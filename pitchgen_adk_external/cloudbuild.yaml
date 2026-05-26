@@ -1,0 +1,6 @@
+# Specify a logs bucket
+logsBucket: "your-gcs-logs-bucket"
+steps:
+- name: "gcr.io/cloud-builders/gcloud"
+  args: ["app", "deploy", "--project", "your-gcp-project-id", "--quiet"]
+timeout: "600s"

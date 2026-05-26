@@ -1,0 +1,41 @@
+[default]
+project_name = your-gcp-project-id
+gemini_model = gemini-3.5-flash
+gemini_model_1 = gemini-3.5-flash
+gemini_model_2 = gemini-3.1-flash-image-preview
+gemini_image_flash_model = gemini-3.1-flash-image-preview
+gemini_image_pro_model = gemini-3-pro-image-preview
+region = global
+discovery_engine_location = us
+
+[company]
+project_number = your-gcp-project-number
+secret_id = your-drive-token-secret-id
+secret_version = 1
+display_name = your-company-display-name
+
+[datastore]
+pitch_decks = your-text-pitch-golden-datastore-id
+cust_ref = your-text-cust-ref-datastore-id
+website = your-text-website-datastore-id
+
+[reusable]
+cjms = your-reusable-cjms-datastore-id
+cust_ref = your-reusable-cust-ref-datastore-id
+cloudhub_golden_grp = your-reusable-cloudhub-golden-groups-datastore-id
+cloudhub_golden_sin = your-reusable-cloudhub-golden-singles-datastore-id
+cloudhub_silver_grp = your-reusable-cloudhub-silver-groups-datastore-id
+cloudhub_silver_sin = your-reusable-cloudhub-silver-singles-datastore-id
+pitch_grp = your-reusable-pitch-groups-datastore-id
+pitch_sin = your-reusable-pitch-singles-datastore-id
+sales_play_grp = your-reusable-sales-play-groups-datastore-id
+sales_play_sin = your-reusable-sales-play-singles-datastore-id
+
+[bucket]
+content = your-gcs-content-bucket-name
+template = your-gcs-template-bucket-name
+slides = your-gcs-slides-bucket-name
+
+[examples]
+example_slide_1 = your-gcs-slides-bucket-name/examples/example_slide_1.png
+example_slide_2 = your-gcs-slides-bucket-name/examples/example_slide_2.png

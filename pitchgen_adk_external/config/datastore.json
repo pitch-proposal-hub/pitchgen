@@ -1,0 +1,7 @@
+{
+    "datastore_map": {
+        "pitchhub": "pitch_sin",
+        "cloudhub": "cloudhub_golden_sin",
+        "customer references": "cust_ref",
+        "customer journey maps(cjms)": "cjms"}
+}
