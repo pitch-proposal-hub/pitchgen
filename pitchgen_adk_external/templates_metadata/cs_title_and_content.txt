@@ -1,0 +1,84 @@
+{
+    "1@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_600": {
+        "title": "160 to 200 characters",
+        "item1": "365 to 445 characters"
+    },
+    "2@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_605": {
+        "title": "160 to 200 characters",
+        "header1": "45 to 55 characters",
+        "header1_content": "365 to 445 characters",
+        "header2": "45 to 55 characters",
+        "header2_content": "365 to 445 characters"
+    },
+    "3@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_613": {
+        "title": "160 to 200 characters",
+        "header1": "45 to 55 characters",
+        "header1_content": "100 to 130 characters",
+        "header2": "45 to 55 characters",
+        "header2_content": "100 to 130 characters",
+        "header3": "45 to 55 characters",
+        "header3_content": "100 to 130 characters"
+    },
+    "4@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_626": {
+        "title": "160 to 200 characters",
+        "header1": "35 to 45 characters",
+        "header1_content": "35 to 45 characters",
+        "item1": "395 to 485 characters"
+    },
+    "5@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_634": {
+        "title": "160 to 200 characters",
+        "header1": "35 to 45 characters",
+        "header2": "35 to 45 characters",
+        "header1_content": "35 to 45 characters",
+        "header2_content": "35 to 45 characters"
+    },
+    "6@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_644": {
+        "title": "160 to 200 characters",
+        "header1": "15 to 25 characters",
+        "header1_content": "65 to 80 characters",
+        "header2": "15 to 25 characters",
+        "header2_content": "65 to 80 characters",
+        "header3": "15 to 25 characters",
+        "header3_content": "65 to 80 characters",
+        "header4": "15 to 25 characters",
+        "header4_content": "65 to 80 characters",
+        "header5": "15 to 25 characters",
+        "header5_content": "65 to 80 characters",
+        "header6": "15 to 25 characters",
+        "header6_content": "65 to 80 characters",
+        "header7": "15 to 25 characters",
+        "header7_content": "65 to 80 characters"
+    },
+    "7@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_678": {
+        "title": "160 to 200 characters",
+        "header1": "15 to 25 characters",
+        "header2": "15 to 25 characters",
+        "header3": "15 to 25 characters",
+        "header4": "15 to 25 characters",
+        "header1_content": "95 to 120 characters",
+        "header2_content": "95 to 120 characters",
+        "header3_content": "95 to 120 characters",
+        "header4_content": "95 to 120 characters"
+    },
+    "8@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_702": {
+        "item1": "135 to 165 characters"
+    },
+    "9@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_706": {
+        "item1": "135 to 165 characters"
+    },
+    "10@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_710": {
+        "header1": "90 to 115 characters",
+        "header1_content": "55 to 70 characters"
+    },
+    "11@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_715": {
+        "title": "70 to 90 characters",
+        "item1": "370 to 455 characters"
+    },
+    "12@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_722": {
+        "item1": "65 to 80 characters"
+    },
+    "13@1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU@g381c91226b1_0_1173": {
+        "header1": "35 to 40 characters",
+        "header1_content": "30 to 40 characters"
+    }
+}

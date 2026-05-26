@@ -1,0 +1,89 @@
+{
+    "1@15H0myA0Iw7FTgImKuwv6snhqoSad_XhWnYVY5V3nWFo@g32be974fc6a_0_128": {
+        "title": "30 to 40 characters",
+        "item1": "30 to 40 characters",
+        "item2": "30 to 40 characters",
+        "item3": "30 to 40 characters",
+        "item4": "350 to 400 characters",
+        "header1": "30 to 40 characters",
+        "header1_content": "30 to 40 characters"
+    },
+    "2@15H0myA0Iw7FTgImKuwv6snhqoSad_XhWnYVY5V3nWFo@g32be974fc6a_0_169": {
+        "title": "30 to 40 characters",
+        "item1": "30 to 40 characters",
+        "item2": "30 to 40 characters",
+        "item3": "30 to 40 characters",
+        "item4": "30 to 40 characters",
+        "item5": "350 to 400 characters",
+        "header1": "30 to 40 characters",
+        "header1_content": "30 to 40 characters"
+    },
+    "3@15H0myA0Iw7FTgImKuwv6snhqoSad_XhWnYVY5V3nWFo@g1e48964edee_0_0": {
+        "title": "30 to 40 characters",
+        "item1": "30 to 40 characters",
+        "item2": "30 to 40 characters",
+        "item3": "30 to 40 characters",
+        "item4": "350 to 400 characters"
+    },
+    "4@15H0myA0Iw7FTgImKuwv6snhqoSad_XhWnYVY5V3nWFo@g21ec854185f_0_0": {
+        "title": "30 to 40 characters",
+        "subtitle": "30 to 40 characters",
+        "item1": "30 to 40 characters",
+        "item2": "30 to 40 characters",
+        "item3": "30 to 40 characters",
+        "item4": "150 to 300 characters"
+    },
+    "5@15H0myA0Iw7FTgImKuwv6snhqoSad_XhWnYVY5V3nWFo@g21ec047e0ba_0_1430": {
+        "title": "30 to 40 characters",
+        "header1": "50 to 80 characters",
+        "header1_content": "350 to 390 characters",
+        "header2": "50 to 80 characters",
+        "header2_content": "350 to 390 characters"
+    },
+    "6@15H0myA0Iw7FTgImKuwv6snhqoSad_XhWnYVY5V3nWFo@g21ec047e0ba_0_2465": {
+        "title": "30 to 40 characters",
+        "subtitle1": "30 to 40 characters",
+        "subtitle1_content": "150 to 190 characters",
+        "subtitle2": "30 to 40 characters",
+        "subtitle2_content": "150 to 190 characters"
+    },
+    "7@15H0myA0Iw7FTgImKuwv6snhqoSad_XhWnYVY5V3nWFo@g24f02d2908f_0_0": {
+        "title": "30 to 40 characters",
+        "item1": "30 to 40 characters",
+        "item1_content": "250 to 290 characters",
+        "item2": "30 to 40 characters",
+        "item2_content": "250 to 290 characters",
+        "item3": "30 to 40 characters",
+        "item3_content": "250 to 290 characters",
+        "item4": "30 to 40 characters",
+        "item4_content": "250 to 290 characters"
+    },
+    "8@15H0myA0Iw7FTgImKuwv6snhqoSad_XhWnYVY5V3nWFo@g3e7e5f1e0ac_0_177": {
+        "Use_Case_Title": "30 to 60 characters",
+        "Industry_Pillar": "20 to 40 characters",
+        "Description_details": "150 to 300 characters",
+        "Problem_statement_details": "150 to 300 characters",
+        "Value_statement": "50 to 100 characters",
+        "Google_differentiation_points": "150 to 300 characters",
+        "List_of_KPIs": "100 to 250 characters",
+        "Sales_Play_1": "15 to 30 characters",
+        "Sales_Play_2": "15 to 30 characters",
+        "Sales_Play_3": "15 to 30 characters",
+        "Sales_Play_4": "15 to 30 characters",
+        "Persona_1": "15 to 30 characters",
+        "Persona_2": "15 to 30 characters",
+        "Persona_3": "15 to 30 characters",
+        "Persona_4": "15 to 30 characters"
+    },
+    "9@15H0myA0Iw7FTgImKuwv6snhqoSad_XhWnYVY5V3nWFo@g3e7e5f1e0ac_0_201": {
+        "Use_Case_Title": "30 to 60 characters",
+        "Industry_Pillar": "20 to 40 characters",
+        "Description_details": "150 to 300 characters",
+        "Problem_statement_details": "150 to 300 characters",
+        "Value_statement": "50 to 100 characters",
+        "Google_differentiation_points": "150 to 300 characters",
+        "List_of_KPIs": "100 to 250 characters",
+        "Sales_Plays": "80 to 150 characters",
+        "Personas": "80 to 150 characters"
+    }
+}
