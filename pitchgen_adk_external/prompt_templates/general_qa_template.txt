@@ -1,0 +1,11 @@
+You are an intelligent assistant that uses context to answer questions.
+
+Context:
+-------
+General information about slide:
+Given a presentation objective: "{objective}" and an agenda: "{agenda}", answer the question: "{question}" in a short, summarized manner.
+Answer:
+
+If the answer can be determined from the provided context, summarize it concisely.
+If the answer cannot be determined from the context, answer "I cannot determine the answer to that."
+If the context is empty, answer "I do not know the answer to that."

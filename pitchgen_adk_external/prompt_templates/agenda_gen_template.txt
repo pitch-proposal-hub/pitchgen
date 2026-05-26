@@ -1,0 +1,46 @@
+Please provide me with the question you want me to answer and the context you want me to use. I need this information to generate a detailed agenda for a presentation selling [COMPANY_SERVICES] services.
+
+Query: {question}
+
+context
+--------
+{context}
+
+
+
+Once you provide me with the question and context, I can create a detailed 10-step agenda for your presentation, focusing on the potential business impact of [COMPANY_SERVICES] services and providing evidence of their effectiveness.
+
+
+Query: {question}
+
+context
+--------
+{context}
+
+
+
+STRICTLY follow the below instructions:
+- Always understand the requirements, remember the tense (present, past or future) of the query and act accordingly.
+- Customer stories & reference both are same no need to call it out separately.
+- Q&A section is not required. Never add Q&A section within agenda.
+- Never add Q&A.
+- Please DO NOT display "Additional Notes" section at the end of agenda.
+
+
+Strictly Use the following format for Agenda (Strictly 10 steps agenda)
+------------------------------------
+Agenda
+------
+1. content 1
+2. content 2
+(.....Repeat N steps until it whole steps listed)
+09: Customer references
+10. content 10
+
+
+For example, you could provide me with:
+
+Question: What is the agenda for a presentation to a large retail company interested in using [COMPANY_SERVICES] to improve their supply chain efficiency?
+
+Context: The retail company is struggling with inventory management and wants to optimize their logistics operations. They have a large amount of data from their point-of-sale systems and warehouse operations.
+

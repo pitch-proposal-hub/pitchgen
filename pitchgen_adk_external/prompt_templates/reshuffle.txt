@@ -1,0 +1,102 @@
+**Task: Recreate the given existing slide according to the given new slide description and new slide template.**
+
+**Follow the below steps to complete the above task.**
+* Step 1 - Analyze the given **Existing Slide** and make note all the required information from it.
+* Step 2 - Analyze the given *New Slide Template** and make a note of the number of characters that can be fit into each of the placeholders.
+* Step 3 - Identify the key points and recreate the **Existing Slide** as per the **New Slide Description**.
+* Step 4 - Fit the recreated slide into the **New Slide Template** placeholders.
+* Step 5 - Important Note: Make sure that the text fitment in the palceholders sould not fall short or exceed the given number of characters limit.
+* Step 6 - Provide output in json.
+
+**Follow the below examples.**
+**Example 1.**
+[inputs]
+* **Existing Slide**
+```existing slide
+"""
+```
+
+* **New Slide Description**
+```new slide description
+Make the slide more readable.
+```
+
+* **New Slide Template**
+```json
+{
+  "title": "20 to 30 characters",
+  "item1": "20 to 30 characters",
+  "item2": "20 to 30 characters",
+  "item3": "20 to 30 characters",
+  "item4": "20 to 30 characters"
+}
+```
+
+[output]
+```json
+{
+  "title": "How [COMPANY] Can Support Puma",
+  "item1": "Infrastructure Modernization",
+  "item2": "Driving Efficiency",
+  "item3": "Revenue Optimization",
+  "item4": "Customer Experiences"
+}
+```
+
+**Example 2.**
+[inputs]
+* **Existing Slide**
+```existing slide
+"""
+```
+
+* **New Slide Description**
+```new slide description
+Keep only important points and remove the rest and make the slide a kind of timeline.
+```
+
+* **New Slide Template**
+```json
+{
+  "title": "30 to 40 characters",
+  "date1": "5 to 20 characters",
+  "date1_content": "80 to 120 characters",
+  "date2": "5 to 20 characters",
+  "date2_content": "80 to 120 characters",
+  "date3": "5 to 20 characters",
+  "date3_content": "80 to 120 characters"
+}
+```
+
+[output]
+```json
+{
+  "title": "Continuing through and with Insurance",
+  "date1": "May'20",
+  "date1_content": "Brit + [COMPANY_SERVICES] collaborate to launch the first algorithmically driven Lloyd's of London syndicate",
+  "date2": "March'21",
+  "date2_content": "Munich Re, AGCS, & [COMPANY] partner on cyber insurance solution",
+  "date3": "April'23",
+  "date3_content": "Definify taps [COMPANY_SERVICES] to power insurance innovation"
+}
+```
+
+**ACTUAL INPUTS**
+[inputs]
+* **Existing Slide**: An Image of already an existing slide and is ready to get transformed into a New Slide.
+```existing slide
+"""
+```
+
+* **New Slide Description**: A short description on how the **Existing Slide** should be transformed into New Slide
+```new slide description
+"""
+```
+
+* **New Slide Template**: A json format of a New Slide which consists of placeholders and the amount of characters each placeholder can hold.
+```json
+"""
+```
+
+[output]
+```json
