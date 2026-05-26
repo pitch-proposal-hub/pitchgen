@@ -1,180 +1,175 @@
-# PitchGen External Solution Accelerator
+# PitchGen ADK External
 
-PitchGen is an AI-powered solution accelerator designed to automate, streamline, and customize slides presentation pipelines. By leveraging Generative AI (Gemini models), **Google Agent Development Kit (ADK)**, and semantic RAG slide search indexes, PitchGen dynamically drafts professional outlines, structures tailored agendas, and retrieves reusable slide templates matching the target business context.
+PitchGen ADK External is a consolidated, production-ready Python application designed to automate and accelerate the creation of sales pitches and presentation slides. It leverages Google's Vertex AI, GenAI SDK, and the Agent Development Kit (ADK) to dynamically generate presentation outlines, slide content, and map them to high-quality corporate templates.
 
-This repository is a decoupled, sanitized version of the PitchGen project, prepared for **external deployment** inside standard GCP cloud environments or local setups.
-
----
-
-## 1. Repository Structure
-
-```
-PitchGen-external/
-├── README.md                  <-- This Setup Guide
-├── PitchGen-UI/               <-- Google Apps Script Sidebar client files
-│   ├── Code.gs
-│   ├── userInputPopup.html
-│   └── ...
-├── PitchGen-backend/          <-- Python Flask API Gateway
-│   ├── main.py
-│   ├── config.py
-│   ├── connection.py
-│   └── .env.template
-└── PitchGen-model/            <-- Python FastAPI ADK Agent Service
-    ├── main.py
-    ├── adk_agent.py
-    └── config/
-        └── config.ini.template
-```
+The application is structured as a dual-interface system:
+1.  **FastAPI Web Service (`main.py`)**: Provides REST endpoints for integration with frontend applications.
+2.  **ADK Agent (`agent.py`)**: A standalone, payload-driven autonomous agent that encapsulates the core slide generation skills.
 
 ---
 
-## 2. Setup and Deployment Guide
+## Business Context & Ecosystem
 
-### Step 2.1: Provision the Database (MySQL)
-PitchGen uses a MySQL database to persist session parameters, outlines, feature metrics, and feedback logs. 
+PitchGen is a core component of the **Google Cloud Sales Enablement** suite, integrated under the **Pitch & Proposal Hub (go/phub)**—the central platform on CloudHub where Google Cloud sales teams request customized assets (pitches, proposals, demos, 1-Pagers, QBRs) and access self-service enablement tools.
 
-Connect to your MySQL server and execute the following DDL statements to bootstrap the tables:
+Specifically, PitchGen serves as the backend engine powering the **PitchGen Google Slides Extension (go/pitchgen)**. It enables sales representatives and engineers to:
+*   **Accelerate Asset Creation**: Automate the tedious process of building customer-specific presentations from scratch.
+*   **Maintain Brand Consistency**: Automatically map generated copy into approved, high-quality Google Cloud presentation templates.
+*   **Ensure Technical & Factual Accuracy**: Ground generated slide content in verified technical details (via Vertex AI Search and RAG) rather than relying on generic AI outputs.
+*   **Tailor to the Customer**: Seamlessly inject customized customer research, SWOT analyses, and tailored solution mappings into the slides.
+*   **Promote Asset Reuse**: Automatically search and retrieve existing, pre-approved architectural and product slides (reusable assets) that match the customer's solution requirements, avoiding redundant work and ensuring aligned messaging.
 
-```sql
--- 1. Users Table
-CREATE TABLE IF NOT EXISTS user_details (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_ldap VARCHAR(100) UNIQUE NOT NULL
-);
 
--- 2. Presentation Requests Table
-CREATE TABLE IF NOT EXISTS users_input (
-    user_request_id INT AUTO_INCREMENT PRIMARY KEY,
-    requested_by VARCHAR(300),
-    request_type VARCHAR(300),
-    presentation_id VARCHAR(300),
-    audience VARCHAR(5000),
-    industry VARCHAR(5000),
-    solution VARCHAR(5000),
-    customer_name VARCHAR(5000),
-    region VARCHAR(100),
-    product VARCHAR(300),
-    er_number VARCHAR(100), -- Acts as standard Opportunity ID
-    user_id INT,
-    business_context VARCHAR(5000),
-    user_input_id VARCHAR(300) NOT NULL,
-    model_generated_outlines_url VARCHAR(5000),
-    sales_play VARCHAR(300),
-    content_gen_slides INT,
-    reusable_slides INT,
-    total_slides INT,
-    FOREIGN KEY (user_id) REFERENCES user_details(user_id)
-);
+---
 
--- 3. Generated Outlines Table
-CREATE TABLE IF NOT EXISTS user_outline (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    request_id INT,
-    outline TEXT,
-    sequence INT,
-    FOREIGN KEY (request_id) REFERENCES users_input(user_request_id)
-);
+## 1. Architecture Overview
 
--- 4. Slide Assets Path Logs
-CREATE TABLE IF NOT EXISTS model_response (
-    response_id INT AUTO_INCREMENT PRIMARY KEY,
-    request_id INT,
-    deck_drive_url VARCHAR(5000),
-    generated_content_url VARCHAR(5000),
-    architectural_url VARCHAR(5000),
-    FOREIGN KEY (request_id) REFERENCES users_input(user_request_id)
-);
+The application orchestrates a multi-step pipeline combining retrieval-augmented generation (RAG) with layout mapping.
 
--- 5. Presentation Copy Queue Table
-CREATE TABLE IF NOT EXISTS copy_drive (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_ldap VARCHAR(300),
-    status VARCHAR(300),
-    user_input_id VARCHAR(300),
-    filename VARCHAR(300),
-    deckId VARCHAR(300),
-    folder VARCHAR(300),
-    created_date DATETIME
-);
-
--- 6. Feature Logging Table
-CREATE TABLE IF NOT EXISTS feature_usage_log (
-    log_id INT AUTO_INCREMENT PRIMARY KEY,
-    presentation_id VARCHAR(300),
-    er_number VARCHAR(100),
-    requested_by VARCHAR(100),
-    request_type VARCHAR(300),
-    user_id INT,
-    action VARCHAR(300),
-    payload JSON,
-    FOREIGN KEY (user_id) REFERENCES user_details(user_id)
-);
-```
-
-### Step 2.2: Configure and Run the Backend (`PitchGen-backend`)
-1.  Navigate to the backend directory:
-    ```bash
-    cd PitchGen-backend
-    ```
-2.  Create your environment file from the template:
-    ```bash
-    cp .env.template .env
-    ```
-3.  Fill in the `.env` parameters (database connection URI `DATABASE_URL`, your target Google Cloud Project IDs, GCS Storage Buckets, and Model Endpoint URL).
-4.  Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-5.  Start the server:
-    ```bash
-    python3 main.py
-    ```
-
-### Step 2.3: Configure and Run the Model Service (`PitchGen-model`)
-1.  Navigate to the model directory:
-    ```bash
-    cd PitchGen-model
-    ```
-2.  Create your configuration file from the template:
-    ```bash
-    cp config/config.ini.template config/config.ini
-    ```
-3.  Provide your specific GCP Project parameters, regional location, and targeted Gemini model versions (e.g., `gemini-2.5-pro`).
-4.  **Slide Search RAG Setup**: 
-    Ensure you index your reusable slide assets in a BigQuery table matching the structure below, and export the table environment variables:
-    *   `export BQ_PROJECT_ID="your-gcp-project-id"`
-    *   `export BQ_DATASET_TABLE="your_dataset.your_slide_indexing_table"`
+```mermaid
+graph TD
+    User([User]) -->|Input Parameters| API_Agendas[Endpoint: /getAgendas]
+    API_Agendas -->|Generate Outline| OutlineGen[Outline Generator]
+    API_Agendas -->|Refine Outline| ArchitecturalRefine[Architectural_slides.filtered_outline]
+    API_Agendas -->|Gemini Transformation| AgendaGen[Gemini: Outline to Agendas]
+    API_Agendas -->|Result| User
     
-    The BigQuery index table must contain these columns:
-    *   `presentation_id` (STRING)
-    *   `slide_id` (STRING)
-    *   `text_content` (STRING)
-    *   `gcs_asset_url` (STRING)
-5.  Install dependencies (which includes the open-source `google-adk` package):
+    User -->|Agendas + Context| API_Content[Endpoint: /contentGen]
+    API_Content -->|Search Reusables| ReusableSearch[Architectural_slides.get_reusable_slides]
+    API_Content -->|Async Task| AsyncTask[Background Task: run]
+    
+    subgraph "Content Generation Pipeline (Async)"
+        AsyncTask -->|Customer Info| CustInfo[generate_cust_info]
+        AsyncTask -->|RAG Content| GenText[gen_text]
+        GenText -->|Search| VertexSearch[(Vertex AI Search)]
+        AsyncTask -->|Mapping| TemplateSorting[get_placeholders_json]
+        AsyncTask -->|Final Merge| FinalMerge[get_final_content]
+    end
+    
+    FinalMerge -->|Upload| GCS[(Google Cloud Storage)]
+    API_Content -->|Return Metadata| User
+```
+
+For a detailed breakdown of components and data structures, see [FLOW_DIAGRAM.md](FLOW_DIAGRAM.md).
+
+---
+
+## 2. Key Features
+
+*   **Agenda Generation**: Transforms high-level business context (customer, audience, industry, products) into a structured presentation outline.
+*   **Smart Content Generation (RAG)**: Pulls contextual information using Vertex AI Search and Google Search to generate factual, customer-specific slide copy.
+*   **Template Mapping**: Classifies generated slide copy and maps it to specific placeholder variables in corporate slide templates.
+*   **Image Generation (Nano Banana)**: Integrates with **Nano Banana 2** (`gemini-3.1-flash-image-preview`) and **Nano Banana Pro** (`gemini-3-pro-image-preview`) for generating custom visual slides with high-fidelity text rendering.
+*   **Intelligent Reusable Asset Search**: Automatically queries internal databases (via the `Architectural_slides` skill) to find matching, pre-approved "reusable" slides (such as standard architecture diagrams or customer success stories) based on the generated outline.
+*   **Ad-hoc Slide Search**: Provides endpoints (`/searchSlide`) to perform semantic vector searches across existing slide repositories to find and pull specific slides into the deck.
+*   **Slide Translation**: Translates decks into target languages while preserving visual formatting and layout.
+*   **Slide Reshuffling**: Allows users to iteratively transform or regenerate specific slides.
+
+---
+
+## 3. Directory Structure
+
+```
+pitchgen_adk_external/
+├── agent.py                  # ADK Agent interface & standalone execution
+├── main.py                   # FastAPI Web application & endpoints
+├── app.yaml                  # App Engine configuration
+├── cloudbuild.yaml           # GCP Cloud Build trigger configuration
+├── requirements.txt          # Cleaned production dependencies
+├── .env.example              # Template for environment variables
+├── FLOW_DIAGRAM.md           # Detailed architectural documentation
+├── config/
+│   ├── config.ini            # Local active configuration (git-ignored)
+│   ├── config.ini.example    # Template for INI configurations
+│   └── *mapping.json         # Static industry/layout mappings
+├── prompt_templates/         # System and user prompts for Gemini LLM calls
+├── templates_metadata/       # Slide layout descriptions for template mapping
+├── src/                      # Core application module (FastAPI backend)
+│   ├── new_content_gen.py    # RAG & text generation logic
+│   ├── outline_generator.py  # Outline creation logic
+│   ├── reusable_slides.py    # Retrieval of existing assets
+│   ├── template_sorting.py   # Placeholder mapping logic
+│   └── ...
+└── src_agent/                # ADK Agent specific skills
+    └── skills/
+        ├── content_generator.py
+        └── template_selector.py
+```
+
+---
+
+## 4. Setup & Installation
+
+### Prerequisites
+*   Python 3.11+
+*   A Google Cloud Project with Vertex AI and Discovery Engine enabled.
+*   A GCS bucket for storing generated outputs.
+
+### Step 1: Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Step 2: Environment Configuration
+1.  Copy `.env.example` to `.env`:
     ```bash
-    pip install -r requirements.txt
+    cp .env.example .env
     ```
-6.  Run the service:
+2.  Fill in your Google Cloud Project details in `.env`:
+    ```env
+    GOOGLE_GENAI_USE_VERTEXAI=1
+    GOOGLE_CLOUD_PROJECT=your-gcp-project-id
+    GOOGLE_CLOUD_LOCATION=global
+    MODEL=gemini-3.5-flash
+    IMAGE_MODEL=gemini-3.1-flash-image-preview
+    ```
+
+### Step 3: Application Configuration
+1.  Copy `config/config.ini.example` to `config/config.ini`:
     ```bash
-    gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app -b 0.0.0.0:8000
+    cp config/config.ini.example config/config.ini
     ```
+2.  Configure your GCP resources, GCS buckets, and Vertex AI Search datastore IDs in `config/config.ini`.
 
-### Step 2.4: Deploy Google Apps Script client (`PitchGen-UI`)
-1.  Open Google Slides and create a blank presentation.
-2.  Navigate to **Extensions > Apps Script**.
-3.  Copy all `.gs` and `.html` files from the `PitchGen-UI` directory into the Apps Script editor.
-4.  Configure the REST API target address in `configuration.gs` or `restAPI.gs` to point to your running Flask `PitchGen-backend` endpoint URL.
-5.  Click **Run** to authenticate the scripts and link the custom sidebar UI directly into your slides!
+#### Model Configuration in `config.ini`:
+*   `gemini_model` / `gemini_model_1`: Primary and fallback text models (e.g., `gemini-3.5-flash` or `gemini-3.1-pro-preview`).
+*   `gemini_model_2`: The active image generation model.
+*   `gemini_image_flash_model`: Explicitly configured as `gemini-3.1-flash-image-preview` (Nano Banana 2).
+*   `gemini_image_pro_model`: Explicitly configured as `gemini-3-pro-image-preview` (Nano Banana Pro).
 
-### Step 2.5: Generalizing LLM Prompt Templates
-All dynamic RAG extraction and outline structuring scripts in `PitchGen-model/prompt_templates/` are fully parameterized with generic token placeholders:
-*   The system instructions refer generically to the target target **`[Cloud Provider]`** rather than hardcoding GCP or Google.
-*   **Important**: The valid values catalogs for `solutions` and `products` inside `prompt_templates/searchEntities.txt` and `prompt_templates/contextEntities.txt` contain placeholders for Google Cloud's product portfolios. To tailor this tool for another target organization (e.g. AWS, Azure, or SaaS suites), simply overwrite these arrays inside the raw text prompt files with your own target product lists to allow precise AI metadata extraction.
+*Note: The environment variable `MODEL` will override the text models (`gemini_model`/`gemini_model_1`), while `IMAGE_MODEL` will override `gemini_model_2`.*
 
-### Step 2.6: Map Your Presentation Layout Decks
-PitchGen generates presentation slides by cloning pre-styled layouts from master presentation decks. These templates mapping coordinates are defined inside `PitchGen-model/config/mapping.json`.
-1. Create your own styled master templates in Google Slides (for Titles, Agendas, Section Dividers, and Thank-you slides).
-2. Overwrite the `"deckId"` values inside `mapping.json` with your own Google Slides presentation IDs (replacing placeholders like `your-title-master-presentation-deck-id`).
-3. Ensure you define the correct layout slide ID mappings (e.g. `"1": "your_slide_id_here"`) to tell the backend which slide index to copy for each design category.
+---
 
+## 5. Running the Application
+
+### Running the FastAPI Web Service (Local)
+You can run the API server locally using Uvicorn:
+```bash
+uvicorn main:app --reload --port 8080
+```
+The interactive API documentation will be available at `http://localhost:8080/docs`.
+
+### Running the ADK Agent (Standalone Test)
+You can run a standalone test execution of the ADK agent payload mapping:
+```bash
+python3 agent.py
+```
+This executes the agent with a mock payload defined in the `__main__` block of `agent.py`.
+
+---
+
+## 6. Production Deployment
+
+The application is configured for deployment to **Google App Engine (Standard Environment)**.
+
+### Deploying via gcloud CLI
+```bash
+gcloud app deploy --project=your-gcp-project-id --quiet
+```
+
+### Deploying via Cloud Build
+A `cloudbuild.yaml` is provided to automate deployment via GCP Cloud Build:
+```bash
+gcloud builds submit --config=cloudbuild.yaml --project=your-gcp-project-id
+```
