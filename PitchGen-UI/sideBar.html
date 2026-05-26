@@ -1,0 +1,2791 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <base target="_top">
+  <style>
+    .container-fluid {
+      font-family: 'Google Sans', sans-serif;
+      padding: 13px;
+      background-color: #F8F9FA;
+      width: 300px; 
+      height: 100%; 
+      max-width: 100%; 
+      min-width: 200px; 
+      height: calc(100vh - 60px); 
+    }
+
+    @media (max-width: 768px) {
+      .container-fluid {
+        width: 100%; 
+      }
+    }
+    .sidebar-title {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px;
+      font-size: 1.2em;
+    }
+
+    .reshuffleSlideTemplate {
+      overflow-y: auto;
+      max-height: calc(100vh - 289px);
+      box-sizing: border-box;
+      width: 100vw;
+      max-width: 107%;
+      margin-left: -2px;
+    }
+    .addSlideTemplate{
+      overflow-y: auto;
+      max-height: calc(100vh - 268px);
+      box-sizing: border-box;
+      width: 101vw;
+      max-width: 104%;
+      margin-left: -2px;
+    }
+    .searchSlideTemplate{
+      overflow-y: auto;
+      max-height: calc(121vh - 384px);
+      box-sizing: border-box;
+      width: 101vw;
+      max-width: 104%;
+      margin-left: -2px;
+    }
+    button {
+      flex-basis: calc(50% - 10px);
+      margin: 5px;
+      border-radius: 8px;
+    }
+    .input-field {
+      border-radius: 8px;
+      width:100%;
+      border: 1px solid #d2d3d5;
+      margin-bottom: 5px;
+    }
+    .input-label {
+      font-size: 14px;
+      color: #414141;
+      font-style: normal;
+      font-weight: 700;
+      /* margin-top: 5px; */
+    }
+    .addSlidesImage:hover {
+      background-color: #87ace8;
+      cursor: pointer;
+    }
+    .searchSlidesImage:hover {
+      background-color: #87ace8;
+      cursor: pointer;
+    }
+    .reshuffleSlidesImage:hover {
+      background-color: #87ace8;
+      cursor: pointer;
+    }
+    .slidesImageSelected{
+      background-color: #616161;
+    }
+    .searchImageSelected{
+      background-color: #616161;
+    }
+    .form-control {
+    font-size: 13px;
+    padding-left: 12px;
+    }
+    .dropdown{
+      font-weight: bold;
+    }
+    /*------------------ width Custom Scrollbar ------------------*/
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: #f1f1f1; 
+    } 
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: #9b9b9b; 
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+    }
+    /*------------------ Bootstrap modal popup ------------------*/
+    .button-wrapper {
+      display: flex;              
+      justify-content: center;   
+      width: 100%;   
+      border-radius: 13px;  
+      margin-top: -25px;         
+    }
+    .PopupMessageBtn {
+      display: flex;             
+      gap: 15px;                 
+      margin-top: 20px; 
+      margin-bottom:4vh;          
+    }
+    .PopupMessageBtn .btn {
+      padding: 5px 12px;
+      font-size: 15px;
+      border-radius: 20px;          
+    } 
+    .modal-content {
+      color: #656565;
+    }
+    .modal-body {
+      position: relative;
+      padding: 16px;
+      margin-top: 10px;
+    }
+    .dltMessage{
+      font-family: 'Google Sans', sans-serif;
+      font-size:15px;
+      text-align:center;
+    }
+    .dltMessage1{
+      font-family: 'Google Sans', sans-serif;
+      font-size:15px;
+      text-align:center;
+    }
+    .warning-icon {
+      margin-top: 20px;
+      margin-left: 55vh;
+      padding-top: 6px;
+    }
+    h3{
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: -13px;
+    }
+    .material-symbols-outlined {
+      text-align: center; 
+      font-size: 44px;
+      margin-bottom: -14px;
+      margin-top: 24px;
+    }
+    .modal-backdrop {
+    display: none;
+    }
+
+    /*---------New update as per figma---------*/
+    /*-------------Segemented Buttons CSS ----------------*/
+    .sidebar{
+      font-family: Google Sans, Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      overflow-y: hidden;
+      overflow-x: hidden;
+      background-color: #ffffff;
+       padding: 0px;
+      box-sizing: border-box;
+      margin-top: 2px;
+    }
+    .sidebar-button {
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 32px);
+      font-family: 'Google Sans', sans-serif;
+      margin: 0 16px 12px 16px;
+      gap: 0;
+      background-color: #F0F4F9;
+      border-radius: 9999px;
+      padding: 4px;
+    }
+
+    .btn-segment {
+      padding: 8px 16px;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+      line-height: 1.2; 
+      border: none !important; 
+      color: #444746;
+      border-radius: 9999px !important; 
+      margin: 0; 
+      flex-grow: 1;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .btn:hover {
+      background-color: rgba(60,64,67,0.04);
+    }
+    .blue-btn:hover {
+      background-color: #c2e7ff;
+      border: 1px solid #4d4e4f; 
+    }
+
+    /*-------------segemented buttons ----------------*/
+    .separator {
+      border: 0;
+      border-top: 2px solid #e0e0e0;
+      margin: 12px 0; 
+    }
+    .grey-btn {
+      background-color: transparent;
+      color: #444746;
+    }
+    .blue-btn {
+      background-color: #FFFFFF !important;
+      box-shadow: 0 1px 3px rgba(60,64,67,0.3);
+      color: #1a73e8 !important;
+      font-weight: 600 !important;
+    }
+    /*-------------Collapse arrow CSS---------------*/
+    .collapse-arrow {
+      position: relative;
+      text-align: right;
+      cursor: pointer; 
+      font-size: 13px;
+      color: black; 
+      transition: transform 0.3s; 
+      margin-bottom: -19px;
+    }
+    /*-------------Generate Slide button CSS---------------*/
+
+    .card-body{
+      background-color: #FFFFFF;
+      box-shadow: 0 1px 2px rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+      border-radius: 8px;
+      border:none;
+      padding:16px;
+      margin-bottom: 12px;
+    }
+
+    /* ---------translate information on icon click--------------- */
+    .info-icon {
+      cursor: pointer;
+      margin-left: 5px;
+      color: #007bff;
+    }
+    .popup {
+      display: none;
+      position: absolute;
+      border-radius: 12px;
+      background-color: white;
+      border: 1px solid #555555;
+      padding: 10px 10px;
+      z-index: 1000;
+      width: 288px;
+      height: 140px;
+      top: 23.8px;
+      font-size: 13px;
+      left: -0.35px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .popup::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #ccc transparent transparent transparent;
+    }
+    /* --------- End--------------- */
+    .fullDeck{
+      display: block;
+      min-height: 1.5rem;
+      padding-left: 2.5em;
+      margin-bottom: .125rem;
+      }
+    .fullDecklable{
+      display: inline-block;
+      max-width: 100%;
+      margin-bottom: 10px;
+      padding-top: 1px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    .layoutDropdown {
+      width: 100%;
+      height: 36px;
+      padding: 7px 10px;
+      line-height: 1.428571;
+      color: #444746;
+      background-color: #f0f4f9;
+       background-image: none;
+       border: none;
+       border-radius: 16px;
+    }
+    .layoutDropdown option {
+      background-color: #f0f4f9;
+      color: #444746;
+    }
+    .dropdown-list{
+      max-height:150px;
+    }
+    .slideContent{
+      color: #444746;
+      background-color: #ffffff;
+      border: 1px solid #747775;
+      border-radius: 4px;
+    }
+    .slideTitleUSP{
+      width: 100%;
+      height: 36px;
+      padding: 7px 10px;
+      line-height: 1.428571;
+      color: #444746;
+      background-color:#ffffff;
+      background-image: none;
+      border: 1px solid #747775;
+      border-radius:4px;
+    }
+    .required{
+      color: #92ABD5;
+    }
+    .form-select {
+        appearance: none; 
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+        background-size: 21px; 
+        padding-right: 30px;
+        color:#444746; 
+        background-color: #f0f4f9;
+        font-style: normal;
+        font-weight: 400;
+    }
+    .modal-body{
+      position: relative;
+      padding: 16px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .modal-header {
+        min-height: 16.43px;
+        border-bottom: none;
+        margin-left: 109px;
+    }
+    .modal-header .close {
+      font-size: 2.5rem; 
+      color: #000;
+      padding-left: 107px;
+    }
+    .transProg{
+      font-family: Google Sans;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 0%;
+      color: #1F1F1F;
+      margin-top: -24px;
+      margin-bottom: 10px;
+    }
+    .transDetails{
+      color: #5E5E5E;
+      font-family: "Google Sans";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px; 
+    }
+    .TranslateGifImageProcess{
+      width: 129px;
+      height: 156.486px;
+      margin-top: 32px;
+      margin-left: 70px;
+      margin-bottom: 18px;
+    }
+    .TranslateGifImageSuccess{
+      width: 121px;
+      height: 148.486px;          
+      margin-top: -14px;
+      margin-left: 70px;
+      margin-bottom: 20px;
+    }
+    .TranslateGifImageError{
+      width: 178px;
+      height: 128.486px;
+      margin-top: -22px;
+      margin-left: 44px;
+      margin-bottom: 15px;
+    }
+    .svg-container {
+        position: relative;
+        width: 211px;
+        height: 13px; 
+        overflow: hidden; 
+        margin-left: 6px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .white-svg {
+        position: relative; 
+        z-index: 0; 
+    }
+    .green-svg {
+        position: absolute; 
+        top: 2px; 
+        left: 0; 
+        animation: move 2s linear infinite;
+    }
+
+    @keyframes move {
+        0% {
+            left: 0; /* Start at the left edge */
+        }
+        50% {
+            left: 154px; /* Move to the right (end position) */
+        }
+        100% {
+            left: 0; /* Move back to the left (start position) */
+        }
+    }
+    .modal-open .modal {
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+
+    /* ------Add-slide Tabs css start----------- */
+    .container {
+      margin-top: 15px;
+      display: flex;
+      height: 48px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tab {
+      width:100%;
+      color: black;
+      padding: 8px 20px;
+      border-bottom: 1px solid #ccc;
+      font-family: Google Sans;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+      transition: background-color 0.3s, border-bottom 0.3s;
+    }
+    .tab:hover {
+        background-color: #EBEDEF;
+    }
+    .hidden {
+        display: none;
+    }
+    .visible {
+        display: block;
+    }
+    .active {
+        background-color: #DDE8F7; 
+        border-bottom: 2px solid #0B57D0; 
+        color: #0B57D0;
+    }
+    .clicked {
+      background-color: red; 
+    }
+    .tab.active:hover {
+      background-color: #DDE8F7; 
+      border-bottom: 2px solid #0B57D0; 
+    }
+    .addSlidePart{
+      margin-top: 15px;
+    }
+
+    /* ------Search Slide icon show hide CSS ------ */
+    .textarea-container {
+      position: relative;
+    }
+    #searchContentInput {
+      width: 100%; 
+      padding-right: 23px; 
+      box-sizing: border-box; 
+    }
+    .search-icon-grey {
+      position: absolute;
+      right: -2px; 
+      cursor: pointer;
+      font-size: 16px; 
+      color: #888; 
+      top: 35px; 
+    }
+    .search-icon-blue {
+      position: absolute;
+      right: -2px; 
+      cursor: pointer;
+      font-size: 16px; 
+      color: #888; 
+      top: 35px; 
+    }
+    .clear-icon {
+      position: absolute;
+      right: 8px; 
+      cursor: pointer;
+      font-size: 16px; 
+      color: #888; 
+      top: 5px; 
+    }
+
+    /* ------loading spinner CSS ------ */
+    .button-container {
+      display: inline-block;
+      position: relative;
+      margin-left: -2px;
+    }
+    .loadingAddSlide {
+      position: absolute;
+      top: 67%;
+      left: 258%;
+      transform: translateY(-50%);
+      display: none; 
+    }
+    .loadingSearchSlide {
+      position: absolute;
+      top: 67%;
+      left: 260%;
+      transform: translateY(-50%);
+      display: none; 
+    }
+    .loadingReshuffleSlide {
+      position: absolute;
+      top: 215px;
+      right: 10px;
+      z-index: 1;
+    }
+
+    /*---- Data Source Card CSS ----- */
+    .data-source-card {
+        padding: 16px;
+        border-radius: 16px;
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 20px;
+    }
+    .data-source-card:hover {
+        border-color: #1a73e8;
+        box-shadow: 0 4px 12px rgba(26,115,232,0.1);
+        transform: translateY(-2px);
+    }
+    .data-source-icon {
+        font-size: 20px;
+        color: #1a73e8;
+        background-color: #e8f0fe;
+        padding: 10px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .data-source-content {
+        flex: 1;
+    }
+    .data-source-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #1F1F1F;
+        margin-bottom: 4px;
+    }
+    .data-source-description {
+        font-size: 12px;
+        color: #444746;
+        line-height: 1.5;
+    }
+
+    /*---- Add Slide info message CSS----- */
+    .info-container{
+
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between; 
+      padding: 2px; 
+      font-family: 'Google Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+    }
+    .logo-section{
+      border-radius: 11px; 
+      margin-top: -10px;
+      margin-left: 4px;
+      display: flex; 
+      justify-content: center;
+    }
+    .Translogo-section{
+      border-radius: 11px; 
+      margin-top: -10px;
+      display: flex; 
+      justify-content: center;
+    }
+
+    /* ----- add slide popup image css ---------------------- */
+  .addProg{
+      font-family: Google Sans;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 0%;
+      color: #1F1F1F;
+      margin-top: -24px;
+      margin-bottom: 10px;
+    }
+    .addDetails{
+      color: #5E5E5E;
+      font-family: "Google Sans";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px; 
+    }
+    /* -------- Add Slide Popup -------------- */
+    .AddGifImageProcess{
+      width: 142px;
+      height: 142.486px;
+      margin-top: 32px;
+      margin-left: 63px;
+      margin-bottom: 12px;
+    }
+    .AddGifImageSuccess{
+      width: 138px;
+      height: 142.486px;
+      margin-top: -12px;
+      margin-left: 64px;
+      margin-bottom: 27px;
+    }
+    .AddGifImageError{
+      width: 178px;
+      height: 128.486px;
+      margin-top: -15px;
+      margin-left: 44px;
+      margin-bottom: 15px;
+    }
+    /* -------- Search Slide Popup -------------- */
+    .SearchGifImageProcess{
+      width: 142px;
+      height: 142.486px;
+      margin-top: 18px;
+      margin-left: 63px;
+      margin-bottom: 7px;
+    }
+    .SearchGifImageSuccess{
+      width: 136px;
+      height: 141.486px;
+      margin-top: -23px;
+      margin-left: 64px;
+      margin-bottom: 10px;
+      }
+    .SearchGifImageError{
+      width: 178px;
+      height: 128.486px;
+      margin-top: -15px;
+      margin-left: 44px;
+      margin-bottom: 15px;
+    }
+    .noSearchGifImageError{
+      width: 178px;
+      height: 128.486px;
+      margin-top: -15px;
+      margin-left: 44px;
+      margin-bottom: 15px;
+    }
+    .addsvg-container {
+        position: relative;
+        width: 211px;
+        height: 13px; 
+        overflow: hidden; 
+        margin-left: 6px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .addwhite-svg {
+        position: relative; 
+        z-index: 0; 
+    }
+    .addgreen-svg {
+        position: absolute; 
+        top: 2px; 
+        left: 0; 
+        animation: move 2s linear infinite;
+    }
+    
+    .gemini-gradient {
+        background: linear-gradient(135deg, #1A73E8 0%, #4285F4 100%);
+    }
+    .tone-options {
+        display: flex;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 4px; /* Thinner padding */
+    }
+    .tone-options::-webkit-scrollbar {
+        height: 3px; /* Super thin scrollbar */
+    }
+    .tone-options::-webkit-scrollbar-thumb {
+        background-color: #dadce0;
+        border-radius: 3px;
+    }
+
+    .tone-option input[type="radio"] {
+        display: none;
+    }
+    .tone-option label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3px 12px;
+        border-radius: 20px;
+        border: 1px solid #dadce0;
+        height: 28px;
+
+        font-size: 13px;
+
+        color: #444746;
+        cursor: pointer;
+        transition: all 0.2s;
+        white-space: nowrap;
+        margin-bottom: 0px;
+    }
+    .tone-option input[type="radio"]:checked + label {
+        background-color: #e8f0fe;
+        border-color: #e8f0fe;
+        color: #1a73e8;
+    }
+    .bottom-prompt-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-top: none;
+        padding: 8px;
+
+        box-sizing: border-box;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .generate-scroll-content {
+        height: calc(100vh - 260px);
+        overflow-y: auto;
+        padding-bottom: 20px;
+    }
+    /* ER-ID styles */
+    .ErId {
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+
+
+
+    .ErId .input-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1F1F1F;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+    .required {
+      color: #df2222;
+    }
+    .ErIdCommon {
+      font-size: 13px;
+      padding: 12px;
+      border: none;
+      border-radius: 16px;
+      background-color: #f0f4f9 !important;
+
+      width: 100%;
+    }
+    .quick-button-refresh {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      cursor: pointer;
+    }
+    .tooltip-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .tooltip-container .tooltip-text {
+      visibility: hidden;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      padding: 4px 8px;
+      position: absolute;
+      z-index: 100;
+      bottom: 24px;
+      left: 0;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .tooltip-container:hover .tooltip-text {
+      visibility: visible;
+    }
+
+    /* Home Screen Styles */
+    .home-container {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background-color: #ffffff;
+        height: 100vh;
+        overflow-y: auto;
+    }
+    .home-header {
+        margin-bottom: 8px;
+    }
+    .home-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #1F1F1F;
+        font-family: 'Google Sans', sans-serif;
+    }
+    .home-subtitle {
+        font-size: 14px;
+        color: #444746;
+        margin-top: 4px;
+    }
+    .feature-card {
+        padding: 20px;
+        border-radius: 16px;
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .feature-card:hover {
+        border-color: #1a73e8;
+        box-shadow: 0 4px 12px rgba(26,115,232,0.1);
+        transform: translateY(-2px);
+    }
+    .feature-icon {
+        font-size: 24px;
+        color: #1a73e8;
+        background-color: #e8f0fe;
+        padding: 12px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .feature-content {
+        flex: 1;
+    }
+    .feature-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1F1F1F;
+        margin-bottom: 4px;
+        font-family: 'Google Sans', sans-serif;
+    }
+    .feature-description {
+        font-size: 13px;
+        color: #444746;
+        line-height: 1.4;
+    }
+    .back-to-home {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #1a73e8;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 16px;
+        padding: 4px 0;
+    }
+    .back-to-home:hover {
+        text-decoration: underline;
+    }
+  </style>
+
+  
+</head>
+  <body class="container-fluid">
+    <div class = "sidebar">
+      <!-- Home Screen View -->
+      <div class="home-container" id="homeDiv">
+        <div class="home-header">
+          <h2 class="home-title">Welcome to Pitch<span style="background: linear-gradient(to right, #4d90fe, #1a73e8); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Gen</span></h2>
+
+          <p class="home-subtitle">Select a feature to get started.</p>
+        </div>
+
+        <div class="feature-card" onclick="showSearch()">
+          <div class="feature-icon"><i class="fa-solid fa-search"></i></div>
+          <div class="feature-content">
+            <div class="feature-title">Search Slides</div>
+            <p class="feature-description">Find reusable slides in your drive with AI-assisted vector search.</p>
+          </div>
+        </div>
+
+        <div class="feature-card" onclick="showGenerate()">
+          <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="feature-content">
+            <div class="feature-title">Generate New Slides</div>
+            <p class="feature-description">Describe your layout and use Gemini to generate stunning visuals.</p>
+          </div>
+        </div>
+
+        <div class="feature-card" onclick="showTransform()">
+          <div class="feature-icon"><i class="fa-solid fa-sync"></i></div>
+          <div class="feature-content">
+            <div class="feature-title">Transform Slides</div>
+            <p class="feature-description">Change layout, theme, or language for multi-brand presentations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row" id="tabNav" style="display: none;">
+        <div class="btn-group sidebar-button" role="group">
+          <button type="button" class="btn btn-segment blue-btn" onclick="showSearch()" id="search-btn">Search</button>
+          <button type="button" class="btn btn-segment grey-btn" onclick="showGenerate()" id="generate-btn">Generate</button>
+          <button type="button" class="btn btn-segment grey-btn" onclick="showTransform()" id="transform-btn">Transform</button>
+        </div>
+      </div>
+
+
+
+      <!-- Search Tab Content (Default) -->
+      <div class="input-container" id="searchDiv" style="display: none;">
+
+      
+        <!-- Scrollable Top Content -->
+        <div class="generate-scroll-content">
+          <div style="padding: 8px;">
+
+
+
+
+      
+            <!-- Result Placeholder area -->
+            <div class="searchSlideTemplate" id="searchSlideTemplate"></div>
+            <div id="info-container" style="padding: 12px;">
+              <div class="data-source-card">
+                <div class="data-source-icon">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <div class="data-source-content">
+                  <div class="data-source-title">Available Data Sources</div>
+                  <div class="data-source-description">
+                    Search across <b>CloudHub</b>, <b>Sales Plays</b>, <b>Customer References</b>, and <b>PitchHub</b> Library.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+        </div>
+
+        <!-- Fixed Bottom Prompt Container -->
+        <div class="bottom-prompt-bar">
+          <!-- ER-ID for Search -->
+          <div class="ErId">
+            <label class="input-label tooltip-container">ER-ID<span class="required">*</span>
+              <i class="fa fa-info-circle"></i>
+              <span class="tooltip-text">Enter valid ER ID. Eg: ER-12345, ER-123456</span>
+            </label>
+            <input type="text" class="form-control input-field ErIdCommon" id="ErIdSearch" value="ER-" maxlength="9"
+              oninput="enforcePrefix(this)" placeholder="ER-ID">
+            <span class="quick-button-refresh" id="refresh-icon-search">
+              <i id="refresh-search-icon" class="fa-solid fa-spinner fa-spin" style="font-size: 16px; color: #666;"></i>
+            </span>
+          </div>
+
+          <div style="position: relative; width: 100%;">
+
+            <textarea name="searchContent" class="form-control input-field slideContent" id="searchContentInput" rows="3"
+              placeholder="Describe the slides you want..."
+              style="font-size: 13px; padding: 12px; resize: none; border: none; border-radius: 16px; background-color: #f0f4f9 !important;"></textarea>
+            <span class="clear-icon" id="clearIcon" style="right: 12px; top: 12px;"><i class="bi bi-x-lg"></i></span>
+          </div>
+          <div class="button-container" id="searchSlideButton" style="width: 100%;">
+            <button class="btn btn-custom gemini-gradient" id="searchAddSlide" type="button" onclick="triggerSearch();"
+              style="width: 100%; height: 44px; border-radius: 24px; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700;">
+              <span class="material-symbols-outlined" id="searchButtonIcon"
+                style="font-size: 18px; display: flex; align-items: center; margin: 0 !important;">search</span>
+              <span id="searchButtonText">Search</span>
+            </button>
+            <div class="loadingSearchSlide" id="loadingSearchSlide" style="display: none;">
+              <div class="spinner-border text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+
+      <!-- Generate Tab Content -->
+      <div class="input-container" id="generateDiv" style="display:none">
+        <!-- Scrollable Top Content -->
+        <div class="generate-scroll-content">
+          <div style="padding: 8px;">
+
+
+
+
+
+            <!-- Tone Selection -->
+            <div style="margin-bottom: 20px;">
+              <span style="font-size: 12px; font-weight: 700; color: #444746; display: block; margin-bottom: 8px;">Select Mode</span>
+
+              <div class="tone-options">
+                <div class="tone-option">
+                  <input type="radio" name="tone" value="slide" id="tone-slide" checked onclick="toggleGenerateStyleReference()">
+                  <label for="tone-slide"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px; vertical-align: middle; margin: 0 !important;">slideshow</span>Slide</label>
+                </div>
+                <div class="tone-option">
+                  <input type="radio" name="tone" value="image" id="tone-image" onclick="toggleGenerateStyleReference()">
+                  <label for="tone-image"><span style="font-size: 16px; margin-right: 4px; vertical-align: middle; display: inline-block; transform: scale(0.85);">🍌</span>Nano Banana</label>
+                </div>
+
+                <div class="tone-option">
+                  <input type="radio" name="tone" value="infographic" id="tone-infographic" onclick="toggleGenerateStyleReference()">
+                  <label for="tone-infographic"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px; vertical-align: middle; margin: 0 !important;">analytics</span>Infographic</label>
+                </div>
+              </div>
+              </div>
+
+            <!-- Style Reference Section -->
+            <div id="styleReferenceSection" style="margin-bottom: 20px; display: none;">
+              <span style="font-size: 12px; font-weight: 700; color: #444746; display: block; margin-bottom: 8px;">Style Reference Image</span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <button type="button" id="style_upload_btn" class="btn btn-sm" onclick="document.getElementById('style_file_input').click()" style="border-radius: 20px; font-size: 12px; height: 28px; padding: 3px 12px; display: flex; align-items: center; gap: 8px; border: 1px solid #dadce0; background-color: #ffffff; color: #444746;">
+                  <span class="material-symbols-outlined" style="font-size: 16px; display: flex; align-items: center; margin: 0 !important;">upload_file</span>
+                  Add reference image
+                </button>
+                <input type="file" id="style_file_input" accept="image/*" style="display: none;" onchange="handleStyleFileSelect(this)">
+              </div>
+              <div id="styleFilePreview" style="margin-top: 8px; display: none;">
+                <img id="stylePreviewImg" src="" style="max-width: 100px; max-height: 100px; border-radius: 8px; border: 1px solid #dadce0;">
+              </div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <div style="display: flex; align-items: center; gap: 8px; color: #1F1F1F; margin-bottom: 12px; cursor: pointer;"
+                onclick="toggleAdvancedOptions()">
+                <span class="material-symbols-outlined"
+                  style="font-size: 16px; display: flex; align-items: center; margin: 0 !important;">tune</span>
+                <span style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Advanced Settings</span>
+                <span class="material-symbols-outlined" id="advanced-arrow"
+                  style="font-size: 18px; display: flex; align-items: center; margin: 0 !important; transform: translateY(-2px);">expand_more</span>
+
+
+
+              </div>
+              <div id="advancedContent" style="display: none;">
+                <div class="themeAndLayout" style="width: 100%;">
+                  <label class="form-label input-label" style="font-size: 11px;">INDUSTRY</label>
+                  <select class="form-control form-select input-field layoutDropdown dropdown" id="addSlideIndustry"
+                    style="margin-bottom: 12px;">
+                    <option value="" selected disabled hidden>Select Industry</option>
+                    <option value="Automotive">Automotive</option>
+                    <option value="Consumer Packaged Goods">Consumer Packaged Goods</option>
+                    <option value="Financial Services & Insurance">Financial Services & Insurance</option>
+                    <option value="Games">Games</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Int'l Public Sector">Int'l Public Sector</option>
+                    <option value="Life Sciences">Life Sciences</option>
+                    <option value="Logistics">Logistics</option>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Media & Entertainment">Media & Entertainment</option>
+                    <option value="Power & Energy">Power & Energy</option>
+                    <option value="Retail & Consumer">Retail & Consumer</option>
+                    <option value="Sustainability">Sustainability</option>
+                    <option value="Telecommunications">Telecommunications</option>
+                    <option value="Travel & Hospitality">Travel & Hospitality</option>
+                  </select>
+
+                  <label class="form-label input-label" style="font-size: 11px;">PRODUCT</label>
+                  <select class="form-control form-select input-field layoutDropdown dropdown" id="addSlideProduct"
+                    style="margin-bottom: 12px;">
+                    <option value="" selected disabled hidden style="font-style: italic;">Select Product</option>
+                    <optgroup label="Cross-product tools">
+                      <option value="Cloud Billing">Cloud Billing</option>
+                      <option value="Cloud Identity">Cloud Identity</option>
+                      <option value="Cloud Quotas">Cloud Quotas</option>
+                      <option value="Config Connector">Config Connector</option>
+                      <option value="Deployment Manager">Deployment Manager</option>
+                      <option value="Identity Platform">Identity Platform</option>
+                      <option value="Infra Manager">Infra Manager</option>
+                      <option value="Managed Microsoft AD">Managed Microsoft AD</option>
+                      <option value="Recommender">Recommender</option>
+                      <option value="Service Catalog">Service Catalog</option>
+                      <option value="Service Usage">Service Usage</option>
+                    </optgroup>
+                    <optgroup label="AI and ML">
+                      <option value="Cloud TPU">Cloud TPU</option>
+                      <option value="Colab Enterprise">Colab Enterprise</option>
+                      <option value="Deep Learning Containers">Deep Learning Containers</option>
+                      <option value="Deep Learning VM">Deep Learning VM</option>
+                      <option value="DocAI">DocAI</option>
+                      <option value="Enterprise Knowledge Graph">Enterprise Knowledge Graph</option>
+                      <option value="Immersive Stream for XR">Immersive Stream for XR</option>
+                      <option value="Speech-to-Text">Speech-to-Text</option>
+                      <option value="TensorFlow Enterprise">TensorFlow Enterprise</option>
+                      <option value="Text-to-Speech">Text-to-Speech</option>
+                      <option value="Translation">Translation</option>
+                      <option value="Vertex AI">Vertex AI</option>
+                      <option value="Vertex AI Vision">Vertex AI Vision</option>
+                      <option value="Vertex AI Workbench">Vertex AI Workbench</option>
+                      <option value="Vision API">Vision API</option>
+                    </optgroup>
+                    <optgroup label="App development">
+                      <option value="API Gateway">API Gateway</option>
+                      <option value="Apigee">Apigee</option>
+                      <option value="App Hub">App Hub</option>
+                      <option value="Application Integration">Application Integration</option>
+                      <option value="Artifact Analysis">Artifact Analysis</option>
+                      <option value="Cloud Build">Cloud Build</option>
+                      <option value="Cloud Code">Cloud Code</option>
+                      <option value="Cloud Deploy">Cloud Deploy</option>
+                      <option value="Cloud Scheduler">Cloud Scheduler</option>
+                      <option value="Cloud Shell">Cloud Shell</option>
+                      <option value="Cloud Tasks">Cloud Tasks</option>
+                      <option value="Cloud Workstations">Cloud Workstations</option>
+                      <option value="Developer Connect">Developer Connect</option>
+                      <option value="Eventarc">Eventarc</option>
+                      <option value="gcloud CLI">gcloud CLI</option>
+                      <option value="Integration Connectors">Integration Connectors</option>
+                      <option value="Pub/Sub">Pub/Sub</option>
+                      <option value="Secure Source Manager">Secure Source Manager</option>
+                      <option value="Service Infrastructure">Service Infrastructure</option>
+                      <option value="Software supply chain security">Software supply chain security</option>
+                      <option value="Workflows">Workflows</option>
+                    </optgroup>
+                    <optgroup label="App hosting">
+                      <option value="App Engine">App Engine</option>
+                      <option value="Blockchain Node Engine">Blockchain Node Engine</option>
+                      <option value="Blockchain RPC">Blockchain RPC</option>
+                      <option value="Cloud Run">Cloud Run</option>
+                      <option value="Google Kubernetes Engine (GKE)">Google Kubernetes Engine (GKE)</option>
+                    </optgroup>
+                    <optgroup label="Compute">
+                      <option value="AI Hypercomputer">AI Hypercomputer</option>
+                      <option value="Batch">Batch</option>
+                      <option value="Capacity Planner">Capacity Planner</option>
+                      <option value="Cluster toolkit">Cluster toolkit</option>
+                      <option value="Compute Engine">Compute Engine</option>
+                      <option value="Migrate to Containers">Migrate to Containers</option>
+                      <option value="Migrate to VMs">Migrate to VMs</option>
+                      <option value="Migration Center">Migration Center</option>
+                      <option value="Shielded VMs">Shielded VMs</option>
+                      <option value="VM Manager">VM Manager</option>
+                      <option value="VMware Engine">VMware Engine</option>
+                      <option value="Workload Manager">Workload Manager</option>
+                    </optgroup>
+                    <optgroup label="Data analytics and pipelines">
+                      <option value="BigQuery">BigQuery</option>
+                      <option value="Blockchain Analytics">Blockchain Analytics</option>
+                      <option value="Cloud Composer">Cloud Composer</option>
+                      <option value="Cloud Data Fusion">Cloud Data Fusion</option>
+                      <option value="Dataflow">Dataflow</option>
+                      <option value="Dataform">Dataform</option>
+                      <option value="Dataplex">Dataplex</option>
+                      <option value="Dataproc">Dataproc</option>
+                      <option value="Dataproc Serverless">Dataproc Serverless</option>
+                      <option value="Datastream">Datastream</option>
+                      <option value="Looker">Looker</option>
+                    </optgroup>
+                    <optgroup label="Databases">
+                      <option value="AlloyDB">AlloyDB</option>
+                      <option value="Bigtable">Bigtable</option>
+                      <option value="Cloud SQL">Cloud SQL</option>
+                      <option value="Database Migration Service">Database Migration Service</option>
+                      <option value="Firestore">Firestore</option>
+                      <option value="Memorystore for Memcached">Memorystore for Memcached</option>
+                      <option value="Spanner">Spanner</option>
+                    </optgroup>
+                    <optgroup label="Distributed, hybrid, and multicloud">
+                      <option value="GKE Multi-Cloud">GKE Multi-Cloud</option>
+                    </optgroup>
+                    <optgroup label="Industry solutions">
+                      <option value="Anti Money Laundering AI">Anti Money Laundering AI</option>
+                      <option value="Healthcare Data Engine">Healthcare Data Engine</option>
+                      <option value="Talent Solutions">Talent Solutions</option>
+                      <option value="Telecom Network Automation">Telecom Network Automation</option>
+                      <option value="Telecom Subscriber Insights">Telecom Subscriber Insights</option>
+                      <option value="Vertex AI Search for retail">Vertex AI Search for retail</option>
+                    </optgroup>
+                    <optgroup label="Networking">
+                      <option value="Cloud CDN">Cloud CDN</option>
+                      <option value="Cloud DNS">Cloud DNS</option>
+                      <option value="Cloud IDS">Cloud IDS</option>
+                      <option value="Cloud Interconnect">Cloud Interconnect</option>
+                      <option value="Cloud Load Balancing">Cloud Load Balancing</option>
+                      <option value="Cloud NAT">Cloud NAT</option>
+                      <option value="Cloud NGFW">Cloud NGFW</option>
+                      <option value="Cloud Router">Cloud Router</option>
+                      <option value="Cloud Service Mesh">Cloud Service Mesh</option>
+                      <option value="Cloud VPN">Cloud VPN</option>
+                      <option value="Google Cloud Armor">Google Cloud Armor</option>
+                      <option value="Media CDN">Media CDN</option>
+                      <option value="Network Connectivity Center">Network Connectivity Center</option>
+                      <option value="Network Intelligence Center">Network Intelligence Center</option>
+                      <option value="Network Service Tiers">Network Service Tiers</option>
+                      <option value="Secure Web Proxy">Secure Web Proxy</option>
+                      <option value="Service Extensions">Service Extensions</option>
+                      <option value="Virtual Private Cloud (VPC)">Virtual Private Cloud (VPC)</option>
+                      <option value="VPC Service Controls">VPC Service Controls</option>
+                    </optgroup>
+                    <optgroup label="Observability and monitoring">
+                      <option value="Error Reporting">Error Reporting</option>
+                      <option value="Logging">Logging</option>
+                      <option value="Monitoring">Monitoring</option>
+                      <option value="Profiler">Profiler</option>
+                      <option value="Trace">Trace</option>
+                    </optgroup>
+                    <optgroup label="Security">
+                      <option value="Access Context Manager">Access Context Manager</option>
+                      <option value="Access Transparency">Access Transparency</option>
+                      <option value="Advisory Notifications">Advisory Notifications</option>
+                      <option value="Assured OSS">Assured OSS</option>
+                      <option value="Binary Authorization">Binary Authorization</option>
+                      <option value="Certificate Authority">Certificate Authority</option>
+                      <option value="Certificate Manager">Certificate Manager</option>
+                      <option value="Chrome Enterprise Premium">Chrome Enterprise Premium</option>
+                      <option value="Cloud Asset Inventory">Cloud Asset Inventory</option>
+                      <option value="Cloud KMS">Cloud KMS</option>
+                      <option value="Confidential VM">Confidential VM</option>
+                      <option value="Endpoint Verification">Endpoint Verification</option>
+                      <option value="Google SecOps">Google SecOps</option>
+                      <option value="IAM">IAM</option>
+                      <option value="Identity-Aware Proxy">Identity-Aware Proxy</option>
+                      <option value="Policy Intelligence">Policy Intelligence</option>
+                      <option value="reCAPTCHA">reCAPTCHA</option>
+                      <option value="Resource Manager">Resource Manager</option>
+                      <option value="Secret Manager">Secret Manager</option>
+                      <option value="Security Command Center">Security Command Center</option>
+                      <option value="Sensitive Data Protection">Sensitive Data Protection</option>
+                      <option value="Service Health">Service Health</option>
+                      <option value="Web Risk">Web Risk</option>
+                    </optgroup>
+                    <optgroup label="Storage">
+                      <option value="Backup and DR Service">Backup and DR Service</option>
+                      <option value="Cloud Storage">Cloud Storage</option>
+                      <option value="Filestore">Filestore</option>
+                    </optgroup>
+                  </select>
+
+                  <label class="form-label input-label" style="font-size: 11px;">THEME AND LAYOUT</label>
+
+                  <select class="form-control form-select input-field layoutDropdown dropdown" onchange="getAddSlideTimelineDropdown()" id="addSlideLayout" name="themeAndLayout" required style="margin-bottom: 12px;">
+                    <option value="" selected disabled hidden>Select Theme</option>
+                    <option value="Standard Corporate">Standard Corporate</option>
+                    <option value="Modern Creative">Modern Creative</option>
+                    <option value="PitchHub">PitchHub</option>
+                    <option value="GTM Accelerate">GTM Accelerate</option>
+                  </select>
+                  <select class="form-control form-select input-field layoutDropdown dropdown" id="addSlideTimeline" name="timeline" onchange="getSlides('addSlide')" required style="margin-bottom: 12px;">
+                    <option value="" selected disabled hidden>Select Layout</option>
+                  </select>
+
+                  </div>
+              </div>
+              </div>
+            <!-- Result Placeholder area if needed -->
+            <div class="addSlideTemplate" id="addSlideTemplate"></div>
+          </div>
+          </div>
+
+        <!-- Fixed Bottom Prompt Container -->
+        <div class="bottom-prompt-bar">
+          <!-- ER-ID for Generate -->
+          <div class="ErId">
+            <label class="input-label tooltip-container">ER-ID<span class="required">*</span>
+              <i class="fa fa-info-circle"></i>
+              <span class="tooltip-text">Enter valid ER ID. Eg: ER-12345, ER-123456</span>
+            </label>
+            <input type="text" class="form-control input-field ErIdCommon" id="ErIdGenerate" value="ER-" maxlength="9"
+              oninput="enforcePrefix(this)" placeholder="ER-ID">
+            <span class="quick-button-refresh" id="refresh-icon-generate">
+              <i id="refresh-generate-icon" class="fa-solid fa-spinner fa-spin" style="font-size: 16px; color: #666;"></i>
+            </span>
+            </div>
+            
+            <div style="position: relative; width: 100%;">
+
+
+              <textarea name="slideContent" class="form-control input-field slideContent" id="slideContent" rows="3"
+                placeholder="Describe the slides you want..."
+                style="font-size: 13px; padding: 12px; resize: none; border: none; border-radius: 16px; background-color: #f0f4f9 !important;"></textarea>
+              <span class="clear-icon" id="clearIconGenerate" style="right: 12px; top: 12px;"><i class="bi bi-x-lg"></i></span>
+            </div>
+            <div class="button-container" id="generateSlideButton" style="width: 100%;">
+              <button class="btn btn-custom gemini-gradient" id="generateAddSlide" type="button" onclick="generateSlide();" disabled
+                style="width: 100%; height: 44px; border-radius: 24px; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700;">
+                <span class="material-symbols-outlined"
+                  style="font-size: 18px; display: flex; align-items: center; margin: 0 !important;">auto_awesome</span>
+                Generate
+              </button>
+              <div class="loadingAddSlide" id="loadingAddSlide" style="display: none;">
+                <div class="spinner-border text-info" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </div>
+            </div>
+      </div>
+
+      <!-- Transform Tab Content (Includes Translate) -->
+      <div class="input-container" id="transformDiv" style="display:none">
+        <!-- Unified Scrollable Top Content -->
+        <div class="generate-scroll-content">
+          <div style="padding: 8px;">
+
+            <!-- Mode Selection -->
+            <div style="margin-bottom: 20px;">
+              <span style="font-size: 12px; font-weight: 700; color: #444746; display: block; margin-bottom: 8px;">Select Mode</span>
+              <div class="tone-options">
+                <div class="tone-option">
+                  <input type="radio" name="transformTone" value="slide" id="transform-tone-slide" checked onclick="toggleTransformThemeAndLayout()">
+                  <label for="transform-tone-slide"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px; vertical-align: middle; margin: 0 !important;">slideshow</span>Slide</label>
+                </div>
+                <div class="tone-option">
+                  <input type="radio" name="transformTone" value="image" id="transform-tone-image" onclick="toggleTransformThemeAndLayout()">
+                  <label for="transform-tone-image"><span style="font-size: 16px; margin-right: 4px; vertical-align: middle; display: inline-block; transform: scale(0.85);">🍌</span>Nano Banana</label>
+                </div>
+                <div class="tone-option">
+                  <input type="radio" name="transformTone" value="infographic" id="transform-tone-infographic" onclick="toggleTransformThemeAndLayout()">
+                  <label for="transform-tone-infographic"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px; vertical-align: middle; margin: 0 !important;">analytics</span>Infographic</label>
+                </div>
+                <div class="tone-option">
+                  <input type="radio" name="transformTone" value="text" id="transform-tone-text" onclick="toggleTransformThemeAndLayout()">
+                  <label for="transform-tone-text"><span class="material-symbols-outlined" style="font-size: 16px; margin-right: 4px; vertical-align: middle; margin: 0 !important;">text_fields</span>Text</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Transform Style Reference Section -->
+            <div id="transformStyleReferenceSection" style="margin-bottom: 20px; display: none;">
+              <span style="font-size: 12px; font-weight: 700; color: #444746; display: block; margin-bottom: 8px;">Style Reference Image</span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <button type="button" id="transform_style_upload_btn" class="btn btn-sm" onclick="document.getElementById('transform_style_file_input').click()" style="border-radius: 20px; font-size: 12px; height: 28px; padding: 3px 12px; display: flex; align-items: center; gap: 8px; border: 1px solid #dadce0; background-color: #ffffff; color: #444746;">
+                  <span class="material-symbols-outlined" style="font-size: 16px; display: flex; align-items: center; margin: 0 !important;">upload_file</span>
+                  Add reference image
+                </button>
+                <input type="file" id="transform_style_file_input" accept="image/*" style="display: none;" onchange="handleTransformStyleFileSelect(this)">
+              </div>
+              <div id="transformStyleFilePreview" style="margin-top: 8px; display: none;">
+                <img id="transformStylePreviewImg" src="" style="max-width: 100px; max-height: 100px; border-radius: 8px; border: 1px solid #dadce0;">
+              </div>
+            </div>
+
+
+
+
+
+      
+            <!-- Theme & Layout Section -->
+            <div class="themeAndLayout" id="transformThemeAndLayoutSection" style="width: 100%; margin-bottom: 24px;">
+
+              <label class="form-label input-label" style="font-size: 11px;">THEME AND LAYOUT</label>
+              <select class="form-control form-select input-field layoutDropdown dropdown"
+                onchange="getReshuffleSlideTimelineDropdown(); resetToTransformButton();" id="reshuffleSlideLayout"
+                name="themeAndLayout" required style="margin-bottom: 12px;">
+                <option value="" selected disabled hidden>Select Theme</option>
+                <option value="Standard Corporate">Standard Corporate</option>
+                <option value="Modern Creative">Modern Creative</option>
+                <option value="PitchHub">PitchHub</option>
+                <option value="GTM Accelerate">GTM Accelerate</option>
+              </select>
+              <select class="form-control form-select input-field layoutDropdown dropdown" id="reshuffleSlideTimeline" name="timeline"
+                onchange="getSlides('reshuffleSlide'); resetToTransformButton();" required style="margin-bottom: 12px;">
+                <option value="" selected disabled hidden>Select Layout</option>
+              </select>
+
+            </div>
+
+            <!-- Language Section -->
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label class="form-label label-size input-label" style="font-size: 11px;">TRANSLATE TO</label>
+              <select class="form-control form-select layoutDropdown" id="translateLang" name="Translate"
+                aria-label="Default select example" onchange="resetToTranslateButton();">
+                <option value="" selected disabled hidden>Select the Language</option>
+                <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+                <option value="Chinese (Traditional)">Chinese (Traditional)</option>
+                <option value="Danish">Danish</option>
+                <option value="Dutch">Dutch</option>
+                <option value="English">English</option>
+                <option value="Finnish">Finnish</option>
+                <option value="French">French</option>
+                <option value="German">German</option>
+                <option value="Greek">Greek</option>
+                <option value="Indonesian">Indonesian</option>
+                <option value="Italian">Italian</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Korean">Korean</option>
+                <option value="Polish">Polish</option>
+                <option value="Portuguese">Portuguese</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Swedish">Swedish</option>
+                <option value="Thai">Thai</option>
+              </select>
+            </div>
+
+            <div class="form-check fullDeck" id="fullDeckCheckboxSection" style="display: none;">
+
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="margin-top: 0.3rem;">
+              <label class="form-check-label fullDecklable" for="flexCheckDefault" style="font-size: 13px; color: #444746;">Full
+
+                deck</label>
+            </div>
+            
+            <div class="reshuffleSlideTemplate" id="reshuffleSlideTemplate"></div>
+            
+            <div class="popup" id="infoPopup">
+              For translation of all the slides:
+              <ul>
+                <li>Select the <strong>'Full deck'</strong> option.</li>
+              </ul>
+              For translation of specific slide(s):
+              <ul>
+                <li>Uncheck the <strong>'Full deck'</strong> option and select the desired slides from the left panel.</li>
+              </ul>
+            </div>
+            </div>
+            </div>
+            
+            <!-- Unified Fixed Bottom Prompt Container -->
+            <div class="bottom-prompt-bar">
+              <!-- ER-ID for Transform -->
+              <div class="ErId">
+                <label class="input-label tooltip-container">ER-ID<span class="required">*</span>
+                  <i class="fa fa-info-circle"></i>
+                  <span class="tooltip-text">Enter valid ER ID. Eg: ER-12345, ER-123456</span>
+                </label>
+                <input type="text" class="form-control input-field ErIdCommon" id="ErIdTransform" value="ER-" maxlength="9"
+                  oninput="enforcePrefix(this)" placeholder="ER-ID">
+                <span class="quick-button-refresh" id="refresh-icon-transform">
+                  <i id="refresh-transform-icon" class="fa-solid fa-spinner fa-spin" style="font-size: 16px; color: #666;"></i>
+                </span>
+              </div>
+            
+              <div style="position: relative; width: 100%;">
+
+
+                <textarea name="desiredOutput" class="form-control input-field slideContent" id="desiredOutputCriteria" rows="3"
+                  placeholder="Optional details to transform your slide..."
+                  style="font-size: 13px; padding: 12px; resize: none; border: none; border-radius: 16px; background-color: #f0f4f9 !important;"
+                  oninput="resetToTransformButton();"></textarea>
+                <span class="clear-icon" id="clearIconTransform" style="right: 12px; top: 12px;"><i class="bi bi-x-lg"></i></span>
+          </div>
+          <div class="button-container" id="reshuffleSlideButton" style="width: 100%;">
+            <button class="btn btn-custom gemini-gradient" id="generateReshuffleSlide" type="button"
+              onclick="reshuffleSlideFunc();" disabled
+              style="width: 100%; height: 44px; border-radius: 24px; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700;">
+              <i class="fa fa-sync" id="transformButtonIcon"
+                style="font-size: 18px; display: flex; align-items: center; margin: 0 !important;"></i>
+
+              <span id="transformButtonText">Transform Slide</span>
+              </button>
+              <div class="clearfix loadingReshuffleSlide" id="loadingReshuffleSlide"
+                style="display:none; position: absolute; right: 10px; top: 12px;">
+                <div class="spinner-border text-info" role="status">
+                  <span class="visually-hidden"></span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      </div>      <!-----------form-row End--------------->
+      
+      <input type ="text" class="form-control input-field" id="selectedSlidePositionInAddSlide" style="display:none">
+      <input type ="text" class="form-control input-field" id="selectedSlidePositionInReshuffleSlide" style="display:none">
+      <input type ="text" class="form-control input-field" id="selectedSlideInAddSlide" style="display:none">
+      <input type ="text" class="form-control input-field" id="selectedSlideInReshuffleSlide" style="display:none">
+      <input type ="text" class="form-control input-field" id="selectedImageURLInReshuffleSlide" style="display:none">
+      
+      
+      <!-- Modal -->
+      <div class="modal fade" id="myGenerateSlideModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <!-- Modal content-->
+          <div class="modal-content"> 
+            <span class="material-symbols-outlined">error</span>
+              <h3>PitchGen</h3>
+            <div class="modal-body">
+              <p class="dltMessage">Please enter input for Generating Slide.</p>
+            </div>
+            <div class="button-wrapper">
+              <div class="PopupMessageBtn">
+                <button type="button" class="btn btn-primary " data-dismiss="modal">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+      <!-- Modal close -->
+
+
+      <!-- Modal Add Slide popup start----------->
+      
+      <div class="modal fade" id="addSlideSuccess" data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <img id="gifImage" src="https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/Mug.svg?authuser=0" alt="logo"
+                  class="addSlideSuccess AddGifImageSuccess">
+                <div class="modal-body">
+                    <h3 class="addProg">Success</h3>
+                    <!-- <span class="addDetails">Selected slide got inserted in this deck</span> -->
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Modal close -->
+      <!-- Modal Add Slide popup start----------->
+      
+      <div class="modal fade" id="transformSlideSuccess" data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <img id="gifImage" src="https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/Mug.svg?authuser=0" alt="logo"
+                  class="addSlideSuccess AddGifImageSuccess">
+                <div class="modal-body">
+                    <h3 class="addProg">Success</h3>
+                    <!-- <span class="addDetails">Selected slide got inserted in this deck</span> -->
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Modal close -->
+      <!-- Modal -->
+      <div class="modal fade" id="addSlideRunning" data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <img id="gifImage" src="https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/Group.svg?authuser=0"
+                  alt="logo" class="addSlideRunning AddGifImageProcess">
+                <div class="modal-body">
+                    <h3 class="addProg">Inserting a slide in progress</h3>
+
+                      <div class="addsvg-container">
+                        <svg class="addwhite-svg" xmlns="http://www.w3.org/2000/svg" width="211" height="13" viewBox="0 0 211 13" fill="none">
+                            <rect x="0.5" y="0.59375" width="210" height="11" rx="5.5" fill="#FCF6F6" stroke="white"/>
+                        </svg>
+                        <svg class="addgreen-svg" xmlns="http://www.w3.org/2000/svg" width="57" height="8" viewBox="0 0 57 8" fill="none">
+                            <rect x="-0.00585938" y="0.682617" width="57" height="7" rx="3.5" fill="#34A853"/>
+                        </svg>
+                      </div>
+
+                    <!-- <span class="addDetails">The process of inserting a selected slide is underway.</span> -->
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Modal close -->
+      <!-- Modal -->
+      <div class="modal fade" id="addSlideError"  data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <img id="gifImage"
+                  src="https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0"
+                  alt="logo" class="addSlideError AddGifImageError">
+                <div class="modal-body">
+                    <h3 class="addProg">Error!</h3>
+                    <span class="addDetails">Unable to process your request. Please try after sometime.</span>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Modal Add Slide popup end -->
+      <!-- Modal -->
+      <div class="modal fade" id="transformSlideError"  data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <img id="gifImage"
+                  src="https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0"
+                  alt="logo" class="addSlideError AddGifImageError">
+                <div class="modal-body">
+                    <h3 class="addProg">Error!</h3>
+                    <span class="addDetails" id="transformDetails"></span>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Modal Add Slide popup end -->
+
+
+      <!-- Modal Search Slide popup Start----------->   
+      <div class="modal fade" id="searchSlideSuccess" data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <img id="gifImage"
+                  src="https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/search%20-%20Success.svg?authuser=0" alt="logo"
+                  class="searchSlideSuccess SearchGifImageSuccess">
+                <div class="modal-body">
+                    <h3 class="addProg">Success</h3>
+                    <!-- <span class="addDetails">Selected slide got inserted in this deck</span> -->
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Modal close -->
+      <!-- Modal -->
+      <div class="modal fade" id="searchSlideRunning" data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <img id="gifImage"
+                  src="https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/search%20loading.svg?authuser=0" alt="logo"
+                  class="searchSlideRunning SearchGifImageProcess">
+                <div class="modal-body">
+                    <h3 class="addProg">Searching</h3>
+
+                      <div class="addsvg-container">
+                        <svg class="addwhite-svg" xmlns="http://www.w3.org/2000/svg" width="211" height="13" viewBox="0 0 211 13" fill="none">
+                            <rect x="0.5" y="0.59375" width="210" height="11" rx="5.5" fill="#FCF6F6" stroke="white"/>
+                        </svg>
+                        <svg class="addgreen-svg" xmlns="http://www.w3.org/2000/svg" width="57" height="8" viewBox="0 0 57 8" fill="none">
+                            <rect x="-0.00585938" y="0.682617" width="57" height="7" rx="3.5" fill="#34A853"/>
+                        </svg>
+                      </div>
+
+                    <span class="addDetails">Searching slide is in progress. Please wait for sometime.</span>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Modal close -->
+      <!-- Modal -->
+      <div class="modal fade" id="searchSlideError"  data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <img id="gifImage"
+                  src="https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0"
+                  alt="logo" class="searchSlideError SearchGifImageError">
+                <div class="modal-body">
+                    <h3 class="addProg" id="searchProg">Error!</h3>
+                    <span class="addDetails" id="searchDetails">We couldn't find any results. Please try a different search.</span>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Modal Seach Slide popup End -->
+
+
+
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="myResuffleSlideModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <!-- Modal content-->
+          <div class="modal-content"> 
+              <span class="material-symbols-outlined">error</span>
+              <h3>PitchGen</h3>
+            <div class="modal-body">
+              <p class="dltMessage1">Please enter input for Transform Slide.</p>
+            </div>
+            <div class="button-wrapper">
+              <div class="PopupMessageBtn">
+                <button type="button" class="btn btn-primary " data-dismiss="modal">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+      <!-- Modal close -->
+
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="myTranslateSlideModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <!-- Modal content-->
+          <div class="modal-content"> 
+              <span class="material-symbols-outlined">error</span>
+              <h3>PitchGen</h3>
+            <div class="modal-body">
+              <p id="dlttranslateMessage"></p>
+            </div>
+            <div class="button-wrapper">
+              <div class="PopupMessageBtn">
+                <button type="button" class="btn btn-primary " data-dismiss="modal">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+      <!-- Modal close -->
+
+      <!-- Modal -->
+      <div class="modal fade" id="languageTranslate" data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <!-- Modal content-->
+          <div class="modal-content"> 
+              <img id="gifImage" src="https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/Processing.png?authuser=0"
+                alt="logo" class="TranslateGifImageProcess">
+            <div class="modal-body">
+              <h3 class="transProg">Translation in progress</h3>
+
+              <div class="svg-container">
+                  <svg class="white-svg" xmlns="http://www.w3.org/2000/svg" width="211" height="13" viewBox="0 0 211 13" fill="none">
+                      <rect x="0.5" y="0.59375" width="210" height="11" rx="5.5" fill="#FCF6F6" stroke="white"/>
+                  </svg>
+                  <svg class="green-svg" xmlns="http://www.w3.org/2000/svg" width="57" height="8" viewBox="0 0 57 8" fill="none">
+                      <rect x="-0.00585938" y="0.682617" width="57" height="7" rx="3.5" fill="#34A853"/>
+                  </svg>
+              </div>
+
+              <!-- <span class="transDetails">Language translation is underway. It may take few moments.</span> -->
+            </div>
+          </div>
+        </div>
+      </div>  
+      <!-- Modal close -->
+      <!-- Modal -->
+      <div class="modal fade" id="languageTranslateSuccess" data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <img id="gifImage" src="https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/Success.png?authuser=0"
+                  alt="logo" class="TranslateGifImageSuccess">
+                <div class="modal-body">
+                    <h3 class="transProg">Success</h3>
+                    <span class="transDetails">Language translation is completed.</span>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Modal close -->
+      <!-- Modal -->
+      <div class="modal fade" id="languageTranslateError"  data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <!-- Modal content-->
+          <div class="modal-content"> 
+            <div class="modal-header">
+                <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+               <img id="languagErrorImage" src="" alt="logo" class="TranslateGifImageError">
+            <div class="modal-body">
+              <h3 class="transProg" id="transStatusError">Error!</h3>
+              <span class="transDetails" id="transDetailsError"></span>
+            </div>
+          </div>
+        </div>
+      </div>  
+      <!-- Modal close -->
+
+      <!-- Modal No Search Result -->
+      <div class="modal fade" id="noSearchResultError" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <img id="gifImage"
+                  src="https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0"
+                  alt="logo" class="searchSlideError SearchGifImageError">
+                <div class="modal-body">
+                    <h3 class="addProg">No Search Result</h3>
+                    <span class="addDetails">We couldn't find any results. Please try a different search.</span>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Modal close -->
+
+      <!-- <div class="addSlideTemplate" id="addSlideTemplate"></div> -->
+      <div class="reshuffleSlideTemplate" id="reshuffleSlideTemplate"></div>
+    </div>    <!--Sidebar End-->
+    <script>
+        function enforcePrefix(input) {
+          if (!input.value.startsWith("ER-")) {
+            input.value = "ER-";
+          }
+        }
+
+      var caseStudyTemplate = "15H0myA0Iw7FTgImKuwv6snhqoSad_XhWnYVY5V3nWFo";
+
+      var circleChartsTemplate = "1jQQ7mikdmlWu_p3Pqghp4M3cv3tuK2kOIYllFp5YBB0";
+      var chartsTemplate = "1ESIbdiIf3eOcx8wPoSsQZQq0tVYNtMTp5xsR7ILzKjE";
+      var timelineTemplate = "17CbYbM-oJNiyPLtk2_XWMVr2r8vkIZSCJG6zvRB9MZY";
+      var nextStepsTemplate = "1xQpWP6t7atlYthR2ym1-b4DowOh3PfgFFFtV5eLQtxg"; 
+        //var contextTemplate = "1vy48tMiDC6DnO3PvVm5oAXYvxtJQBLjRDrXXq5mAhZw";
+        var contextTemplate = "1DpF8nTzJuB3db55NmRXe0JfeOFZ0BwU2SmbQz9u059Q";
+
+    function getAddSlideTimelineDropdown()
+    {
+      var cloud2023 = {};
+      var cloud2024 = {"Case Study": caseStudyTemplate,"Charts": chartsTemplate,"Circle Charts":circleChartsTemplate,"Next Steps":nextStepsTemplate,"Timeline":timelineTemplate,"Context": contextTemplate};
+      var keys;
+      var theme = document.getElementById("addSlideLayout").value;
+  
+      $('#addSlideTimeline').empty();
+      $('#addSlideTimeline').append($('<option selected disabled hidden></option>').val("").html("Select Layout"));
+      
+      if(theme=="Standard Corporate 2023")
+      {
+        keys = Object.keys(cloud2023);
+      }
+      else if(theme=="Standard Corporate" || theme=="Standard Corporate 2024")
+      {
+        keys = Object.keys(cloud2024);
+      }
+      for(var i=0; i<keys.length; i++)
+      {
+        $('#addSlideTimeline').append($('<option></option>').val(cloud2024[keys[i]]).html(keys[i]));
+      }
+    }
+    function getReshuffleSlideTimelineDropdown()
+    {
+      var cloud2023 = {};
+      var cloud2024 = {"Case Study": caseStudyTemplate,"Charts": chartsTemplate,"Circle Charts":circleChartsTemplate,"Next Steps":nextStepsTemplate,"Timeline":timelineTemplate,"Context": contextTemplate};
+      
+      var keys;
+      var theme = document.getElementById("reshuffleSlideLayout").value;
+  
+      $('#reshuffleSlideTimeline').empty();
+      $('#reshuffleSlideTimeline').append($('<option selected disabled hidden></option>').val("").html("Select Layout"));
+      
+      if(theme=="Standard Corporate 2023")
+      {
+        keys = Object.keys(cloud2023);
+      }
+      else if(theme=="Standard Corporate" || theme=="Standard Corporate 2024")
+      {
+        keys = Object.keys(cloud2024);
+      }
+      for(var i=0; i<keys.length; i++)
+      {
+        $('#reshuffleSlideTimeline').append($('<option></option>').val(cloud2024[keys[i]]).html(keys[i]));
+      }
+    }
+     
+     function addSlideSelected(position,slideId,imageURL)
+     {
+      $(".addSlidesImage").removeClass("slidesImageSelected");
+      $("#addSlide"+position).addClass("slidesImageSelected");
+
+      document.getElementById("selectedSlidePositionInAddSlide").value = position;
+      document.getElementById("selectedSlideInAddSlide").value = slideId;
+     }
+      function reshuffleSlideSelected(position,slideId,imageURL)
+      {
+        document.getElementById("generateReshuffleSlide").disabled = false;
+        $(".reshuffleSlidesImage").removeClass("slidesImageSelected");
+        $("#reshuffleSlide"+position).addClass("slidesImageSelected");
+
+        document.getElementById("selectedSlidePositionInReshuffleSlide").value = position;
+        document.getElementById("selectedSlideInReshuffleSlide").value = slideId;
+        document.getElementById("selectedImageURLInReshuffleSlide").value = imageURL;
+      }
+        function toggleAdvancedOptions() {
+          var content = document.getElementById('advancedContent');
+          var arrow = document.getElementById('advanced-arrow');
+          if (content.style.display === 'none') {
+            content.style.display = 'block';
+            arrow.textContent = 'expand_less';
+          } else {
+            content.style.display = 'none';
+            arrow.textContent = 'expand_more';
+          }
+        }
+
+        function toggleGenerateStyleReference() {
+            var selectedTone = $('input[name="tone"]:checked').val();
+            var section = document.getElementById('styleReferenceSection');
+            
+            if (selectedTone === 'image' || selectedTone === 'infographic') {
+                document.getElementById('addSlideLayout').removeAttribute('required');
+                document.getElementById('addSlideTimeline').removeAttribute('required');
+                
+                if (selectedTone === 'image') {
+                    section.style.display = 'block';
+                    if (selectedStyleBase64) {
+                        document.getElementById('addSlideLayout').disabled = true;
+                        document.getElementById('addSlideTimeline').disabled = true;
+                    }
+                } else {
+                    section.style.display = 'none';
+                    document.getElementById('addSlideLayout').disabled = false;
+                    document.getElementById('addSlideTimeline').disabled = false;
+                }
+            } else {
+                section.style.display = 'none';
+                document.getElementById('addSlideLayout').disabled = false;
+                document.getElementById('addSlideTimeline').disabled = false;
+                document.getElementById('addSlideLayout').setAttribute('required', '');
+                document.getElementById('addSlideTimeline').setAttribute('required', '');
+            }
+        }
+
+        var selectedStyleBase64 = null;
+
+        function handleStyleFileSelect(input) {
+            const file = input.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                selectedStyleBase64 = e.target.result;
+                
+                // Change button style on upload
+                const btn = document.getElementById('style_upload_btn');
+                if (btn) {
+                    btn.style.backgroundColor = '#1a73e8';
+                    btn.style.color = 'white';
+                    btn.style.borderColor = '#1a73e8';
+                    // Update text
+                    const iconSpan = btn.querySelector('.material-symbols-outlined').outerHTML;
+                    btn.innerHTML = iconSpan + ' Reference image added';
+                }
+
+                // Disable Theme and Layout options
+                document.getElementById('addSlideLayout').disabled = true;
+                document.getElementById('addSlideTimeline').disabled = true;
+
+                // Show preview
+                const previewImg = document.getElementById('stylePreviewImg');
+                previewImg.src = selectedStyleBase64;
+                document.getElementById('styleFilePreview').style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        var selectedTransformStyleBase64 = null;
+
+        function handleTransformStyleFileSelect(input) {
+            const file = input.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                selectedTransformStyleBase64 = e.target.result;
+                
+                // Change button style on upload
+                const btn = document.getElementById('transform_style_upload_btn');
+                if (btn) {
+                    btn.style.backgroundColor = '#1a73e8';
+                    btn.style.color = 'white';
+                    btn.style.borderColor = '#1a73e8';
+                    // Update text
+                    const iconSpan = btn.querySelector('.material-symbols-outlined').outerHTML;
+                    btn.innerHTML = iconSpan + ' Reference image added';
+                }
+
+                // Disable Theme and Layout options
+                document.getElementById('reshuffleSlideLayout').disabled = true;
+                document.getElementById('reshuffleSlideTimeline').disabled = true;
+
+                // Show preview
+                const previewImg = document.getElementById('transformStylePreviewImg');
+                previewImg.src = selectedTransformStyleBase64;
+                document.getElementById('transformStyleFilePreview').style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function toggleTransformThemeAndLayout() {
+            const tone = $('input[name="transformTone"]:checked').val();
+            const isText = tone === 'text';
+            const isImage = tone === 'image';
+            const isInfographic = tone === 'infographic';
+            
+            if (isText) {
+                $('#transformThemeAndLayoutSection').hide();
+                $('#fullDeckCheckboxSection').show();
+            } else {
+                $('#transformThemeAndLayoutSection').show();
+                $('#fullDeckCheckboxSection').hide();
+            }
+
+            if (isImage || isInfographic) {
+                document.getElementById('reshuffleSlideLayout').removeAttribute('required');
+                document.getElementById('reshuffleSlideTimeline').removeAttribute('required');
+            } else {
+                document.getElementById('reshuffleSlideLayout').setAttribute('required', '');
+                document.getElementById('reshuffleSlideTimeline').setAttribute('required', '');
+            }
+
+            var section = document.getElementById('transformStyleReferenceSection');
+            if (isImage) {
+                section.style.display = 'block';
+                if (selectedTransformStyleBase64) {
+                    document.getElementById('reshuffleSlideLayout').disabled = true;
+                    document.getElementById('reshuffleSlideTimeline').disabled = true;
+                }
+            } else {
+                section.style.display = 'none';
+                document.getElementById('reshuffleSlideLayout').disabled = false;
+                document.getElementById('reshuffleSlideTimeline').disabled = false;
+            }
+        }
+
+
+        function showHome() {
+
+            $("#homeDiv").show();
+            $("#searchDiv").hide();
+            $("#generateDiv").hide();
+            $("#transformDiv").hide();
+            $("#tabNav").hide();
+        }
+
+        function showSearch() {
+            $("#homeDiv").hide();
+            $("#searchDiv").show();
+            $("#generateDiv").hide();
+            $("#transformDiv").hide();
+            $("#tabNav").show();
+            updateTabStyles("search-btn");
+            if (typeof resetSearchButton === 'function') resetSearchButton();
+        }
+
+
+        function showGenerate() {
+            $("#homeDiv").hide();
+            $("#searchDiv").hide();
+            $("#generateDiv").show();
+            $("#transformDiv").hide();
+            $("#tabNav").show();
+            updateTabStyles("generate-btn");
+        }
+
+        function showTransform() {
+            $("#homeDiv").hide();
+            $("#searchDiv").hide();
+            $("#generateDiv").hide();
+            $("#transformDiv").show();
+            $("#tabNav").show();
+            updateTabStyles("transform-btn");
+        }
+
+        function updateTabStyles(activeId) {
+
+            const buttons = ["search-btn", "generate-btn", "transform-btn"];
+            buttons.forEach(id => {
+              const btn = document.getElementById(id);
+              if (btn) {
+                if (id === activeId) {
+                  btn.classList.add("blue-btn");
+                  btn.classList.remove("grey-btn");
+                } else {
+                  btn.classList.remove("blue-btn");
+                  btn.classList.add("grey-btn");
+                }
+              }
+            });
+      }
+
+      function generateSlide()
+      {
+        var audience = localStorage.getItem('audience');
+        var solution = localStorage.getItem('solution');
+        var productEl = document.getElementById('addSlideProduct');
+        var product = (productEl && productEl.value) ? productEl.value : (localStorage.getItem('product') || "");
+        var customerName = localStorage.getItem('customer_name');
+        var industryEl = document.getElementById('addSlideIndustry');
+        var industry = (industryEl && industryEl.value) ? industryEl.value : (localStorage.getItem('industry') || "");
+        var region = localStorage.getItem('region');
+
+        audience = (audience==null) ? "" : audience;
+        solution = (solution==null) ? "" : solution;
+        product = (product==null) ? "" : product;
+        customerName = (customerName==null) ? "" : customerName;
+        industry = (industry==null) ? "" : industry;
+        region = (region==null) ? "" : region;
+
+        var selectedCategory =  document.getElementById('selectedSlidePositionInAddSlide').value;
+        var spreadSheetId =  document.getElementById('addSlideTimeline').value;
+        var sheetId = document.getElementById('selectedSlideInAddSlide').value;
+        
+        var slideTitleEl = document.getElementById('slideTitle');
+        var slideTitle = slideTitleEl ? slideTitleEl.value : "";
+        var slideContent = document.getElementById('slideContent').value;
+        var slideLayout = document.getElementById('addSlideLayout').value;
+        var domNode = document.getElementById("addSlideTimeline");
+        var value = domNode.selectedIndex;
+        var slideCategory = domNode.options[value].text;
+        var slideTimeline = document.getElementById("addSlideTimeline").value;
+
+        if(slideCategory=="Select Layout")
+        {
+          slideCategory = "";
+        }
+        var errorMessage = "Please enter input for Generating Slide [";
+        var errorFound = 0;
+
+        if(slideContent.trim()=="")
+        {
+          errorFound = 1;
+          errorMessage = errorMessage + " Slide Content &";
+        }
+        
+        errorMessage = errorMessage.substring(0,errorMessage.length-1);
+        errorMessage = errorMessage + "]";
+
+        if(errorFound == 1)
+        {
+          $('#myGenerateSlideModal').modal('show');
+          document.querySelector(".dltMessage").innerHTML = errorMessage;
+        }
+        else
+        {
+          var toneElement = document.querySelector('input[name="tone"]:checked');
+          var tone = toneElement ? toneElement.value : 'professional';
+
+          document.getElementById("generateAddSlide").disabled = true;
+          
+          $('#addSlideRunning').modal('show');
+
+          if (tone === 'image') {
+            google.script.run.withSuccessHandler(function(arg){
+              $('#addSlideRunning').modal('hide');
+              document.getElementById("generateAddSlide").disabled = false;
+              if(arg.status==false) {
+                 $('#addSlideError').modal('show');
+                document.querySelector(".dltMessage").innerHTML = arg.error;
+              } else {
+                $('#addSlideSuccess').modal('show');
+              }
+            }).triggerNanoBananaAPI(slideContent, selectedStyleBase64);
+          } else {
+            slideContent = slideContent + ". Output should be in a " + tone + " tone.";
+
+            google.script.run.withSuccessHandler(function(arg){
+              $('#addSlideRunning').modal('hide');
+              document.getElementById("generateAddSlide").disabled = false;
+              if(arg.status==false) {
+                 $('#addSlideError').modal('show');
+                document.querySelector(".dltMessage").innerHTML = arg.error;
+              } else {
+                $('#addSlideSuccess').modal('show');
+              }
+            }).addSlideAPI(selectedCategory,sheetId,spreadSheetId,slideTitle,slideContent,slideLayout,slideCategory,audience,solution,product,customerName,industry,region);
+          }
+        }
+      }
+
+      function reshuffleSlideFunc()
+      {
+        var spreadSheetId =  document.getElementById('reshuffleSlideTimeline').value;
+        var sheetId = document.getElementById('selectedSlideInReshuffleSlide').value;
+        //var imageURL = document.getElementById('selectedImageURLInReshuffleSlide').value;
+        var desiredOutputCriteria = document.getElementById('desiredOutputCriteria').value;
+        var slideLayout = document.getElementById('reshuffleSlideLayout').value;            //Theme
+        var domNode = document.getElementById("reshuffleSlideTimeline");
+        var value = domNode.selectedIndex;
+        var slideCategory = domNode.options[value].text;
+        var slideTimeline = document.getElementById("reshuffleSlideTimeline").value;      //Layout
+
+        var transformToneElement = document.querySelector('input[name="transformTone"]:checked');
+        var transformTone = transformToneElement ? transformToneElement.value : 'professional';
+
+        if(desiredOutputCriteria.trim()=="")
+        {
+          desiredOutputCriteria = "Populate the above contents into the selected template";
+        }
+
+        var errorMessage = "Please enter input for Transform Slide [";
+        var errorFound = 0;
+
+        if (transformTone !== 'image' && transformTone !== 'infographic') {
+            if(slideLayout=="")
+            {
+              errorFound = 1;
+              errorMessage = errorMessage + " Theme &";
+            }
+            if(slideTimeline=="")
+            {
+              errorFound = 1;
+              errorMessage = errorMessage + " Layout &";
+            }
+        }
+        
+        if((reshuffleSlideTemplateLoaded==1) && (sheetId==""))
+        {
+          errorFound = 1;
+          errorMessage = errorMessage + " Template &";
+        }
+        
+        errorMessage = errorMessage.substring(0,errorMessage.length-1);
+        errorMessage = errorMessage + "]";
+
+       if(errorFound == 1)
+        {   
+          //alertify.alert(errorMessage).set({title:""});
+          $('#myResuffleSlideModal').modal('show');
+          document.querySelector(".dltMessage1").innerHTML = errorMessage;
+        }
+        else
+        {
+
+          $("#loadingReshuffleSlide").show(); 
+          document.getElementById("generateReshuffleSlide").disabled = true;
+
+          if (transformTone === 'image') {
+            google.script.run.withSuccessHandler(function(arg){
+              $("#loadingReshuffleSlide").hide();
+              document.getElementById("generateReshuffleSlide").disabled = false;
+              if(arg.status==false) {
+                $('#transformSlideError').modal('show');
+                document.getElementById("transformDetails").innerHTML = arg.error;
+              } else {
+                $('#transformSlideSuccess').modal('show');
+              }
+            }).triggerNanoBananaAPI(desiredOutputCriteria, selectedTransformStyleBase64);
+          } else {
+            google.script.run.withSuccessHandler(function(arg){
+              $("#loadingReshuffleSlide").hide();
+              document.getElementById("generateReshuffleSlide").disabled = false;
+              if(arg.status==false)
+              {
+                $('#transformSlideError').modal('show');
+                document.getElementById("transformDetails").innerHTML = arg.error;
+              }
+              else
+              {
+                $('#transformSlideSuccess').modal('show');
+              }
+            }).reshuffleSlideAPI(sheetId,spreadSheetId,desiredOutputCriteria,slideLayout,slideCategory);
+          }
+        }
+      }
+
+      function translateSlideFunc()
+      {
+        var targetLanguage = document.getElementById('translateLang').value;
+        var isFullDeck = document.querySelector('#flexCheckChecked').checked;
+
+        $("#languageTranslate").modal('show'); 
+        document.getElementById("info-container-trans").style.display="none";
+
+        google.script.run.withSuccessHandler(function(arg){
+          $("#languageTranslate").modal('hide');
+
+          if(arg.status == true)
+          {          
+            if(arg.message == "Success")
+            {
+              $("#languageTranslateSuccess").modal('show');
+            }
+            else
+            {
+              var imageElement = document.getElementById("languagErrorImage");
+              imageElement.src = "https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0";
+              document.getElementById("transDetailsError").textContent = arg.message;
+              $("#languageTranslateError").modal('show');
+            }
+          }
+          else{
+            var imageElement = document.getElementById("languagErrorImage");
+            if(arg.flag=="NO_FILE_SELECTED")
+            {
+              imageElement.src = 'https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/Shopping%20Ad%20-%20UI%20Abstraction%20-%20Medium.svg?authuser=0';
+              document.getElementById("transDetailsError").innerHTML = "Please click to select at least one slide from the left panel to proceed. <br><br> Don't forget to manually click the highlighted slide if you want to include it.";
+            }
+            else
+            {
+              imageElement.src = "https://storage.mtls.cloud.google.com/slides-deck-dumps-qa-p2/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0";
+              document.getElementById("transDetailsError").textContent = arg.message;
+            }
+
+            $("#languageTranslateError").modal('show');
+          }
+        }).createJsonRequestForSlideTextFormatting(targetLanguage , isFullDeck);
+      }
+      
+      var addSlideTemplateLoaded = 0;
+      var reshuffleSlideTemplateLoaded = 0;
+
+      function getSlides(selectedTemplate) {        
+        const disabledAddSlide = document.querySelector("#generateAddSlide");
+        const disabledReshuffleSlide = document.querySelector("#generateReshuffleSlide");
+        const textarea = document.getElementById('slideContent');
+        var slideId;
+        if(selectedTemplate=='addSlide')
+        {
+          addSlideTemplateLoaded = 0;
+          document.getElementById("selectedSlidePositionInAddSlide").value = "";
+          document.getElementById("selectedSlideInAddSlide").value = "";
+          disabledAddSlide.setAttribute("disabled", true);
+          $("#loadingAddSlide").show();
+          slideId = document.getElementById("addSlideTimeline").value;
+          $('#addSlideTemplate').empty();
+        }
+        else
+        {
+          reshuffleSlideTemplateLoaded = 0;
+          document.getElementById("selectedSlidePositionInReshuffleSlide").value = "";
+          document.getElementById("selectedSlideInReshuffleSlide").value = "";
+          document.getElementById("selectedImageURLInReshuffleSlide").value = "";
+          disabledReshuffleSlide.setAttribute("disabled", true);
+          $("#loadingReshuffleSlide").show();
+          slideId = document.getElementById("reshuffleSlideTimeline").value;
+          $('#reshuffleSlideTemplate').empty();
+        } 
+        
+        google.script.run.withSuccessHandler(function(arg){  
+
+          for(var i=0; i<arg.length; i++)
+          {
+            if(selectedTemplate=='addSlide')
+            {
+              document.getElementById('info-container').style.display="none";
+              addSlideTemplateLoaded = 1;
+              $("#loadingAddSlide").hide();
+
+              if (textarea.value.trim() !== "") {
+                  disabledAddSlide.removeAttribute("disabled"); // Enable the button
+              } else {
+                  disabledAddSlide.setAttribute("disabled", "true"); // Disable the button
+              }
+              $('#addSlideTemplate').append('<div class="addSlidesImage" id="addSlide'+(i+1)+'" onclick="addSlideSelected('+(i+1)+',\''+arg[i].slideId+'\',\''+arg[i].url+'\')" style="height: 167px; margin-top: 10px;"><img src="'+arg[i].url+'" style="height: 152px; margin-top: 7px; margin-left: 10px; width: 262px" alt="slide1"></div>');
+            }
+            else
+            {
+              reshuffleSlideTemplateLoaded = 1;
+              $("#loadingReshuffleSlide").hide();
+              //disabledReshuffleSlide.removeAttribute("disabled");
+              $('#reshuffleSlideTemplate').append('<div class="reshuffleSlidesImage" id="reshuffleSlide'+(i+1)+'" onclick="reshuffleSlideSelected('+(i+1)+',\''+arg[i].slideId+'\',\''+arg[i].url+'\')" style="height: 167px; margin-top: 10px;"><img src="'+arg[i].url+'" style="height: 152px; margin-top: 7px; margin-left: 9px; width: 262px" alt="slide1"></div>');
+            }
+          }  
+        }).readSlides(slideId);
+      }
+
+      // google.script.run.withSuccessHandler(function(arg){
+      //   for(var i=0; i<arg.length; i++)
+      //   {
+      //     $("#addSlideTimeline").append('<option value="'+arg[i].id+'">'+arg[i].name+'</option>');
+      //     $("#reshuffleSlideTimeline").append('<option value="'+arg[i].id+'">'+arg[i].name+'</option>');
+      //   }
+      // }).getSlidesName();
+
+     //addslide/Resuffle/translate button color change-------------
+        // Tab click visibility handled inline with showSearch(), showGenerate(), showTransform()
+        document.addEventListener('DOMContentLoaded', function () {
+          showHome(); // Initialize with Home view
+      });
+
+
+       //translate information on icon click-----------------------------------------------------------
+       function togglePopup(event) {
+        const popup = document.getElementById('infoPopup');
+        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        }
+        // Close the popup if clicked outside
+        window.onclick = function(event) {
+            const popup = document.getElementById('infoPopup');
+            if (!event.target.matches('.info-icon') && popup.style.display === 'block') {
+                popup.style.display = 'none';
+            }
+        }
+
+
+  
+   //---info-container show hide-------------
+      document.addEventListener('DOMContentLoaded', function() {
+        const textarea = document.getElementById('slideContent');
+        const button = document.getElementById('generateAddSlide');
+        const info = document.getElementById('info-container');
+
+        function checkTextarea() {
+          const erId = document.getElementById('ErIdGenerate').value;
+          button.disabled = textarea.value.trim() === '' || erId.length < 4;
+            info.style.display = 'none';
+        }
+
+        // Add event listener to the textarea to monitor input
+        textarea.addEventListener('input', checkTextarea);
+      });
+
+
+
+    // ----------chevron-down/chevron-up arrow change script------------
+    $(document).ready(function() {
+        $('.collapse-arrow').click(function() {
+            var icon = $(this).find('i');
+            icon.toggleClass('bi-chevron-down bi-chevron-up');
+        });
+    });
+
+  // ----------Search Slide icon show/hide script ---------- 
+
+      // --- New Search Input and Trigger Logic ---
+      function triggerSearch() {
+      const searchInput = document.getElementById('searchContentInput');
+      const searchContentInputText = searchInput.value.trim();
+      const button = document.getElementById('searchAddSlide');
+
+      if (searchContentInputText) {
+        $('#searchSlideTemplate').empty();
+        $('#searchSlideRunning').modal('show');
+        google.script.run.withSuccessHandler(function (arg) {
+          $('#searchSlideRunning').modal('hide');
+          if (arg.status == false) {
+            if (arg.flag == "NO_RESULT") {
+                const searchGifImage = document.getElementById("searchGifImage");
+                if (searchGifImage) {
+                  searchGifImage.src = 'https://storage.mtls.cloud.google.com/slides-deck-dumps-dev-p2/UI/AdSense%20-%20Sites%20-%20Loading%20fail.svg?authuser=0';
+                }
+                document.getElementById("searchDetails").innerHTML = "We couldn't find any results. Please try a different search.";
+                document.getElementById("searchProg").innerHTML = arg.message;
+              } else if (arg.flag == "OTHER") {
+                const searchGifImage = document.getElementById("searchGifImage");
+                if (searchGifImage) {
+                  searchGifImage.src = 'https://storage.mtls.cloud.google.com/slides-deck-dumps-dev-p2/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0';
+                }
+                document.getElementById("searchDetails").innerHTML = "Unable to process your request. Please try after sometime.";
+                document.getElementById("searchProg").innerHTML = arg.message;
+              }
+
+              $('#searchSlideError').modal('show');
+            }
+            else {
+              var imageData = arg.image;
+              if (imageData.length > 0) {
+                const infoContainer = document.getElementById('info-container');
+                if (infoContainer) infoContainer.style.display = "none";
+
+                for (var i = 0; i < imageData.length; i++) {
+                  var name = imageData[i].name.replace(/["']/g, "");
+                  $('#searchSlideTemplate').append('<div class="searchSlidesImage" id="searchSlide' + (i + 1) + '" onclick="searchSlideSelected(' + (i + 1) + ',\'' + imageData[i].date + '\',\'' + name + '\',\'' + imageData[i].deckId + '\',\'' + imageData[i].slideId + '\',\'' + imageData[i].slideURL + '\',\'' + imageData[i].url + '\')" style="height: 167px; margin-top: 10px; margin-left: 8px;"><img src="' + imageData[i].url + '" style="height: 152px; margin-top: 7px; margin-left: 6px; width: 262px" alt="slide1"></div>');
+                }
+              }
+            }
+          }).searchSlide(searchContentInputText);
+                  }
+                }
+
+                document.addEventListener('DOMContentLoaded', function () {
+                  const searchInput = document.getElementById('searchContentInput');
+                  const clearIcon = document.getElementById('clearIcon');
+                  const button = document.getElementById('searchAddSlide');
+
+                  const generateInput = document.getElementById('slideContent');
+                  const clearIconGenerate = document.getElementById('clearIconGenerate');
+                  const generateButton = document.getElementById('generateAddSlide');
+
+                  const transformInput = document.getElementById('desiredOutputCriteria');
+                  const clearIconTransform = document.getElementById('clearIconTransform');
+                  const transformButton = document.getElementById('generateReshuffleSlide');
+
+                  if (searchInput && button) {
+                    searchInput.addEventListener('input', function () {
+                      const erId = document.getElementById('ErIdSearch').value;
+                      button.disabled = searchInput.value.trim() === '' || erId.length < 4;
+
+                      resetSearchButton();
+                    });
+                  }
+
+                  if (clearIcon && searchInput) {
+                    clearIcon.addEventListener('click', function () {
+                      searchInput.value = '';
+                      searchInput.focus();
+                      $('#searchSlideTemplate').empty();
+                      if (button) button.disabled = true;
+                      resetSearchButton();
+                    });
+                  }
+
+                  if (clearIconGenerate && generateInput) {
+                    clearIconGenerate.addEventListener('click', function () {
+                      generateInput.value = '';
+                      generateInput.focus();
+                      if (generateButton) generateButton.disabled = true;
+                    });
+                  }
+
+      if (clearIconTransform && transformInput) {
+        clearIconTransform.addEventListener('click', function () {
+          transformInput.value = '';
+          transformInput.focus();
+          resetToTransformButton();
+        });
+      }
+
+      // Cascading logic for ER-ID
+      $('.ErIdCommon').on('input', function () {
+        const val = $(this).val();
+        $('.ErIdCommon').val(val);
+
+        // Toggle visibility!
+        if (val.trim() !== "ER-") {
+          $('#refresh-search-icon, #refresh-generate-icon, #refresh-transform-icon').hide();
+          } else {
+          $('#refresh-search-icon, #refresh-generate-icon, #refresh-transform-icon').show();
+        }
+
+
+        const searchInput = document.getElementById('searchContentInput');
+        const generateInput = document.getElementById('slideContent');
+        const transformInput = document.getElementById('desiredOutputCriteria');
+
+        const searchButton = document.getElementById('searchAddSlide');
+        const generateButton = document.getElementById('generateAddSlide');
+        const transformButton = document.getElementById('generateReshuffleSlide');
+
+        if (searchInput && searchButton) {
+          searchButton.disabled = searchInput.value.trim() === '' || val.length < 4;
+        }
+        if (generateInput && generateButton) {
+          generateButton.disabled = generateInput.value.trim() === '' || val.length < 4;
+        }
+        if (transformButton) {
+          transformButton.disabled = val.length < 4; 
+          }
+      });
+    });
+
+
+
+  function resetSearchButton() {
+    const button = document.getElementById('searchAddSlide');
+    const buttonText = document.getElementById('searchButtonText');
+    const buttonIcon = document.getElementById('searchButtonIcon');
+    if (buttonText && buttonIcon) {
+      buttonText.innerText = "Search";
+      buttonIcon.innerText = "search";
+      if (button) button.setAttribute("onclick", "triggerSearch();");
+    }
+  }
+
+  function resetToTransformButton() {
+    const button = document.getElementById('generateReshuffleSlide');
+    const buttonText = document.getElementById('transformButtonText');
+    const buttonIcon = document.getElementById('transformButtonIcon');
+    if (buttonText && buttonIcon) {
+      buttonText.innerText = "Transform Slide";
+      buttonIcon.className = "fa fa-sync";
+      buttonIcon.innerText = ""; // Clear any text
+      if (button) {
+        button.setAttribute("onclick", "reshuffleSlideFunc();");
+        button.disabled = false;
+      }
+    }
+  }
+
+  function resetToTranslateButton() {
+    const button = document.getElementById('generateReshuffleSlide');
+    const buttonText = document.getElementById('transformButtonText');
+    const buttonIcon = document.getElementById('transformButtonIcon');
+    if (buttonText && buttonIcon) {
+      buttonText.innerText = "Translate Slide";
+      buttonIcon.className = "fa fa-language";
+      buttonIcon.innerText = ""; // Clear any text
+      if (button) {
+        button.setAttribute("onclick", "translateSlideFunc();");
+        button.disabled = false;
+      }
+    }
+  }
+
+
+
+
+    function searchSlideSelected(id,date,name,deckId,slideId,slideUrl,imageUrl)
+    {
+       $(".searchSlidesImage").removeClass("searchImageSelected");
+      $("#searchSlide" + id).addClass("searchImageSelected");
+
+      document.getElementById('searchAddSlide').disabled = false;
+      const elementname = document.getElementById('searchAddSlide');
+
+      // Toggle to Insert Slide mode
+      const buttonText = document.getElementById('searchButtonText');
+      const buttonIcon = document.getElementById('searchButtonIcon');
+      if (buttonText && buttonIcon) {
+        buttonText.innerText = "Insert Slide";
+        buttonIcon.innerText = "add";
+      }
+      
+      elementname.setAttribute("onclick","insertSearchSlide("+id+",'"+date+"','"+name+"','"+deckId+"','"+slideId+"','"+slideUrl+"','"+imageUrl+"')");
+    }
+
+
+    function insertSearchSlide(id,date,name,deckId,slideId,slideUrl,imageUrl){
+      var resData = {};
+      resData.deckId = deckId;
+      resData.slideId = slideId;
+      resData.slideUrl = slideUrl;
+      resData.name = name;
+      resData.date = date;
+       $('#addSlideRunning').modal('show');
+      google.script.run.withSuccessHandler(function(arg){
+        $('#addSlideRunning').modal('hide');
+        if(arg == false)
+        {
+          $('#addSlideError').modal('show');
+          document.querySelector(".dltMessage").innerHTML = "Please Try Again After Sometime.";
+        }else{
+          $('#addSlideSuccess').modal('show');
+        }
+      }).searchSlideInsertion(resData);
+    }
+
+
+  function fetchingAllSlideId() {
+    var isFullDeck = document.querySelector('#flexCheckChecked').checked;
+    var targetLanguage = document.getElementById('translateLang').value;
+    $("#languageTranslate").modal('show');
+    google.script.run.withSuccessHandler(function (arg) {
+      if (arg.status == false) {
+        $("#languageTranslate").modal('hide');
+        document.getElementById("languagErrorImage").src = 'https://storage.mtls.cloud.google.com/slides-deck-dumps-dev-p2/UI/Shopping%20Ad%20-%20UI%20Abstraction%20-%20Medium.svg?authuser=0';
+        document.getElementById("transDetailsError").innerHTML = "Please click to select at least one slide from the left panel to proceed. <br><br> Don't forget to manually click the highlighted slide if you want to include it.";
+
+        $("#languageTranslateError").modal('show');
+      }
+      else {
+        var slides = arg.slides;
+        var slideChunks = [];
+        var chunkSize = 10;
+        var totalExecution = 1;
+        for (var i = 0; i < slides.length; i += chunkSize) {
+          slideChunks.push(slides.slice(i, i + chunkSize));
+        }
+        for (var i = 0; i < slideChunks.length; i++) {
+          var slidePosition = [];
+          //var msgArr = [];
+          google.script.run.withSuccessHandler(function (arg) {
+            //msgArr.push(arg.message);
+
+            if (arg.slides != undefined) {
+              for (var k = 0; k < arg.slides.length; k++) {
+                slidePosition.push(arg.slides[k]);
+              }
+            }
+            if (totalExecution == slideChunks.length) {
+              // if(msgArr.includes("Please select a translation language distinct from the slide's current language."))
+              // {
+              //   $("#languageTranslate").modal('hide');
+              //   document.getElementById("languagErrorImage").src="https://storage.mtls.cloud.google.com/slides-deck-dumps-dev-p2/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0";
+              //   document.getElementById("transStatusError").innerHTML = "Error!";
+              //   document.getElementById("transDetailsError").textContent = arg.message;
+              //   $("#languageTranslateError").modal('show');
+              // }
+              // else
+              // {
+              var output = "";
+              if (slidePosition.length > 0) {
+                slidePosition.sort((a, b) => a - b);
+                output = "[" + slidePosition[0];
+                for (var k = 0; k < slidePosition.length; k++) {
+                  var present = slidePosition[k] + 1;
+                  var next = slidePosition[k + 1];
+                  var flag = 0;
+                  if (next != present) {
+                    output = output + "-" + slidePosition[k];
+                    flag = 1;
+                  }
+                  if (flag == 1 && next != undefined) {
+                    output = output + "," + next;
+                  }
+                  if (k == (slidePosition.length - 1)) {
+                    output = output + "]";
+                  }
+                }
+
+
+              }
+
+              $("#languageTranslate").modal('hide');
+
+
+
+              if (slides.length == slidePosition.length) {
+                document.getElementById("languagErrorImage").src = "https://storage.mtls.cloud.google.com/slides-deck-dumps-dev-p2/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0";
+                document.getElementById("transDetailsError").textContent = "Unable to process your request. Please try after sometime.";
+                $("#languageTranslateError").modal('show');
+              }
+              else if (slides.length > slidePosition.length && slidePosition.length != 0) {
+                $("#languageTranslateError").modal('show');
+                document.getElementById("languagErrorImage").src = 'https://storage.mtls.cloud.google.com/slides-deck-dumps-dev-p2/UI/Shopping%20Ad%20-%20UI%20Abstraction%20-%20Medium.svg?authuser=0';
+                document.getElementById("transStatusError").innerHTML = "Moderately success";
+                document.getElementById("transDetailsError").innerHTML = "Translation progressed moderately. \nThe following slides are " + output + " require re-translation.\nPlease select these slides from the left side stack panel and retry.";
+              }
+              else {
+                $("#languageTranslateSuccess").modal('show');
+              }
+              //}
+            }
+            totalExecution++;
+          }).createJsonRequestForSlideTextFormatting(slideChunks[i], targetLanguage, isFullDeck);
+        }
+      }
+    }).fetchingAllSlideId(isFullDeck);
+  }
+    </script>
+  </body>
+</html>

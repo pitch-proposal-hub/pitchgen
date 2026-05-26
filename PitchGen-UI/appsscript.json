@@ -1,0 +1,42 @@
+{
+  "timeZone": "Asia/Kolkata",
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "dependencies": {
+    "enabledAdvancedServices": [
+      {
+        "userSymbol": "Slides",
+        "serviceId": "slides",
+        "version": "v1"
+      },
+      {
+        "userSymbol": "Drive",
+        "serviceId": "drive",
+        "version": "v3"
+      },
+      {
+        "userSymbol": "Gemini",
+        "version": "v1",
+        "serviceId": "Gemini API"
+      },
+      {
+        "userSymbol": "VertexAI",
+        "version": "v1",
+        "serviceId": "aiplatform"
+      },
+      {
+        "userSymbol": "BigQuery",
+        "version": "v2",
+        "serviceId": "bigquery"
+      }
+    ]
+  },
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/presentations",
+    "https://www.googleapis.com/auth/script.container.ui",
+    "https://www.googleapis.com/auth/script.external_request",
+    "https://www.googleapis.com/auth/drive.readonly",
+    "https://www.googleapis.com/auth/cloud-platform",
+    "https://www.googleapis.com/auth/userinfo.email"
+  ]
+}
