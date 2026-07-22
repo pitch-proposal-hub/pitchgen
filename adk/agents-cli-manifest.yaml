@@ -1,0 +1,15 @@
+name: "pitchgen-multiagent"
+acli_version: "0.3.0"
+agent_directory: "src"
+region: "us-central1"
+base_template: "local_Pitchgen_MultiAgent"
+generated_at: "2026-06-05T15:01:37.104488+00:00"
+language: "python"
+create_params:
+  deployment_target: "agent_runtime"
+  session_type: "none"
+  cicd_runner: "skip"
+  include_data_ingestion: false
+  
+  datastore: "none"
+  agent_guidance_filename: "GEMINI.md"

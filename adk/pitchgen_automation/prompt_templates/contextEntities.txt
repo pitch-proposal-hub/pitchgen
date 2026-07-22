@@ -1,0 +1,71 @@
+Understand the input context and assign values to the following entities:
+"customer_name": organization name for whom the context is written (it should not be related to "Google") or an empty string("").
+"audience": designations in an organization CEO, CFO, ITDM, Line of Business (LOB), CTO etc., can have MULTIPLE values, if mentioned explicitly in the context or an empty list [].
+"industry": should be ONE value from the list ["Consumer Packaged Goods", "Financial Services", "Gaming", "Healthcare & Life Sciences", "Insurance", "Manufacturing", "Media & Entertainment", "Public Sector", "Retail", "Software & Internet", "Supply Chain, Logistics & Transportation", "Telecommunications", "Beauty, Personal, Home in Consumer Packaged Goods", "Food & Bev in Consumer Packaged Goods", "Banking in Financial Services", "Cap Markets in Financial Services", "Payments & Cards in Financial Services", "Healthcare in Healthcare & Life Sciences", "Life Sciences in Healthcare & Life Sciences", "Aerospace in Manufacturing", "Automotive in Manufacturing", "Energy in Manufacturing", "Industrial Manufacturing in Manufacturing", "Agriculture & Interior in Public Sector", "Climate & Sustainability in Public Sector", "Defense & National Security in Public Sector", "Education in Public Sector", "Finance, Tax, & Trade in Public Sector", "Government in Public Sector", "Health in Public Sector", "Human Services & Labor in Public Sector", "Justice & Public Safety in Public Sector", "Science and R&D in Public Sector", "Transportation & Infrastructure in Public Sector", "Advertising in Retail", "Grocery in Retail", "Hospitality in Retail", "Air, Ocean & Ground in Supply Chain, Logistics & Transportation"] or an empty string("").
+"solution": Enterprise Cloud solution to be pitched to the customer, values SHOULD be from the list ["Application Modernization", "Artificial Intelligence", "Data Analytics", "Databases", "Enterprise Applications & Cortex", "Infrastructure Modernization", "Productivity & Collaboration", "Security"] or an empty list [].
+"product": Enterprise Cloud products to be pitched to the customer, if not in context assign ["AlloyDB", "Agent Assist", "AI Accelerators", "AI Accelerators & ML Frameworks", "AI Component - Natural Language", "AI Platform Training", "AI Platform Vision NAS", "Advisory Notifications", "Analytics Hub", "Anthos", "Anthos Config Management", "Anthos for Virtual Machines", "Anti-Money Laundering (AML)", "Apigee", "Apigee Platform", "App Engine", "AppSheet", "Artifact Registry", "Backup for GKE", "BeyondCorp Enterprise", "BigQuery", "BigQuery / Dremel", "BigQuery BI Engine", "BigQuery ML", "BigQuery Omni", "Blockchain Node Engine", "CCAI Insights", "CCAI Platform", "Certificate Authority Service", "Chrome Enterprise", "Chrome OS", "Chronicle SIEM", "Chronicle SOAR", "Chronicle Security Operations", "Cloud Access Policy (CAP) (Formerly IAM)", "Cloud Armor", "Cloud Backup & DR", "Cloud Bigtable", "Cloud Build", "Cloud CDN", "Cloud Composer", "Cloud DNS", "Cloud Data Catalog", "Cloud Data Fusion", "Cloud Data Loss Prevention (DLP) / Syft", "Cloud Data Transfer - Appliance", "Cloud Dataprep by Trifacta", "Cloud Dataflow", "Cloud Debugger", "Cloud Deploy", "Cloud Endpoints & API Gateway", "Cloud Firestore", "Cloud Functions", "Cloud Functions for Firebase", "Cloud Generative AI", "Cloud Graphics Processing Unit (GPU)", "Cloud HSM", "Cloud Identity-Aware Proxy", "Cloud Interconnect", "Cloud IoT Core", "Cloud KMS", "Cloud Load Balancing", "Cloud Logging", "Cloud Memorystore", "Cloud Monitoring", "Cloud NAT", "Cloud Marketplace", "Cloud Run", "Cloud SQL", "Cloud Scheduler", "Cloud Spanner", "Cloud Tasks", "Cloud Tensor Processing Unit (TPU)", "Cloud Trace", "Cloud VPN", "Cloud Workflows", "Connected Sheets", "Core Compute", "Cross Cloud Network", "Contact Center Insights", "Data Fusion", "Data Studio", "Database Migration Service", "Databases", "Dataplex", "Dataproc", "Datastream", "Dialogflow", "Document AI - Human in the Loop", "Document AI - Pretrained Models", "Document AI Warehouse", "Document AI Workbench (Custom Models)", "Document OCR", "Earth Engine", "Eventarc", "Filestore", "Firebase App Distribution", "Firebase Auth", "Firebase Machine Learning", "GCE - Autoscaler", "GCP Support", "Gemini for Enterprise Cloud", "Gemini in Workspace", "Enterprise Cloud Storage", "Google Distributed Cloud (GDC) in connected configuration", "Google Edge Cloud (GEC)", "Google Kubernetes Engine (GKE)", "Google Maps Platform", "Google Workspace", "Google Workspace Security", "Immersive Stream for XR", "Local SSD",  "Looker", "ML Pipelines", "Mandiant", "Mandiant Consulting", "Mandiant Managed Defense", "Mandiant Threat Intelligence", "Media CDN", "Media Rendering APIs", "Natural Language API", "Networking", "Optimization AI", "Oracle on Bare Metal Servers", "Persistent Disk (PD)", "Pub/Sub", "Retail Recommendations AI", "Retail Search", "Secret Manager", "Security Analytics & Operations", "Security Command Center (SCC)", "Service Infrastructure", "Smart Factory Platform: Manufacturing, "Speech-to-Text API", "Storage Transfer Service", "TensorFlow Enterprise", "Transcode API", "Translation API", "VMware Engine", "Virtual Private Cloud (VPC)", "VPC Service Controls", "Vertex AI", "Vertex AI Agent Builder", "Video Intelligence API", "Vision API", "Visual Inspection AI", "Web Risk", "Web3", "reCAPTCHA Enterprise and Web Risk"] or an empty list [].  
+"region": should be ONE value from the list ["APAC","EMEA","LATAM","NORTHAM","JAPAN","GLOBAL"] or an empty string("").
+"outline_items": check for items asked explicitly to be included in the outline of the deck, can have MULTIPLE values, otherwise an empty list [].
+
+[input]
+Build a "why Enterprise Cloud" pitch for a US-based ecommerce company. Include GenAI solutions, as well as a slide on sustainability.
+
+[output]
+{"customer_name": "", "audience": [], "industry": "Retail", "solution": ["Artificial intelligence"], "product": ["Gemini for Enterprise Cloud", "Retail Recommendations AI"], "region": "NORTHAM", "outline_items": ["GenAI solutions", "Sustainability"]}
+
+[input]
+This is the first meeting with Google, after our partner TCS has provided the consulting to modernise their infrastructure, operations and way of doing business. 
+At the moment customer's priorities are:
+ - How to implement a Data strategy and potential monetisation models from Data
+ - How to innovate with their offerings and market and be able to offer new services.
+ - Sustainability
+ - How to support as a stock exchange the local startup community with IPOs (and how Google helps startup business as well)
+ - Why Enterprise Cloud for Financial Service Firms/ Stock Exchange
+ - Similar Case Studies
+ 
+[output]
+{"customer_name": "", "audience": [], "industry": "Cap Markets in Financial Services", "solution": ["Infrastructure Modernization", "Data Analytics"], "product": ["AlloyDB", "BigQuery"], "region": "", "outline_items": [ "Data monetisation models", "Innovation and new services", "Sustainability", "Supporting the local startup community with IPOs", "Enterprise Cloud for Financial Service Firms/ Stock Exchange", "Case Studies" ]}
+
+[input]
+Pitch on why google cloud for CEO of Tata Motors.
+
+[output]
+{"customer_name": "Tata Motors", "audience": ["CEO"], "industry": "Automotive in Manufacturing", "solution": [], "product": [], "region": "", "outline_items": []}
+
+[input]
+We need to share Data Management AI/ML use cases in FSI and why Google is unique to the CTO, ITDM & Line of Business of American Express.
+
+[output]
+{"customer_name": "American Express", "audience": ["CTO", "ITDM", "Line of Business"], "industry": "Financial Services", "solution": ["Data Analytics", "Artificial intelligence"], "product": [], "region": "", "outline_items": [ "Data Management AI/ML use cases in FSI", "Why Google is unique" ]}
+
+[input]
+The CFO of Paytm is keen to understand how OneGoogle can help drive business better in the domains of Customer experience / acquisition, revenue, Maps and Addresses etc. They are expected to start delivery very soon by end of 2025 so focus on data analytics w.r.t. customers & delivery improvement will help. Also try and include a Analytics + Cloud Platform and Maps + GCP theme into it
+
+[output]
+{"customer_name": "Paytm", "audience": ["CFO"], "industry": "", "solution": ["Data Analytics"], "product": ["Google Maps Platform","GA360"], "region": "", "outline_items": ["Customer experience / acquisition", "revenue", "Maps and Addresses", "data analytics w.r.t. customers & delivery improvement", "Analytics + Cloud Platform and Maps + GCP theme"]}
+
+[input]
+"The customer is one of the biggest private healthcare providers in the CEE region with around 10k employees. They would like to start using ML/AI technology to predict which patient may not come to the doctor's appointment. Thanks to this, they could reduce the costs of unused visits. They have different databases onprem MS-SQL and also cloud. They built 3TB data warehouse onpremise and just started using Python to build ML models. I had a discovery call where they showed an interest in BigQuery and VertexAI. In our deck we would like to show max 20 pages what GCP is offering to healthcare providers in terms of cloud data warehouse and AI like CCAI, API, BQML, AutoAI and especially VertexAI. They asked me if they could use Python in VertexAI which could be an advantage to present on one page how it looks."
+
+[output]
+{"customer_name": "", "audience": [], "industry": "Healthcare in Healthcare & Life Sciences", "solution": ["Artificial intelligence", "Data Analytics"], "product": ["BigQuery", "Vertex AI", "CCAI Platform", "BigQuery ML"], "region": "", "outline_items": ["What GCP is offering to healthcare providers in terms of cloud data warehouse and AI", "How to use Python in VertexAI"]}
+
+[input]
+"Generate a deck on how google cloud can help the public health sector."
+
+[output]
+{"customer_name": "", "audience": [], "industry": "Health in Public Sector", "solution": [], "product": [], "region": "", "outline_items": []}
+
+[input]
+Build a "why Enterprise Cloud" pitch for a India-based energy company. Include GenAI solutions, as well as a slide on sustainability.
+
+[output]
+{"customer_name": "", "audience": [], "industry": "Energy in Manufacturing", "solution": ["Artificial intelligence"], "product": ["Gemini for Enterprise Cloud"], "region": "APAC", "outline_items": ["GenAI solutions", "Sustainability"]}
+
+[input]
+"Create a pitch deck on how google cloud can help the sustainability industry."
+
+[output]
+{"customer_name": "", "audience": [], "industry": "Climate & Sustainability in Public Sector", "solution": [], "product": [], "region": "", "outline_items": []}
+
+[input]
