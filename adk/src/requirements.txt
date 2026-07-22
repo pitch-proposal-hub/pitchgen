@@ -505,7 +505,7 @@ sniffio==1.3.1
     #   openai
 sqlalchemy==2.0.50
     # via pitchgen-multiagent (pyproject.toml)
-starlette==1.2.1
+starlette==1.3.1
     # via
     #   fastapi
     #   google-adk
