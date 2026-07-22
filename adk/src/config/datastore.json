@@ -1,0 +1,8 @@
+{
+    "datastore_map": {
+        "pitchhub": "pitch_sin",
+        "golden_sin": "golden_sin",
+        "customer references": "cust_ref",
+        "customer journey maps(cjms)": "cjms",
+        "sales play": "sales_play_reusables"}
+}

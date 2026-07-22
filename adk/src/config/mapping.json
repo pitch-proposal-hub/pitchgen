@@ -1,0 +1,37 @@
+{
+    "title": {
+        "deckId": "1cL_k_rw4dmVMj8xheB4-11BL7TtycmJj1ht-opRT-Co",
+        "1": "g3ed0a2e9bc0_1_624",
+        "2": "g3ed0a2e9bc0_1_618",
+        "3": "g3ed0a2e9bc0_2_131",
+        "4": "g3ed0a2e9bc0_2_139",
+        "5": "g3ed0a2e9bc0_2_448,",
+        "6": "g3ed0a2e9bc0_2_324",
+        "7": "g3ed0a2e9bc0_2_381",
+        "8": "g3ed0a2e9bc0_2_202",
+        "9": "g3e58b9a881c_0_68"
+    },
+    "agenda": {
+        "deckId": "1p_NEUA1ccUIa8e9dSZMlr2WrjpoGpUGibDcuhxeNOzs",
+        "4": ["g3ed0a0b3dd7_0_332", "g3ed0a0b3dd7_0_345"],
+        "5": ["g3ed0a0b3dd7_0_359", "g3ed0a0b3dd7_0_374"],
+        "6": ["g3ed0a0b3dd7_0_390", "g3ed0a0b3dd7_0_407"],
+        "7": ["g3ed0a0b3dd7_0_664", "g3ed0a0b3dd7_0_683"],
+        "8": ["g3ed0a0b3dd7_0_942", "g3ed0a0b3dd7_0_963"],
+        "9": ["g3ed0a0b3dd7_0_985", "g3ed0a0b3dd7_0_1008"]
+        
+    },
+    "divider": {
+        "deckId": "1UMBMcf4XWVjHVG-0WZRL2XUXUIb1PR44K1c5iuwsGVg",
+        "1":["g37d00b64bf6_0_815", "g37d00b64bf6_0_820", "g348daf40754_0_274", "g348daf40754_0_279", "g37d00b64bf6_0_840", "g37d00b64bf6_0_825","g348daf40754_0_269"],
+        "2":["g348daf40754_0_0", "g348daf40754_0_563", "g348daf40754_0_25", "g348daf40754_0_548", "g348daf40754_0_15", "g348daf40754_0_10","g348daf40754_0_5"]
+        
+    },
+    "thank": {
+        "deckId": "11FfZZ34Pumx-kTUbmmjV6IUlX33heHCGxNFCUGuyolg",
+        "1": "g3ed09d4594d_0_0",
+        "2": "g3e5382a2b92_0_576",
+        "3": "g3ed09d4594d_0_144",
+        "4": "g3e5382a2b92_0_27"       
+    }
+}
