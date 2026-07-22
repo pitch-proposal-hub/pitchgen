@@ -1,0 +1,83 @@
+{
+    "templates": {
+        "1": {
+            "title": "120 to 130 characters",
+            "header1": "70 to 80 characters",
+            "header2": "70 to 80 characters",
+            "header3": "70 to 80 characters",
+            "header4": "70 to 80 characters",
+            "header5": "70 to 80 characters",
+            "details": "700 to 710 characters"
+        },
+        "2": {
+            "title": "30 to 40 characters",
+            "header1": "20 to 30 characters",
+            "header1_content": "150 to 190 characters",
+            "header2": "20 to 30 characters",
+            "header2_content": "150 to 190 characters",
+            "header3": "20 to 30 characters",
+            "header3_content": "130 to 170 characters",
+            "header4": "20 to 30 characters",
+            "header4_content": "90 to 120 characters"
+        },
+        "3": {
+            "title": "30 to 40 characters",
+            "header1": "20 to 30 characters",
+            "header1_content": "50 to 80 characters",
+            "header2": "20 to 30 characters",
+            "header2_content": "50 to 80 characters",
+            "header3": "20 to 30 characters",
+            "header3_content": "50 to 80 characters",
+            "header4": "20 to 30 characters",
+            "header4_content": "50 to 70 characters"
+        },
+        "4": {
+            "title": "30 to 40 characters",
+            "header1": "20 to 30 characters",
+            "header1_content": "150 to 180 characters",
+            "header2": "20 to 30 characters",
+            "header2_content": "140 to 170 characters",
+            "header3": "20 to 30 characters",
+            "header3_content": "120 to 140 characters",
+            "header4": "20 to 30 characters",
+            "header4_content": "80 to 100 characters"
+        },
+        "5": {
+            "title": "30 to 40 characters",
+            "header1": "20 to 30 characters",
+            "header1_content": "150 to 180 characters",
+            "header2": "20 to 30 characters",
+            "header2_content": "140 to 170 characters",
+            "header3": "20 to 30 characters",
+            "header3_content": "120 to 140 characters",
+            "header4": "20 to 30 characters",
+            "header4_content": "80 to 100 characters"
+        },
+        "6": {
+            "title": "30 to 40 characters",
+            "header": "50 to 100 characters",
+            "item1": "30 to 40 characters",
+            "item2": "30 to 40 characters",
+            "item3": "30 to 40 characters"
+        },
+        "7": {
+            "title": "30 to 40 characters",
+            "header1": "30 to 40 characters",
+            "header1_content1": "50 to 90 characters",
+            "header1_content2": "50 to 90 characters",
+            "header1_content3": "50 to 90 characters",
+            "header1_content4": "50 to 90 characters",
+            "header2": "30 to 40 characters",
+            "header2_content1": "50 to 90 characters",
+            "header2_content2": "50 to 90 characters",
+            "header2_content3": "50 to 90 characters",
+            "header2_content4": "50 to 90 characters",
+            "header3": "30 to 40 characters",
+            "header3_content1": "50 to 90 characters",
+            "header3_content2": "50 to 90 characters",
+            "header3_content3": "50 to 90 characters",
+            "header3_content4": "50 to 90 characters"
+        }
+    },
+    "examples": "* Example 1:\n[Input]\n```INPUT_TEXT\nSlide Title: Analytics + Cloud Platform for Customer Insights\nSlide Content: \n- Google Analytics 360 (GA360) and Cloud Platform (GCP) can provide valuable customer insights for Starbucks.\n- GA360 is a powerful analytics platform that can collect and analyze data from a variety of sources, including websites, mobile apps, and offline transactions.\n- GCP provides a range of cloud-based services that can be used to process and analyze data, including BigQuery, Cloud Dataflow, and Cloud Machine Learning.\n- By combining GA360 and GCP, Starbucks can gain a deeper understanding of their customers' behavior and preferences.\n- This information can be used to improve marketing campaigns, customer engagement strategies, and product development.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"1\",\n    \"placeholders\": {\n  \"title\": \"Unlocking Customer Insights: GA360 & GCP Integration for Enhanced Starbucks Strategies\",\n  \"header1\": \"GA360 & GCP: A Powerful Combination for Customer Understanding\",\n  \"header2\": \"GA360: Comprehensive Data Collection & Analysis Across Channels\",\n  \"header3\": \"GCP: Scalable Cloud Services for Data Processing & Advanced Analytics\",\n  \"header4\": \"Deeper Customer Understanding Through Integrated Data Analysis\",\n  \"header5\": \"Actionable Insights: Improving Marketing, Engagement & Product\",\n  \"details\": \"Google Analytics 360 (GA360) and Cloud Platform (GCP) offer valuable customer insights for Starbucks. GA360, a robust analytics platform, collects and analyzes data from websites, mobile apps, and offline transactions. GCP provides cloud-based services like BigQuery, Cloud Dataflow, and Cloud Machine Learning for data processing and analysis. By integrating GA360 and GCP, Starbucks gains a deeper understanding of customer behavior and preferences. This enables improvements in marketing campaigns, customer engagement strategies, and product development, leading to enhanced customer experiences and business outcomes. Ultimately, this data-driven approach fosters stronger customer relationships and drives sustainable growth for Starbucks.\"\n}\n}\n```\n\n* Example 2:\n[Input]\n```INPUT_TEXT\nSlide Title: Use Cases of Google AI in Healthcare\nSlide Content: Google AI can be applied across various healthcare domains to drive meaningful impact. Here are some key use cases:\n* **Improving Diagnostic Accuracy:** Google's AI algorithms can analyze medical images like X-rays, CT scans, and MRIs to assist radiologists in detecting and diagnosing diseases with greater accuracy and speed.\n* **Enhancing Patient Care:** AI-powered chatbots and virtual assistants can provide 24/7 support to patients, answering questions, scheduling appointments, and offering personalized health recommendations.\n* **Optimizing Operational Efficiency:** AI can streamline administrative tasks such as claims processing, appointment scheduling, and billing, freeing up valuable time for healthcare professionals to focus on patient care.\n* **Accelerating Drug Discovery:** Google's AI capabilities can analyze vast datasets of molecular information to identify potential drug candidates and accelerate the drug discovery process.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"2\",\n    \"placeholders\":{\n  \"title\": \"Google AI Use Cases in Healthcare\",\n  \"header1\": \"Diagnostic Accuracy\",\n  \"header1_content\": \"AI algorithms analyze medical images (X-rays, CT scans, MRIs) to assist radiologists in detecting and diagnosing diseases with greater accuracy and speed, improving patient outcomes.\",\n  \"header2\": \"Enhancing Patient Care\",\n  \"header2_content\": \"AI chatbots and virtual assistants offer 24/7 support, answering questions, scheduling appointments, and providing personalized health recommendations, leading to better patient engagement.\",\n  \"header3\": \"Operational Efficiency\",\n  \"header3_content\": \"AI streamlines administrative tasks like claims, scheduling, and billing, freeing healthcare professionals to focus on patient care and reducing operational costs significantly.\",\n  \"header4\": \"Drug Discovery\",\n  \"header4_content\": \"AI analyzes molecular data to identify drug candidates, accelerating the drug discovery process and reducing development time.\"\n}\n}\n```\n\n* Example 3:\n[Input]\n```INPUT_TEXT\nSlide Title: Business Context and Focus\nSlide Content:\n- Review of Starbucks' business objectives and challenges:\n  - Enhance customer experience\n  - Increase revenue generation\n  - Improve operational efficiency\n- How Enterprise Cloud can help Starbucks achieve its goals:\n  - Application Modernization: Modernize Starbucks' applications to improve performance, scalability, and security.\n  - Data Management: Implement a comprehensive data management strategy to improve data quality, accessibility, and security.\n  - Smart Analytics: Leverage smart analytics to gain insights from data and make better decisions.\n  - Artificial Intelligence: Utilize AI to enhance customer experiences, improve operations, and drive innovation.\n  - Security: Implement robust security measures to protect Starbucks' data and systems.\n  - Productivity & Collaboration: Enhance productivity and collaboration among Starbucks' employees.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"7\", \n    \"placeholders\":{\n  \"title\": \"Business Context and Focus\",\n  \"header1\": \"Starbucks Objectives\",\n  \"header1_content1\": \"Enhance customer experience\",\n  \"header1_content2\": \"Increase revenue generation\",\n  \"header1_content3\": \"Improve operational efficiency\",\n  \"header1_content4\": \"Address key business challenges\",\n  \"header2\": \"Application Modernization\",\n  \"header2_content1\": \"Improve performance and scalability\",\n  \"header2_content2\": \"Enhance security posture\",\n  \"header2_content3\": \"Drive innovation and agility\",\n  \"header2_content4\": \"Reduce operational costs\",\n  \"header3\": \"Enterprise Cloud Solutions\",\n  \"header3_content1\": \"Data Management: Improve data quality\",\n  \"header3_content2\": \"Smart Analytics: Gain data insights\",\n  \"header3_content3\": \"AI: Enhance customer experiences\",\n  \"header3_content4\": \"Security: Protect data and systems\"\n}\n}\n\"\"\"\n```"
+}

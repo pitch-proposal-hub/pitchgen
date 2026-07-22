@@ -1,0 +1,123 @@
+{
+    "templates": {
+        "1": {
+            "title": "120 to 130 characters",
+            "header1": "20 to 30 characters",
+            "header1_content": "160 to 170 characters",
+            "header2": "20 to 30 characters",
+            "header2_content": "160 to 170 characters",
+            "header3": "20 to 30 characters",
+            "header3_content": "160 to 170 characters",
+            "header4": "20 to 30 characters",
+            "header4_content": "160 to 170 characters",
+            "header5": "20 to 30 characters",
+            "header5_content": "160 to 170 characters",
+            "header6": "20 to 30 characters",
+            "header6_content": "160 to 170 characters"
+        },
+        "2": {
+            "title": "120 to 130 characters",
+            "header1": "30 to 40 characters",
+            "header1_content": "200 to 210 characters",
+            "header2": "30 to 40 characters",
+            "header2_content": "200 to 210 characters",
+            "header3": "30 to 40 characters",
+            "header3_content": "200 to 210 characters",
+            "header4": "30 to 40 characters",
+            "header4_content": "200 to 210 characters",
+            "header5": "30 to 40 characters",
+            "header5_content": "200 to 210 characters"
+        },
+        "3": {
+            "title": "30 to 40 characters",
+            "item1": "30 to 40 characters",
+            "item2": "30 to 40 characters",
+            "item3": "30 to 40 characters",
+            "item4": "30 to 40 characters",
+            "item5": "30 to 40 characters",
+            "item6": "30 to 40 characters"
+        },
+        "4": {
+            "title": "30 to 40 characters",
+            "header1": "20 to 30 characters",
+            "header1_content": "20 to 40 characters",
+            "header2": "20 to 30 characters",
+            "header2_content": "20 to 40 characters",
+            "header3": "20 to 30 characters",
+            "header3_content": "20 to 40 characters",
+            "header4": "20 to 30 characters",
+            "header4_content": "20 to 40 characters",
+            "header5": "20 to 30 characters",
+            "header5_content": "20 to 40 characters",
+            "header6": "20 to 30 characters",
+            "header6_content": "20 to 40 characters"
+        },
+        "5": {
+            "title": "30 to 40 characters",
+            "header": "30 to 40 characters",
+            "item1": "30 to 40 characters",
+            "item2": "30 to 40 characters",
+            "item3": "30 to 40 characters",
+            "item4": "30 to 40 characters",
+            "item5": "30 to 40 characters"
+        },
+        "6": {
+            "title": "10 to 15 characters",
+            "item1": "10 to 15 characters",
+            "item2": "10 to 15 characters",
+            "item3": "10 to 15 characters",
+            "item4": "10 to 15 characters",
+            "item5": "10 to 15 characters",
+            "item6": "10 to 15 characters",
+            "item7": "10 to 15 characters",
+            "item8": "10 to 15 characters",
+            "item9": "10 to 15 characters",
+            "item10": "10 to 15 characters"
+        },
+        "7": {
+            "title": "30 to 40 characters",
+            "header1": "30 to 40 characters",
+            "header2": "30 to 40 characters",
+            "header3": "30 to 40 characters",
+            "header4": "30 to 40 characters",
+            "header5": "30 to 40 characters"
+        },
+        "8": {
+            "title": "30 to 40 characters",
+            "item1": "30 to 40 characters",
+            "item2": "30 to 40 characters",
+            "item3": "30 to 40 characters",
+            "item4": "30 to 40 characters"
+        },
+        "9": {
+            "title": "30 to 40 characters",
+            "item1": "30 to 40 characters",
+            "item2": "30 to 40 characters",
+            "item3": "30 to 40 characters",
+            "item4": "30 to 40 characters",
+            "item5": "30 to 40 characters",
+            "item6": "30 to 40 characters",
+            "item7": "30 to 40 characters"
+        },
+        "10": {
+            "title": "30 to 40 characters",
+            "header1": "20 to 30 characters",
+            "header1_content": "20 to 50 characters",
+            "header2": "20 to 30 characters",
+            "header2_content": "20 to 50 characters",
+            "header3": "20 to 30 characters",
+            "header3_content": "20 to 50 characters",
+            "header4": "20 to 30 characters",
+            "header4_content": "20 to 50 characters",
+            "header5": "20 to 30 characters",
+            "header5_content": "20 to 50 characters",
+            "header6": "20 to 30 characters",
+            "header6_content": "20 to 50 characters",
+            "header7": "20 to 30 characters",
+            "header7_content": "20 to 50 characters",
+            "header8": "20 to 30 characters",
+            "header8_content": "20 to 50 characters"
+        }
+    },
+    "examples": "* Example 1:\n[Input]\n```INPUT_TEXT\nSlide Title:\nUnlocking Healthcare's Potential: The Power of Google AI\nSlide Content:\n**Google AI is revolutionizing healthcare by driving advancements across several key areas**:\n* **AI-Powered Diagnosis:** Advanced algorithms analyze medical images for faster and more accurate diagnoses, aiding healthcare professionals.\n* **24/7 Virtual Care:** AI-powered assistants provide patients with round-the-clock support, answering questions and scheduling appointments, easing administrative burdens.\n* **Streamlined Operations:** By automating tasks like claims processing and billing, AI frees up valuable time for healthcare professionals to focus on patient care.\n* **Accelerated Drug Discovery:** Google AI tools analyze vast datasets to identify potential drug candidates, significantly speeding up research and development.\n* **Personalized Medicine:** AI personalizes patient experiences by analyzing medical data to suggest targeted treatments and preventive measures.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"2\",\n    \"placeholders\":{\n    \"title\": \"Google AI: Revolutionizing Healthcare & Unlocking Its Potential Through Innovation and Advanced Technology Solutions\",\n    \"header1\": \"AI-Powered Diagnosis\",\n    \"header1_content\": \"Advanced algorithms analyze medical images for faster and more accurate diagnoses, providing invaluable assistance to healthcare professionals in making critical decisions.\",\n    \"header2\": \"24/7 Virtual Care\",\n    \"header2_content\": \"AI-powered assistants offer round-the-clock support, answering patient questions and efficiently scheduling appointments, significantly easing administrative burdens on healthcare staff.\",\n    \"header3\": \"Streamlined Operations\",\n    \"header3_content\": \"By automating tasks like claims processing and billing, AI frees up valuable time for healthcare professionals, enabling them to dedicate more focus and attention to patient care.\",\n    \"header4\": \"Accelerated Drug Discovery\",\n    \"header4_content\": \"Google AI tools analyze vast datasets to identify potential drug candidates, significantly speeding up the research and development process, leading to faster breakthroughs.\",\n    \"header5\": \"Personalized Medicine\",\n    \"header5_content\": \"AI personalizes patient experiences by analyzing medical data to suggest targeted treatments and preventive measures, ensuring more effective and tailored healthcare solutions for individuals.\"\n  }\n}\n```\n\n* Example 2:\n[Input]\n```INPUT_TEXT\nSlide Title: Key Milestones in Starbucks' Digital Transformation Journey\nSlide Content: \n- 2008: Launch of the Starbucks Card mobile app\n- 2011: Introduction of mobile ordering and payment\n- 2015: Launch of the Starbucks Rewards loyalty program\n- 2017: Acquisition of Teavana and Evolution Fresh\n- 2018: Launch of the Starbucks Delivers program\n- 2019: Introduction of the Starbucks Pickup program\n- 2020: Launch of the Starbucks Rewards Visa Card\n- 2021: Introduction of the Starbucks Odyssey loyalty program\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"10\",\n    \"placeholders\": {\n    \"title\": \"Starbucks' Digital Milestones\",\n    \"header1\": \"2008: Mobile App Launch\",\n    \"header1_content\": \"Starbucks Card mobile app launched\",\n    \"header2\": \"2011: Mobile Order & Pay\",\n    \"header2_content\": \"Mobile ordering and payment introduced\",\n    \"header3\": \"2015: Rewards Program\",\n    \"header3_content\": \"Starbucks Rewards loyalty program launched\",\n    \"header4\": \"2017: Acquisitions\",\n    \"header4_content\": \"Acquisition of Teavana & Evolution Fresh\",\n    \"header5\": \"2018: Starbucks Delivers\",\n    \"header5_content\": \"Starbucks Delivers program launched\",\n    \"header6\": \"2019: Pickup Program\",\n    \"header6_content\": \"Starbucks Pickup program introduced\",\n    \"header7\": \"2020: Rewards Visa Card\",\n    \"header7_content\": \"Starbucks Rewards Visa Card launched\",\n    \"header8\": \"2021: Starbucks Odyssey\",\n    \"header8_content\": \"Starbucks Odyssey loyalty program launch\"\n}\n}\n```\n\n* Example 3:\n[Input]\n```INPUT_TEXT\nSlide Title: Use Cases of Google AI in Healthcare\nSlide Content: Google AI can be applied across various healthcare domains to drive meaningful impact. Here are some key use cases:\n* **Improving Diagnostic Accuracy:** Google's AI algorithms can analyze medical images like X-rays, CT scans, and MRIs to assist radiologists in detecting and diagnosing diseases with greater accuracy and speed.\n* **Enhancing Patient Care:** AI-powered chatbots and virtual assistants can provide 24/7 support to patients, answering questions, scheduling appointments, and offering personalized health recommendations.\n* **Optimizing Operational Efficiency:** AI can streamline administrative tasks such as claims processing, appointment scheduling, and billing, freeing up valuable time for healthcare professionals to focus on patient care.\n* **Accelerating Drug Discovery:** Google's AI capabilities can analyze vast datasets of molecular information to identify potential drug candidates and accelerate the drug discovery process.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"8\",\n    \"placeholders\":{\n    \"title\": \"Google AI Use Cases in Healthcare\",\n    \"item1\": \"Improving Diagnostic Accuracy\",\n    \"item2\": \"Enhancing Patient Care\",\n    \"item3\": \"Optimizing Operational Efficiency\",\n    \"item4\": \"Accelerating Drug Discovery\"\n}\n}\n```"
+}

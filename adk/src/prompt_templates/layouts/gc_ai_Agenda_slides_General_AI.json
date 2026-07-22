@@ -1,0 +1,47 @@
+{
+    "templates": {
+        "1": {
+            "item1": "50 to 60 characters",
+            "item2": "50 to 60 characters",
+            "item3": "50 to 60 characters",
+            "item4": "50 to 60 characters",
+            "item5": "50 to 60 characters"
+        },
+        "2": {
+            "item1": "50 to 60 characters",
+            "item2": "50 to 60 characters",
+            "item3": "50 to 60 characters",
+            "item4": "50 to 60 characters",
+            "item5": "50 to 60 characters"
+        },
+        "3": {
+            "item1": "50 to 60 characters",
+            "item2": "50 to 60 characters",
+            "item3": "50 to 60 characters",
+            "item4": "50 to 60 characters",
+            "item5": "50 to 60 characters"
+        },
+        "4": {
+            "item1": "50 to 60 characters",
+            "item2": "50 to 60 characters",
+            "item3": "50 to 60 characters",
+            "item4": "50 to 60 characters",
+            "item5": "50 to 60 characters"
+        },
+        "5": {
+            "item1": "50 to 60 characters",
+            "item2": "50 to 60 characters",
+            "item3": "50 to 60 characters",
+            "item4": "50 to 60 characters",
+            "item5": "50 to 60 characters"
+        },
+        "6": {
+            "item1": "50 to 60 characters",
+            "item2": "50 to 60 characters",
+            "item3": "50 to 60 characters",
+            "item4": "50 to 60 characters",
+            "item5": "50 to 60 characters"
+        }
+    },
+    "examples": "* Example 1:\n[Input]\n```INPUT_TEXT\nSlide Title: Analytics + Cloud Platform for Customer Insights\nSlide Content: \n- Google Analytics 360 (GA360) and Cloud Platform (GCP) can provide valuable customer insights for Starbucks.\n- GA360 is a powerful analytics platform that can collect and analyze data from a variety of sources, including websites, mobile apps, and offline transactions.\n- GCP provides a range of cloud-based services that can be used to process and analyze data, including BigQuery, Cloud Dataflow, and Cloud Machine Learning.\n- By combining GA360 and GCP, Starbucks can gain a deeper understanding of their customers' behavior and preferences.\n- This information can be used to improve marketing campaigns, customer engagement strategies, and product development.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"3\",\n    \"placeholders\": {\n        \"item1\": \"Google Analytics 360 (GA360) and Cloud Platform (GCP).\",\n        \"item2\": \"A360 a powerful analytics platform\",\n        \"item3\": \"GCP provides cloud-based services.\",\n        \"item4\": \"Starbucks gain a deeper understanding of their customers' behavior and preferences.\",\n        \"item5\": \"improve marketing campaigns, customer engagement strategies, and product development.\"\n  }\n}\n```\n\n* Example 2:\n[Input]\n```INPUT_TEXT\nSlide Title: Use Cases of Google AI in Healthcare\nSlide Content: Google AI can be applied across various healthcare domains to drive meaningful impact. Here are some key use cases:\n* **Improving Diagnostic Accuracy:** Google's AI algorithms can analyze medical images like X-rays, CT scans, and MRIs to assist radiologists in detecting and diagnosing diseases with greater accuracy and speed.\n* **Enhancing Patient Care:** AI-powered chatbots and virtual assistants can provide 24/7 support to patients, answering questions, scheduling appointments, and offering personalized health recommendations.\n* **Optimizing Operational Efficiency:** AI can streamline administrative tasks such as claims processing, appointment scheduling, and billing, freeing up valuable time for healthcare professionals to focus on patient care.\n* **Accelerating Drug Discovery:** Google's AI capabilities can analyze vast datasets of molecular information to identify potential drug candidates and accelerate the drug discovery process.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"2\",\n    \"placeholders\":{\n        \"item1\": \"Use Cases of Google AI in Healthcare\",\n        \"item2\": \"Improving Diagnostic Accuracy.\",\n        \"item3\": \"Enhancing Patient Care\",\n        \"item4\": \"Optimizing Operational Efficiency.\",\n        \"item5\": \"Accelerating Drug Discovery.\"\n  }\n}\n```"
+}

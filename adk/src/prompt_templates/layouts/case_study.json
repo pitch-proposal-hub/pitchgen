@@ -1,0 +1,64 @@
+{
+    "templates": {
+        "1": {
+            "title": "30 to 40 characters",
+            "item1": "30 to 40 characters",
+            "item2": "30 to 40 characters",
+            "item3": "30 to 40 characters",
+            "item4": "350 to 400 characters",
+            "header1": "30 to 40 characters",
+            "header1_content": "30 to 40 characters"
+        },
+        "2": {
+            "title": "30 to 40 characters",
+            "item1": "30 to 40 characters",
+            "item2": "30 to 40 characters",
+            "item3": "30 to 40 characters",
+            "item4": "30 to 40 characters",
+            "item5": "350 to 400 characters",
+            "header1": "30 to 40 characters",
+            "header1_content": "30 to 40 characters"
+        },
+        "3": {
+            "title": "30 to 40 characters",
+            "item1": "30 to 40 characters",
+            "item2": "30 to 40 characters",
+            "item3": "30 to 40 characters",
+            "item4": "350 to 400 characters"
+        },
+        "4": {
+            "title": "30 to 40 characters",
+            "subtitle": "30 to 40 characters",
+            "item1": "30 to 40 characters",
+            "item2": "30 to 40 characters",
+            "item3": "30 to 40 characters",
+            "item4": "150 to 300 characters"
+        },
+        "5": {
+            "title": "30 to 40 characters",
+            "header1": "50 to 80 characters",
+            "header1_content": "350 to 390 characters",
+            "header2": "50 to 80 characters",
+            "header2_content": "350 to 390 characters"
+        },
+        "6": {
+            "title": "30 to 40 characters",
+            "subtitle1": "30 to 40 characters",
+            "subtitle1_content": "150 to 190 characters",
+            "subtitle2": "30 to 40 characters",
+            "subtitle2_content": "150 to 190 characters"
+        },
+        "7": {
+            "title": "30 to 40 characters",
+            "item1": "30 to 40 characters",
+            "item1_content": "250 to 290 characters",
+            "item2": "30 to 40 characters",
+            "item2_content": "250 to 290 characters",
+            "item3": "30 to 40 characters",
+            "item3_content": "250 to 290 characters",
+            "item4": "30 to 40 characters",
+            "item4_content": "250 to 290 characters"
+        }
+    },
+    "examples": "* Example 1:\n[Input]\n```INPUT_TEXT\nSlide Title: Welcome to the presentation on how Enterprise Cloud can help Tata Starbucks Private Limited enhance customer experience, revenue generation, and operational efficiency.\nSlide Content: Enterprise Cloud offers a comprehensive suite of services and capabilities that can benefit Tata Starbucks Private Limited, including:\n- Application Modernization: Migrate and modernize your applications to the cloud to improve performance, scalability, and security.\n- Data Management: Manage and analyze your data in the cloud to gain insights and make better decisions.\n- Smart Analytics: Use machine learning and artificial intelligence to analyze your data and identify trends and patterns.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"4\",\n    \"placeholders\":{\n  \"title\": \"Enterprise Cloud for Tata Starbucks\",\n  \"subtitle\": \"Enhance CX, Revenue & Efficiency\",\n  \"item1\": \"Application Modernization\",\n  \"item2\": \"Data Management\",\n  \"item3\": \"Smart Analytics\",\n  \"item4\": \"Enterprise Cloud offers services to benefit Tata Starbucks, including application modernization for performance, data management for insights, and smart analytics using AI to identify trends.\"\n}\n}\n\"\"\"\n```\n\n\n* Example 2:\n[Input]\n```INPUT_TEXT\nSlide Title: Use Cases of Google AI in Healthcare\nSlide Content: Google AI can be applied across various healthcare domains to drive meaningful impact. Here are some key use cases:\n* **Improving Diagnostic Accuracy:** Google's AI algorithms can analyze medical images like X-rays, CT scans, and MRIs to assist radiologists in detecting and diagnosing diseases with greater accuracy and speed.\n* **Enhancing Patient Care:** AI-powered chatbots and virtual assistants can provide 24/7 support to patients, answering questions, scheduling appointments, and offering personalized health recommendations.\n* **Optimizing Operational Efficiency:** AI can streamline administrative tasks such as claims processing, appointment scheduling, and billing, freeing up valuable time for healthcare professionals to focus on patient care.\n* **Accelerating Drug Discovery:** Google's AI capabilities can analyze vast datasets of molecular information to identify potential drug candidates and accelerate the drug discovery process.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"7\",\n    \"placeholders\":{\n    \"title\": \"Google AI Use Cases in Healthcare\",\n    \"item1\": \"Improving Diagnostic Accuracy\",\n    \"item1_content\": \"Google's AI algorithms analyze medical images (X-rays, CT scans, MRIs) to assist radiologists. This leads to detecting and diagnosing diseases with greater accuracy and speed, ultimately improving patient outcomes through earlier and more precise diagnoses. AI's ability to process complex visual data enhances the efficiency of diagnostic procedures.\",\n    \"item2\": \"Enhancing Patient Care\",\n    \"item2_content\": \"AI-powered chatbots and virtual assistants offer 24/7 patient support. They answer questions, schedule appointments, and provide personalized health recommendations. This constant availability improves patient engagement and satisfaction, ensuring timely access to information and care, and freeing up medical staff.\",\n    \"item3\": \"Optimizing Operational Efficiency\",\n    \"item3_content\": \"AI streamlines administrative tasks like claims processing, appointment scheduling, and billing. This automation frees up healthcare professionals, allowing them to focus more on direct patient care. Reduced administrative burden leads to improved staff morale and a more efficient healthcare system overall, benefiting both providers and patients.\",\n    \"item4\": \"Accelerating Drug Discovery\",\n    \"item4_content\": \"Google's AI analyzes vast datasets of molecular information to identify potential drug candidates. This accelerates the drug discovery process, potentially leading to faster development of new treatments and therapies. AI's ability to identify patterns and insights from complex data significantly reduces the time and cost associated with traditional drug discovery methods.\"\n  }\n}\n```\n\n* Example 3:\n[Input]\n```INPUT_TEXT\nSlide Title: Business Context and Focus\nSlide Content:\n- Review of Starbucks' business objectives and challenges:\n  - Enhance customer experience\n  - Increase revenue generation\n  - Improve operational efficiency\n- How Enterprise Cloud can help Starbucks achieve its goals:\n  - Application Modernization: Modernize Starbucks' applications to improve performance, scalability, and security.\n  - Data Management: Implement a comprehensive data management strategy to improve data quality, accessibility, and security.\n  - Smart Analytics: Leverage smart analytics to gain insights from data and make better decisions.\n  - Artificial Intelligence: Utilize AI to enhance customer experiences, improve operations, and drive innovation.\n  - Security: Implement robust security measures to protect Starbucks' data and systems.\n  - Productivity & Collaboration: Enhance productivity and collaboration among Starbucks' employees.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"5\", \n    \"placeholders\":{\n  \"title\": \"Business Context & Focus\",\n  \"header1\": \"Starbucks' Objectives & Challenges\",\n  \"header1_content\": \"Starbucks aims to enhance customer experience, increase revenue, and improve efficiency. Key challenges include modernizing applications for performance and security, managing data for quality and accessibility, and leveraging analytics for better decisions. They also need to implement robust security measures and improve employee productivity and collaboration to achieve their business goals in a competitive market.\",\n  \"header2\": \"Enterprise Cloud's Solution for Starbucks\",\n  \"header2_content\": \"Enterprise Cloud offers solutions like Application Modernization to improve performance and security, Data Management for quality and accessibility, Smart Analytics for data-driven decisions, and AI to enhance customer experiences and operations. Robust security measures protect data, while Productivity & Collaboration tools improve teamwork. These solutions directly address Starbucks' challenges and support their objectives for growth and innovation.\"\n}\n}\n```"
+}

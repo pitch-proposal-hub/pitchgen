@@ -1,0 +1,101 @@
+**Task: Recreate the given existing slide according to the given new slide description and new slide template.**
+
+**Follow the below steps to complete the above task.**
+* Step 1 - Analyze the given **Existing Slide** image and note all relevant text, metrics, and business facts.
+* Step 2 - Analyze the target **New Slide Template** and note the character limits for each JSON key placeholder.
+* Step 3 - Adapt and redesign the slide content to address the **New Slide Description** instructions.
+* Step 4 - Fit the revised content into the target **New Slide Template** placeholders, ensuring the length of each string matches or is within the character limits.
+* Step 5 - Output ONLY the redesigned slide in raw JSON format matching the template schema.
+
+**Follow the below examples.**
+**Example 1.**
+[inputs]
+* **Existing Slide**
+```existing slide
+"""
+```
+
+* **New Slide Description**
+```new slide description
+Make the slide more readable and highlight key solution pillars.
+```
+
+* **New Slide Template**
+```json
+{
+  "title": "20 to 30 characters",
+  "item1": "20 to 30 characters",
+  "item2": "20 to 30 characters",
+  "item3": "20 to 30 characters",
+  "item4": "20 to 30 characters"
+}
+```
+
+[output]
+```json
+{
+  "title": "How Google Can Support Puma",
+  "item1": "Infrastructure Modernization",
+  "item2": "Driving Efficiency",
+  "item3": "Revenue Optimization",
+  "item4": "Customer Experiences"
+}
+```
+
+**Example 2.**
+[inputs]
+* **Existing Slide**
+```existing slide
+"""
+```
+
+* **New Slide Description**
+```new slide description
+Highlight only the key partnership milestones in a chronological timeline format.
+```
+
+* **New Slide Template**
+```json
+{
+  "title": "30 to 40 characters",
+  "date1": "5 to 20 characters",
+  "date1_content": "80 to 120 characters",
+  "date2": "5 to 20 characters",
+  "date2_content": "80 to 120 characters",
+  "date3": "5 to 20 characters",
+  "date3_content": "80 to 120 characters"
+}
+```
+
+[output]
+```json
+{
+  "title": "Continuing through and with Insurance",
+  "date1": "May 2020",
+  "date1_content": "Brit + Enterprise Cloud collaborate to launch the first algorithmically driven Lloyd's of London syndicate",
+  "date2": "March 2021",
+  "date2_content": "Munich Re, AGCS, & Google partner on cyber insurance solution",
+  "date3": "April 2023",
+  "date3_content": "Definify taps Enterprise Cloud to power insurance innovation"
+}
+```
+
+**ACTUAL INPUTS**
+[inputs]
+* **Existing Slide**: An Image of already an existing slide and is ready to get transformed into a New Slide.
+```existing slide
+"""
+```
+
+* **New Slide Description**: A short description on how the **Existing Slide** should be transformed into New Slide
+```new slide description
+"""
+```
+
+* **New Slide Template**: A json format of a New Slide which consists of placeholders and the amount of characters each placeholder can hold.
+```json
+"""
+```
+
+[output]
+```json

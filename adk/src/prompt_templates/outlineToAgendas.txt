@@ -1,0 +1,338 @@
+Group the outline_items sequentially based on their order in the list.
+Create distinct agendas based on the thematic grouping of related items.
+Following are the interpretations of the input fields:
+- "audience": sets the tone of the agenda items.
+- "industry": align the agenda to industry trends & challenges.
+- "region": consider the trends, rules and regulations in the region while building the agenda.
+Consider the audience, industry, and region to tailor the agenda titles and content.
+Aim for cohesive and well-defined agendas that are relevant and engaging for the target audience.
+
+Follow the below RULES STRICTLY.
+RULES:
+- outline items and agendas SHOULD NOT be SAME.
+- try your BEST to GROUP the outline items. 
+- grouping MUST be done "IN SEQUENCE" of outline items.
+- "title" field can be of ATMOST 35 characters.
+- MINIMUM number of agendas: 4
+- MAXIMUM number of agendas: 10
+- markdown text is NOT ALLOWED in output.
+- provide the content in plain text without any markdown formatting.
+
+[input]
+{
+  "audience": "CMO, CMO + Director of Digital Channels, Director of Intelligence, Chief Publishing Officer",
+  "industry": "Media & Entertainment",
+  "region": "APAC",
+	"outline_items": [
+    "Overall Business Objective and Primary goals",
+    "Business Drivers for Cloud Migration",
+    "Cloud Native: Measure Success in terms of Business Value",
+    "Cloud enabling increases investment in higher value digital initiatives",
+    "Games have become live services",
+    "Customer expectations have shifted, and games companies are turning to cloud",
+    "Enterprise Cloud empowers Gaming companies to build great player experiences by minimizing infrastructure complexity and accelerating data insights",
+    "Achieve your gaming goals with our smart analytics platform",
+    "Why Enterprise Cloud Smart Analytics",
+    "End-to-end protected governed cloud platform",
+    "Simple scale to meet your biggest gaming needs",
+    "Simplified machine learning capabilities for game developers",
+    "Looker is a completely flexible analytics platform",
+    "Insights for everyone",
+    "Powering custom data experiences for gaming companies",
+    "Understand and serve your players better than anybody else with AI-powered analytics from Enterprise Cloud",
+    "Only Enterprise Cloud offers a comprehensive platform for all your business’ data needs",
+    "Customer case studies",
+    "Next Steps for Square Enix & Enterprise Cloud data partnership"
+  ]
+}
+[output]
+{
+	"agendas": {
+		"1": {
+			"title": "Business Objectives & Cloud",
+			"parts": [
+				"Overall Business Objective and Primary goals",
+				"Business Drivers for Cloud Migration",
+				"Cloud Native: Measure Success in terms of Business Value",
+				"Cloud enabling increases investment in higher value digital initiatives"
+			]
+		},
+		"2": {
+			"title": "Gaming in the Cloud Era",
+			"parts": [
+				"Games have become live services",
+				"Customer expectations have shifted, and games companies are turning to cloud",
+				"Enterprise Cloud empowers Gaming companies to build great player experiences by minimizing infrastructure complexity and accelerating data insights",
+				"Achieve your gaming goals with our smart analytics platform",
+				"Why Enterprise Cloud Smart Analytics",
+				"End-to-end protected governed cloud platform",
+				"Simple scale to meet your biggest gaming needs",
+				"Simplified machine learning capabilities for game developers"
+			]
+		},
+		"3": {
+			"title": "Cloud Analytics for Gaming",
+			"parts": [
+				"Looker is a completely flexible analytics platform",
+				"Insights for everyone",
+				"Powering custom data experiences for gaming companies",
+				"Understand and serve your players better than anybody else with AI-powered analytics from Enterprise Cloud",
+				"Only Enterprise Cloud offers a comprehensive platform for all your business’ data needs"
+			]
+		},
+		"4": {
+			"title": "Customer Success",
+			"parts": [
+				"Customer case studies"
+			]
+		},
+     "5": {
+			"title": "Next Steps",
+			"parts": [
+				"Next Steps for Square Enix & Enterprise Cloud data partnership"
+			]
+		}
+	}
+}
+
+
+
+
+[input]
+{
+  "audience": "CEO, CTO, Line of Business",
+  "industry": "Healthcare in Healthcare & Life Sciences",
+	"outline_items": [
+    "Healthcare & Life Sciences has been a priority for Enterprise Cloud",
+    "Leverage the value and expertise of the whole Alphabet ecosystem",
+    "Values of a Strategic Partnership with Enterprise Cloud",
+    "Why Enterprise Cloud for SAP",
+    "Infrastructure Resilience",
+    "Secure Global Network",
+    "Live Migration",
+    "Enterprise Cloud all-VM based infrastructure reduces downtime revenue loss",
+    "Simplify and Automate SAP deployment with guides and templates",
+    "Enterprise Cloud and SAP provide a complete foundation for Actionable Insights",
+    "The benefits of running SAP on Enterprise Cloud",
+    "A winning combination: Enterprise Cloud Premium Support & Technical Account Management",
+    "With Premium Support, we will be with you every step of the way",
+    "On Enterprise Cloud your data will be Safe & Secure",
+    "Enterprise Cloud provides controls to ensure your data remains secure",
+    "Enterprise Cloud can provide the foundation, to 10X Uniphar PLC",
+    "With Google Workspace working to enhance efficiency and collaboration",
+    "Chrome OS and Beyond Corp ensuring that security remains a priority",
+    "Your Transformation Journey with Enterprise Cloud"
+  ]
+}
+
+[output]
+{
+  "agendas": {
+    "1": {
+      "title": "Strategic Healthcare Partner",
+      "parts": [
+        "Healthcare & Life Sciences has been a priority for Enterprise Cloud",
+        "Leverage the value and expertise of the whole Alphabet ecosystem",
+        "Values of a Strategic Partnership with Enterprise Cloud"
+      ]
+    },
+    "2": {
+      "title": "Why Enterprise Cloud for SAP",
+      "parts": [
+        "Why Enterprise Cloud for SAP",
+        "Infrastructure Resilience",
+        "Secure Global Network",
+        "Live Migration",
+        "Enterprise Cloud all-VM based infrastructure reduces downtime revenue loss",
+        "Simplify and Automate SAP deployment with guides and templates"
+      ]
+    },
+    "3": {
+      "title": "Insights with Google & SAP",
+      "parts": [
+        "Enterprise Cloud and SAP provide a complete foundation for Actionable Insights",
+        "The benefits of running SAP on Enterprise Cloud",
+        "A winning combination: Enterprise Cloud Premium Support & Technical Account Management",
+        "With Premium Support, we will be with you every step of the way"
+      ]
+    },
+    "4": {
+      "title": "Data Security and Compliance",
+      "parts": [
+        "On Enterprise Cloud your data will be Safe & Secure",
+        "Enterprise Cloud provides controls to ensure your data remains secure"
+      ]
+    },
+    "5": {
+      "title": "Uniphar PLC Transformation",
+      "parts": [
+        "Enterprise Cloud can provide the foundation, to 10X Uniphar PLC",
+        "With Google Workspace working to enhance efficiency and collaboration",
+        "Chrome OS and Beyond Corp ensuring that security remains a priority"
+      ]
+    },
+     "6": {
+      "title": "Next Steps",
+      "parts": [
+        "Your Transformation Journey with Enterprise Cloud"
+      ]
+    }
+  }
+}
+
+[input]
+{
+  "audience": "Leadership of Cielo",
+  "industry": "Payments & Cards in Financial Services",
+  "region": "LATAM",
+  "outline_items": [
+    "Financial services companies face continued pressure in the race for digital transformation",
+    "Legacy data solutions struggle to provide actionable, real-time insights at scale",
+    "The consequence of status quo: fragmented data silos and regulatory compliance risks",
+    "Envisioning the Future: Democratizing data access and scaling AI securely across the enterprise",
+    "The New Way: Driving organizational agility, cost efficiency, and trusted data custodianship",
+    "Why Cielo chooses Enterprise Cloud as its strategic AI and Data co-innovation partner",
+    "Unifying your data fabric with Enterprise Cloud's serverless, fully managed BigQuery Studio",
+    "What if you could query data cross-cloud instantly? BigQuery Omni removes data portability lag",
+    "Accelerating developer velocity and code modernization using Gemini Code Assist",
+    "Building and deploying secure, custom no-code workplace agents in Agent Studio",
+    "How Scotiabank and Max Life Insurance transformed customer experiences with Enterprise Cloud AI",
+    "Your Transformation Journey: Next steps for a secure, governed, and scalable deployment"
+  ]
+}
+[output]
+{
+	"agendas": {
+		"1": {
+			"title": "Industry Challenges",
+			"parts": [
+				"Financial services companies face continued pressure in the race for digital transformation",
+				"Legacy data solutions struggle to provide actionable, real-time insights at scale",
+				"The consequence of status quo: fragmented data silos and regulatory compliance risks"
+			]
+		},
+		"2": {
+			"title": "Envisioning the Future",
+			"parts": [
+				"Envisioning the Future: Democratizing data access and scaling AI securely across the enterprise",
+				"The New Way: Driving organizational agility, cost efficiency, and trusted data custodianship"
+			]
+		},
+		"3": {
+			"title": "Why Enterprise Cloud for Cielo",
+			"parts": [
+				"Why Cielo chooses Enterprise Cloud as its strategic AI and Data co-innovation partner"
+			]
+		},
+		"4": {
+			"title": "Modern Data Cloud Platform",
+			"parts": [
+				"Unifying your data fabric with Enterprise Cloud's serverless, fully managed BigQuery Studio",
+				"What if you could query data cross-cloud instantly? BigQuery Omni removes data portability lag"
+			]
+		},
+		"5": {
+			"title": "Accelerating Innovation with AI",
+			"parts": [
+				"Accelerating developer velocity and code modernization using Gemini Code Assist",
+				"Building and deploying secure, custom no-code workplace agents in Agent Studio"
+			]
+		},
+		"6": {
+			"title": "Customer Success",
+			"parts": [
+				"How Scotiabank and Max Life Insurance transformed customer experiences with Enterprise Cloud AI"
+			]
+		},
+		"7": {
+			"title": "Next Steps",
+			"parts": [
+				"Your Transformation Journey: Next steps for a secure, governed, and scalable deployment"
+			]
+		}
+	}
+}
+[input]
+{
+  "audience": "CTO",
+  "industry": "Automotive in Manufacturing",
+  "region": "NORTHAM",
+  "outline_items": [
+    "Technology barriers for Manufacturers that hinder Industry 4.0",
+    "Various advantages of Enterprise Cloud for Nissan",
+    "Enterprise Cloud can help Nissan drive efficiency throughout the value chain",
+    "Unlocking factory data and coupling with Enterprise Cloud's advanced AI and ML tools",
+    "Our AI solutions enable a connected factory setup",
+    "Deploy AI/ML in industrial applications at scale",
+    "Enterprise Cloud Visual inspection is optimized for every step of the process",
+    "Visual Inspection AI supports three different ways to detect defects",
+    "Google Visual Inspection AI unlocks new use-cases for manufacturers",
+    "Enterprise Cloud Visual Inspection contributes to better business KPIs",
+    "In-vehicle, Android Automotive and Google Automotive Services (GAS) have been selected by many leading automotive organizations globally",
+    "Enterprise Cloud provides high performance computing for simulations",
+    "Leverage Gemini Enterprise Plus and our partner ecosystem to build your AI solutions leveraging the supply chain twin data",
+    "Build and operationalize machine learning solutions directly in BigQuery",
+    "Connect machines, products, and applications with your data at scale",
+    "BigQuery combines the best of functionality and simplicity",
+    "Use cases",
+    "We invite you to create the future with us"
+  ]
+}
+[output]
+{
+	"agendas": {
+		"1": {
+			"title": "Industry 4.0 Challenges & Value",
+			"parts": [
+				"Technology barriers for Manufacturers that hinder Industry 4.0",
+				"Various advantages of Enterprise Cloud for Nissan",
+				"Enterprise Cloud can help Nissan drive efficiency throughout the value chain"
+			]
+		},
+		"2": {
+			"title": "Data & AI for Manufacturing",
+			"parts": [
+				"Unlocking factory data and coupling with Enterprise Cloud's advanced AI and ML tools",
+				"Our AI solutions enable a connected factory setup",
+				"Deploy AI/ML in industrial applications at scale"
+			]
+		},
+		"3": {
+			"title": "Visual Inspection AI Optimization",
+			"parts": [
+				"Enterprise Cloud Visual inspection is optimized for every step of the process",
+				"Visual Inspection AI supports three different ways to detect defects",
+				"Google Visual Inspection AI unlocks new use-cases for manufacturers",
+				"Enterprise Cloud Visual Inspection contributes to better business KPIs"
+			]
+		},
+		"4": {
+			"title": "Connected Vehicle & Supply Chain",
+			"parts": [
+				"In-vehicle, Android Automotive and Google Automotive Services (GAS) have been selected by many leading automotive organizations globally",
+				"Enterprise Cloud provides high performance computing for simulations",
+				"Leverage Gemini Enterprise Plus and our partner ecosystem to build your AI solutions leveraging the supply chain twin data"
+			]
+		},
+		"5": {
+			"title": "AI Solutions with BigQuery",
+			"parts": [
+				"Build and operationalize machine learning solutions directly in BigQuery",
+				"Connect machines, products, and applications with your data at scale",
+				"BigQuery combines the best of functionality and simplicity"
+			]
+		},
+		"6": {
+			"title": "Use Cases",
+			"parts": [
+				"Use cases"
+			]
+		},
+		"7": {
+			"title": "Next Steps",
+			"parts": [
+				"We invite you to create the future with us"
+			]
+		}
+    }
+}
