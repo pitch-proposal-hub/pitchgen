@@ -40,14 +40,14 @@ name = "aiohttp"
 version = "3.14.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "aiohappyeyeballs", marker = "sys_platform == 'linux'" },
-    { name = "aiosignal", marker = "sys_platform == 'linux'" },
-    { name = "attrs", marker = "sys_platform == 'linux'" },
-    { name = "frozenlist", marker = "sys_platform == 'linux'" },
-    { name = "multidict", marker = "sys_platform == 'linux'" },
-    { name = "propcache", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
-    { name = "yarl", marker = "sys_platform == 'linux'" },
+    { name = "aiohappyeyeballs" },
+    { name = "aiosignal" },
+    { name = "attrs" },
+    { name = "frozenlist" },
+    { name = "multidict" },
+    { name = "propcache" },
+    { name = "typing-extensions" },
+    { name = "yarl" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/ee/ab/93ce242f899b68c51b0578c027aafa791ab3614cb9345fa5d37b5f5c8e3e/aiohttp-3.14.0.tar.gz", hash = "sha256:2882de819734c715fd1b9c11c97e09fa020d14438203d1d354d8ed1702791c9b", size = 7940674, upload-time = "2026-06-01T19:41:02.763Z" }
 wheels = [
@@ -70,8 +70,8 @@ name = "aiosignal"
 version = "1.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "frozenlist", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "frozenlist" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/61/62/06741b579156360248d1ec624842ad0edf697050bbaf7c3e46394e106ad1/aiosignal-1.4.0.tar.gz", hash = "sha256:f47eecd9468083c2029cc99945502cb7708b082c232f9aca65da147157b251c7", size = 25007, upload-time = "2025-07-03T22:54:43.528Z" }
 wheels = [
@@ -110,8 +110,8 @@ name = "anyio"
 version = "4.13.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "idna", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "idna" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/19/14/2c5dd9f512b66549ae92767a9c7b330ae88e1932ca57876909410251fe13/anyio-4.13.0.tar.gz", hash = "sha256:334b70e641fd2221c1505b3890c69882fe4a2df910cba14d97019b90b24439dc", size = 231622, upload-time = "2026-03-24T12:59:09.671Z" }
 wheels = [
@@ -132,8 +132,8 @@ name = "authlib"
 version = "1.7.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cryptography", marker = "sys_platform == 'linux'" },
-    { name = "joserfc", marker = "sys_platform == 'linux'" },
+    { name = "cryptography" },
+    { name = "joserfc" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/36/98/7d93f30d029643c0275dbc0bd6d5a6f670661ee6c9a94d93af7ab4887600/authlib-1.7.2.tar.gz", hash = "sha256:2cea25fefcd4e7173bdf1372c0afc265c8034b23a8cd5dcb6a9164b826c64231", size = 176511, upload-time = "2026-05-06T08:10:23.116Z" }
 wheels = [
@@ -154,7 +154,7 @@ name = "cffi"
 version = "2.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pycparser", marker = "implementation_name != 'PyPy' and sys_platform == 'linux'" },
+    { name = "pycparser", marker = "implementation_name != 'PyPy'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz", hash = "sha256:44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529", size = 523588, upload-time = "2025-09-08T23:24:04.541Z" }
 wheels = [
@@ -202,12 +202,12 @@ name = "cloud-sql-python-connector"
 version = "1.20.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "aiofiles", marker = "sys_platform == 'linux'" },
-    { name = "aiohttp", marker = "sys_platform == 'linux'" },
-    { name = "cryptography", marker = "sys_platform == 'linux'" },
-    { name = "dnspython", marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'linux'" },
+    { name = "aiofiles" },
+    { name = "aiohttp" },
+    { name = "cryptography" },
+    { name = "dnspython" },
+    { name = "google-auth" },
+    { name = "requests" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/ad/87/3f424bab34980b7996514d5232134ef868e412a9dcde1ba20345d674f62f/cloud_sql_python_connector-1.20.3.tar.gz", hash = "sha256:4b6f5c376982206fb0e62545c86d23ee49d045f2e71da817a326654cd169149a", size = 44211, upload-time = "2026-05-27T01:38:29.02Z" }
 wheels = [
@@ -246,7 +246,7 @@ name = "cryptography"
 version = "48.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cffi", marker = "platform_python_implementation != 'PyPy' and sys_platform == 'linux'" },
+    { name = "cffi", marker = "platform_python_implementation != 'PyPy'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/9f/a9/db8f313fdcd85d767d4973515e1db101f9c71f95fced83233de224673757/cryptography-48.0.0.tar.gz", hash = "sha256:5c3932f4436d1cccb036cb0eaef46e6e2db91035166f1ad6505c3c9d5a635920", size = 832984, upload-time = "2026-05-04T22:59:38.133Z" }
 wheels = [
@@ -284,6 +284,15 @@ wheels = [
 ]
 
 [[package]]
+name = "defusedxml"
+version = "0.7.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69", size = 75520, upload-time = "2021-03-08T10:59:26.269Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/6c/aa3f2f849e01cb6a001cd8554a88d4c77c5c1a31c95bdf1cf9301e6d9ef4/defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61", size = 25604, upload-time = "2021-03-08T10:59:24.45Z" },
+]
+
+[[package]]
 name = "distro"
 version = "1.9.0"
 source = { registry = "https://pypi.org/simple" }
@@ -315,8 +324,8 @@ name = "faiss-cpu"
 version = "1.14.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "numpy", marker = "sys_platform == 'linux'" },
-    { name = "packaging", marker = "sys_platform == 'linux'" },
+    { name = "numpy" },
+    { name = "packaging" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/35/b4/d130a1908ad548671cd5ee9a1b537c7d3753cfdf0b2b134f3c10ccc6b537/faiss_cpu-1.14.2-cp310-abi3-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:b340c33212351f04d4f167cb7b22c9e756705a634d3b7b58987651f3ba1f6217", size = 9592827, upload-time = "2026-05-22T19:58:30.772Z" },
@@ -328,11 +337,11 @@ name = "fastapi"
 version = "0.136.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "annotated-doc", marker = "sys_platform == 'linux'" },
-    { name = "pydantic", marker = "sys_platform == 'linux'" },
-    { name = "starlette", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
-    { name = "typing-inspection", marker = "sys_platform == 'linux'" },
+    { name = "annotated-doc" },
+    { name = "pydantic" },
+    { name = "starlette" },
+    { name = "typing-extensions" },
+    { name = "typing-inspection" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/81/2d/ff8d91d7b564d464629a0fd50a4489c97fcb836ac230bf3a7269232a9b1f/fastapi-0.136.3.tar.gz", hash = "sha256:e487fae93ad408e6f47641ee4dfe389864fd7bec92e547ea8498fc13f43e83ab", size = 396410, upload-time = "2026-05-23T18:53:15.192Z" }
 wheels = [
@@ -404,14 +413,14 @@ name = "gcsfs"
 version = "2026.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "aiohttp", marker = "sys_platform == 'linux'" },
-    { name = "decorator", marker = "sys_platform == 'linux'" },
-    { name = "fsspec", marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "google-auth-oauthlib", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-storage", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-storage-control", marker = "sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'linux'" },
+    { name = "aiohttp" },
+    { name = "decorator" },
+    { name = "fsspec" },
+    { name = "google-auth" },
+    { name = "google-auth-oauthlib" },
+    { name = "google-cloud-storage" },
+    { name = "google-cloud-storage-control" },
+    { name = "requests" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/78/da/915029bc34b541c5ac3e6ba8b32ca14d278cd17588bbbb6e4b297a944cd9/gcsfs-2026.5.0.tar.gz", hash = "sha256:283941a7a53bdbfed2133f6b471c640e61c0a1379eb52280a26618b83acc49c0", size = 922614, upload-time = "2026-05-07T15:15:51.484Z" }
 wheels = [
@@ -432,30 +441,30 @@ name = "google-adk"
 version = "2.2.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "aiosqlite", marker = "sys_platform == 'linux'" },
-    { name = "authlib", marker = "sys_platform == 'linux'" },
-    { name = "click", marker = "sys_platform == 'linux'" },
-    { name = "fastapi", marker = "sys_platform == 'linux'" },
-    { name = "google-auth", extra = ["pyopenssl"], marker = "sys_platform == 'linux'" },
-    { name = "google-genai", marker = "sys_platform == 'linux'" },
-    { name = "graphviz", marker = "sys_platform == 'linux'" },
-    { name = "httpx", marker = "sys_platform == 'linux'" },
-    { name = "jsonschema", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-sdk", marker = "sys_platform == 'linux'" },
-    { name = "packaging", marker = "sys_platform == 'linux'" },
-    { name = "pydantic", marker = "sys_platform == 'linux'" },
-    { name = "python-dotenv", marker = "sys_platform == 'linux'" },
-    { name = "python-multipart", marker = "sys_platform == 'linux'" },
-    { name = "pyyaml", marker = "sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'linux'" },
-    { name = "starlette", marker = "sys_platform == 'linux'" },
-    { name = "tenacity", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
-    { name = "tzlocal", marker = "sys_platform == 'linux'" },
-    { name = "uvicorn", marker = "sys_platform == 'linux'" },
-    { name = "watchdog", marker = "sys_platform == 'linux'" },
-    { name = "websockets", marker = "sys_platform == 'linux'" },
+    { name = "aiosqlite" },
+    { name = "authlib" },
+    { name = "click" },
+    { name = "fastapi" },
+    { name = "google-auth", extra = ["pyopenssl"] },
+    { name = "google-genai" },
+    { name = "graphviz" },
+    { name = "httpx" },
+    { name = "jsonschema" },
+    { name = "opentelemetry-api" },
+    { name = "opentelemetry-sdk" },
+    { name = "packaging" },
+    { name = "pydantic" },
+    { name = "python-dotenv" },
+    { name = "python-multipart" },
+    { name = "pyyaml" },
+    { name = "requests" },
+    { name = "starlette" },
+    { name = "tenacity" },
+    { name = "typing-extensions" },
+    { name = "tzlocal" },
+    { name = "uvicorn" },
+    { name = "watchdog" },
+    { name = "websockets" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/4a/65/3ff3f50b10dac3323ddecd694515e9f9ed345886e0eaf666d0e42c90748b/google_adk-2.2.0.tar.gz", hash = "sha256:04cb6318aba8829fe7c941ee1b456ccb4745253898c13595708c9eb07b4582ff", size = 3391545, upload-time = "2026-06-04T22:15:12.9Z" }
 wheels = [
@@ -464,12 +473,12 @@ wheels = [
 
 [package.optional-dependencies]
 eval = [
-    { name = "gepa", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-aiplatform", extra = ["evaluation"], marker = "sys_platform == 'linux'" },
-    { name = "jinja2", marker = "sys_platform == 'linux'" },
-    { name = "pandas", marker = "sys_platform == 'linux'" },
-    { name = "rouge-score", marker = "sys_platform == 'linux'" },
-    { name = "tabulate", marker = "sys_platform == 'linux'" },
+    { name = "gepa" },
+    { name = "google-cloud-aiplatform", extra = ["evaluation"] },
+    { name = "jinja2" },
+    { name = "pandas" },
+    { name = "rouge-score" },
+    { name = "tabulate" },
 ]
 
 [[package]]
@@ -477,11 +486,11 @@ name = "google-api-core"
 version = "2.31.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "googleapis-common-protos", marker = "sys_platform == 'linux'" },
-    { name = "proto-plus", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'linux'" },
+    { name = "google-auth" },
+    { name = "googleapis-common-protos" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
+    { name = "requests" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/c6/22/155cadf1d49272a9cf48f3168c0f3874fa13397297e611a5ea00cd093880/google_api_core-2.31.0.tar.gz", hash = "sha256:2be84ee0f584c48e6bde1b36766e23348b361fb7e55e56135fc76ce1c397f9c2", size = 176492, upload-time = "2026-06-03T14:52:17.257Z" }
 wheels = [
@@ -490,8 +499,8 @@ wheels = [
 
 [package.optional-dependencies]
 grpc = [
-    { name = "grpcio", marker = "sys_platform == 'linux'" },
-    { name = "grpcio-status", marker = "sys_platform == 'linux'" },
+    { name = "grpcio" },
+    { name = "grpcio-status" },
 ]
 
 [[package]]
@@ -499,11 +508,11 @@ name = "google-api-python-client"
 version = "2.197.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "google-auth-httplib2", marker = "sys_platform == 'linux'" },
-    { name = "httplib2", marker = "sys_platform == 'linux'" },
-    { name = "uritemplate", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core" },
+    { name = "google-auth" },
+    { name = "google-auth-httplib2" },
+    { name = "httplib2" },
+    { name = "uritemplate" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/22/09/081d66357118bd260f8f182cb1b2dd5bd32ca88e3714d7c93896cab946fc/google_api_python_client-2.197.0.tar.gz", hash = "sha256:32e03977eda4a66eafc6ae58dc9ec46426b6025636d5ef019c5703013eddd4e5", size = 14707398, upload-time = "2026-05-28T20:23:12.498Z" }
 wheels = [
@@ -515,8 +524,8 @@ name = "google-auth"
 version = "2.53.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cryptography", marker = "sys_platform == 'linux'" },
-    { name = "pyasn1-modules", marker = "sys_platform == 'linux'" },
+    { name = "cryptography" },
+    { name = "pyasn1-modules" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/c6/ad/ff781329bbbdc0974a098d996e89c9e1f7024262f9e3eec442fbb9ad1ac6/google_auth-2.53.0.tar.gz", hash = "sha256:e7e6aa16f6bee7b2b264830fd04f08087a1d5a836df516251a5d15327b246c9c", size = 335844, upload-time = "2026-05-15T20:53:07.928Z" }
 wheels = [
@@ -525,10 +534,10 @@ wheels = [
 
 [package.optional-dependencies]
 pyopenssl = [
-    { name = "pyopenssl", marker = "sys_platform == 'linux'" },
+    { name = "pyopenssl" },
 ]
 requests = [
-    { name = "requests", marker = "sys_platform == 'linux'" },
+    { name = "requests" },
 ]
 
 [[package]]
@@ -536,8 +545,8 @@ name = "google-auth-httplib2"
 version = "0.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "httplib2", marker = "sys_platform == 'linux'" },
+    { name = "google-auth" },
+    { name = "httplib2" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/1c/b3/f192c8bc7e41e0ebdbd95afcae4783417a34b6a6af62d22daf22c3fd38fc/google_auth_httplib2-0.4.0.tar.gz", hash = "sha256:d5b030a204b7a4b4d553ba9ca701b62481ee2b74419325580be70f7d85ffed35", size = 11161, upload-time = "2026-05-07T08:03:46.878Z" }
 wheels = [
@@ -549,8 +558,8 @@ name = "google-auth-oauthlib"
 version = "1.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "requests-oauthlib", marker = "sys_platform == 'linux'" },
+    { name = "google-auth" },
+    { name = "requests-oauthlib" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/70/18/90c7fac516e63cf2058166fce0c88c353647c677b51cc036c09c49bb5cbb/google_auth_oauthlib-1.4.0.tar.gz", hash = "sha256:18b5e28880eb8eba9065c436becdc0ee8e4b59117a73a510679c82f70cd363d2", size = 21675, upload-time = "2026-05-07T08:03:47.816Z" }
 wheels = [
@@ -562,18 +571,18 @@ name = "google-cloud-aiplatform"
 version = "1.156.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "docstring-parser", marker = "sys_platform == 'linux'" },
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-bigquery", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-resource-manager", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-storage", marker = "sys_platform == 'linux'" },
-    { name = "google-genai", marker = "sys_platform == 'linux'" },
-    { name = "packaging", marker = "sys_platform == 'linux'" },
-    { name = "proto-plus", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
-    { name = "pydantic", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "docstring-parser" },
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "google-cloud-bigquery" },
+    { name = "google-cloud-resource-manager" },
+    { name = "google-cloud-storage" },
+    { name = "google-genai" },
+    { name = "packaging" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
+    { name = "pydantic" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/94/96/6a948c77bbc35783fbc49119349f8ecf8c943cd56a3cf4b1f5fde8da06e0/google_cloud_aiplatform-1.156.0.tar.gz", hash = "sha256:b2f8c92d7e3fd50a1570e433d596fb863f8ced528ede657e85d46e25b8445a25", size = 11056403, upload-time = "2026-06-04T17:44:47.932Z" }
 wheels = [
@@ -582,27 +591,27 @@ wheels = [
 
 [package.optional-dependencies]
 agent-engines = [
-    { name = "aiohttp", marker = "sys_platform == 'linux'" },
-    { name = "cloudpickle", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-iam", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-logging", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-trace", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-exporter-gcp-logging", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-exporter-gcp-trace", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-exporter-otlp-proto-http", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-sdk", marker = "sys_platform == 'linux'" },
-    { name = "packaging", marker = "sys_platform == 'linux'" },
-    { name = "pydantic", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "aiohttp" },
+    { name = "cloudpickle" },
+    { name = "google-cloud-iam" },
+    { name = "google-cloud-logging" },
+    { name = "google-cloud-trace" },
+    { name = "opentelemetry-exporter-gcp-logging" },
+    { name = "opentelemetry-exporter-gcp-trace" },
+    { name = "opentelemetry-exporter-otlp-proto-http" },
+    { name = "opentelemetry-sdk" },
+    { name = "packaging" },
+    { name = "pydantic" },
+    { name = "typing-extensions" },
 ]
 evaluation = [
-    { name = "jsonschema", marker = "sys_platform == 'linux'" },
-    { name = "litellm", marker = "sys_platform == 'linux'" },
-    { name = "pandas", marker = "sys_platform == 'linux'" },
-    { name = "pyyaml", marker = "sys_platform == 'linux'" },
-    { name = "ruamel-yaml", marker = "sys_platform == 'linux'" },
-    { name = "scikit-learn", marker = "sys_platform == 'linux'" },
-    { name = "tqdm", marker = "sys_platform == 'linux'" },
+    { name = "jsonschema" },
+    { name = "litellm" },
+    { name = "pandas" },
+    { name = "pyyaml" },
+    { name = "ruamel-yaml" },
+    { name = "scikit-learn" },
+    { name = "tqdm" },
 ]
 
 [[package]]
@@ -610,11 +619,11 @@ name = "google-cloud-appengine-logging"
 version = "1.10.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "grpcio", marker = "sys_platform == 'linux'" },
-    { name = "proto-plus", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "grpcio" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/7f/b9/fcafc8d2dc68975a65cdff74807547cff9b2a7b00e738d3f5ff0bd112867/google_cloud_appengine_logging-1.10.0.tar.gz", hash = "sha256:b5563e76010a36e6adf1cc489620c29ee4fb3b986b006d237e9a061eb0f0abb7", size = 17744, upload-time = "2026-06-03T14:52:40.298Z" }
 wheels = [
@@ -626,8 +635,8 @@ name = "google-cloud-audit-log"
 version = "0.6.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "googleapis-common-protos", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "googleapis-common-protos" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/01/46/b971191224557091cc865b47d527e61da180e33b9397904bdefdae1dcacd/google_cloud_audit_log-0.6.0.tar.gz", hash = "sha256:4dd343683c0bb31187ebef3426803f13159e950fbea3fe60a864855cfed959b8", size = 44674, upload-time = "2026-06-03T14:52:48.095Z" }
 wheels = [
@@ -639,13 +648,13 @@ name = "google-cloud-bigquery"
 version = "3.41.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-core", marker = "sys_platform == 'linux'" },
-    { name = "google-resumable-media", marker = "sys_platform == 'linux'" },
-    { name = "packaging", marker = "sys_platform == 'linux'" },
-    { name = "python-dateutil", marker = "sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "google-cloud-core" },
+    { name = "google-resumable-media" },
+    { name = "packaging" },
+    { name = "python-dateutil" },
+    { name = "requests" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/ce/13/6515c7aab55a4a0cf708ffd309fb9af5bab54c13e32dc22c5acd6497193c/google_cloud_bigquery-3.41.0.tar.gz", hash = "sha256:2217e488b47ed576360c9b2cc07d59d883a54b83167c0ef37f915c26b01a06fe", size = 513434, upload-time = "2026-03-30T22:50:55.347Z" }
 wheels = [
@@ -657,8 +666,8 @@ name = "google-cloud-core"
 version = "2.6.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core" },
+    { name = "google-auth" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/a8/dd/1eef226e470369b26824a505c34482c0b493bc35fe8e0c6b003b5feca21a/google_cloud_core-2.6.0.tar.gz", hash = "sha256:e76149739f90fac1fc6757c09f47eaccb3145b54adbd7759b0f7c4b235f46c83", size = 36001, upload-time = "2026-05-07T08:04:04.124Z" }
 wheels = [
@@ -670,10 +679,10 @@ name = "google-cloud-discoveryengine"
 version = "0.13.12"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "proto-plus", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/8f/cd/b33bbc4b096d937abee5ebfad3908b2bdc65acd1582191aa33beaa2b70a5/google_cloud_discoveryengine-0.13.12.tar.gz", hash = "sha256:d6b9f8fadd8ad0d2f4438231c5eb7772a317e9f59cafbcbadc19b5d54c609419", size = 3582382, upload-time = "2025-09-22T16:51:14.052Z" }
 wheels = [
@@ -685,12 +694,12 @@ name = "google-cloud-iam"
 version = "2.23.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "grpc-google-iam-v1", marker = "sys_platform == 'linux'" },
-    { name = "grpcio", marker = "sys_platform == 'linux'" },
-    { name = "proto-plus", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "grpc-google-iam-v1" },
+    { name = "grpcio" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/0d/5f/128a1462354e0f8f0b7baff34b5a1a4e5cd7aee100d8db0eb39843b43d1d/google_cloud_iam-2.23.0.tar.gz", hash = "sha256:49246f6221026d381cff4f8d804daf1bb6416153f2504bf5ef54d4af2450b828", size = 561685, upload-time = "2026-05-07T08:04:16.253Z" }
 wheels = [
@@ -702,16 +711,16 @@ name = "google-cloud-logging"
 version = "3.16.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-appengine-logging", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-audit-log", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-core", marker = "sys_platform == 'linux'" },
-    { name = "grpc-google-iam-v1", marker = "sys_platform == 'linux'" },
-    { name = "grpcio", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "proto-plus", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "google-cloud-appengine-logging" },
+    { name = "google-cloud-audit-log" },
+    { name = "google-cloud-core" },
+    { name = "grpc-google-iam-v1" },
+    { name = "grpcio" },
+    { name = "opentelemetry-api" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/9b/ba/e749846f13c8d1c6c01eb6317e8b09abc130fe67b5d72081a48d1bf96971/google_cloud_logging-3.16.0.tar.gz", hash = "sha256:08a3076b8f0f724219d6f73b2a242ef69d51e8bce226133aebe41a25f23f5400", size = 293703, upload-time = "2026-06-03T15:28:23.862Z" }
 wheels = [
@@ -723,12 +732,12 @@ name = "google-cloud-resource-manager"
 version = "1.17.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "grpc-google-iam-v1", marker = "sys_platform == 'linux'" },
-    { name = "grpcio", marker = "sys_platform == 'linux'" },
-    { name = "proto-plus", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "grpc-google-iam-v1" },
+    { name = "grpcio" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/b2/1a/13060cabf553d52d151d2afc26b39561e82853380d499dd525a0d422d9f0/google_cloud_resource_manager-1.17.0.tar.gz", hash = "sha256:0f486b62e2c58ff992a3a50fa0f4a96eef7750aa6c971bb373398ccb91828660", size = 464971, upload-time = "2026-03-26T22:17:29.204Z" }
 wheels = [
@@ -740,12 +749,12 @@ name = "google-cloud-secret-manager"
 version = "2.29.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "grpc-google-iam-v1", marker = "sys_platform == 'linux'" },
-    { name = "grpcio", marker = "sys_platform == 'linux'" },
-    { name = "proto-plus", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "grpc-google-iam-v1" },
+    { name = "grpcio" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/d2/7c/5c88cdde9664f6c75fb68aa11e0af4309a92bef38dd38df0456ffb0f469b/google_cloud_secret_manager-2.29.0.tar.gz", hash = "sha256:ee64133af8fdb3780affb65ec6ccf10ab15a0113d8edeba388665f4be87ce1be", size = 278437, upload-time = "2026-06-03T16:13:43.149Z" }
 wheels = [
@@ -757,12 +766,12 @@ name = "google-cloud-storage"
 version = "3.11.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-core", marker = "sys_platform == 'linux'" },
-    { name = "google-crc32c", marker = "sys_platform == 'linux'" },
-    { name = "google-resumable-media", marker = "sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core" },
+    { name = "google-auth" },
+    { name = "google-cloud-core" },
+    { name = "google-crc32c" },
+    { name = "google-resumable-media" },
+    { name = "requests" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/22/09/8953e2993e604c8882fd441b5b2de624a2dfe7e6144c6166d7b477509596/google_cloud_storage-3.11.0.tar.gz", hash = "sha256:498bf37c999028f69a245f586b5e50d89f59df1fafc0e3a93783ac56be2a456b", size = 17335639, upload-time = "2026-06-03T16:14:04.649Z" }
 wheels = [
@@ -774,12 +783,12 @@ name = "google-cloud-storage-control"
 version = "1.12.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "grpc-google-iam-v1", marker = "sys_platform == 'linux'" },
-    { name = "grpcio", marker = "sys_platform == 'linux'" },
-    { name = "proto-plus", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "grpc-google-iam-v1" },
+    { name = "grpcio" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/88/ae/707995271f77e3c1da715c740160f98f87a79a5c601b28d17c4d2500c037/google_cloud_storage_control-1.12.0.tar.gz", hash = "sha256:49090d03532c0c84c6246a5fd490c31fd4bbffb4c7771c0a6744ec23a194a5f6", size = 137036, upload-time = "2026-06-03T16:14:00.921Z" }
 wheels = [
@@ -791,11 +800,11 @@ name = "google-cloud-trace"
 version = "1.19.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "grpcio", marker = "sys_platform == 'linux'" },
-    { name = "proto-plus", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "grpcio" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/89/7b/c2a5848c4722373c92b500b65e6308ad89ca0c7c01054e0d948c58c107f2/google_cloud_trace-1.19.0.tar.gz", hash = "sha256:58293c6efcee6c74bb854ff01b008823bef66845c14f15ffa5209d545098a65d", size = 103875, upload-time = "2026-03-26T22:18:18.123Z" }
 wheels = [
@@ -807,13 +816,13 @@ name = "google-cloud-translate"
 version = "3.26.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-api-core", extra = ["grpc"], marker = "sys_platform == 'linux'" },
-    { name = "google-auth", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-core", marker = "sys_platform == 'linux'" },
-    { name = "grpc-google-iam-v1", marker = "sys_platform == 'linux'" },
-    { name = "grpcio", marker = "sys_platform == 'linux'" },
-    { name = "proto-plus", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "google-cloud-core" },
+    { name = "grpc-google-iam-v1" },
+    { name = "grpcio" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/45/52/3bc1f9b87511eb3b4d28c4d7da65f1f4ecc407df46e56cff0eae43b5d875/google_cloud_translate-3.26.0.tar.gz", hash = "sha256:74c4c302ea705daa1d7dda095288fd736bb616f943480db34314cd0cd52cc9dd", size = 276633, upload-time = "2026-04-10T00:41:26.769Z" }
 wheels = [
@@ -835,16 +844,16 @@ name = "google-genai"
 version = "2.8.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "anyio", marker = "sys_platform == 'linux'" },
-    { name = "distro", marker = "sys_platform == 'linux'" },
-    { name = "google-auth", extra = ["requests"], marker = "sys_platform == 'linux'" },
-    { name = "httpx", marker = "sys_platform == 'linux'" },
-    { name = "pydantic", marker = "sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'linux'" },
-    { name = "sniffio", marker = "sys_platform == 'linux'" },
-    { name = "tenacity", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
-    { name = "websockets", marker = "sys_platform == 'linux'" },
+    { name = "anyio" },
+    { name = "distro" },
+    { name = "google-auth", extra = ["requests"] },
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "requests" },
+    { name = "sniffio" },
+    { name = "tenacity" },
+    { name = "typing-extensions" },
+    { name = "websockets" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/5b/52/0244e310812f3063d09d60b30ae29ab7df9343bd005744cd5eeaa6ba39b4/google_genai-2.8.0.tar.gz", hash = "sha256:37a9b3cb127d763e7f4ca47452ae3562c87728773bd1b149f7b559c239da2bc1", size = 564955, upload-time = "2026-06-03T22:55:38.397Z" }
 wheels = [
@@ -856,7 +865,7 @@ name = "google-resumable-media"
 version = "2.10.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-crc32c", marker = "sys_platform == 'linux'" },
+    { name = "google-crc32c" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/48/f8/1ca5781d6be9cb9f73f7d40f4958c4bd1226a60598e3e39e1d6aaf838c4b/google_resumable_media-2.10.0.tar.gz", hash = "sha256:e324bc9d0fdae4c52a08ae90456edc4e71ece858399e1217ac0eb3a51d6bc6ee", size = 2164570, upload-time = "2026-06-03T16:14:26.103Z" }
 wheels = [
@@ -868,7 +877,7 @@ name = "googleapis-common-protos"
 version = "1.75.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/b5/c8/f439cffde755cffa462bfbb156278fa6f9d09119719af9814b858fd4f81f/googleapis_common_protos-1.75.0.tar.gz", hash = "sha256:53a062ff3c32552fbd62c11fe23768b78e4ddf0494d5e5fd97d3f4689c75fbbd", size = 151035, upload-time = "2026-05-07T08:04:49.423Z" }
 wheels = [
@@ -877,7 +886,7 @@ wheels = [
 
 [package.optional-dependencies]
 grpc = [
-    { name = "grpcio", marker = "sys_platform == 'linux'" },
+    { name = "grpcio" },
 ]
 
 [[package]]
@@ -907,9 +916,9 @@ name = "grpc-google-iam-v1"
 version = "0.14.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "googleapis-common-protos", extra = ["grpc"], marker = "sys_platform == 'linux'" },
-    { name = "grpcio", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "googleapis-common-protos", extra = ["grpc"] },
+    { name = "grpcio" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/44/4f/d098419ad0bfc06c9ce440575f05aa22d8973b6c276e86ac7890093d3c37/grpc_google_iam_v1-0.14.4.tar.gz", hash = "sha256:392b3796947ed6334e61171d9ab06bf7eb357f554e5fc7556ad7aab6d0e17038", size = 23706, upload-time = "2026-04-01T01:57:49.813Z" }
 wheels = [
@@ -921,7 +930,7 @@ name = "grpcio"
 version = "1.81.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/15/f3/23f47b24f8d8c2028eba501db3acfbb2f592cbb5995eaa6e363a627b74d7/grpcio-1.81.0.tar.gz", hash = "sha256:a5acd7efd3b1fe9b4eb0bcaaa1507eed68a0ad0678b654c3f7b464df9ba9dca5", size = 13032272, upload-time = "2026-06-01T05:56:22.827Z" }
 wheels = [
@@ -939,9 +948,9 @@ name = "grpcio-status"
 version = "1.81.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "googleapis-common-protos", marker = "sys_platform == 'linux'" },
-    { name = "grpcio", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "googleapis-common-protos" },
+    { name = "grpcio" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/01/b6/cdc177114997d15c887fb09ccfd16705c8ceb8b4ca2487902b54a7bfd1af/grpcio_status-1.81.0.tar.gz", hash = "sha256:b6fe9788cfdd1f0f63c0528a1e0bfdb41e8ff0583e920d2d8e8888598c01bb69", size = 13900, upload-time = "2026-06-01T06:00:32.638Z" }
 wheels = [
@@ -974,8 +983,8 @@ name = "httpcore"
 version = "1.0.9"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "certifi", marker = "sys_platform == 'linux'" },
-    { name = "h11", marker = "sys_platform == 'linux'" },
+    { name = "certifi" },
+    { name = "h11" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz", hash = "sha256:6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8", size = 85484, upload-time = "2025-04-24T22:06:22.219Z" }
 wheels = [
@@ -987,7 +996,7 @@ name = "httplib2"
 version = "0.31.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pyparsing", marker = "sys_platform == 'linux'" },
+    { name = "pyparsing" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/c1/1f/e86365613582c027dda5ddb64e1010e57a3d53e99ab8a72093fa13d565ec/httplib2-0.31.2.tar.gz", hash = "sha256:385e0869d7397484f4eab426197a4c020b606edd43372492337c0b4010ae5d24", size = 250800, upload-time = "2026-01-23T11:04:44.165Z" }
 wheels = [
@@ -999,10 +1008,10 @@ name = "httpx"
 version = "0.28.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "anyio", marker = "sys_platform == 'linux'" },
-    { name = "certifi", marker = "sys_platform == 'linux'" },
-    { name = "httpcore", marker = "sys_platform == 'linux'" },
-    { name = "idna", marker = "sys_platform == 'linux'" },
+    { name = "anyio" },
+    { name = "certifi" },
+    { name = "httpcore" },
+    { name = "idna" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz", hash = "sha256:75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc", size = 141406, upload-time = "2024-12-06T15:37:23.222Z" }
 wheels = [
@@ -1014,16 +1023,16 @@ name = "huggingface-hub"
 version = "1.18.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "click", marker = "sys_platform == 'linux'" },
-    { name = "filelock", marker = "sys_platform == 'linux'" },
-    { name = "fsspec", marker = "sys_platform == 'linux'" },
-    { name = "hf-xet", marker = "(platform_machine == 'AMD64' and sys_platform == 'linux') or (platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'amd64' and sys_platform == 'linux') or (platform_machine == 'arm64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
-    { name = "httpx", marker = "sys_platform == 'linux'" },
-    { name = "packaging", marker = "sys_platform == 'linux'" },
-    { name = "pyyaml", marker = "sys_platform == 'linux'" },
-    { name = "tqdm", marker = "sys_platform == 'linux'" },
-    { name = "typer", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "click" },
+    { name = "filelock" },
+    { name = "fsspec" },
+    { name = "hf-xet", marker = "platform_machine == 'AMD64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64'" },
+    { name = "httpx" },
+    { name = "packaging" },
+    { name = "pyyaml" },
+    { name = "tqdm" },
+    { name = "typer" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/fb/d8/748ea0a47f0fa15227fe682f7a80826b4b7c096e4818044b8f56d6cb66d6/huggingface_hub-1.18.0.tar.gz", hash = "sha256:f0c5ecd1ef8c6a60f86f61ee278f2c1570ba9e279c9f54de9094210723b3613b", size = 812699, upload-time = "2026-06-05T09:26:33.401Z" }
 wheels = [
@@ -1044,7 +1053,7 @@ name = "importlib-metadata"
 version = "8.7.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "zipp", marker = "sys_platform == 'linux'" },
+    { name = "zipp" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/f3/49/3b30cad09e7771a4982d9975a8cbf64f00d4a1ececb53297f1d9a7be1b10/importlib_metadata-8.7.1.tar.gz", hash = "sha256:49fef1ae6440c182052f407c8d34a68f72efc36db9ca90dc0113398f2fdde8bb", size = 57107, upload-time = "2025-12-21T10:00:19.278Z" }
 wheels = [
@@ -1065,7 +1074,7 @@ name = "jinja2"
 version = "3.1.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "markupsafe", marker = "sys_platform == 'linux'" },
+    { name = "markupsafe" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz", hash = "sha256:0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d", size = 245115, upload-time = "2025-03-05T20:05:02.478Z" }
 wheels = [
@@ -1105,7 +1114,7 @@ name = "joserfc"
 version = "1.7.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cryptography", marker = "sys_platform == 'linux'" },
+    { name = "cryptography" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/d3/c3/2f590052b55cbdd0ace470ee7ee1f685f6882051be93a9374891005623e2/joserfc-1.7.0.tar.gz", hash = "sha256:4aced6ab0c47846f0a531402aec2419a874b91e918df9c4c9da8a82fb559d6c4", size = 232967, upload-time = "2026-06-02T09:59:34.506Z" }
 wheels = [
@@ -1117,10 +1126,10 @@ name = "jsonschema"
 version = "4.26.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "attrs", marker = "sys_platform == 'linux'" },
-    { name = "jsonschema-specifications", marker = "sys_platform == 'linux'" },
-    { name = "referencing", marker = "sys_platform == 'linux'" },
-    { name = "rpds-py", marker = "sys_platform == 'linux'" },
+    { name = "attrs" },
+    { name = "jsonschema-specifications" },
+    { name = "referencing" },
+    { name = "rpds-py" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/b3/fc/e067678238fa451312d4c62bf6e6cf5ec56375422aee02f9cb5f909b3047/jsonschema-4.26.0.tar.gz", hash = "sha256:0c26707e2efad8aa1bfc5b7ce170f3fccc2e4918ff85989ba9ffa9facb2be326", size = 366583, upload-time = "2026-01-07T13:41:07.246Z" }
 wheels = [
@@ -1132,7 +1141,7 @@ name = "jsonschema-specifications"
 version = "2025.9.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "referencing", marker = "sys_platform == 'linux'" },
+    { name = "referencing" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/19/74/a633ee74eb36c44aa6d1095e7cc5569bebf04342ee146178e2d36600708b/jsonschema_specifications-2025.9.1.tar.gz", hash = "sha256:b540987f239e745613c7a9176f3edb72b832a4ac465cf02712288397832b5e8d", size = 32855, upload-time = "2025-09-08T01:34:59.186Z" }
 wheels = [
@@ -1144,7 +1153,7 @@ name = "levenshtein"
 version = "0.27.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "rapidfuzz", marker = "sys_platform == 'linux'" },
+    { name = "rapidfuzz" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/82/56/dcf68853b062e3b94bdc3d011cc4198779abc5b9dc134146a062920ce2e2/levenshtein-0.27.3.tar.gz", hash = "sha256:1ac326b2c84215795163d8a5af471188918b8797b4953ec87aaba22c9c1f9fc0", size = 393269, upload-time = "2025-11-01T12:14:31.04Z" }
 wheels = [
@@ -1161,18 +1170,18 @@ name = "litellm"
 version = "1.85.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "aiohttp", marker = "sys_platform == 'linux'" },
-    { name = "click", marker = "sys_platform == 'linux'" },
-    { name = "fastuuid", marker = "sys_platform == 'linux'" },
-    { name = "httpx", marker = "sys_platform == 'linux'" },
-    { name = "importlib-metadata", marker = "sys_platform == 'linux'" },
-    { name = "jinja2", marker = "sys_platform == 'linux'" },
-    { name = "jsonschema", marker = "sys_platform == 'linux'" },
-    { name = "openai", marker = "sys_platform == 'linux'" },
-    { name = "pydantic", marker = "sys_platform == 'linux'" },
-    { name = "python-dotenv", marker = "sys_platform == 'linux'" },
-    { name = "tiktoken", marker = "sys_platform == 'linux'" },
-    { name = "tokenizers", marker = "sys_platform == 'linux'" },
+    { name = "aiohttp" },
+    { name = "click" },
+    { name = "fastuuid" },
+    { name = "httpx" },
+    { name = "importlib-metadata" },
+    { name = "jinja2" },
+    { name = "jsonschema" },
+    { name = "openai" },
+    { name = "pydantic" },
+    { name = "python-dotenv" },
+    { name = "tiktoken" },
+    { name = "tokenizers" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/ec/fa/6ac3984c7d57c6a7b0dd18cfae3dfaf509b7f3eb80075b38fac357ef45b9/litellm-1.85.4.tar.gz", hash = "sha256:f4cb776b7ae2a57e63f64092933641b837d7516ef878ddca93d6dac890282ae4", size = 15350215, upload-time = "2026-06-04T04:58:03.495Z" }
 wheels = [
@@ -1184,7 +1193,7 @@ name = "markdown-it-py"
 version = "4.2.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "mdurl", marker = "sys_platform == 'linux'" },
+    { name = "mdurl" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz", hash = "sha256:04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49", size = 82454, upload-time = "2026-05-07T12:08:28.36Z" }
 wheels = [
@@ -1255,17 +1264,18 @@ wheels = [
 
 [[package]]
 name = "nltk"
-version = "3.9.4"
+version = "3.10.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "click", marker = "sys_platform == 'linux'" },
-    { name = "joblib", marker = "sys_platform == 'linux'" },
-    { name = "regex", marker = "sys_platform == 'linux'" },
-    { name = "tqdm", marker = "sys_platform == 'linux'" },
+    { name = "click" },
+    { name = "defusedxml" },
+    { name = "joblib" },
+    { name = "regex" },
+    { name = "tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/74/a1/b3b4adf15585a5bc4c357adde150c01ebeeb642173ded4d871e89468767c/nltk-3.9.4.tar.gz", hash = "sha256:ed03bc098a40481310320808b2db712d95d13ca65b27372f8a403949c8b523d0", size = 2946864, upload-time = "2026-03-24T06:13:40.641Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e0/e6/fe51d2bb1a3b446f59c5c8165999a9fee208bc346af90a7cbf7657bc0d75/nltk-3.10.3.tar.gz", hash = "sha256:bb9327a461c3811c2fa4900e03840401f2126adfb30c0072827c433bd2444ea4", size = 5137152, upload-time = "2026-08-12T23:46:37.258Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9d/91/04e965f8e717ba0ab4bdca5c112deeab11c9e750d94c4d4602f050295d39/nltk-3.9.4-py3-none-any.whl", hash = "sha256:f2fa301c3a12718ce4a0e9305c5675299da5ad9e26068218b69d692fda84828f", size = 1552087, upload-time = "2026-03-24T06:13:38.47Z" },
+    { url = "https://files.pythonhosted.org/packages/b6/6d/ebd2af4640b12168fdf0cb74b6118df2f32a2f62ec7e0c06fbfd80706639/nltk-3.10.3-py3-none-any.whl", hash = "sha256:ff9598a8e20518ee0d557745890cc4435b9578489e2dcbc69c4f81fa060caf7c", size = 1798643, upload-time = "2026-08-12T23:44:13.478Z" },
 ]
 
 [[package]]
@@ -1294,14 +1304,14 @@ name = "openai"
 version = "2.41.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "anyio", marker = "sys_platform == 'linux'" },
-    { name = "distro", marker = "sys_platform == 'linux'" },
-    { name = "httpx", marker = "sys_platform == 'linux'" },
-    { name = "jiter", marker = "sys_platform == 'linux'" },
-    { name = "pydantic", marker = "sys_platform == 'linux'" },
-    { name = "sniffio", marker = "sys_platform == 'linux'" },
-    { name = "tqdm", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "anyio" },
+    { name = "distro" },
+    { name = "httpx" },
+    { name = "jiter" },
+    { name = "pydantic" },
+    { name = "sniffio" },
+    { name = "tqdm" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/3c/a6/5815fe2e2aca74b36c650d1bd43b69827cee568073d0d2d9b6fc5aaac80c/openai-2.41.0.tar.gz", hash = "sha256:db5c362acd6604b84f076abbefa66826ea4b46ecba2954ed866e6a149a1352c0", size = 783525, upload-time = "2026-06-03T22:39:40.719Z" }
 wheels = [
@@ -1313,8 +1323,8 @@ name = "opentelemetry-api"
 version = "1.41.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "importlib-metadata", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "importlib-metadata" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/fa/fc/b7564cbef36601aef0d6c9bc01f7badb64be8e862c2e1c3c5c3b43b53e4f/opentelemetry_api-1.41.1.tar.gz", hash = "sha256:0ad1814d73b875f84494387dae86ce0b12c68556331ce6ce8fe789197c949621", size = 71416, upload-time = "2026-04-24T13:15:38.262Z" }
 wheels = [
@@ -1326,10 +1336,10 @@ name = "opentelemetry-exporter-gcp-logging"
 version = "1.12.0a0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-cloud-logging", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-resourcedetector-gcp", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-sdk", marker = "sys_platform == 'linux'" },
+    { name = "google-cloud-logging" },
+    { name = "opentelemetry-api" },
+    { name = "opentelemetry-resourcedetector-gcp" },
+    { name = "opentelemetry-sdk" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/77/e4/95ecebaa1c5134adaa0d0374028b25e3b3c5c08535d29a66d39d372a3d11/opentelemetry_exporter_gcp_logging-1.12.0a0.tar.gz", hash = "sha256:586529dbbcae5e22b880f7c121fde3f0fe8ae997aba1bad53f13c20eeb27cb3a", size = 22521, upload-time = "2026-04-28T20:59:40.237Z" }
 wheels = [
@@ -1341,10 +1351,10 @@ name = "opentelemetry-exporter-gcp-trace"
 version = "1.12.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "google-cloud-trace", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-resourcedetector-gcp", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-sdk", marker = "sys_platform == 'linux'" },
+    { name = "google-cloud-trace" },
+    { name = "opentelemetry-api" },
+    { name = "opentelemetry-resourcedetector-gcp" },
+    { name = "opentelemetry-sdk" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/bf/55/32922e72d88421505383dfdba9c1ee6ad67253f94f2358f6e9dbc4ac3749/opentelemetry_exporter_gcp_trace-1.12.0.tar.gz", hash = "sha256:18c6e56fe123eed020d5005fdd819b196d64f651545bce1ca7e2e2cbaf9d343b", size = 18779, upload-time = "2026-04-28T20:59:41.974Z" }
 wheels = [
@@ -1356,7 +1366,7 @@ name = "opentelemetry-exporter-otlp-proto-common"
 version = "1.41.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "opentelemetry-proto", marker = "sys_platform == 'linux'" },
+    { name = "opentelemetry-proto" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/ae/fa/f9e3bd3c4d692b3ce9a2880a167d1f79681a1bea11f00d5bf76adc03e6ea/opentelemetry_exporter_otlp_proto_common-1.41.1.tar.gz", hash = "sha256:0e253156ea9c36b0bd3d2440c5c9ba7dd1f3fb64ba7a08fc85fbac536b56e1fb", size = 20409, upload-time = "2026-04-24T13:15:40.924Z" }
 wheels = [
@@ -1368,13 +1378,13 @@ name = "opentelemetry-exporter-otlp-proto-http"
 version = "1.41.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "googleapis-common-protos", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-exporter-otlp-proto-common", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-proto", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-sdk", marker = "sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "googleapis-common-protos" },
+    { name = "opentelemetry-api" },
+    { name = "opentelemetry-exporter-otlp-proto-common" },
+    { name = "opentelemetry-proto" },
+    { name = "opentelemetry-sdk" },
+    { name = "requests" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/33/5b/9d3c7f70cca10136ba82a81e738dee626c8e7fc61c6887ea9a58bf34c606/opentelemetry_exporter_otlp_proto_http-1.41.1.tar.gz", hash = "sha256:4747a9604c8550ab38c6fd6180e2fcb80de3267060bef2c306bad3cb443302bc", size = 24139, upload-time = "2026-04-24T13:15:42.977Z" }
 wheels = [
@@ -1386,10 +1396,10 @@ name = "opentelemetry-instrumentation"
 version = "0.62b1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-semantic-conventions", marker = "sys_platform == 'linux'" },
-    { name = "packaging", marker = "sys_platform == 'linux'" },
-    { name = "wrapt", marker = "sys_platform == 'linux'" },
+    { name = "opentelemetry-api" },
+    { name = "opentelemetry-semantic-conventions" },
+    { name = "packaging" },
+    { name = "wrapt" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/52/cb/0523b92c112a6cc70be43724343dc45225d3af134419844d7879a07755d4/opentelemetry_instrumentation-0.62b1.tar.gz", hash = "sha256:90e92a905ba4f84db06ac3aec96701df6c079b2d66e9379f8739f0a1bdcc7f45", size = 34043, upload-time = "2026-04-24T13:22:31.997Z" }
 wheels = [
@@ -1401,10 +1411,10 @@ name = "opentelemetry-instrumentation-google-genai"
 version = "0.7b1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-instrumentation", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-semantic-conventions", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-util-genai", marker = "sys_platform == 'linux'" },
+    { name = "opentelemetry-api" },
+    { name = "opentelemetry-instrumentation" },
+    { name = "opentelemetry-semantic-conventions" },
+    { name = "opentelemetry-util-genai" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/5a/ca/da1a8d598542a3bd343859efc6e6e89b74b5189887b8f7ef447267e5e9ed/opentelemetry_instrumentation_google_genai-0.7b1.tar.gz", hash = "sha256:dc81249eb8a01184e2b3e0eb207864158e7147e3307b018dc9625b23973457a5", size = 52078, upload-time = "2026-05-19T01:46:07.689Z" }
 wheels = [
@@ -1416,10 +1426,10 @@ name = "opentelemetry-instrumentation-grpc"
 version = "0.62b1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-instrumentation", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-semantic-conventions", marker = "sys_platform == 'linux'" },
-    { name = "wrapt", marker = "sys_platform == 'linux'" },
+    { name = "opentelemetry-api" },
+    { name = "opentelemetry-instrumentation" },
+    { name = "opentelemetry-semantic-conventions" },
+    { name = "wrapt" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/7c/c6/b78b406077cce9046a63f36f05b9641dcb4c4e3940ed021cabb733b559af/opentelemetry_instrumentation_grpc-0.62b1.tar.gz", hash = "sha256:dabd3dfd30714e857b2beca05db8ea0059a32ecefad096eedc9aa3db7ee463d0", size = 31945, upload-time = "2026-04-24T13:22:51.461Z" }
 wheels = [
@@ -1431,11 +1441,11 @@ name = "opentelemetry-instrumentation-httpx"
 version = "0.62b1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-instrumentation", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-semantic-conventions", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-util-http", marker = "sys_platform == 'linux'" },
-    { name = "wrapt", marker = "sys_platform == 'linux'" },
+    { name = "opentelemetry-api" },
+    { name = "opentelemetry-instrumentation" },
+    { name = "opentelemetry-semantic-conventions" },
+    { name = "opentelemetry-util-http" },
+    { name = "wrapt" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/33/cb/7a418e69c7dad281803529cb4f6de1b747d802cca44c38032668690b4836/opentelemetry_instrumentation_httpx-0.62b1.tar.gz", hash = "sha256:a1fac9bcc3a6ef5996a7990563f1af0798468b2c146de535fd598369383fba7e", size = 24181, upload-time = "2026-04-24T13:22:52.124Z" }
 wheels = [
@@ -1447,7 +1457,7 @@ name = "opentelemetry-proto"
 version = "1.41.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/99/e8/633c6d8a9c8840338b105907e55c32d3da1983abab5e52f899f72a82c3d1/opentelemetry_proto-1.41.1.tar.gz", hash = "sha256:4b9d2eb631237ea43b80e16c073af438554e32bc7e9e3f8ca4a9582f900020e5", size = 45670, upload-time = "2026-04-24T13:15:49.768Z" }
 wheels = [
@@ -1459,10 +1469,10 @@ name = "opentelemetry-resourcedetector-gcp"
 version = "1.12.0a0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-sdk", marker = "sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "opentelemetry-api" },
+    { name = "opentelemetry-sdk" },
+    { name = "requests" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/21/ae/b62c5e986c9c7f908a15682ea173bcfcdc00403c0c85243ccbd30eca7fc2/opentelemetry_resourcedetector_gcp-1.12.0a0.tar.gz", hash = "sha256:d5e3f78283a272eb92547e00bbeff45b7332a34ae791a70ab4eba81af9bc3baf", size = 18797, upload-time = "2026-04-28T20:59:43.195Z" }
 wheels = [
@@ -1474,9 +1484,9 @@ name = "opentelemetry-sdk"
 version = "1.41.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-semantic-conventions", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "opentelemetry-api" },
+    { name = "opentelemetry-semantic-conventions" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/58/d0/54ee30dab82fb0acda23d144502771ff76ef8728459c83c3e89ef9fb1825/opentelemetry_sdk-1.41.1.tar.gz", hash = "sha256:724b615e1215b5aeacda0abb8a6a8922c9a1853068948bd0bd225a56d0c792e6", size = 230180, upload-time = "2026-04-24T13:15:50.991Z" }
 wheels = [
@@ -1488,8 +1498,8 @@ name = "opentelemetry-semantic-conventions"
 version = "0.62b1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "opentelemetry-api" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/9e/de/911ac9e309052aca1b20b2d5549d3db45d1011e1a610e552c6ccdd1b64f8/opentelemetry_semantic_conventions-0.62b1.tar.gz", hash = "sha256:c5cc6e04a7f8c7cdd30be2ed81499fa4e75bfbd52c9cb70d40af1f9cd3619802", size = 145750, upload-time = "2026-04-24T13:15:52.236Z" }
 wheels = [
@@ -1501,9 +1511,9 @@ name = "opentelemetry-util-genai"
 version = "0.3b0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "opentelemetry-api", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-instrumentation", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-semantic-conventions", marker = "sys_platform == 'linux'" },
+    { name = "opentelemetry-api" },
+    { name = "opentelemetry-instrumentation" },
+    { name = "opentelemetry-semantic-conventions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/a2/d8/4dd2fb622d26ec45b10ef63eb87fd512f5d7467c7bd35ce390629bd6dff8/opentelemetry_util_genai-0.3b0.tar.gz", hash = "sha256:83e127789a9ad615b8ca65f05fc36955a67ce257b06142bfd46159a3b7ed73d3", size = 31800, upload-time = "2026-02-20T16:16:14.807Z" }
 wheels = [
@@ -1533,8 +1543,8 @@ name = "pandas"
 version = "3.0.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "numpy", marker = "sys_platform == 'linux'" },
-    { name = "python-dateutil", marker = "sys_platform == 'linux'" },
+    { name = "numpy" },
+    { name = "python-dateutil" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/f8/87/4341c6252d1c47b08768c3d25ac487362bf403f0313ddae4a2a26c9b1b4c/pandas-3.0.3.tar.gz", hash = "sha256:696a4a00a2a2a35d4e5deb3fc946641b96c944f02230e4f76137fe35d806c4fc", size = 4651414, upload-time = "2026-05-11T18:54:29.21Z" }
 wheels = [
@@ -1549,50 +1559,50 @@ name = "pitchgen-multiagent"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "cloud-sql-python-connector", marker = "sys_platform == 'linux'" },
-    { name = "configparser", marker = "sys_platform == 'linux'" },
-    { name = "faiss-cpu", marker = "sys_platform == 'linux'" },
-    { name = "fastapi", marker = "sys_platform == 'linux'" },
-    { name = "fuzzywuzzy", marker = "sys_platform == 'linux'" },
-    { name = "gcsfs", marker = "sys_platform == 'linux'" },
-    { name = "google-adk", marker = "sys_platform == 'linux'" },
-    { name = "google-api-python-client", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-aiplatform", extra = ["agent-engines", "evaluation"], marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-discoveryengine", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-logging", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-secret-manager", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-storage", marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-translate", marker = "sys_platform == 'linux'" },
-    { name = "google-genai", marker = "sys_platform == 'linux'" },
-    { name = "numpy", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-instrumentation-google-genai", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-instrumentation-grpc", marker = "sys_platform == 'linux'" },
-    { name = "opentelemetry-instrumentation-httpx", marker = "sys_platform == 'linux'" },
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
-    { name = "pydantic", marker = "sys_platform == 'linux'" },
-    { name = "pymysql", marker = "sys_platform == 'linux'" },
-    { name = "python-dotenv", marker = "sys_platform == 'linux'" },
-    { name = "python-levenshtein", marker = "sys_platform == 'linux'" },
-    { name = "sqlalchemy", marker = "sys_platform == 'linux'" },
-    { name = "thefuzz", marker = "sys_platform == 'linux'" },
+    { name = "cloud-sql-python-connector" },
+    { name = "configparser" },
+    { name = "faiss-cpu" },
+    { name = "fastapi" },
+    { name = "fuzzywuzzy" },
+    { name = "gcsfs" },
+    { name = "google-adk" },
+    { name = "google-api-python-client" },
+    { name = "google-cloud-aiplatform", extra = ["agent-engines", "evaluation"] },
+    { name = "google-cloud-discoveryengine" },
+    { name = "google-cloud-logging" },
+    { name = "google-cloud-secret-manager" },
+    { name = "google-cloud-storage" },
+    { name = "google-cloud-translate" },
+    { name = "google-genai" },
+    { name = "numpy" },
+    { name = "opentelemetry-instrumentation-google-genai" },
+    { name = "opentelemetry-instrumentation-grpc" },
+    { name = "opentelemetry-instrumentation-httpx" },
+    { name = "protobuf" },
+    { name = "pydantic" },
+    { name = "pymysql" },
+    { name = "python-dotenv" },
+    { name = "python-levenshtein" },
+    { name = "sqlalchemy" },
+    { name = "thefuzz" },
 ]
 
 [package.optional-dependencies]
 eval = [
-    { name = "google-adk", extra = ["eval"], marker = "sys_platform == 'linux'" },
-    { name = "google-cloud-aiplatform", extra = ["evaluation"], marker = "sys_platform == 'linux'" },
+    { name = "google-adk", extra = ["eval"] },
+    { name = "google-cloud-aiplatform", extra = ["evaluation"] },
 ]
 lint = [
-    { name = "codespell", marker = "sys_platform == 'linux'" },
-    { name = "ruff", marker = "sys_platform == 'linux'" },
-    { name = "ty", marker = "sys_platform == 'linux'" },
+    { name = "codespell" },
+    { name = "ruff" },
+    { name = "ty" },
 ]
 
 [package.dev-dependencies]
 dev = [
-    { name = "nest-asyncio", marker = "sys_platform == 'linux'" },
-    { name = "pytest", marker = "sys_platform == 'linux'" },
-    { name = "pytest-asyncio", marker = "sys_platform == 'linux'" },
+    { name = "nest-asyncio" },
+    { name = "pytest" },
+    { name = "pytest-asyncio" },
 ]
 
 [package.metadata]
@@ -1672,7 +1682,7 @@ name = "proto-plus"
 version = "1.28.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "protobuf", marker = "sys_platform == 'linux'" },
+    { name = "protobuf" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/c9/56/e647b0c675392d2da368da7b6f158f7368b18542fd6f7d7400a2f39de000/proto_plus-1.28.0.tar.gz", hash = "sha256:38e5696342835b08fc116f30a25665b29531cda9d5d5643e9b81fc312385abd9", size = 57221, upload-time = "2026-05-07T08:04:50.811Z" }
 wheels = [
@@ -1705,7 +1715,7 @@ name = "pyasn1-modules"
 version = "0.4.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pyasn1", marker = "sys_platform == 'linux'" },
+    { name = "pyasn1" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e9/e6/78ebbb10a8c8e4b61a59249394a4a594c1a7af95593dc933a349c8d00964/pyasn1_modules-0.4.2.tar.gz", hash = "sha256:677091de870a80aae844b1ca6134f54652fa2c8c5a52aa396440ac3106e941e6", size = 307892, upload-time = "2025-03-28T02:41:22.17Z" }
 wheels = [
@@ -1726,10 +1736,10 @@ name = "pydantic"
 version = "2.13.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "annotated-types", marker = "sys_platform == 'linux'" },
-    { name = "pydantic-core", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
-    { name = "typing-inspection", marker = "sys_platform == 'linux'" },
+    { name = "annotated-types" },
+    { name = "pydantic-core" },
+    { name = "typing-extensions" },
+    { name = "typing-inspection" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/18/a5/b60d21ac674192f8ab0ba4e9fd860690f9b4a6e51ca5df118733b487d8d6/pydantic-2.13.4.tar.gz", hash = "sha256:c40756b57adaa8b1efeeced5c196f3f3b7c435f90e84ea7f443901bec8099ef6", size = 844775, upload-time = "2026-05-06T13:43:05.343Z" }
 wheels = [
@@ -1741,7 +1751,7 @@ name = "pydantic-core"
 version = "2.46.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/9d/56/921726b776ace8d8f5db44c4ef961006580d91dc52b803c489fafd1aa249/pydantic_core-2.46.4.tar.gz", hash = "sha256:62f875393d7f270851f20523dd2e29f082bcc82292d66db2b64ea71f64b6e1c1", size = 471464, upload-time = "2026-05-06T13:37:06.98Z" }
 wheels = [
@@ -1782,8 +1792,8 @@ name = "pyopenssl"
 version = "26.2.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cryptography", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "cryptography" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/1a/51/27a5ad5f939d08f690a326ef9582cda7140555180db71695f6fb747d6a36/pyopenssl-26.2.0.tar.gz", hash = "sha256:8c6fcecd1183a7fc897548dfe388b0cdb7f37e018200d8409cf33959dbe35387", size = 182195, upload-time = "2026-05-04T23:06:09.72Z" }
 wheels = [
@@ -1804,10 +1814,10 @@ name = "pytest"
 version = "9.0.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "iniconfig", marker = "sys_platform == 'linux'" },
-    { name = "packaging", marker = "sys_platform == 'linux'" },
-    { name = "pluggy", marker = "sys_platform == 'linux'" },
-    { name = "pygments", marker = "sys_platform == 'linux'" },
+    { name = "iniconfig" },
+    { name = "packaging" },
+    { name = "pluggy" },
+    { name = "pygments" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/7d/0d/549bd94f1a0a402dc8cf64563a117c0f3765662e2e668477624baeec44d5/pytest-9.0.3.tar.gz", hash = "sha256:b86ada508af81d19edeb213c681b1d48246c1a91d304c6c81a427674c17eb91c", size = 1572165, upload-time = "2026-04-07T17:16:18.027Z" }
 wheels = [
@@ -1819,8 +1829,8 @@ name = "pytest-asyncio"
 version = "1.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pytest", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "pytest" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/43/7c/d36d04db312ecf4298932ef77e6e4a9e8ad017906e24e34f0b0c361a2473/pytest_asyncio-1.4.0.tar.gz", hash = "sha256:c6c0d2259945122819f171a32ecea2c349ead889ee28176caaf492143424be42", size = 58514, upload-time = "2026-05-26T09:56:04.083Z" }
 wheels = [
@@ -1832,7 +1842,7 @@ name = "python-dateutil"
 version = "2.9.0.post0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "six", marker = "sys_platform == 'linux'" },
+    { name = "six" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz", hash = "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3", size = 342432, upload-time = "2024-03-01T18:36:20.211Z" }
 wheels = [
@@ -1853,7 +1863,7 @@ name = "python-levenshtein"
 version = "0.27.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "levenshtein", marker = "sys_platform == 'linux'" },
+    { name = "levenshtein" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/f6/b4/36eda4188dd19d3cb53d8a8749d7520bd23dfe1c1f44e56ea9dcd0232274/python_levenshtein-0.27.3.tar.gz", hash = "sha256:27dc2d65aeb62a7d6852388f197073296370779286c0860b087357f3b8129a62", size = 12446, upload-time = "2025-11-01T12:54:59.712Z" }
 wheels = [
@@ -1901,9 +1911,9 @@ name = "referencing"
 version = "0.37.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "attrs", marker = "sys_platform == 'linux'" },
-    { name = "rpds-py", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "attrs" },
+    { name = "rpds-py" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/22/f5/df4e9027acead3ecc63e50fe1e36aca1523e1719559c499951bb4b53188f/referencing-0.37.0.tar.gz", hash = "sha256:44aefc3142c5b842538163acb373e24cce6632bd54bdb01b21ad5863489f50d8", size = 78036, upload-time = "2025-10-13T15:30:48.871Z" }
 wheels = [
@@ -1933,10 +1943,10 @@ name = "requests"
 version = "2.34.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "certifi", marker = "sys_platform == 'linux'" },
-    { name = "charset-normalizer", marker = "sys_platform == 'linux'" },
-    { name = "idna", marker = "sys_platform == 'linux'" },
-    { name = "urllib3", marker = "sys_platform == 'linux'" },
+    { name = "certifi" },
+    { name = "charset-normalizer" },
+    { name = "idna" },
+    { name = "urllib3" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz", hash = "sha256:f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed", size = 142856, upload-time = "2026-05-14T19:25:27.735Z" }
 wheels = [
@@ -1948,8 +1958,8 @@ name = "requests-oauthlib"
 version = "2.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "oauthlib", marker = "sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'linux'" },
+    { name = "oauthlib" },
+    { name = "requests" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/42/f2/05f29bc3913aea15eb670be136045bf5c5bbf4b99ecb839da9b422bb2c85/requests-oauthlib-2.0.0.tar.gz", hash = "sha256:b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9", size = 55650, upload-time = "2024-03-22T20:32:29.939Z" }
 wheels = [
@@ -1961,8 +1971,8 @@ name = "rich"
 version = "15.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "markdown-it-py", marker = "sys_platform == 'linux'" },
-    { name = "pygments", marker = "sys_platform == 'linux'" },
+    { name = "markdown-it-py" },
+    { name = "pygments" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz", hash = "sha256:edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36", size = 230680, upload-time = "2026-04-12T08:24:00.75Z" }
 wheels = [
@@ -1974,10 +1984,10 @@ name = "rouge-score"
 version = "0.1.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "absl-py", marker = "sys_platform == 'linux'" },
-    { name = "nltk", marker = "sys_platform == 'linux'" },
-    { name = "numpy", marker = "sys_platform == 'linux'" },
-    { name = "six", marker = "sys_platform == 'linux'" },
+    { name = "absl-py" },
+    { name = "nltk" },
+    { name = "numpy" },
+    { name = "six" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e2/c5/9136736c37022a6ad27fea38f3111eb8f02fe75d067f9a985cc358653102/rouge_score-0.1.2.tar.gz", hash = "sha256:c7d4da2683e68c9abf0135ef915d63a46643666f848e558a1b9f7ead17ff0f04", size = 17400, upload-time = "2022-07-22T22:46:22.909Z" }
 
@@ -2033,11 +2043,11 @@ name = "scikit-learn"
 version = "1.9.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "joblib", marker = "sys_platform == 'linux'" },
-    { name = "narwhals", marker = "sys_platform == 'linux'" },
-    { name = "numpy", marker = "sys_platform == 'linux'" },
-    { name = "scipy", marker = "sys_platform == 'linux'" },
-    { name = "threadpoolctl", marker = "sys_platform == 'linux'" },
+    { name = "joblib" },
+    { name = "narwhals" },
+    { name = "numpy" },
+    { name = "scipy" },
+    { name = "threadpoolctl" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/fa/6f/37092bdb25f712817231799fc5674d8e704066a8a70c1d2d40517e18b4ab/scikit_learn-1.9.0.tar.gz", hash = "sha256:8833266989d3a5110178a9fae30783675460724d0e1efb13b14901d2c660c557", size = 7750767, upload-time = "2026-06-02T11:54:32.706Z" }
 wheels = [
@@ -2050,7 +2060,7 @@ name = "scipy"
 version = "1.17.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "numpy", marker = "sys_platform == 'linux'" },
+    { name = "numpy" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/7a/97/5a3609c4f8d58b039179648e62dd220f89864f56f7357f5d4f45c29eb2cc/scipy-1.17.1.tar.gz", hash = "sha256:95d8e012d8cb8816c226aef832200b1d45109ed4464303e997c5b13122b297c0", size = 30573822, upload-time = "2026-02-23T00:26:24.851Z" }
 wheels = [
@@ -2092,8 +2102,8 @@ name = "sqlalchemy"
 version = "2.0.50"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "greenlet", marker = "(platform_machine == 'AMD64' and sys_platform == 'linux') or (platform_machine == 'WIN32' and sys_platform == 'linux') or (platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'amd64' and sys_platform == 'linux') or (platform_machine == 'ppc64le' and sys_platform == 'linux') or (platform_machine == 'win32' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "greenlet", marker = "platform_machine == 'AMD64' or platform_machine == 'WIN32' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'ppc64le' or platform_machine == 'win32' or platform_machine == 'x86_64'" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/57/da/6fbf010c8ebb347679d0d100b22fe9ba5e13fd04046c5df7280d2f0bf706/sqlalchemy-2.0.50.tar.gz", hash = "sha256:af5607d11ef90fd6a5c0549fe0045dce1663d427426bcfb506dcb5346a85a3b9", size = 9907424, upload-time = "2026-05-24T19:20:04.018Z" }
 wheels = [
@@ -2109,8 +2119,8 @@ name = "starlette"
 version = "1.2.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "anyio", marker = "sys_platform == 'linux'" },
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "anyio" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/25/44/ec35f1b6e83094b997da438a02c8c9b0ade2b1e84cfc48bd4656780760a6/starlette-1.2.1.tar.gz", hash = "sha256:9b9b5ebb992e67d6093741e63c2f59e4f6fff986f81163c087867bd7b924b3f6", size = 2701854, upload-time = "2026-05-31T01:07:51.847Z" }
 wheels = [
@@ -2140,7 +2150,7 @@ name = "thefuzz"
 version = "0.22.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "rapidfuzz", marker = "sys_platform == 'linux'" },
+    { name = "rapidfuzz" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/81/4b/d3eb25831590d6d7d38c2f2e3561d3ba41d490dc89cd91d9e65e7c812508/thefuzz-0.22.1.tar.gz", hash = "sha256:7138039a7ecf540da323792d8592ef9902b1d79eb78c147d4f20664de79f3680", size = 19993, upload-time = "2024-01-19T19:18:23.135Z" }
 wheels = [
@@ -2161,8 +2171,8 @@ name = "tiktoken"
 version = "0.13.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "regex", marker = "sys_platform == 'linux'" },
-    { name = "requests", marker = "sys_platform == 'linux'" },
+    { name = "regex" },
+    { name = "requests" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e4/e5/5f3cb2159769d0f4324c0e9e87f9de3c4b1cd45848a96b2eb3566ad5ca77/tiktoken-0.13.0.tar.gz", hash = "sha256:c9435714c3a84c2319499de9a300c0e604449dd0799ff246458b3bb6a7f433c1", size = 38986, upload-time = "2026-05-15T04:51:27.153Z" }
 wheels = [
@@ -2177,7 +2187,7 @@ name = "tokenizers"
 version = "0.23.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "huggingface-hub", marker = "sys_platform == 'linux'" },
+    { name = "huggingface-hub" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/c1/60/21f715d9faba5f5407ff759472ade058ec4a507ad62bcea47cb847239a73/tokenizers-0.23.1.tar.gz", hash = "sha256:1feeeadf865a7915adc25445dea30e9933e593c31bb96c277cee36de227c8bfa", size = 365748, upload-time = "2026-04-27T14:43:25.606Z" }
 wheels = [
@@ -2228,10 +2238,10 @@ name = "typer"
 version = "0.25.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "annotated-doc", marker = "sys_platform == 'linux'" },
-    { name = "click", marker = "sys_platform == 'linux'" },
-    { name = "rich", marker = "sys_platform == 'linux'" },
-    { name = "shellingham", marker = "sys_platform == 'linux'" },
+    { name = "annotated-doc" },
+    { name = "click" },
+    { name = "rich" },
+    { name = "shellingham" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e4/51/9aed62104cea109b820bbd6c14245af756112017d309da813ef107d42e7e/typer-0.25.1.tar.gz", hash = "sha256:9616eb8853a09ffeabab1698952f33c6f29ffdbceb4eaeecf571880e8d7664cc", size = 122276, upload-time = "2026-04-30T19:32:16.964Z" }
 wheels = [
@@ -2252,7 +2262,7 @@ name = "typing-inspection"
 version = "0.4.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "typing-extensions", marker = "sys_platform == 'linux'" },
+    { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz", hash = "sha256:ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464", size = 75949, upload-time = "2025-10-01T02:14:41.687Z" }
 wheels = [
@@ -2291,8 +2301,8 @@ name = "uvicorn"
 version = "0.49.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "click", marker = "sys_platform == 'linux'" },
-    { name = "h11", marker = "sys_platform == 'linux'" },
+    { name = "click" },
+    { name = "h11" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/c4/1f/fa18009dea8469069cca78a4e877a008ab78f08b064bfc9ab891579077ff/uvicorn-0.49.0.tar.gz", hash = "sha256:ebf4271aa580d9de97f93192d4595176df6e91f9aae919ca73e4fc07df1e66a3", size = 91284, upload-time = "2026-06-03T22:01:30.448Z" }
 wheels = [
@@ -2349,9 +2359,9 @@ name = "yarl"
 version = "1.24.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "idna", marker = "sys_platform == 'linux'" },
-    { name = "multidict", marker = "sys_platform == 'linux'" },
-    { name = "propcache", marker = "sys_platform == 'linux'" },
+    { name = "idna" },
+    { name = "multidict" },
+    { name = "propcache" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/79/12/1e8f37460ea0f7eb59c221fdaf0ed75e7ac43e97f8093b9c6f411df50a78/yarl-1.24.2.tar.gz", hash = "sha256:9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8", size = 210798, upload-time = "2026-05-19T21:31:05.599Z" }
 wheels = [
