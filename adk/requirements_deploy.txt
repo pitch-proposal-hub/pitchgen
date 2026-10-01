@@ -300,7 +300,7 @@ numpy==2.4.6
     #   pandas
     #   scikit-learn
     #   scipy
-oauthlib==3.3.1
+oauthlib==4.0.0
     # via requests-oauthlib
 openai==2.41.0
     # via litellm
