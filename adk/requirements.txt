@@ -591,9 +591,9 @@ levenshtein==0.27.3 \
     --hash=sha256:fbaa1219d9b2d955339a37e684256a861e9274a3fe3a6ee1b8ea8724c3231ed9 \
     --hash=sha256:fc975465a51b1c5889eadee1a583b81fba46372b4b22df28973e49e8ddb8f54a
     # via python-levenshtein
-litellm==1.85.4 \
-    --hash=sha256:66ba162d61478fc9607fbdab73e2e528f9c518382f087788074e605f562f5c9d \
-    --hash=sha256:f4cb776b7ae2a57e63f64092933641b837d7516ef878ddca93d6dac890282ae4
+litellm==1.88.6 \
+    --hash=sha256:07d947dfe92f137d5296c40285dbcf97cb405b4300d73c0feda48d76468d6eb4 \
+    --hash=sha256:8c01f7e9aebded5b3509128be648518a2ec4f1feb8dfb87a539895091651898b
     # via google-cloud-aiplatform
 markdown-it-py==4.2.0 \
     --hash=sha256:04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49 \
