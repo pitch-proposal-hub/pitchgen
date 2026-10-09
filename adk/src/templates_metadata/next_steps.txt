@@ -1,0 +1,105 @@
+{
+    "1@TEMPLATE_DECK_NEXT_STEPS_PLACEHOLDER_001@g26964209bed_0_438": {
+        "title": "25 to 38 characters",
+        "subtitle": "65 to 95 characters",
+        "header1": "18 to 26 characters",
+        "header1_content": "100 to 125 characters",
+        "header2": "18 to 26 characters",
+        "header2_content": "100 to 125 characters",
+        "header3": "18 to 26 characters",
+        "header3_content": "100 to 125 characters",
+        "header4": "18 to 26 characters",
+        "header4_content": "100 to 125 characters"
+    },
+    "2@TEMPLATE_DECK_NEXT_STEPS_PLACEHOLDER_001@g23b9fe80ef3_0_0": {
+        "title": "40 to 56 characters",
+        "subtitle": "65 to 95 characters",
+        "item1": "18 to 26 characters",
+        "item1_content": "90 to 115 characters",
+        "item2": "18 to 26 characters",
+        "item2_content": "90 to 115 characters",
+        "item3": "18 to 26 characters",
+        "item3_content": "90 to 115 characters",
+        "item4": "18 to 26 characters",
+        "item4_content": "90 to 115 characters"
+    },
+    "3@TEMPLATE_DECK_NEXT_STEPS_PLACEHOLDER_001@g2eb3a50b310_0_42": {
+        "title": "40 to 56 characters",
+        "subtitle": "65 to 95 characters",
+        "item1": "95 to 120 characters",
+        "item2": "95 to 120 characters",
+        "item3": "95 to 120 characters",
+        "item4": "95 to 120 characters"
+    },
+    "4@TEMPLATE_DECK_NEXT_STEPS_PLACEHOLDER_001@g2eb3a50b310_0_74": {
+        "title": "40 to 56 characters",
+        "subtitle": "65 to 95 characters",
+        "item1": "18 to 26 characters",
+        "item1_content": "100 to 125 characters",
+        "item2": "18 to 26 characters",
+        "item2_content": "100 to 125 characters",
+        "item3": "18 to 26 characters",
+        "item3_content": "100 to 125 characters",
+        "item4": "18 to 26 characters",
+        "item4_content": "100 to 125 characters"
+    },
+    "5@TEMPLATE_DECK_NEXT_STEPS_PLACEHOLDER_001@g21ec6d263c3_1_718": {
+        "title": "38 to 54 characters",
+        "subtitle": "65 to 95 characters",
+        "header1": "20 to 30 characters",
+        "header1_content": "125 to 155 characters",
+        "item1": "25 to 40 characters",
+        "header2": "20 to 30 characters",
+        "header2_content": "125 to 155 characters",
+        "item2": "25 to 40 characters",
+        "header3": "20 to 30 characters",
+        "header3_content": "125 to 155 characters",
+        "item3": "25 to 40 characters"
+    },
+    "6@TEMPLATE_DECK_NEXT_STEPS_PLACEHOLDER_001@g21ec7664ba6_0_0": {
+        "title": "25 to 38 characters",
+        "subtitle": "75 to 105 characters",
+        "header1": "16 to 24 characters",
+        "header1_content": "40 to 60 characters",
+        "item1": "28 to 42 characters",
+        "header2": "16 to 24 characters",
+        "header2_content": "40 to 60 characters",
+        "item2": "28 to 42 characters",
+        "header3": "16 to 24 characters",
+        "header3_content": "40 to 60 characters",
+        "item3": "28 to 42 characters",
+        "header4": "16 to 24 characters",
+        "header4_content": "40 to 60 characters",
+        "item4": "28 to 42 characters"
+    },
+    "7@TEMPLATE_DECK_NEXT_STEPS_PLACEHOLDER_001@g222cad7e3e3_0_0": {
+        "title": "38 to 54 characters",
+        "header1": "20 to 30 characters",
+        "header1_content": "130 to 165 characters",
+        "header2": "20 to 30 characters",
+        "header2_content": "130 to 165 characters",
+        "header3": "20 to 30 characters",
+        "header3_content": "130 to 165 characters"
+    },
+    "8@TEMPLATE_DECK_NEXT_STEPS_PLACEHOLDER_001@g24c12c3bf34_0_0": {
+        "subtitle": "40 to 56 characters",
+        "header1": "20 to 30 characters",
+        "header1_content": "60 to 85 characters",
+        "item1": "25 to 40 characters",
+        "header2": "20 to 30 characters",
+        "header2_content": "60 to 85 characters",
+        "item2": "25 to 40 characters",
+        "header3": "20 to 30 characters",
+        "header3_content": "60 to 85 characters",
+        "item3": "25 to 40 characters"
+    },
+    "9@TEMPLATE_DECK_NEXT_STEPS_PLACEHOLDER_001@g225efbdbcfa_0_202": {
+        "subtitle": "40 to 56 characters",
+        "header1": "20 to 30 characters",
+        "header1_content": "125 to 160 characters",
+        "header2": "20 to 30 characters",
+        "header2_content": "125 to 160 characters",
+        "header3": "20 to 30 characters",
+        "header3_content": "125 to 160 characters"
+    }
+}

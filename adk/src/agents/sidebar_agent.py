@@ -32,17 +32,33 @@ class SidebarAgent(BaseAgent):
     """Abstract method implementation. Unused for SidebarAgent since it exposes direct tool endpoints."""
     pass
 
-  def search(self, search_query: str, strict_search: bool = False, user_ldap: str = "") -> dict:
-    model = self.config.get("default", "gemini_model")
+  def search(
+      self,
+      search_query: str,
+      strict_search: bool = False,
+      user_ldap: str = "",
+      slide_job: str = "",
+  ) -> dict:
+    model = self.config.get("default", "gemini_model_1", fallback=self.config.get("default", "gemini_model"))
 
     # Instantiate and run slide search
-    search_obj = self.skills["search"](search_query, strict_search, self.config, model)
+    search_obj = self.skills["search"](
+        search_query, strict_search, self.config, model, slide_job=slide_job
+    )
     results = search_obj.execute()
 
     # Clean results for JSON serialization if needed
     cleaned_results = []
     for res in results:
-      cleaned_results.append(dict(res))
+      c_res = {}
+      for k, v in dict(res).items():
+        if isinstance(v, (list, tuple)):
+          c_res[k] = [str(x) for x in v]
+        elif isinstance(v, (int, float, bool, str)) or v is None:
+          c_res[k] = v
+        else:
+          c_res[k] = str(v)
+      cleaned_results.append(c_res)
 
     return {"search_query": search_query, "search_results": cleaned_results}
 
@@ -126,7 +142,10 @@ class SidebarAgent(BaseAgent):
 
 
 def sidebar_search(
-    search_query: str, strict_search: bool = False, user_ldap: str = ""
+    search_query: str,
+    strict_search: bool = False,
+    user_ldap: str = "",
+    slide_job: str = "",
 ) -> str:
   """Search for reusable slides based on a search query.
 
@@ -134,11 +153,17 @@ def sidebar_search(
       search_query: The query string to search for (e.g. 'Gaming industry').
       strict_search: Whether to perform a strict tag-based search.
       user_ldap: User's LDAP/email.
+      slide_job: Target slide job category (e.g. 'Why_Google_Cloud', 'Proof_Points').
   """
   try:
     config = load_config()
     agent = SidebarAgent(config)
-    result = agent.search(search_query, strict_search, user_ldap)
+    result = agent.search(
+        search_query,
+        strict_search=strict_search,
+        user_ldap=user_ldap,
+        slide_job=slide_job,
+    )
     return json.dumps(result, indent=2)
   except Exception as e:
     return json.dumps({"error": str(e)})
@@ -209,9 +234,9 @@ def sidebar_generate(
 # Initialize the Root Agent using ADK standard syntax for web UI loading
 try:
   config = load_config()
-  default_model = config.get("default", "gemini_model", fallback="gemini-3.1-flash-lite")
+  default_model = config.get("default", "gemini_model", fallback="gemini-3.5-flash-lite")
 except Exception:
-  default_model = "gemini-3.1-flash-lite"
+  default_model = "gemini-3.5-flash-lite"
 
 root_agent = Agent(
     name="SidebarSearchGeneratorAgent",

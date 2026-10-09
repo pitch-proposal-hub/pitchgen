@@ -1,81 +1,108 @@
 {
     "templates": {
         "1": {
-            "header1": "30 to 40 characters",
-            "header1_content": "150 to 120 characters",
-            "header2": "30 to 40 characters",
-            "header2_content": "90 to 120 characters",
-            "header3": "30 to 40 characters",
-            "header3_content": "90 to 120 characters",
-            "header4": "30 to 40 characters",
-            "header4_content": "90 to 120 characters"
+            "title": "25 to 38 characters",
+            "subtitle": "65 to 95 characters",
+            "header1": "18 to 26 characters",
+            "header1_content": "100 to 125 characters",
+            "header2": "18 to 26 characters",
+            "header2_content": "100 to 125 characters",
+            "header3": "18 to 26 characters",
+            "header3_content": "100 to 125 characters",
+            "header4": "18 to 26 characters",
+            "header4_content": "100 to 125 characters"
         },
         "2": {
-            "title": "30 to 40 characters",
-            "item1": "30 to 40 characters",
-            "item1_content": "150 to 190 characters",
-            "item2": "30 to 40 characters",
-            "item2_content": "150 to 190 characters",
-            "item3": "30 to 40 characters",
-            "item3_content": "150 to 190 characters",
-            "item4": "30 to 40 characters",
-            "item4_content": "150 to 190 characters"
+            "title": "40 to 56 characters",
+            "subtitle": "65 to 95 characters",
+            "item1": "18 to 26 characters",
+            "item1_content": "90 to 115 characters",
+            "item2": "18 to 26 characters",
+            "item2_content": "90 to 115 characters",
+            "item3": "18 to 26 characters",
+            "item3_content": "90 to 115 characters",
+            "item4": "18 to 26 characters",
+            "item4_content": "90 to 115 characters"
         },
         "3": {
-            "title": "30 to 40 characters",
-            "item1": "30 to 150 characters",
-            "item2": "30 to 150 characters",
-            "item3": "30 to 150 characters",
-            "item4": "30 to 150 characters"
+            "title": "40 to 56 characters",
+            "subtitle": "65 to 95 characters",
+            "item1": "95 to 120 characters",
+            "item2": "95 to 120 characters",
+            "item3": "95 to 120 characters",
+            "item4": "95 to 120 characters"
         },
         "4": {
-            "title": "30 to 40 characters",
-            "item1": "30 to 40 characters",
-            "item1_content": "50 to 90 characters",
-            "item2": "30 to 40 characters",
-            "item2_content": "50 to 90 characters",
-            "item3": "30 to 40 characters",
-            "item3_content": "50 to 90 characters",
-            "item4": "30 to 40 characters",
-            "item4_content": "50 to 90 characters"
+            "title": "40 to 56 characters",
+            "subtitle": "65 to 95 characters",
+            "item1": "18 to 26 characters",
+            "item1_content": "100 to 125 characters",
+            "item2": "18 to 26 characters",
+            "item2_content": "100 to 125 characters",
+            "item3": "18 to 26 characters",
+            "item3_content": "100 to 125 characters",
+            "item4": "18 to 26 characters",
+            "item4_content": "100 to 125 characters"
         },
         "5": {
-            "title": "30 to 40 characters",
-            "item1": "30 to 40 characters",
-            "item2": "30 to 40 characters",
-            "item3": "30 to 40 characters",
-            "item4": "30 to 40 characters"
+            "title": "38 to 54 characters",
+            "subtitle": "65 to 95 characters",
+            "header1": "20 to 30 characters",
+            "header1_content": "125 to 155 characters",
+            "item1": "25 to 40 characters",
+            "header2": "20 to 30 characters",
+            "header2_content": "125 to 155 characters",
+            "item2": "25 to 40 characters",
+            "header3": "20 to 30 characters",
+            "header3_content": "125 to 155 characters",
+            "item3": "25 to 40 characters"
         },
         "6": {
-            "item1": "30 to 100 characters",
-            "item2": "30 to 100 characters",
-            "item3": "30 to 100 characters",
-            "item4": "30 to 100 characters"
+            "title": "25 to 38 characters",
+            "subtitle": "75 to 105 characters",
+            "header1": "16 to 24 characters",
+            "header1_content": "40 to 60 characters",
+            "item1": "28 to 42 characters",
+            "header2": "16 to 24 characters",
+            "header2_content": "40 to 60 characters",
+            "item2": "28 to 42 characters",
+            "header3": "16 to 24 characters",
+            "header3_content": "40 to 60 characters",
+            "item3": "28 to 42 characters",
+            "header4": "16 to 24 characters",
+            "header4_content": "40 to 60 characters",
+            "item4": "28 to 42 characters"
         },
         "7": {
-            "title": "30 to 150 characters",
-            "item1": "30 to 150 characters",
-            "item2": "30 to 150 characters",
-            "item3": "30 to 150 characters",
-            "item4": "30 to 150 characters"
+            "title": "38 to 54 characters",
+            "header1": "20 to 30 characters",
+            "header1_content": "130 to 165 characters",
+            "header2": "20 to 30 characters",
+            "header2_content": "130 to 165 characters",
+            "header3": "20 to 30 characters",
+            "header3_content": "130 to 165 characters"
         },
         "8": {
-            "subtitle": "50 to 80 characters",
-            "header1": "30 to 40 characters",
-            "header1_content": "150 to 190 characters",
-            "header2": "30 to 40 characters",
-            "header2_content": "150 to 190 characters",
-            "header3": "30 to 40 characters",
-            "header3_content": "150 to 190 characters",
-            "header4": "30 to 40 characters",
-            "header4_content": "150 to 190 characters"
+            "subtitle": "40 to 56 characters",
+            "header1": "20 to 30 characters",
+            "header1_content": "60 to 85 characters",
+            "item1": "25 to 40 characters",
+            "header2": "20 to 30 characters",
+            "header2_content": "60 to 85 characters",
+            "item2": "25 to 40 characters",
+            "header3": "20 to 30 characters",
+            "header3_content": "60 to 85 characters",
+            "item3": "25 to 40 characters"
         },
         "9": {
-            "subtitle": "50 to 80 characters",
-            "item1": "30 to 100 characters",
-            "item2": "30 to 100 characters",
-            "item3": "30 to 100 characters"
+            "subtitle": "40 to 56 characters",
+            "header1": "20 to 30 characters",
+            "header1_content": "125 to 160 characters",
+            "header2": "20 to 30 characters",
+            "header2_content": "125 to 160 characters",
+            "header3": "20 to 30 characters",
+            "header3_content": "125 to 160 characters"
         }
     },
-    "examples": "* Example 1:\n[Input]\n```INPUT_TEXT\nSlide Title:\nUnlocking Healthcare's Potential: The Power of Google AI\nSlide Content:\n**Google AI is revolutionizing healthcare by driving advancements across several key areas**:\n* **AI-Powered Diagnosis:** Advanced algorithms analyze medical images for faster and more accurate diagnoses, aiding healthcare professionals.\n* **24/7 Virtual Care:** AI-powered assistants provide patients with round-the-clock support, answering questions and scheduling appointments, easing administrative burdens.\n* **Streamlined Operations:** By automating tasks like claims processing and billing, AI frees up valuable time for healthcare professionals to focus on patient care.\n* **Accelerated Drug Discovery:** Google AI tools analyze vast datasets to identify potential drug candidates, significantly speeding up research and development.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"2\",\n    \"placeholders\":{\n    \"title\": \"Google AI: Healthcare Revolution\",\n    \"item1\": \"AI-Powered Diagnosis\",\n    \"item1_content\": \"Algorithms analyze images for faster, accurate diagnoses, aiding professionals and improving patient outcomes through early detection and personalized treatment plans.\",\n    \"item2\": \"24/7 Virtual Care\",\n    \"item2_content\": \"AI assistants offer round-the-clock support, answering questions, scheduling, and easing burdens, enhancing accessibility and improving patient experience with instant support.\",\n    \"item3\": \"Streamlined Operations\",\n    \"item3_content\": \"Automating claims and billing frees time for patient care, reducing administrative overhead and improving efficiency, allowing focus on critical healthcare needs and services.\",\n    \"item4\": \"Accelerated Drug Discovery\",\n    \"item4_content\": \"AI analyzes datasets to identify drug candidates, speeding up R&D, revolutionizing pharmaceutical research, and enabling faster development of life-saving medications and therapies.\"\n}\n}\n```\n\n* Example 2:\n[Input]\n```INPUT_TEXT\nSlide Title: Welcome to the presentation on how Enterprise Cloud can help Tata Starbucks Private Limited enhance customer experience, revenue generation, and operational efficiency.\nSlide Content: Enterprise Cloud offers a comprehensive suite of services and capabilities that can benefit Tata Starbucks Private Limited, including:\n- Application Modernization: Migrate and modernize your applications to the cloud to improve performance, scalability, and security.\n- Data Management: Manage and analyze your data in the cloud to gain insights and make better decisions.\n- Smart Analytics: Use machine learning and artificial intelligence to analyze your data and identify trends and patterns.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"9\",\n    \"placeholders\":{\n    \"subtitle\": \"Enterprise Cloud for Tata Starbucks: Enhancing Growth\",\n    \"item1\": \"Application Modernization: Boost performance and security.\",\n    \"item2\": \"Data Management: Gain insights for better decisions.\",\n    \"item3\": \"Smart Analytics: Identify trends with AI/ML.\"\n}\n}\n```\n\n* Example 3:\n[Input]\n```INPUT_TEXT\nSlide Title: Key Milestones in Starbucks' Digital Transformation Journey\nSlide Content: \n- 2008: Launch of the Starbucks Card mobile app\n- 2011: Introduction of mobile ordering and payment\n- 2015: Launch of the Starbucks Rewards loyalty program\n- 2017: Acquisition of Teavana and Evolution Fresh\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"7\",\n    \"placeholders\":{\n  \"title\": \"Starbucks' Digital Transformation: Key Milestones\",\n  \"item1\": \"2008: Starbucks Card Mobile App Launch\",\n  \"item2\": \"2011: Mobile Ordering & Payment Introduced\",\n  \"item3\": \"2015: Starbucks Rewards Loyalty Program Launch\",\n  \"item4\": \"2017: Acquisition of Teavana & Evolution Fresh\"\n}\n}\n```"
+    "examples": "* Example 1:\n[Input]\n```INPUT_TEXT\nSlide Title:\nUnlocking Healthcare's Potential: The Power of Google AI\nSlide Content:\n**Google AI is revolutionizing healthcare by driving advancements across several key areas**:\n* **AI-Powered Diagnosis:** Advanced algorithms analyze medical images for faster and more accurate diagnoses, aiding healthcare professionals.\n* **24/7 Virtual Care:** AI-powered assistants provide patients with round-the-clock support, answering questions and scheduling appointments, easing administrative burdens.\n* **Streamlined Operations:** By automating tasks like claims processing and billing, AI frees up valuable time for healthcare professionals to focus on patient care.\n* **Accelerated Drug Discovery:** Google AI tools analyze vast datasets to identify potential drug candidates, significantly speeding up research and development.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"2\",\n    \"placeholders\":{\n\u00a0\u00a0\u00a0\u00a0\"title\": \"Google AI: Healthcare Revolution\",\n\u00a0\u00a0\u00a0\u00a0\"item1\": \"AI-Powered Diagnosis\",\n\u00a0\u00a0\u00a0\u00a0\"item1_content\": \"Algorithms analyze images for faster, accurate diagnoses, aiding professionals and improving patient outcomes through early detection and personalized treatment plans.\",\n\u00a0\u00a0\u00a0\u00a0\"item2\": \"24/7 Virtual Care\",\n\u00a0\u00a0\u00a0\u00a0\"item2_content\": \"AI assistants offer round-the-clock support, answering questions, scheduling, and easing burdens, enhancing accessibility and improving patient experience with instant support.\",\n\u00a0\u00a0\u00a0\u00a0\"item3\": \"Streamlined Operations\",\n\u00a0\u00a0\u00a0\u00a0\"item3_content\": \"Automating claims and billing frees time for patient care, reducing administrative overhead and improving efficiency, allowing focus on critical healthcare needs and services.\",\n\u00a0\u00a0\u00a0\u00a0\"item4\": \"Accelerated Drug Discovery\",\n\u00a0\u00a0\u00a0\u00a0\"item4_content\": \"AI analyzes datasets to identify drug candidates, speeding up R&D, revolutionizing pharmaceutical research, and enabling faster development of life-saving medications and therapies.\"\n}\n}\n```\n\n* Example 2:\n[Input]\n```INPUT_TEXT\nSlide Title: Welcome to the presentation on how Google Cloud can help Tata Starbucks Private Limited enhance customer experience, revenue generation, and operational efficiency.\nSlide Content: Google Cloud offers a comprehensive suite of services and capabilities that can benefit Tata Starbucks Private Limited, including:\n- Application Modernization: Migrate and modernize your applications to the cloud to improve performance, scalability, and security.\n- Data Management: Manage and analyze your data in the cloud to gain insights and make better decisions.\n- Smart Analytics: Use machine learning and artificial intelligence to analyze your data and identify trends and patterns.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"9\",\n    \"placeholders\":{\n\u00a0\u00a0\u00a0\u00a0\"subtitle\": \"Google Cloud for Tata Starbucks: Enhancing Growth\",\n\u00a0\u00a0\u00a0\u00a0\"item1\": \"Application Modernization: Boost performance and security.\",\n\u00a0\u00a0\u00a0\u00a0\"item2\": \"Data Management: Gain insights for better decisions.\",\n\u00a0\u00a0\u00a0\u00a0\"item3\": \"Smart Analytics: Identify trends with AI/ML.\"\n}\n}\n```\n\n* Example 3:\n[Input]\n```INPUT_TEXT\nSlide Title: Key Milestones in Starbucks' Digital Transformation Journey\nSlide Content: \n- 2008: Launch of the Starbucks Card mobile app\n- 2011: Introduction of mobile ordering and payment\n- 2015: Launch of the Starbucks Rewards loyalty program\n- 2017: Acquisition of Teavana and Evolution Fresh\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"7\",\n    \"placeholders\":{\n  \"title\": \"Starbucks' Digital Transformation: Key Milestones\",\n  \"item1\": \"2008: Starbucks Card Mobile App Launch\",\n  \"item2\": \"2011: Mobile Ordering & Payment Introduced\",\n  \"item3\": \"2015: Starbucks Rewards Loyalty Program Launch\",\n  \"item4\": \"2017: Acquisition of Teavana & Evolution Fresh\"\n}\n}\n```"
 }

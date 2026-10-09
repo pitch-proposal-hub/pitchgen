@@ -1,0 +1,11 @@
+{
+    "1@TEMPLATE_DECK_CS_CHART_V1_PLACEHOLDER_01@g5f1dd2246c4910f8_453": {
+        "title": "40 to 56 characters",
+        "header1": "20 to 30 characters",
+        "header1_content": "120 to 170 characters",
+        "header2": "15 to 25 characters",
+        "header2_content1": "15 to 25 characters",
+        "header2_content2": "15 to 25 characters",
+        "item1": "15 to 25 characters"
+    }
+}

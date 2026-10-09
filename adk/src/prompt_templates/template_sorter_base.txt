@@ -17,11 +17,21 @@
 4. **Content Population**: 
    4a. Once a template is selected, extract relevant information from the INPUT_TEXT and populate the corresponding placeholders in the chosen template. 
    4b. Ensure that the content fits within the specified character limits for each placeholder.  
-   4c. If the INPUT_TEXT provides more content than can fit in the template, prioritize the most important information.  
-   4d. If the INPUT_TEXT provides less content, try to rephrase or expand on the existing information to fill the space appropriately, but do not hallucinate or add information not present in the original text.
-   4e. If any placeholder is left out empty e.g.( header_content:"") then fill it with relevant information with respect to the given INPUT_TEXT.
+   4c. **GEOMETRY-CALIBRATED CHARACTER & DENSITY MANDATE (CARD/COLUMN BODIES & HEADERS)**: 
+       - Match the exact character range specified for each placeholder in the chosen template (`TEMPLATES` JSON) so cards are neither overflowing nor half-empty:
+         * **2-Column & 3-Column Cards / Horizontal Banners** (`130 to 210 characters` spec): Write **20 to 28 words (135 to 175 characters)** of substantive, outcome-focused executive copy so the body fills 5-6 balanced lines inside the card.
+         * **4-Column Tall Cards** (`115 to 165 characters` spec): Write **18 to 25 words (125 to 165 characters)** so the body fills 5-7 balanced lines inside the tall vertical card without leaving large empty whitespace at the bottom.
+         * **5-Column, 6-Column, or Multi-Item Grid Cards** (`50 to 110 characters` spec): Write **9 to 15 words (55 to 105 characters)** strictly within the placeholder's stated character range.
+         * **Card Headers (`header1..N`)**: Write **3 to 4 crisp words (18 to 30 characters)** so headers sit cleanly on 1-2 lines.
+         * **Slide Titles (`title`)**: Write **6 to 10 words (42 to 58 characters)** as a crisp, conversational, declarative executive thesis statement in **Sentence case** using **Subject + finite active verb + outcome** or a **clean noun/contrast phrase** (capitalize only the first word and proper nouns/product names/acronyms; NEVER start with `-ing` gerunds, bare imperative commands, or Title Case Every Word).
+       - NEVER exceed the upper character limit of any placeholder, NEVER write sparse <85 character one-liners in 3- or 4-column tall cards, and NEVER write 220+ character run-on paragraphs.
+   4d. If the INPUT_TEXT provides more content than can fit in the template, prioritize the most important information concisely.  
+   4e. If any placeholder is left out empty e.g.( header_content:"") then fill it with relevant, concise information with respect to the given INPUT_TEXT.
+   4f. **CUSTOMER RESEARCH & EXECUTIVE DISCOVERY QUESTION (`?...`) FIDELITY MANDATE**:
+       - **Customer-Specific Named Entities**: When `INPUT_TEXT` contains specific customer strategic initiatives, proprietary platforms, joint ventures, or installed tech-stack systems (e.g., `Carrefour 2026`, `Carrefour Links`, `Unlimitail`, `Hopla`, `SAP S/4HANA`, `BigQuery`), you MUST preserve those exact named entities in `header1..N` and `header1_content..N` / `item1..N` rather than abstracting them into generic industry labels.
+       - **Consultative Discovery Questions (`?...`)**: When `INPUT_TEXT` or `Slide Title` focuses on **Discovery Questions**, **Consultative Discovery**, or contains questions ending with a question mark (`?`), you MUST preserve an explicit interrogative question (`?...`, e.g., `"How can [Customer] unify...?"` or `"Where do manual handoffs create friction...?"`) in every populated `header1_content..N` or `item1..N` body placeholder. NEVER convert consultative discovery questions into declarative product capability pitches.
 
-5. **Handle Empty Placeholders**: If any placeholders are empty try to put some relevant information into those empty placeholders.
+5. **Handle Empty Placeholders**: If any placeholders are empty try to put some relevant, concise information into those empty placeholders.
 
 6. **Output**: Output must be in JSON format.
 
@@ -37,7 +47,7 @@
 
 **NOW YOUR TURN: Please observe that there are no empty placeholders in the above examples, so you should also never return empty placeholders.**
 
-**NOTE: Please stick to the character limits for each placeholder. If content seems to be overfitting or exceeding the character limit, please feel free to paraphrase the content so that it fits within the character limit mentioned for each placeholder.**
+**NOTE: Please stick to the character limits for each placeholder. Always prioritize brevity, scannability, and punchy executive bullet copy. Never produce walls of text in cards.**
 
 [Input]
 ```INPUT_TEXT

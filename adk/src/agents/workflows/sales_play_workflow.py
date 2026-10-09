@@ -283,7 +283,7 @@ number of slides: {number_of_slides}
         input_data = output["agendas"]["1"]["slides"]
         constant_first_item = {
             "temp_url": (
-                "https://docs.google.com/presentation/d/10KB-1D5AB0HjzWNPIyUuD3IFwOJcr9G4UVsfQIBmXlo/edit#slide=id.g348daf40754_0_533"
+                "https://docs.google.com/presentation/d/TEMPLATE_DECK_SALES_PLAY_PLACEHOLDER_001/edit#slide=id.g348daf40754_0_533"
             ),
             "placeholders": {
                 "num": "01",

@@ -1,20 +1,20 @@
 {
     "templates": {
         "1": {
-            "title": "162 to 198 characters",
+            "title": "40 to 56 characters",
             "header1": "36 to 44 characters",
             "header1_content": "36 to 44 characters",
-            "item1": "398 to 486 characters"
+            "item1": "160 to 205 characters"
         },
         "2": {
-            "title": "162 to 198 characters",
+            "title": "40 to 56 characters",
             "header1": "36 to 44 characters",
             "header2": "36 to 44 characters",
             "header1_content": "36 to 44 characters",
             "header2_content": "36 to 44 characters"
         },
         "3": {
-            "title": "162 to 198 characters",
+            "title": "40 to 56 characters",
             "header1": "36 to 44 characters",
             "header2": "36 to 44 characters",
             "header3": "36 to 44 characters",
@@ -23,7 +23,7 @@
             "header3_content": "36 to 44 characters"
         },
         "4": {
-            "title": "162 to 198 characters",
+            "title": "40 to 56 characters",
             "header1": "36 to 44 characters",
             "header2": "36 to 44 characters",
             "header3": "36 to 44 characters",
@@ -38,7 +38,7 @@
             "header6_content": "36 to 44 characters"
         },
         "5": {
-            "title": "162 to 198 characters",
+            "title": "40 to 56 characters",
             "header1": "16 to 20 characters",
             "header1_content": "16 to 20 characters",
             "header2": "16 to 20 characters",

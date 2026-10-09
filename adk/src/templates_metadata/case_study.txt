@@ -1,0 +1,79 @@
+{
+    "1@TEMPLATE_DECK_CASE_STUDY_PLACEHOLDER_001@g32be974fc6a_0_128": {
+        "title": "40 to 56 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "65 to 90 characters",
+        "item2": "65 to 90 characters",
+        "item3": "65 to 90 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "65 to 90 characters",
+        "item4": "125 to 160 characters",
+        "item5": "25 to 45 characters"
+    },
+    "2@TEMPLATE_DECK_CASE_STUDY_PLACEHOLDER_001@g32be974fc6a_0_169": {
+        "title": "40 to 56 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "65 to 90 characters",
+        "item2": "65 to 90 characters",
+        "item3": "65 to 90 characters",
+        "item4": "65 to 90 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "65 to 90 characters",
+        "item5": "125 to 160 characters",
+        "item6": "25 to 45 characters"
+    },
+    "3@TEMPLATE_DECK_CASE_STUDY_PLACEHOLDER_001@g1e48964edee_0_0": {
+        "title": "38 to 54 characters",
+        "subtitle": "80 to 115 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "100 to 130 characters",
+        "header2": "18 to 28 characters",
+        "header2_content": "100 to 130 characters",
+        "header3": "18 to 28 characters",
+        "header3_content": "100 to 130 characters"
+    },
+    "4@TEMPLATE_DECK_CASE_STUDY_PLACEHOLDER_001@g21ec854185f_0_0": {
+        "title": "38 to 54 characters",
+        "subtitle": "95 to 130 characters",
+        "item1": "95 to 125 characters",
+        "item2": "95 to 125 characters",
+        "item3": "95 to 125 characters"
+    },
+    "5@TEMPLATE_DECK_CASE_STUDY_PLACEHOLDER_001@g21ec047e0ba_0_1430": {
+        "title": "38 to 54 characters",
+        "subtitle": "55 to 80 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "135 to 170 characters",
+        "header2": "18 to 28 characters",
+        "header2_content": "135 to 170 characters"
+    },
+    "6@TEMPLATE_DECK_CASE_STUDY_PLACEHOLDER_001@g21ec047e0ba_0_2465": {
+        "title": "38 to 54 characters",
+        "subtitle1": "18 to 28 characters",
+        "subtitle1_content": "140 to 175 characters",
+        "subtitle2": "18 to 28 characters",
+        "subtitle2_content": "105 to 135 characters",
+        "header1": "6 to 12 characters",
+        "header1_content": "32 to 48 characters",
+        "header2": "6 to 12 characters",
+        "header2_content": "32 to 48 characters"
+    },
+    "7@TEMPLATE_DECK_CASE_STUDY_PLACEHOLDER_001@g24f02d2908f_0_0": {
+        "title": "38 to 54 characters",
+        "subtitle": "80 to 115 characters",
+        "item1": "14 to 22 characters",
+        "item1_content": "65 to 85 characters",
+        "item2": "14 to 22 characters",
+        "item2_content": "65 to 85 characters",
+        "item3": "14 to 22 characters",
+        "item3_content": "65 to 85 characters",
+        "item4": "14 to 22 characters",
+        "item4_content": "65 to 85 characters",
+        "header1": "6 to 12 characters",
+        "header1_content": "32 to 48 characters",
+        "header2": "6 to 12 characters",
+        "header2_content": "32 to 48 characters",
+        "header3": "6 to 12 characters",
+        "header3_content": "32 to 48 characters"
+    }
+}

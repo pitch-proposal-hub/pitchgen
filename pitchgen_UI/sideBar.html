@@ -1016,26 +1016,28 @@
             <div id="info-container" style="padding: 12px;">
               <div class="data-source-card">
                 <div class="data-source-icon">
-                  <i class="fa-solid fa-database"></i>
+                  <i class="fa-solid fa-layer-group"></i>
                 </div>
                 <div class="data-source-content">
-                  <div class="data-source-title">Available Data Sources</div>
+                  <div class="data-source-title">Reusable Slide Catalog</div>
                   <div class="data-source-description">
-                    Search across <b>CloudHub</b>, <b>Sales Plays</b>, <b>Customer References</b>, and <b>PitchHub</b> Library.
+                    Search across <b>Sales Plays</b>, <b>Industry Decks</b>, and <b>Customer References</b>. Filter by Slide Job below.
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Repository for Search -->
+            <!-- Slide Job Filter for Search -->
             <div class="SearchRepository" style="padding: 0 12px; margin-top: 12px; margin-bottom: 12px; width: 100%;">
               <select class="form-control form-select input-field layoutDropdown dropdown" id="searchRepository" name="repository" style="margin-bottom: 8px;">
-                <option value="" selected>Select Repository</option>
-                <option value="Customer References">Customer References</option>
-                <option value="Demos">Demos</option>
-                <option value="GIFs">GIFs</option>
-                <option value="Industry Use Cases">Industry Use Cases</option>
-                <option value="Sales Plays">Sales Plays</option>
+                <option value="all" selected>All Slide Types</option>
+                <option value="Why_Google_Cloud">Why Google Cloud</option>
+                <option value="Proof_Points">Proof Points / Customer Stories</option>
+                <option value="Solution_Overview">Solution Overview</option>
+                <option value="Architecture">Architecture & Technical</option>
+                <option value="Business_Value">Business Value & ROI</option>
+                <option value="Path_to_Prod">Path to Production</option>
+                <option value="Commercials">Commercials & Pricing</option>
               </select>
             </div>
 
@@ -1656,7 +1658,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <img id="gifImage" src="https://storage.googleapis.com/<?= bucketName ?>/UI/Mug.svg?authuser=0" alt="logo"
+                <img id="gifImage" src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/Mug.svg?authuser=0" alt="logo"
                   class="addSlideSuccess AddGifImageSuccess">
                 <div class="modal-body">
                     <h3 class="addProg">Success</h3>
@@ -1677,7 +1679,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <img id="gifImage" src="https://storage.googleapis.com/<?= bucketName ?>/UI/Mug.svg?authuser=0" alt="logo"
+                <img id="gifImage" src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/Mug.svg?authuser=0" alt="logo"
                   class="addSlideSuccess AddGifImageSuccess">
                 <div class="modal-body">
                     <h3 class="addProg">Success</h3>
@@ -1692,7 +1694,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <!-- Modal content-->
             <div class="modal-content">
-                <img id="gifImage" src="https://storage.googleapis.com/<?= bucketName ?>/UI/Group.svg?authuser=0"
+                <img id="gifImage" src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/Group.svg?authuser=0"
                   alt="logo" class="addSlideRunning AddGifImageProcess">
                 <div class="modal-body">
                     <h3 class="addProg">Inserting a slide in progress</h3>
@@ -1717,7 +1719,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <!-- Modal content-->
             <div class="modal-content">
-                <img id="gifImage" src="https://storage.googleapis.com/<?= bucketName ?>/UI/Group.svg?authuser=0"
+                <img id="gifImage" src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/Group.svg?authuser=0"
                   alt="logo" class="addSlideRunning AddGifImageProcess">
                 <div class="modal-body">
                     <h3 class="addProg">Transforming a slide in progress</h3>
@@ -1748,7 +1750,7 @@
                     </button>
                 </div>
                 <img id="gifImage"
-                  src="https://storage.googleapis.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0"
+                  src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0"
                   alt="logo" class="addSlideError AddGifImageError">
                 <div class="modal-body">
                     <h3 class="addProg">Error!</h3>
@@ -1769,7 +1771,7 @@
                     </button>
                 </div>
                 <img id="gifImage"
-                  src="https://storage.googleapis.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0"
+                  src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0"
                   alt="logo" class="addSlideError AddGifImageError">
                 <div class="modal-body">
                     <h3 class="addProg">Error!</h3>
@@ -1792,7 +1794,7 @@
                     </button>
                 </div>
                 <img id="gifImage"
-                  src="https://storage.googleapis.com/<?= bucketName ?>/UI/search%20-%20Success.svg?authuser=0" alt="logo"
+                  src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/search%20-%20Success.svg?authuser=0" alt="logo"
                   class="searchSlideSuccess SearchGifImageSuccess">
                 <div class="modal-body">
                     <h3 class="addProg">Success</h3>
@@ -1808,7 +1810,7 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <img id="gifImage"
-                  src="https://storage.googleapis.com/<?= bucketName ?>/UI/search%20loading.svg?authuser=0" alt="logo"
+                  src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/search%20loading.svg?authuser=0" alt="logo"
                   class="searchSlideRunning SearchGifImageProcess">
                 <div class="modal-body">
                     <h3 class="addProg">Searching</h3>
@@ -1839,7 +1841,7 @@
                     </button>
                 </div>
                 <img id="gifImage"
-                  src="https://storage.googleapis.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0"
+                  src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0"
                   alt="logo" class="searchSlideError SearchGifImageError">
                 <div class="modal-body">
                     <h3 class="addProg" id="searchProg">Error!</h3>
@@ -1901,7 +1903,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <!-- Modal content-->
           <div class="modal-content"> 
-              <img id="gifImage" src="https://storage.googleapis.com/<?= bucketName ?>/UI/Processing.png?authuser=0"
+              <img id="gifImage" src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/Processing.png?authuser=0"
                 alt="logo" class="TranslateGifImageProcess">
             <div class="modal-body">
               <h3 class="transProg">Translation in progress</h3>
@@ -1931,7 +1933,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <img id="gifImage" src="https://storage.googleapis.com/<?= bucketName ?>/UI/Success.png?authuser=0"
+                <img id="gifImage" src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/Success.png?authuser=0"
                   alt="logo" class="TranslateGifImageSuccess">
                 <div class="modal-body">
                     <h3 class="transProg">Success</h3>
@@ -1972,7 +1974,7 @@
                     </button>
                 </div>
                 <img id="gifImage"
-                  src="https://storage.googleapis.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0"
+                  src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0"
                   alt="logo" class="searchSlideError SearchGifImageError">
                 <div class="modal-body">
                     <h3 class="addProg">No Search Result</h3>
@@ -2242,47 +2244,47 @@
 
 
 
-      var caseStudyTemplate = "15H0myA0Iw7FTgImKuwv6snhqoSad_XhWnYVY5V3nWFo";
-      var circleChartsTemplate = "1jQQ7mikdmlWu_p3Pqghp4M3cv3tuK2kOIYllFp5YBB0";
-      var chartsTemplate = "1ESIbdiIf3eOcx8wPoSsQZQq0tVYNtMTp5xsR7ILzKjE";
-      var timelineTemplate = "17CbYbM-oJNiyPLtk2_XWMVr2r8vkIZSCJG6zvRB9MZY";
-      var nextStepsTemplate = "1xQpWP6t7atlYthR2ym1-b4DowOh3PfgFFFtV5eLQtxg"; 
-      var titleAndContentTemplate = "1mcP3dA4wPNlsznVJnkjHe1UBIyHoAoNC1DpJhTI4330";
-      var customerReferencesTemplate = "1oCP5q3baYxLxDp2O2mhmiHbzCzSyJv2wJ-1OeBRGgWE";
+      var caseStudyTemplate = "TEMPLATE_DECK_CASE_STUDY_PLACEHOLDER_001";
+      var circleChartsTemplate = "TEMPLATE_DECK_CIRCLE_CHART_PLACEHOLDER_1";
+      var chartsTemplate = "TEMPLATE_DECK_CHARTS_V1_PLACEHOLDER_0001";
+      var timelineTemplate = "TEMPLATE_DECK_TIMELINE_V1_PLACEHOLDER_01";
+      var nextStepsTemplate = "TEMPLATE_DECK_NEXT_STEPS_PLACEHOLDER_001"; 
+      var titleAndContentTemplate = "TEMPLATE_DECK_CONTEXT_V1_PLACEHOLDER_001";
+      var customerReferencesTemplate = "TEMPLATE_DECK_CUST_REF_PLACEHOLDER_00001";
 
-      var titleCloudStyle = "1t1fTqvswDVR4JdmPDE1MiPB1tCSrbuayLuIoNCbzZuA";
-      var agendaCloudStyle = "131d3j85xNUhNOSZnEUYj6oS_1VqovU8TtT9nJy3TDyw";
-      var dividerCloudStyle = "16wz6_DbEd5ZQR6Nkzai77cXehZW9PL0cGl1-tO4zqkU";
-      var speakerCloudStyle = "1E9spQIz10XncAaOHHNFB1MvUj76iZ5YmSlt7LpivxcA";
-      var timelineCloudstyle = "1V20Wclh7xYnwbnji2QY0O0Fc7kwMuIzhmDVRW3a8DLk";
-      var quoteCloudStyle = "1CiADPv2V7wXkiXxe2pOlDm956IbYsJvtnZ0cRvqOrZc";
-      var statsCloudStyle = "1zpVglLTGhd8t3B5HtvF7TFavG2YuajnFhR_9W2gV-RU";
-      var tableCloudStyle = "1n0wSAnM5r-_xZpTzaLK4KnFNDSgASEeoasfFyXAi2iE";
-      var chartCloudStyle = "1TCfs8nRvoDb3U-Xk9iGIb0qgmjgVqdLVLj9YulGUkDw";
-      var contentCloudStyle = "1m3VF5mvxjK7l_az2v9NOjaSSJEwlJczbjMxWYKXU8Q0";
+      var titleCloudStyle = "TEMPLATE_DECK_CS_TITLE_V1_PLACEHOLDER_01";
+      var agendaCloudStyle = "TEMPLATE_DECK_CS_AGENDAS_PLACEHOLDER_001";
+      var dividerCloudStyle = "TEMPLATE_DECK_CS_DIVIDER_PLACEHOLDER_001";
+      var speakerCloudStyle = "TEMPLATE_DECK_CS_SPEAKER_PLACEHOLDER_001";
+      var timelineCloudstyle = "TEMPLATE_DECK_CS_TIMELINE_PLACEHOLDER_01";
+      var quoteCloudStyle = "TEMPLATE_DECK_CS_QUOTE_V1_PLACEHOLDER_01";
+      var statsCloudStyle = "TEMPLATE_DECK_CS_STATS_V1_PLACEHOLDER_01";
+      var tableCloudStyle = "TEMPLATE_DECK_CS_TABLE_V1_PLACEHOLDER_01";
+      var chartCloudStyle = "TEMPLATE_DECK_CS_CHART_V1_PLACEHOLDER_01";
+      var contentCloudStyle = "TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001";
 
-      var titleSlidesGeneralAI = "1PHyzxVlRNUIGG9F2uKkLgc_IX3GUOOMU5cUeqOdGvjU";
-      var titleSlidesAIAgents = "1idvtVLmCwcDH8BPzjKSTQ7JKcx2Sy_i6x48SHDFbgPA";
-      var welcomeSlideGradient = "10gKOyeSezykoZ00IsIpXckj25kWaBjzO0XeE5pjocKg";
-      var welcomeSlideGeneralAI = "1PAdzymAwcJuL9d93oft4ovnRqLkDhZ0rjPb1C1cdfxY";
-      var welcomeSlideAIAgents = "11sdcopM0gtFBakxymSXJmuokta5EHDlzzme3LSvAdIo";
-      var agendaSlidesGeneralAI = "1W4NhyGOGYmrgeaAgXrga-kkJl7UbH_9bI_HtZrzXT9U";
-      var agendaSlidesAIAgents = "1ZLvNu-UGuZ75tiA5Lqm7OpypvXAhB2GAPQjlz0mApo0";
-      var dividerSlidesGradient = "1S_JB0BuLpXJfnnQ3rOHfNVIwT_P_olm_8ixU88sVRGY";
-      var dividerSlidesGeneralAI = "1L1N-4zYnMxoJDUoycwLPRfSD17ite5LLIDLQOsInFt4";
-      var dividerSlidesAIAgents = "1NJ6PdCZVcmSmg7-T7596PscSXkuKahIHsKHmU8KL5_Q";
-      var contentSlides = "1VszHYuNoNguePq8PEhtYddAflLcSwghsmthEYu-iB9c";
-      var speakerSlidesGeneralAI = "10wLNtn5dZ9x_7UxN49R5P67RYy4VBoAI9G4Ih2AT4Z8";
-      var speakerSlidesAIAgents = "1PtOTxa9TddVnh13hYTKvU3iHy_wVor5Xtw4luUiJ1Z8";
-      var keyTakeawaySlidesGeneralAI = "1qWlksdGK6pJSn_WeFfTRw4Oe8NVSqWnazQ79ejIFAAc";
-      var keyTakeawaySlidesAIAgents = "1rw66qZFse0iCGUtd401kopoXYpaSQfqAyZOYKWopYFM";
-      var keyTakeawaySlidesGradient = "1QFF8h_ckL_kwaDU-5YzDR1YNwBryUFixjqOhzs1ImTk";
-      var quoteSlidesGeneralAI = "1kag_RGG5rfvixuo16MOYXzxsHSdYBdy32iC9AlwYXWE";
-      var quoteSlidesAIAgents = "1WjpfjSxf3qnqSbeVbAxzf9pap8Kp39EQBjVQ0VcyXP8";
-      var quoteSlidesGradient = "1PBaN04w59Jjx3gZbyq4hwhifISjmCIz_JnzSJxs6s6I";
+      var titleSlidesGeneralAI = "TEMPLATE_DECK_GCAI_TTL_GN_PLACEHOLDER_01";
+      var titleSlidesAIAgents = "TEMPLATE_DECK_GCAI_TTL_AG_PLACEHOLDER_01";
+      var welcomeSlideGradient = "TEMPLATE_DECK_WELCOME_GRAD_PLACEHOLDER_1";
+      var welcomeSlideGeneralAI = "TEMPLATE_DECK_GCAI_WLC_GN_PLACEHOLDER_01";
+      var welcomeSlideAIAgents = "TEMPLATE_DECK_WELCOME_AGNT_PLACEHOLDER_1";
+      var agendaSlidesGeneralAI = "TEMPLATE_DECK_GCAI_AGD_GN_PLACEHOLDER_01";
+      var agendaSlidesAIAgents = "TEMPLATE_DECK_GCAI_AGD_AG_PLACEHOLDER_01";
+      var dividerSlidesGradient = "TEMPLATE_DECK_GCAI_DIV_GR_PLACEHOLDER_01";
+      var dividerSlidesGeneralAI = "TEMPLATE_DECK_GCAI_DIV_GN_PLACEHOLDER_01";
+      var dividerSlidesAIAgents = "TEMPLATE_DECK_GCAI_DIV_AG_PLACEHOLDER_01";
+      var contentSlides = "TEMPLATE_DECK_GCAI_CNT_V1_PLACEHOLDER_01";
+      var speakerSlidesGeneralAI = "TEMPLATE_DECK_SPEAKER_GEN_PLACEHOLDER_01";
+      var speakerSlidesAIAgents = "TEMPLATE_DECK_GCAI_SPK_AG_PLACEHOLDER_01";
+      var keyTakeawaySlidesGeneralAI = "TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01";
+      var keyTakeawaySlidesAIAgents = "TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01";
+      var keyTakeawaySlidesGradient = "TEMPLATE_DECK_GCAI_KEY_GR_PLACEHOLDER_01";
+      var quoteSlidesGeneralAI = "TEMPLATE_DECK_GCAI_QUO_GN_PLACEHOLDER_01";
+      var quoteSlidesAIAgents = "TEMPLATE_DECK_GCAI_QUO_AG_PLACEHOLDER_01";
+      var quoteSlidesGradient = "TEMPLATE_DECK_GCAI_QUO_GR_PLACEHOLDER_01";
 
-      var gtmLayout = "1SrZqeXsc9IpC313IYM0u_ahdEtgHsfKgp8RyjKdBypo";
-      var industryUseCase = "19HS3JAt_QasGe3TfALeN1v8HzTtd13aepVVsBSZ9X3A";
+      var gtmLayout = "TEMPLATE_DECK_GTM_LAYOUT_PLACEHOLDER_001";
+      var industryUseCase = "TEMPLATE_DECK_IND_USECASE_PLACEHOLDER_01";
 
     function getAddSlideTimelineDropdown()
     {
@@ -2604,6 +2606,7 @@
                 document.getElementById('transformStyleFilePreview').style.display = 'block';
                 document.getElementById('clearReferenceImgTransform').style.display = 'block';
                 $('#reshuffleSlideTemplate').hide();
+                document.getElementById("desiredOutputCriteria").placeholder = 'Change the slide background to match the layout, design, style, colors, and texture of the reference image.';
             };
             reader.readAsDataURL(file);
         }
@@ -2636,6 +2639,7 @@
           previewImg.src = "";
           document.getElementById('transformStyleFilePreview').style.display = 'none';
           document.getElementById('clearReferenceImgTransform').style.display = 'none';
+          document.getElementById("desiredOutputCriteria").placeholder = 'Change the slide background to match the layout, design, style, colors, and texture of the selected template.';
         }
 
         function toggleTransformThemeAndLayout() {
@@ -2652,6 +2656,7 @@
             }
             const activeTab= $('input[name="transformTone"]:checked').val();
             if(activeTab=='slide'){
+              document.getElementById('desiredOutputCriteria').placeholder = 'Ask PitchGen';
               $('#reshuffleSlideTemplate').show();
               $('#mandatoryFields').show();
               var erIdTransform = document.getElementById('ErIdTransform').value;
@@ -2677,6 +2682,11 @@
               if(selectedTransformStyleBase64)
               {
                 $('#reshuffleSlideTemplate').hide();
+                document.getElementById('desiredOutputCriteria').placeholder = 'Change the slide background to match the layout, design, style, colors, and texture of the reference image.';
+              }
+              else
+              {
+                document.getElementById('desiredOutputCriteria').placeholder = 'Change the slide background to match the layout, design, style, colors, and texture of the selected template.';
               }
               $('#mandatoryFields').hide();
               var erIdTransform = document.getElementById('ErIdTransform').value;
@@ -2696,6 +2706,7 @@
               }
             }
             else if(activeTab=='text'){
+              document.getElementById('desiredOutputCriteria').placeholder = 'Ask PitchGen';
               $('#reshuffleSlideTemplate').hide();
               const selectedLanguage = document.getElementById('translateLang').value;
               const isFullDeck = document.querySelector('#flexCheckChecked').checked;
@@ -2886,6 +2897,10 @@
             }).nanoBananaGenerate(sheetId, spreadSheetId, slideContent, slideLayout, slideCategory, product, customerName, industry, erIdGenerate, solution, selectedStyleBase64);
           } else {
             slideContent = slideContent + ". Output should be in a " + tone + " tone.";
+            var extractedDoc = $('#extractedDocumentText').val();
+            if (extractedDoc) {
+              slideContent += "\n\n### Additional Context from Local Document ###\n" + extractedDoc;
+            }
             var fileId = $('#selectedDriveFileId').val();
             var fileType = $('#selectedDriveFileType').val();
             var contextFileUrl = $('#pdfGcsUrl').val();
@@ -2977,6 +2992,7 @@
               }
             }).nanoBananaTransform(sheetId, spreadSheetId, desiredOutputCriteria, slideLayout, slideCategory, erId, selectedTransformStyleBase64,language);
           } else {
+            var isFullDeck = document.querySelector('#flexCheckChecked').checked;
             google.script.run.withSuccessHandler(function(arg){
               $("#transformSlideRunning").modal('hide');
               document.getElementById("generateReshuffleSlide").disabled = false;
@@ -2989,7 +3005,7 @@
               {
                 $('#transformSlideSuccess').modal('show');
               }
-            }).reshuffleSlideAPI(sheetId,spreadSheetId,desiredOutputCriteria,slideLayout,slideCategory,erId,toggleThemeLayout,language);
+            }).reshuffleSlideAPI(sheetId,spreadSheetId,desiredOutputCriteria,slideLayout,slideCategory,erId,toggleThemeLayout,language,isFullDeck);
           }
         }
       }
@@ -3015,7 +3031,7 @@
             else
             {
               var imageElement = document.getElementById("languagErrorImage");
-              imageElement.src = "https://storage.googleapis.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0";
+              imageElement.src = "https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0";
               document.getElementById("transDetailsError").textContent = arg.message;
               $("#languageTranslateError").modal('show');
             }
@@ -3024,12 +3040,12 @@
             var imageElement = document.getElementById("languagErrorImage");
             if(arg.flag=="NO_FILE_SELECTED")
             {
-              imageElement.src = 'https://storage.googleapis.com/<?= bucketName ?>/UI/Shopping%20Ad%20-%20UI%20Abstraction%20-%20Medium.svg?authuser=0';
+              imageElement.src = 'https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/Shopping%20Ad%20-%20UI%20Abstraction%20-%20Medium.svg?authuser=0';
               document.getElementById("transDetailsError").innerHTML = "Please click to select at least one slide from the left panel to proceed. <br><br> Don't forget to manually click the highlighted slide if you want to include it.";
             }
             else
             {
-              imageElement.src = "https://storage.googleapis.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0";
+              imageElement.src = "https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0";
               document.getElementById("transDetailsError").textContent = arg.message;
             }
 
@@ -3180,14 +3196,14 @@
             if (arg.flag == "NO_RESULT") {
                 const searchGifImage = document.getElementById("searchGifImage");
                 if (searchGifImage) {
-                  searchGifImage.src = 'https://storage.googleapis.com/<?= bucketName ?>/UI/AdSense%20-%20Sites%20-%20Loading%20fail.svg?authuser=0';
+                  searchGifImage.src = 'https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/AdSense%20-%20Sites%20-%20Loading%20fail.svg?authuser=0';
                 }
                 document.getElementById("searchDetails").innerHTML = "We couldn't find any results. Please try a different search.";
                 document.getElementById("searchProg").innerHTML = arg.message;
               } else if (arg.flag == "OTHER") {
                 const searchGifImage = document.getElementById("searchGifImage");
                 if (searchGifImage) {
-                  searchGifImage.src = 'https://storage.googleapis.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0';
+                  searchGifImage.src = 'https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0';
                 }
                 document.getElementById("searchDetails").innerHTML = "Unable to process your request. Please try after sometime.";
                 document.getElementById("searchProg").innerHTML = arg.message;
@@ -3389,6 +3405,8 @@
     var slideCategory = '';
     var erIdTransform = document.getElementById('ErIdTransform').value;
     var toggleThemeLayout = true;
+    var isFullDeck = document.querySelector('#flexCheckChecked').checked;
+    var language = document.getElementById('translateLang').value;
     $("#transformSlideRunning").modal('show');
     google.script.run.withSuccessHandler(function(arg){
       $("#transformSlideRunning").modal('hide');
@@ -3404,7 +3422,7 @@
       {
         $('#transformSlideSuccess').modal('show');
       }
-    }).reshuffleSlideAPI(sheetId,spreadSheetId,desiredOutputCriteria,slideLayout,slideCategory,erIdTransform,toggleThemeLayout);
+    }).reshuffleSlideAPI(sheetId,spreadSheetId,desiredOutputCriteria,slideLayout,slideCategory,erIdTransform,toggleThemeLayout,language,isFullDeck);
   }
 
 
@@ -3460,7 +3478,7 @@
     google.script.run.withSuccessHandler(function (arg) {
       if (arg.status == false) {
         $("#languageTranslate").modal('hide');
-        document.getElementById("languagErrorImage").src = 'https://storage.googleapis.com/<?= bucketName ?>/UI/Shopping%20Ad%20-%20UI%20Abstraction%20-%20Medium.svg?authuser=0';
+        document.getElementById("languagErrorImage").src = 'https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/Shopping%20Ad%20-%20UI%20Abstraction%20-%20Medium.svg?authuser=0';
         document.getElementById("transDetailsError").innerHTML = "Please click to select at least one slide from the left panel to proceed. <br><br> Don't forget to manually click the highlighted slide if you want to include it.";
 
         $("#languageTranslateError").modal('show');
@@ -3488,7 +3506,7 @@
               // if(msgArr.includes("Please select a translation language distinct from the slide's current language."))
               // {
               //   $("#languageTranslate").modal('hide');
-              //   document.getElementById("languagErrorImage").src="https://storage.googleapis.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0";
+              //   document.getElementById("languagErrorImage").src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0";
               //   document.getElementById("transStatusError").innerHTML = "Error!";
               //   document.getElementById("transDetailsError").textContent = arg.message;
               //   $("#languageTranslateError").modal('show');
@@ -3523,13 +3541,13 @@
 
 
               if (slides.length == slidePosition.length) {
-                document.getElementById("languagErrorImage").src = "https://storage.googleapis.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0";
+                document.getElementById("languagErrorImage").src = "https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/AdSense%20-%20Site%20Status%20-%20Error.svg?authuser=0";
                 document.getElementById("transDetailsError").textContent = "Unable to process your request. Please try after sometime.";
                 $("#languageTranslateError").modal('show');
               }
               else if (slides.length > slidePosition.length && slidePosition.length != 0) {
                 $("#languageTranslateError").modal('show');
-                document.getElementById("languagErrorImage").src = 'https://storage.googleapis.com/<?= bucketName ?>/UI/Shopping%20Ad%20-%20UI%20Abstraction%20-%20Medium.svg?authuser=0';
+                document.getElementById("languagErrorImage").src = 'https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/Shopping%20Ad%20-%20UI%20Abstraction%20-%20Medium.svg?authuser=0';
                 document.getElementById("transStatusError").innerHTML = "Moderately success";
                 document.getElementById("transDetailsError").innerHTML = "Translation progressed moderately. \nThe following slides are " + output + " require re-translation.\nPlease select these slides from the left side stack panel and retry.";
               }

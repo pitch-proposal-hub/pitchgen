@@ -20,18 +20,33 @@ helps select the right model and craft effective prompts.
     (`gemini-3.1-flash-image`). Best for standard content slides, text-heavy
     slides, or quick drafts.
 
-## Prompting Guidelines
+## Prompting Guidelines & 4-Part Boardroom Art Director Directive
 
-When prompting the Nano Banana models for slides, follow these guidelines:
+When prompting the Nano Banana models (`gemini-3-pro-image` /
+`gemini-3.1-flash-image`) for executive slides or in-slide visual customization,
+structure prompts using the **4-Part Boardroom Executive Art Director
+Directive**:
 
-1.  **Be Specific about Layout**: Describe the desired layout. Refer to the
-    specific layout styles defined in
-    [google_brand/layouts/](../google_brand/layouts/README.md) (e.g., Title
-    Slide, Content Slide, Quote Slide).
-2.  **Enforce Tone**: Align with the brand tone. See
-    [slide_tone/SKILL.md](../slide_tone/SKILL.md) for details.
-3.  **Keep it Brief**: Slides should not be walls of text. Focus on key
-    messages.
+1.  **Executive Audience & Medium**:
+    -   Explicitly frame the visual as a crisp, modern **16:9 widescreen C-suite
+        boardroom presentation visual** (`2K` resolution `>= 1600x1080px` for
+        hero/title visuals, `1K` `>= 1024px` minimum for content visuals).
+2.  **Palette & Framing**:
+    -   Use clean Google Cloud Material 3 geometry: crisp white (`#FFFFFF`) or
+        light slate (`#F8F9FA`) surfaces, generous negative space (`>= 25%`
+        breathing room), subtle rounded elevation cards, and harmonized Google
+        Cloud (`#4285F4`, `#34A853`, `#FBBC04`, `#EA4335`) + customer brand
+        accent colors.
+3.  **Grid & Structural Composition**:
+    -   Anchor elements to a structured asymmetrical or 3-column bento/flow grid
+        with clear directional visual hierarchy (left-to-right value progression
+        or layered architectural stack).
+4.  **Explicit Text & Iconography Hierarchy**:
+    -   For Title/Cover hero artwork (`slide_index <= 1`): enforce **strict
+        zero-text** (`NO text, NO words, NO letters, NO numbers`) so native
+        Google Slides typography remains crystal clear.
+    -   For data/infographic cards: limit text to short 2–4 word sans-serif
+        callout badges and bold quantitative KPI highlights.
 
 ## Branding & Themes
 

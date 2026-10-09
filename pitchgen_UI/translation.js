@@ -4,7 +4,6 @@ function createJsonRequestForSlideTextFormatting(targetLanguage , isFullDeck, op
     var userLdap = Session.getActiveUser().getEmail();
     var returnData = {};
     const presentation = SlidesApp.getActivePresentation();
-    unGroupedShapesInSlides(presentation);
     const presentationId = presentation.getId();
     var slides = [];
     if (isFullDeck == false) {
@@ -201,9 +200,21 @@ function createJsonRequestForSlideTextFormatting(targetLanguage , isFullDeck, op
         }
       }
 
+      var notesText = "";
+      try {
+        var notesPage = slide.getNotesPage();
+        if (notesPage) {
+          var notesShape = notesPage.getSpeakerNotesShape();
+          if (notesShape && notesShape.getText()) {
+            notesText = notesShape.getText().asString().trim();
+          }
+        }
+      } catch(e) {}
+
       slideData[slideId] = {
         shapes: slideShapeData,
-        tables: slideTableData
+        tables: slideTableData,
+        speaker_notes: notesText
       };
     }
 

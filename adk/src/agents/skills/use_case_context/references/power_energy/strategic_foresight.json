@@ -1,0 +1,402 @@
+[
+  {
+    "use_case_title": "Large Load Forecasting",
+    "description_and_problem_statement": "Problem Statement: Traditional models fail to predict rapid demand from data centers and EV infrastructure, creating uncertainties that complicates capital planning. Description: Forecasting (90 days out to 10 years out) large loads (MW, MWh) in 15 min increments based on type of data center, contractual agreements, and infrastructure build-out.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Plan Forecast & Model with enhanced data-driven tools (Strategic Foresight)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "E/S/VP of Planning",
+      "COO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "Gemini Enterprise Agent Platform"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Maximize grid reliability and optimize capital expenditure (CapEx) by accurately predicting the capacity, energization timelines, and hourly load shapes of hyper-dense power consumers"
+    ],
+    "value_narrative": "",
+    "kpis": [],
+    "google_differentiation": "Google's unique differentiation comes from combining advanced multimodal AI with secure, enterprise-grade data platforms for 'agentic' workflows.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Security-Constrained Optimized Power Flow (Congestion Mgmt and Unit Commitment)",
+    "description_and_problem_statement": "Problem Statement: Slow grid optimization tools struggle with renewable volatility and 'N-1' security constraints; forcing Transmission System Operators to use inefficient 'safety buffers'. This causes grid underutilization, higher carbon emissions via fossil-fuel re-dispatch, and increased consumer costs.",
+    "use_case_status": "Demo/Material - Not Deployed",
+    "industry_pillar": "Plan Forecast & Model with enhanced data-driven tools (Strategic Foresight)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "E/S/VP of Planning",
+      "COO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Compute-Compute Engine",
+      "Gemini Enterprise Agent Platform"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Reduced congestion costs and re-dispatch penalties"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Reduced congestion cost",
+      "regulatory penalties",
+      "improved power quality"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Commodity Price + Volatility Forecasting",
+    "description_and_problem_statement": "Forecasting (next 15 minutes, current-day, day-ahead, current week, prompt month) price and volatility for energy, capacity, and/or ancillary services for one or more nodes or zones",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Plan Forecast & Model with enhanced data-driven tools (Strategic Foresight)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "E/S/VP of Energy Trading or Forecasting",
+      "COO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise Agent Platform",
+      "Analytics-BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Better trading decisions and improved margin"
+    ],
+    "value_narrative": "",
+    "kpis": [],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Model Integration and Stochastic Planning Orchestration",
+    "description_and_problem_statement": "Orchestrating agent to fetch data and models, generate scenarios, run analyses, evaluate outcomes, and present results for various planning situations and timeframes",
+    "use_case_status": "Demo/Material - Not Deployed",
+    "industry_pillar": "Plan Forecast & Model with enhanced data-driven tools (Strategic Foresight)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "E/S/VP of Planning",
+      "COO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "Gemini Enterprise Agent Platform"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Capital Efficiency (Avoided stranded assets)"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Improved ROE via risk-adjusted capital allocation"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Weather Forecasting",
+    "description_and_problem_statement": "Integrating short-term, physics based models with WeatherNext to provide short-to-medium term forecasting improvements around weather (including temp, humidity, wind speed, wind direction, etc.).",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Plan Forecast & Model with enhanced data-driven tools (Strategic Foresight)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "Manager of Meterology",
+      "COO",
+      "VP Transmission or Distribution Operations",
+      "E/S/VP of Energy Trading",
+      "VP of Generation",
+      "VP of Construction"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Google Earth Engine",
+      "WeatherNext",
+      "Analytics-BigQuery",
+      "Gemini Enterprise Agent Platform"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Storm mobilization savings; reduced outage times"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Reduced crew standby costs",
+      "faster ETR"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Multi-Modal Geospatial Insights to Enhance Your Digital Twin and Operations",
+    "description_and_problem_statement": "Improve the accuracy of your asset's (power plant, T&D electric grid, pipeline & compressors, water treatment facility) digital twin for work management, asset management, and grid strategy.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Plan Forecast & Model with enhanced data-driven tools (Strategic Foresight)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "COO",
+      "VP Operations",
+      "E/S/VP Transmission/Distribution",
+      "VP Generation",
+      "VP Construction"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise Agent Platform",
+      "WeatherNext"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Optimized vegetation management (evolve from time-based to condition-based trimming)"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Reduced vegetation management spend",
+      "fire risk mitigation"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Leak/Methane Detection and Reporting",
+    "description_and_problem_statement": "Identify leaks/spills at the wellhead and correctly identify underlying issue.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Plan Forecast & Model with enhanced data-driven tools (Strategic Foresight)",
+    "associated_horizontal_plays": [],
+    "key_personas": [],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Google Earth Engine",
+      "Gemini Enterprise Agent Platform"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Reduced clean up costs; compliance with environmental regulations and reporting"
+    ],
+    "value_narrative": "",
+    "kpis": [],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Reservoir Modeling and System Planning",
+    "description_and_problem_statement": "Model reservoir depletion to enhance well management and improve yields. Leveraging the AI-Native Data Cloud and HPC to accelerate reservoir models.",
+    "use_case_status": "Demo/Material - Not Deployed",
+    "industry_pillar": "Plan Forecast & Model with enhanced data-driven tools (Strategic Foresight)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "VP of Subsurface",
+      "Reservoir Engineers"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise Agent Platform",
+      "Analytics-BigQuery",
+      "Compute-Compute Engine"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Reduced operating costs; better well management and optimization"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Improved recovery rates",
+      "faster modeling cycles"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Energy Demand Forecasting & SCADA Fuel Optimization",
+    "description_and_problem_statement": "Optimizing natural gas compressor set-points by correlating real-time SCADA pressure data with weather forecasts.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Plan Forecast & Model with enhanced data-driven tools (Strategic Foresight)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "Pipeline Operators",
+      "Gas Transmission Managers"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise",
+      "Analytics-BigQuery",
+      "WeatherNext"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Reduced operating costs; improved pipeline/compressor management"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "$15M–$25M annual OpEx savings",
+      "Scope 1 emission reduction"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Source Water Reliability & Hazard Safeguarding",
+    "description_and_problem_statement": "Safeguarding source water reliability against climate-driven hazards by monitoring catchments and reservoirs.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Plan Forecast & Model with enhanced data-driven tools (Strategic Foresight)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "VP Water Resources",
+      "Director Water Quality",
+      "VP Operations"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Google Earth Engine",
+      "Analytics-BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Protected raw water quality and avoided treatment cost spikes."
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Avoids toxic ash contamination",
+      "models precipitation trends"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  }
+]

@@ -1,0 +1,58 @@
+{
+    "1@TEMPLATE_DECK_GCAI_SPK_AG_PLACEHOLDER_01@g389c60a1561_0_678": {
+        "header1": "20 to 34 characters",
+        "header1_content": "53 to 63 characters",
+        "header2": "20 to 34 characters",
+        "header2_content": "53 to 63 characters",
+        "header3": "20 to 34 characters",
+        "header3_content": "53 to 63 characters",
+        "header4": "20 to 34 characters",
+        "header4_content": "53 to 63 characters",
+        "item1": "80 to 110 characters",
+        "item2": "80 to 110 characters",
+        "item3": "80 to 110 characters",
+        "item4": "80 to 110 characters"
+    },
+    "2@TEMPLATE_DECK_GCAI_SPK_AG_PLACEHOLDER_01@g389c60a1561_0_701": {
+        "header1": "20 to 34 characters",
+        "header1_content": "53 to 63 characters",
+        "header2": "20 to 34 characters",
+        "header2_content": "53 to 63 characters",
+        "header3": "20 to 34 characters",
+        "header3_content": "53 to 63 characters",
+        "header4": "20 to 34 characters",
+        "header4_content": "53 to 63 characters",
+        "item1": "80 to 110 characters",
+        "item2": "80 to 110 characters",
+        "item3": "80 to 110 characters",
+        "item4": "80 to 110 characters"
+    },
+    "3@TEMPLATE_DECK_GCAI_SPK_AG_PLACEHOLDER_01@g389c60a1561_0_724": {
+        "header1": "20 to 34 characters",
+        "header1_content": "53 to 63 characters",
+        "header2": "20 to 34 characters",
+        "header2_content": "53 to 63 characters",
+        "header3": "20 to 34 characters",
+        "header3_content": "53 to 63 characters",
+        "header4": "20 to 34 characters",
+        "header4_content": "53 to 63 characters",
+        "item1": "80 to 110 characters",
+        "item2": "80 to 110 characters",
+        "item3": "80 to 110 characters",
+        "item4": "80 to 110 characters"
+    },
+    "4@TEMPLATE_DECK_GCAI_SPK_AG_PLACEHOLDER_01@g389c60a1561_0_747": {
+        "header1": "20 to 34 characters",
+        "header1_content": "53 to 63 characters",
+        "header2": "20 to 34 characters",
+        "header2_content": "53 to 63 characters",
+        "header3": "20 to 34 characters",
+        "header3_content": "53 to 63 characters",
+        "header4": "20 to 34 characters",
+        "header4_content": "53 to 63 characters",
+        "item1": "80 to 110 characters",
+        "item2": "80 to 110 characters",
+        "item3": "80 to 110 characters",
+        "item4": "80 to 110 characters"
+    }
+}

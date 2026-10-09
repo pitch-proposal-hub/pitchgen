@@ -1,5 +1,3 @@
-
-
 import base64
 import json
 from google import genai
@@ -15,13 +13,12 @@ class LayoutTransformerWorkflow(BaseWorkflow):
         "Transforms a slide image and options into layout-mapped content.",
     )
     self.config = config
-    self.project_id = config["default"].get("project_name", os.getenv("GOOGLE_CLOUD_PROJECT", "YOUR_PROJECT_ID"))
+    self.project_id = config["default"].get("project_name", "your-gcp-project-id")
     self.gemini_model = config["default"].get(
         "gemini_model",
-        config["default"].get("gemini_model_1", "gemini-3.1-flash-lite"),
+        config["default"].get("gemini_model_1", "gemini-3.5-flash-lite"),
     )
     self.region = "global"
-
 
   def execute(
       self, slide_layout, slide_category, output_criteria, slide_image_url=None, slide_id=None
@@ -43,31 +40,69 @@ class LayoutTransformerWorkflow(BaseWorkflow):
         "Title and content": "templates_metadata/context.txt",
         "Next Steps": "templates_metadata/next_steps.txt",
         "Timeline": "templates_metadata/timeline.txt",
-        "GC_AI_Title and content": "templates_metadata/gc_ai_title_and_content.txt",
+        "GC_AI_Title and content": (
+            "templates_metadata/gc_ai_title_and_content.txt"
+        ),
         "GC_AI_Divider": "templates_metadata/gc_ai_divider.txt",
         "GC_AI_Agenda": "templates_metadata/gc_ai_agendas.txt",
         "CS_Title and content": "templates_metadata/cs_title_and_content.txt",
         "CS_Divider": "templates_metadata/cs_divider.txt",
         "CS_Agenda": "templates_metadata/cs_agendas.txt",
-        "GC_AI_Agenda slides General AI": "templates_metadata/gc_ai_Agenda_slides_General_AI.txt",
-        "GC_AI_Title slides General AI": "templates_metadata/gc_ai_title_slides_general_ai.txt",
-        "GC_AI_Title slides AI agents": "templates_metadata/gc_ai_Title_slides_AI_agents.txt",
-        "GC_AI_Welcome slide Gradient": "templates_metadata/gc_ai_welcome_slide_gradient.txt",
-        "GC_AI_Welcome slide General AI": "templates_metadata/gc_ai_welcome_slide_general_ai.txt",
-        "GC_AI_Welcome slide AI agents": "templates_metadata/gc_ai_Welcome_slide_AI_agents.txt",
-        "GC_AI_Agenda slides AI agents": "templates_metadata/gc_ai_Agenda_slides_AI_agents.txt",
-        "GC_AI_Divider slides Gradient": "templates_metadata/gc_ai_Divider_slides_Gradient.txt",
-        "GC_AI_Divider slides General AI": "templates_metadata/gc_ai_Divider_slides_General AI.txt",
-        "GC_AI_Divider slides AI agents": "templates_metadata/gc_ai_Divider_slides_AI_agents.txt",
+        "GC_AI_Agenda slides General AI": (
+            "templates_metadata/gc_ai_Agenda_slides_General_AI.txt"
+        ),
+        "GC_AI_Title slides General AI": (
+            "templates_metadata/gc_ai_title_slides_general_ai.txt"
+        ),
+        "GC_AI_Title slides AI agents": (
+            "templates_metadata/gc_ai_Title_slides_AI_agents.txt"
+        ),
+        "GC_AI_Welcome slide Gradient": (
+            "templates_metadata/gc_ai_welcome_slide_gradient.txt"
+        ),
+        "GC_AI_Welcome slide General AI": (
+            "templates_metadata/gc_ai_welcome_slide_general_ai.txt"
+        ),
+        "GC_AI_Welcome slide AI agents": (
+            "templates_metadata/gc_ai_Welcome_slide_AI_agents.txt"
+        ),
+        "GC_AI_Agenda slides AI agents": (
+            "templates_metadata/gc_ai_Agenda_slides_AI_agents.txt"
+        ),
+        "GC_AI_Divider slides Gradient": (
+            "templates_metadata/gc_ai_Divider_slides_Gradient.txt"
+        ),
+        "GC_AI_Divider slides General AI": (
+            "templates_metadata/gc_ai_Divider_slides_General_AI.txt"
+        ),
+        "GC_AI_Divider slides AI agents": (
+            "templates_metadata/gc_ai_Divider_slides_AI_agents.txt"
+        ),
         "GC_AI_Content slides": "templates_metadata/gc_ai_Content_slides.txt",
-        "GC_AI_Speaker slides General AI": "templates_metadata/gc_ai_Speaker_slides_General_AI.txt",
-        "GC_AI_Speaker slides AI agents": "templates_metadata/gc_ai_Speaker_slides_AI_agents.txt",
-        "GC_AI_Key takeaway slides General AI": "templates_metadata/gc_ai_Key_takeaway_slides_General AI.txt",
-        "GC_AI_Key takeaway slides AI agents": "templates_metadata/gc_ai_Key_takeaway_slides_AI_agents.txt",
-        "GC_AI_Key takeaway slides Gradient": "templates_metadata/gc_ai_Key_takeaway_slides_Gradient.txt",
-        "GC_AI_Quote slides General AI": "templates_metadata/gc_ai_Quote_slides_General AI.txt",
-        "GC_AI_Quote slides AI agents": "templates_metadata/gc_ai_Quote_slides_AI_agents.txt",
-        "GC_AI_Quote slides Gradient": "templates_metadata/gc_ai_Quote_slides_Gradient.txt",
+        "GC_AI_Speaker slides General AI": (
+            "templates_metadata/gc_ai_Speaker_slides_General_AI.txt"
+        ),
+        "GC_AI_Speaker slides AI agents": (
+            "templates_metadata/gc_ai_Speaker_slides_AI_agents.txt"
+        ),
+        "GC_AI_Key takeaway slides General AI": (
+            "templates_metadata/gc_ai_Key_takeaway_slides_General_AI.txt"
+        ),
+        "GC_AI_Key takeaway slides AI agents": (
+            "templates_metadata/gc_ai_Key_takeaway_slides_AI_agents.txt"
+        ),
+        "GC_AI_Key takeaway slides Gradient": (
+            "templates_metadata/gc_ai_Key_takeaway_slides_Gradient.txt"
+        ),
+        "GC_AI_Quote slides General AI": (
+            "templates_metadata/gc_ai_Quote_slides_General_AI.txt"
+        ),
+        "GC_AI_Quote slides AI agents": (
+            "templates_metadata/gc_ai_Quote_slides_AI_agents.txt"
+        ),
+        "GC_AI_Quote slides Gradient": (
+            "templates_metadata/gc_ai_Quote_slides_Gradient.txt"
+        ),
         "CS_Chart": "templates_metadata/cs_chart.txt",
         "CS_Content": "templates_metadata/cs_content.txt",
         "CS_Quote": "templates_metadata/cs_quote.txt",
@@ -89,7 +124,7 @@ class LayoutTransformerWorkflow(BaseWorkflow):
       prefixed_key = "CS_" + category_key
     elif slide_layout == "GTM Accelerate" and not category_key.startswith("GTM_"):
       prefixed_key = "GTM_" + category_key
-      
+
     if prefixed_key in templates_metadata_map:
       category_key = prefixed_key
 
@@ -101,12 +136,16 @@ class LayoutTransformerWorkflow(BaseWorkflow):
         metadata_path = os.path.join(base_dir, templates_metadata_map[category_key])
         with open(metadata_path, 'r', encoding='utf-8') as f:
           meta_json = json.loads(f.read())
-        
+
         # Look for slide_id in the keys
         for key, val in meta_json.items():
           if slide_id in key:
             template_keys = list(val.keys())
             break
+        if not template_keys and meta_json:
+          first_val = next(iter(meta_json.values()))
+          if isinstance(first_val, dict):
+            template_keys = list(first_val.keys())
       except Exception as e:
         print(f"[LayoutTransformerWorkflow] Error loading template keys: {e}")
 
@@ -121,10 +160,19 @@ class LayoutTransformerWorkflow(BaseWorkflow):
         f" {output_criteria}\n\nAnalyze the text, layout, and structure in the"
         " image. Rephrase, enhance, or format the text to fit the new"
         " layout/category according to the output criteria. Return a JSON"
-        " object containing keys mapping to text placeholders for this layout.\n"
-        f"{keys_instruction}\n"
-        "Make sure your response contains ONLY the valid JSON object, without"
-        " any markdown formatting wrappers (like ```json ... ```)."
+        " object containing keys mapping to text placeholders for this"
+        " layout.\n- HEADLINE STYLE: Write the primary slide title in"
+        " crisp, conversational, declarative **Sentence case** using **Subject"
+        " + finite active verb + outcome** or a **clean noun/contrast phrase**"
+        " (44 to 62 chars; capitalize only the first word and proper"
+        " nouns/acronyms). NEVER start with '-ing' gerunds, bare imperative"
+        " commands, or Title-Case slogans.\n- CARD BODY DENSITY: Write each"
+        " card body description"
+        " (`header1_content`, `header2_content`, `header3_content`) at 135 to"
+        " 165 characters so cards look visually balanced and"
+        f" substantive.\n{keys_instruction}\nMake sure your response contains"
+        " ONLY the valid JSON object, without any markdown formatting wrappers"
+        " (like ```json ... ```)."
     )
 
     contents = []
@@ -159,6 +207,8 @@ class LayoutTransformerWorkflow(BaseWorkflow):
               temperature=0.2,
           ),
       )
+      if not response.text:
+        raise ValueError("Empty response received from Gemini model.")
       # Ensure it is a valid JSON string
       text_resp = response.text.strip()
       # Double check JSON syntax by parsing

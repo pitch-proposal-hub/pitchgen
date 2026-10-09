@@ -1,118 +1,99 @@
-# PitchGen: Technical Architecture & Function Documentation
+# PitchGen Technical Documentation & Deployment Guide
 
-## 1. Architectural Overview
+## 1. Architecture Overview
 
-The **PitchGen** solution is structured into a two-tier architecture comprising the **Google Apps Script Frontend (`pitchgen_UI/`)** and the **Multi-Agent Python Backend (`pitchgen_adk/`)** built on the **Google ADK (Agent Development Kit)** framework.
+PitchGen uses a modular **Multi-Agent Architecture** built on the **Google Agent Development Kit (ADK)** that serves two interactive surfaces simultaneously:
+1. **Google Slides Add-on (`pitchgen_UI/`)**: Embedded directly inside Google Slides via Google Apps Script (`sideBar.html` and `userInputPopup.html`).
+2. **Enterprise Conversational UI (`adk/src/ge/`)**: Renders rich **A2UI v0.9** interactive cards (Intake forms, Outline review cards, Slide search carousels, and Google Slides Canvas artifacts).
 
-```
-+-----------------------------------------------------------------------+
-|                          PitchGen Solution                            |
-+-----------------------------------------------------------------------+
-|  Frontend UI (pitchgen_UI/)         |  Multi-Agent Backend (pitchgen_adk/) |
-|  - Google Slides Add-on             |  - ADK 2.0 Web Agent (src/agent.py)  |
-|  - Sidebar & Modal Dialogs          |  - Narrative & Creative Orchestrators|
-|  - Clasp & Apps Script Services     |  - Vertex AI Search & Gemini Models  |
-+-----------------------------------------------------------------------+
-```
+```mermaid
+flowchart LR
+    subgraph Surfaces["User Surfaces"]
+        UI["Google Slides Add-on (pitchgen_UI)"]
+        A2UI["Enterprise Chat & A2UI v0.9 Canvas (src/ge)"]
+    end
 
-### Hierarchy & Component Roles
-- **Frontend UI (`pitchgen_UI/`)**: Implements Google Slides sidebar controls, customization popup dialogs, and Google Drive picker integration. Transmits requests to backend Cloud Run / App Engine endpoints via REST APIs (`restAPI.js`, `Code.js`).
-- **Backend Agent Ecosystem (`pitchgen_adk/`)**:
-  - **Orchestrators**: High-level managers that coordinate entire generation phases (`NarrativeOrchestrator` vs. `CreativeOrchestrator`).
-  - **Agents**: Specialist entities responsible for distinct tasks (`RetrievalAgent`, `SlideEngineeringAgent`, `VisualAgent`, `SidebarAgent`).
-  - **Workflows**: Procedural logic classes that perform API calls, GenAI synthesis, semantic retrieval, translation, and layout transformation.
-  - **ADK Integration (`src/agent.py`)**: Exposes agent tools to the Web UI for interactive slide generation, search, translation, and refinement.
+    subgraph ADK["PitchGen ADK Multi-Agent Backend (adk/src)"]
+        Root["PitchGen Orchestrator (agent.py)"]
+        Agenda["AgendaAgent & OutlineWorkflow"]
+        Retrieval["RetrievalAgent & SlideSearchWorkflow"]
+        CustRef["CustomerReferenceRetriever"]
+        Eng["SlideEngineeringAgent & CreativeOrchestrator"]
+        Inspector["16-Gate DeckPerfectionInspector"]
+    end
 
----
+    subgraph GCP["Google Cloud Platform & Workspace"]
+        Gemini["Vertex AI Gemini 3.x & Omni 1.1"]
+        VAIS["Vertex AI Search Datastores"]
+        GCS["Cloud Storage Buckets"]
+        SlidesAPI["Google Slides & Drive APIs"]
+    end
 
-## 2. State & Configuration Management
-
-### Backend Configuration (`pitchgen_adk/src/config_loader.py`)
-- **`load_config(file_path)`**: Reads `src/config/config.ini` to initialize Vertex AI project settings, Gemini model versions, and datastore aliases required for search and retrieval. Resolves secrets securely via Secret Manager with fallback handling.
-
-### State Tracking (`pitchgen_adk/src/state.py`)
-- **`GlobalState` Class**: Pass-through data structure maintaining conversation context across agents:
-    - `context`: Stores customer metadata, target industry, and user requirements.
-    - `outline/agendas`: Contains presentation structure blueprints.
-    - `reusable_slides`: List of pre-existing slides retrieved from repositories.
-    - `generated_content`: Synthesized text for missing content gaps.
-    - `final_deck_structure`: Mappings of content to slide placeholders.
-
-### Database Integration (`pitchgen_adk/src/db/connection.py` & `pitchgen_adk/src/db/db_controller.py`)
-- **`DBController`**: Handles SQL operations for logging user inputs, request outlines, model outputs, slide copy actions, translation/reshuffle events, and feedback entries.
-
----
-
-## 3. End-to-End Workflow
-
-Execution flows from user actions in `pitchgen_UI/` to backend agent orchestrators in `pitchgen_adk/`:
-
-```
-[pitchgen_UI Modal/Sidebar] ---> REST API Call ---> [pitchgen_adk/src/agent.py]
-                                                          │
-                                         ┌────────────────┴────────────────┐
-                                         ▼                                 ▼
-                             Phase 1: Narrative               Phase 2: Creative
-                            (NarrativeOrchestrator)          (CreativeOrchestrator)
+    UI --> Root
+    A2UI --> Root
+    Root --> Agenda
+    Root --> Retrieval
+    Retrieval --> CustRef
+    Root --> Eng
+    Eng --> Inspector
+    Agenda --> Gemini
+    Retrieval --> VAIS
+    CustRef --> VAIS
+    Eng --> Gemini
+    Eng --> GCS
+    Eng --> SlidesAPI
 ```
 
-### Phase 1: Narrative Orchestration
-**Managed by: `NarrativeOrchestrator` (`main.py`) or `create_proposal_outline` tool (`src/agent.py`)**
+---
 
-#### 1.1 Agenda & Outline Generation (`AgendaAgent`)
-- **`OutlineWorkflow.execute()`**:
-    * Fetches customer context and queries **Vertex AI Search (Discovery Engine)** for web intelligence.
-    * Synthesizes a structured presentation outline using Gemini (`gemini-2.5-flash`).
-- **`AgendaWorkflow.execute()`**:
-    * Expands the high-level outline into detailed slide-by-slide agendas.
-- **DB Logging**: Saves user context and outline structures to the tracking database.
+## 2. Model Configuration (`adk/src/config/config.ini`)
+
+PitchGen is configured out-of-the-box for the latest **Gemini 3.x** and **Gemini Omni 1.1** model family on Vertex AI:
+
+| Config Key | Default Model | Purpose |
+| :--- | :--- | :--- |
+| `gemini_model` | `gemini-3.8-flash` | Primary reasoning model (`ThinkingLevel.MEDIUM`) for CVI outlines, slide copywriting, and layout mapping |
+| `gemini_model_1` | `gemini-3.5-flash-lite` | High-throughput classification, entity extraction, and metadata validation |
+| `gemini_image_model_1` | `gemini-3.1-flash-image` | Fast bespoke slide visual and 3D isometric illustration synthesis |
+| `gemini_image_model_2` | `gemini-3-pro-image` | High-fidelity visual restyling and editorial graphic synthesis |
+| `gemini_video_model` | `gemini-omni-1.1-flash-preview` | Video-to-Video (`task="edit"`) customization of animated UI demo GIFs |
+| `embedding_model` | `text-embedding-005` | 768-dimensional semantic slide embeddings for multi-factor retrieval scoring |
 
 ---
 
-### Phase 2: Creative Orchestration
-**Managed by: `CreativeOrchestrator` (`main.py`) or `slide_generator_skill` tool (`src/agent.py`)**
+## 3. Vertex AI Search Datastores
 
-#### 2.1 Asset Discovery (`RetrievalAgent`)
-- **`SlideSearchWorkflow.execute()`**:
-    * Queries internal datastores for matching reusable slides.
-- **`SemanticScoringWorkflow.execute()`**:
-    * Computes vector embeddings using `text-embedding-004` and applies cosine similarity scoring (threshold >= 0.7).
-- **Dynamic Slide Clusters**:
-    * Groups anchor slides and retrieves sibling slides from the same deck to preserve design consistency.
+Configure two structured Vertex AI Search (Discovery Engine) datastores in your GCP project and set their IDs in `adk/src/config/config.ini` under `[reusable]`:
 
-#### 2.2 Content Engineering & Customization (`SlideEngineeringAgent`)
-- **Gap-Based Synthesis (`ContentSynthesisWorkflow.execute()`)**:
-    * Evaluates coverage of agenda sub-points against retrieved assets.
-    * Generates net-new content via Gemini *only* for sub-points lacking reusable slide coverage.
-- **Customization (`ReusableSlideCustomizerWorkflow.execute()`)**:
-    * Personalizes retrieved slide text for target accounts.
-- **Template Mapping (`TemplateMapperWorkflow.execute()`)**:
-    * Maps text into Google Slides placeholder slots with visual layout deduplication.
-
-#### 2.3 Visual Assets (`VisualAgent`)
-- **`VisualSynthesisWorkflow.execute()`**:
-    * Generates contextual business images using **Google Imagen** on Vertex AI when visual assets are requested.
+1. **`sales_play_reusables`**:
+   - Stores metadata for reusable solution, architecture, market trend, and foundation slides.
+   - Recommended schema fields: `deck_id`, `slide_id`, `slide_title`, `deck_title`, `slide_summary`, `slide_job`, `cvi_cluster`, `industry`, `google_product`, `sales_play`, `core_topics`, `desc_embedding`.
+2. **`cust_ref`**:
+   - Stores verified customer reference / case study slides (`Proof_Points`).
+   - Recommended schema fields: `customer_name`, `industry`, `sub_industry`, `asset_url` (`https://docs.google.com/presentation/d/<deck_id>/edit#slide=id.<slide_id>`), `google_products`, `quantifiable_business_impact`, `description`.
 
 ---
 
-## 4. Advanced Features & Payload Services
+## 4. Slide Template Library Setup
 
-Exposed via `pitchgen_adk/src/agent.py` and connected to `pitchgen_UI/restAPI.js`:
-
-- **Layout Reshuffling**: Transforms slide layout coordinates using `LayoutTransformerWorkflow`.
-- **Text Polishing**: Refines slide text length and tone via `TextTransformerWorkflow`.
-- **In-Memory & Package Translation**: Translates presentation decks using `TranslationEngineWorkflow` / `TranslationWorkflow`.
-- **Sales Play Processing**: Automates personalized Sales Play slide content and GCS template mapping.
-- **Sidebar Search & Generation**: Handles live slide search (`sidebar_search`) and multimodal screenshot-to-slide generation (`sidebar_generate`).
+PitchGen separates **slide narrative synthesis** from **visual template geometry**:
+1. Host your master Google Slides template decks in Google Drive (accessible to the service account and end users).
+2. Update `adk/src/config/mapping.json` with the `deckId` and `slide_id` mappings for your `title`, `agenda`, `section` (divider), and `thank` (closing) slides.
+3. Update `adk/src/templates_metadata/*.txt` with your template deck IDs (`<template_number>@<deck_id>@<slide_id>`) and shape placeholder coordinates.
 
 ---
 
-## 5. Key Technologies
-- **Frontend**: Google Apps Script (V8 Runtime), HTML5, JavaScript, Bootstrap, Clasp.
-- **Backend Orchestration**: Google ADK (Agent Development Kit 2.0), Python 3.11+.
-- **Generative AI Models**: Google Gemini 2.5 Flash, Gemini 3.5 Flash, Google Imagen.
-- **Embeddings & Search**: Vertex AI `text-embedding-004`, Vertex AI Search (Discovery Engine).
-- **Security & Storage**: Google Secret Manager, Google Cloud Storage.
+## 5. Deploying the Google Slides Add-on (`pitchgen_UI/`)
 
----
-*Documented: July 2026*
+1. Install `clasp` and authenticate with your Google Workspace account:
+   ```bash
+   npm install -g @google/clasp
+   clasp login
+   ```
+2. Update `pitchgen_UI/.clasp.json` with your Apps Script `scriptId` and `pitchgen_UI/configuration.js` with your GCP project and backend URLs.
+3. Push and deploy the Add-on:
+   ```bash
+   cd pitchgen_UI
+   clasp push
+   clasp deploy
+   ```

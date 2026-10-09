@@ -1,0 +1,24 @@
+{
+    "1@TEMPLATE_DECK_CS_TABLE_V1_PLACEHOLDER_01@g38d7f498029_0_454": {
+        "title": "40 to 56 characters",
+        "header1": "20 to 30 characters",
+        "header1_content": "100 to 130 characters",
+        "item1": "15 to 25 characters",
+        "item2": "15 to 25 characters",
+        "item3": "15 to 25 characters"
+    },
+    "2@TEMPLATE_DECK_CS_TABLE_V1_PLACEHOLDER_01@g38d7f498029_0_461": {
+        "title": "40 to 56 characters",
+        "header1": "15 to 25 characters",
+        "header2": "15 to 25 characters",
+        "header3": "15 to 25 characters",
+        "header4": "15 to 25 characters",
+        "item1": "15 to 25 characters",
+        "item2": "15 to 25 characters",
+        "item3": "15 to 25 characters",
+        "item4": "15 to 25 characters",
+        "item5": "15 to 25 characters",
+        "text1": "50 to 65 characters",
+        "text2": "50 to 65 characters"
+    }
+}

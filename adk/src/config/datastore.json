@@ -1,8 +1,8 @@
 {
     "datastore_map": {
-        "pitchhub": "pitch_sin",
-        "golden_sin": "golden_sin",
+        "sales play": "sales_play_reusables",
+        "sales plays": "sales_play_reusables",
         "customer references": "cust_ref",
-        "customer journey maps(cjms)": "cjms",
-        "sales play": "sales_play_reusables"}
+        "cloudhub": "cloudhub_golden_sin"
+    }
 }

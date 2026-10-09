@@ -6,15 +6,17 @@ authors = [
     {name = "Your Name", email = "your@email.com"},
 ]
 dependencies = [
-    "google-adk>=2.0.0a0",
+    "google-adk[agent-identity,a2a]>=2.8.0",
+    "a2a-sdk>=1.1.0",
     "opentelemetry-instrumentation-google-genai>=0.1.0,<1.0.0",
+    "grpcio>=1.83.0",
     "gcsfs>=2024.11.0",
     "google-cloud-logging>=3.12.0,<4.0.0",
-    "google-cloud-aiplatform[evaluation,agent-engines]>=1.150.0",
+    "google-cloud-aiplatform[evaluation,agent-engines]>=1.157.0",
     "protobuf>=6.31.1,<7.0.0",
-    "google-cloud-discoveryengine",
+    "google-cloud-discoveryengine>=0.13.15",
     "google-cloud-secret-manager",
-    "google-genai",
+    "google-genai>=2.20.0",
     "numpy",
     "configparser",
     "google-cloud-translate",
@@ -32,6 +34,7 @@ dependencies = [
     "thefuzz",
     "opentelemetry-instrumentation-httpx",
     "opentelemetry-instrumentation-grpc",
+    "pillow",
 ]
 requires-python = "==3.12.*"
 
@@ -125,4 +128,7 @@ name = "pypi"
 url = "https://pypi.org/simple"
 default = true
 
-
+[tool.hatch.metadata]
+allow-direct-references = true
+#[tool.uv.sources]
+#google-adk = { path = "./src/google-adk" }

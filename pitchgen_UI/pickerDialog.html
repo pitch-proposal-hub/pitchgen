@@ -45,38 +45,33 @@
         return; // Wait until both are loaded
       }
 
-      google.script.run.withSuccessHandler(function(config) {
-        var devKey = (typeof config === 'object') ? config.developerKey : config;
-        var appId = (typeof config === 'object' && config.appId) ? config.appId : "YOUR_GCP_PROJECT_NUMBER";
-        
-        if (!devKey || devKey === "YOUR_API_KEY_HERE") {
-          alertify.error("Google Picker API Key is not configured.");
-          document.getElementById("statusMessage").innerText = "Configuration error. Please contact support.";
-          return;
-        }
-        
+      google.script.run.withSuccessHandler(function(devKey) {
         var view = new google.picker.View(google.picker.ViewId.DOCS);
         view.setMimeTypes("application/vnd.google-apps.document,application/vnd.google-apps.presentation");
 
-        var pickerBuilder = new google.picker.PickerBuilder()
-            .enableFeature(google.picker.Feature.NAV_HIDDEN);
-            
-        if (appId && appId !== "YOUR_GCP_PROJECT_NUMBER") {
-          pickerBuilder.setAppId(appId);
-        }
-
-        var picker = pickerBuilder
+        var builder = new google.picker.PickerBuilder()
+            .enableFeature(google.picker.Feature.NAV_HIDDEN)
             .setOAuthToken(oauthToken)
             .addView(view)
-            .setDeveloperKey(devKey)
             .setCallback(pickerCallback)
             .setTitle("Select a Google Doc or Slide for context")
             .setOrigin(google.script.host.origin)
-            .setSize(770, 530) // Fit the 800x600 dialog with padding
-            .build();
-        picker.setVisible(true);
-        document.getElementById("statusMessage").style.display = "none";
-      }).getPickerConfig();
+            .setSize(770, 530);
+
+        if (devKey && devKey !== "YOUR_API_KEY_HERE" && devKey.trim() !== "") {
+          builder.setDeveloperKey(devKey);
+        }
+
+        try {
+          var picker = builder.build();
+          picker.setVisible(true);
+          document.getElementById("statusMessage").style.display = "none";
+        } catch (pickerErr) {
+          console.error("Error building Google Picker: ", pickerErr);
+          alertify.error("Could not load Google Picker. Please try Local Upload or @mention.");
+          document.getElementById("statusMessage").innerText = "Could not load Picker. Please select files via @mention or Local Upload.";
+        }
+      }).getDeveloperKey();
     }
 
     function pickerCallback(data) {

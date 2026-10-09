@@ -11,14 +11,23 @@ from datetime import datetime
 import json
 import math
 import os
-from fuzzywuzzy import fuzz, process
+
+try:
+  from fuzzywuzzy import fuzz, process
+except ImportError:
+  fuzz = None
+  process = None
 from google import genai
 from google.genai import types
 from google.cloud import discoveryengine_v1 as discoveryengine
 from google.cloud import secretmanager
+from google.protobuf.json_format import MessageToDict
 import numpy as np
 from pitchgen_utils.gcs_util import read_gcs_file
 from agents.workflows.base_workflow import BaseWorkflow
+
+
+_CACHED_CUST_NAMES = None
 
 
 class slide_search(BaseWorkflow):
@@ -29,10 +38,11 @@ class slide_search(BaseWorkflow):
   datastore search to gather contextually relevant single reusable slides.
   """
 
-  def __init__(self, search_query, is_strict, config, model):
+  def __init__(self, search_query, is_strict, config, model, slide_job=''):
     super().__init__('SidebarSlideSearchWorkflow', 'Searches reusable slides in sidebar.')
     self.config = config
     self.search_query = search_query
+    self.slide_job = str(slide_job).strip()
     self.query_emd = np.array([])
     self.is_strict = is_strict
     self.__project_name = config['default']['project_name']
@@ -46,12 +56,27 @@ class slide_search(BaseWorkflow):
         vertexai=True, project=self.__project_name, location=self.__location
     )
     self.embedding_model_name = os.getenv('EMBEDDING_MODEL', 'text-embedding-005')
-    self.search_bucket_name = self.config['bucket']['content']
-    cust_data = read_gcs_file(
-        f'gs://{self.search_bucket_name}/search_data/customer_names/cust_names.json',
-        project_id=self.__project_name,
-    )
-    self.cust_names = json.loads(cust_data)['cust_names']
+    try:
+      self.search_bucket_name = self.config.get('bucket', 'content', fallback='pitchgen-content')
+    except Exception:
+      self.search_bucket_name = 'pitchgen-content'
+
+    global _CACHED_CUST_NAMES
+    if _CACHED_CUST_NAMES is not None:
+      self.cust_names = _CACHED_CUST_NAMES
+    else:
+      self.cust_names = []
+      _CACHED_CUST_NAMES = []
+      try:
+        from google.cloud import storage
+        storage_client = storage.Client(project=self.__project_name)
+        bucket = storage_client.bucket(self.search_bucket_name)
+        blob = bucket.blob('search_data/customer_names/cust_names.json')
+        cust_data = blob.download_as_text()
+        _CACHED_CUST_NAMES = json.loads(cust_data).get('cust_names', [])
+        self.cust_names = _CACHED_CUST_NAMES
+      except Exception as e:
+        print(f"[SidebarSlideSearchWorkflow] Could not load cust_names from GCS: {e}")
 
     config_file_path = os.path.join(
         os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
@@ -73,27 +98,33 @@ class slide_search(BaseWorkflow):
         'product': [],
         'region': [],
         'datastore': [],
+        'core_topics': [],
     }
 
   def get_embeddings_list(self, queries):
     """function to get text embedding of list of strings"""
-    response = self.client.models.embed_content(
-        model=self.embedding_model_name,
-        contents=queries,
-    )
-    return [np.array(e.values) for e in response.embeddings]
+    try:
+      client = genai.Client(
+          vertexai=True, project=self.__project_name, location='global'
+      )
+      response = client.models.embed_content(
+          model=self.embedding_model_name,
+          contents=queries,
+      )
+      return [np.array(e.values) for e in response.embeddings]
+    except Exception:
+      return [np.zeros(768) for _ in queries]
 
   def get_similarity_score(self, emd1, emd2):
     """function to get cosine similarity score between 2 embeddings"""
-    score = np.dot(emd1, emd2) / (np.linalg.norm(emd1) * np.linalg.norm(emd2))
-    return score
+    norm1 = np.linalg.norm(emd1)
+    norm2 = np.linalg.norm(emd2)
+    if norm1 == 0 or norm2 == 0:
+      return 0.0
+    return float(np.dot(emd1, emd2) / (norm1 * norm2))
 
   def fetch_search_entities(self):
-    """Fetches all the entities like industry, solution, etc., from the search query.
-
-    Updates 'search_entities' attribute with key-value pairs of all the entities
-    found.
-    """
+    """Fetches all the entities like industry, solution, core_topics, etc., from the search query."""
     model_entities = dict()
     entities_prompt_path = os.path.join(
         os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
@@ -107,9 +138,6 @@ class slide_search(BaseWorkflow):
       try:
         if retry_cnt > 0:
           print('retrying...')
-        # response = self.genModel.generate_content(
-        #     [entities_prompt, self.search_query, '</input>\n<output>\n'],
-        #     generation_config=self.generation_config)
         client = genai.Client(
             vertexai=True, project=self.__project_name, location='global'
         )
@@ -134,7 +162,6 @@ class slide_search(BaseWorkflow):
               for part in response.candidates[0].content.parts
               if hasattr(part, 'text') and part.text
           ])
-        # output = response.text
         model_entities = json.loads(
             output[output.index('{') : len(output) - output[::-1].index('}')],
             strict=False,
@@ -144,6 +171,21 @@ class slide_search(BaseWorkflow):
         if output:
           print(output)
         print('Entity extraction failed due to: ', e)
+        try:
+          import vertexai
+          from vertexai.generative_models import GenerativeModel
+          vertexai.init(project=self.__project_name, location=self.__location)
+          vmodel = GenerativeModel(self.__gemini_model)
+          full_prompt = f"{entities_prompt}\n{self.search_query}\n</input>\n<output>\n"
+          vres = vmodel.generate_content(full_prompt)
+          vtext = vres.text if hasattr(vres, 'text') else str(vres)
+          model_entities = json.loads(
+              vtext[vtext.index('{') : len(vtext) - vtext[::-1].index('}')],
+              strict=False,
+          )
+          break
+        except Exception as e_v:
+          print('Vertex AI GenerativeModel fallback also failed:', e_v)
         retry_cnt += 1
         continue
 
@@ -158,15 +200,13 @@ class slide_search(BaseWorkflow):
     industry = []
     subInd = []
 
-    for val in self.search_entities['industry']:
+    for val in self.search_entities.get('industry', []):
       temp = val.lower().split(' in ')
       if len(temp) > 1:
         subInd.append(temp[0].replace(' and ', ' & '))
         industry.append(temp[1].replace(' and ', ' & '))
       else:
         industry.append(temp[0].replace(' and ', ' & '))
-    # print("1",subInd)
-    # print("1",industry)
 
     ind_mapping_path = os.path.join(
         os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
@@ -174,8 +214,8 @@ class slide_search(BaseWorkflow):
     )
     with open(ind_mapping_path, 'r') as f:
       mappings = json.loads(f.read())
-    oTnMapInd = mappings['oldToNewInd']
-    oTnMapSubInd = mappings['oldToNewSubInd']
+    oTnMapInd = mappings.get('oldToNewInd', {})
+    oTnMapSubInd = mappings.get('oldToNewSubInd', {})
 
     for i in range(len(industry)):
       if industry[i] == 'insurance':
@@ -184,9 +224,6 @@ class slide_search(BaseWorkflow):
       elif industry[i] in oTnMapInd.keys():
         industry.extend(oTnMapInd[industry[i]])
 
-    # print("2",subInd)
-    # print("2",industry)
-    remInd = []
     for i in range(len(subInd)):
       if subInd[i] == 'aerospace':
         industry.append('manufacturing, industrial & transportation')
@@ -194,156 +231,260 @@ class slide_search(BaseWorkflow):
       elif subInd[i] in oTnMapSubInd.keys():
         subInd.extend(oTnMapSubInd[subInd[i]])
 
-    # print("3",subInd)
-    # print("3",industry)
     self.search_entities['industry'] = list(set(industry))
     self.search_entities['sub-industry'] = list(set(subInd))
 
     customers = list(
-        map(lambda x: x.lower(), self.search_entities['organization_names'])
+        map(lambda x: x.lower(), self.search_entities.get('organization_names', []))
     )
     final_cust = []
     for val in customers:
-      fuzz_res = process.extract(
-          val, self.cust_names, scorer=fuzz.partial_ratio
-      )
-      for res in fuzz_res:
-        if res[1] > 80:
-          final_cust.append(res[0])
-        else:
-          final_cust.append(val)
+      if process is not None and fuzz is not None and self.cust_names:
+        fuzz_res = process.extract(
+            val, self.cust_names, scorer=fuzz.partial_ratio
+        )
+        for res in fuzz_res:
+          if res[1] > 80:
+            final_cust.append(res[0])
+          else:
+            final_cust.append(val)
+      else:
+        final_cust.append(val)
     self.search_entities['customer'] = list(set(final_cust))
 
-    regions = list(map(lambda x: x.lower(), self.search_entities['region']))
+    regions = list(map(lambda x: x.lower(), self.search_entities.get('region', [])))
     self.search_entities['region'] = list(set(regions))
 
-    solutions = list(map(lambda x: x.lower(), self.search_entities['solution']))
+    solutions = list(map(lambda x: x.lower(), self.search_entities.get('solution', [])))
     self.search_entities['solution'] = list(set(solutions))
 
-    products = list(map(lambda x: x.lower(), self.search_entities['product']))
+    products = list(map(lambda x: x.lower(), self.search_entities.get('product', [])))
     self.search_entities['product'] = list(set(products))
 
     datastores = list(
-        map(lambda x: x.lower(), self.search_entities['datastore'])
+        map(lambda x: x.lower(), self.search_entities.get('datastore', []))
     )
     self.search_entities['datastore'] = list(set(datastores))
 
+    core_topics = list(
+        map(lambda x: str(x).strip(), self.search_entities.get('core_topics', []))
+    )
+    self.search_entities['core_topics'] = [t for t in core_topics if t]
+
     print('search entities:\n', self.search_entities)
 
-  def get_search_filters(self):
-    """Generates a list of search filters.
+  def get_datastore_filters(self, datastore):
+    """Generates valid Discovery Engine filter expressions specific to the target datastore schema."""
+    filters = []
 
-    returns:
-        searchFilters (list): list of search filter strings.
-    """
-    filterStr = dict()
+    INDUSTRY_MAP = {
+        'retail': 'Retail & Consumer',
+        'retail & consumer': 'Retail & Consumer',
+        'cpg': 'Consumer Packaged Goods',
+        'consumer packaged goods': 'Consumer Packaged Goods',
+        'fsi': 'Financial Services & Insurance',
+        'financial services': 'Financial Services & Insurance',
+        'financial services & insurance': 'Financial Services & Insurance',
+        'games': 'Games',
+        'gaming': 'Games',
+        'healthcare': 'Healthcare',
+        'hcls': 'Healthcare',
+        'life sciences': 'Life Sciences',
+        'logistics': 'Logistics',
+        'manufacturing': 'Manufacturing',
+        'media': 'Media & Entertainment',
+        'media & entertainment': 'Media & Entertainment',
+        'm&e': 'Media & Entertainment',
+        'energy': 'Power & Energy',
+        'power & energy': 'Power & Energy',
+        'public sector': 'Public Sector & EDU',
+        'public sector & edu': 'Public Sector & EDU',
+        'education': 'Public Sector & EDU',
+        'software': 'Software & Internet',
+        'software & internet': 'Software & Internet',
+        'tech': 'Software & Internet',
+        'supply chain': 'Supply Chain Management',
+        'supply chain management': 'Supply Chain Management',
+        'sustainability': 'Sustainability',
+        'telco': 'Telecommunications',
+        'telecommunications': 'Telecommunications',
+        'telecom': 'Telecommunications',
+        'travel': 'Travel & Hospitality',
+        'travel & hospitality': 'Travel & Hospitality',
+        'automotive': 'Automotive',
+        'auto': 'Automotive',
+    }
 
-    for key in self.search_entities.keys():
-      if self.search_entities[key] and (
-          key not in ['organization_names', 'datastore']
-      ):
-        filterStr[key] = f"""{key}: ANY("""
-        for val in self.search_entities[key]:
-          if key == 'customer':
-            variations = sorted(list({val, val.lower(), val.upper(), val.title(), val.capitalize()}))
-            for var in variations:
-              filterStr[key] += f""""{var}", """
-          else:
-            filterStr[key] += f""""{val}", """   
-        filterStr[key] = filterStr[key][:-2]
-        filterStr[key] += """)"""
+    PRODUCT_MAP = {
+        'gemini': 'Gemini Enterprise',
+        'gemini enterprise': 'Gemini Enterprise',
+        'workspace': 'Workspace',
+        'google workspace': 'Workspace',
+        'agent': 'Agent and Model Platform',
+        'agent and model platform': 'Agent and Model Platform',
+        'agents': 'Agent and Model Platform',
+        'genai': 'Generative AI',
+        'generative ai': 'Generative AI',
+        'bigquery': 'BigQuery EPE',
+        'looker': 'Cloud BI and Embed Analytics (Looker)',
+        'alloydb': 'Modernize Databases (Heterogeneous - Spanner, AlloyDB, Bigtable)',
+        'spanner': 'Modernize Databases (Heterogeneous - Spanner, AlloyDB, Bigtable)',
+        'cloud sql': 'Move to Managed Databases (Homogeneous - Cloud SQL, AlloyDB, Firestore)',
+        'gke': 'GKE/CloudRun',
+        'cloud run': 'GKE/CloudRun',
+        'networking': 'Networking',
+        'security': 'Secure Innovation with Google Cloud',
+        'mandiant': 'Achieve Resilience Together with Mandiant',
+        'vmware': 'VMware Engine',
+        'oracle': 'Oracle on Compute',
+        'sap': 'SAP RISE',
+    }
 
-    searchFilters1 = []
-    for val in ['customer', 'sub-industry', 'industry']:
-      if val in filterStr.keys():
-        searchFilters1.append(filterStr[val])
+    if datastore in ['sales_play_reusables', 'sales_play']:
+      ind_vals = set()
+      for iv in self.search_entities.get('industry', []):
+        norm = INDUSTRY_MAP.get(iv.lower().strip())
+        if norm:
+          ind_vals.add(norm)
+        else:
+          ind_vals.add(iv.title().strip())
 
-    searchFilters2 = [
-        (
-            """ AND """.join(
-                [filterStr[val] for val in ['product', 'solution', 'region']]
-            )
+      prod_vals = set()
+      for pv in self.search_entities.get('product', []):
+        norm = PRODUCT_MAP.get(pv.lower().strip())
+        if norm:
+          prod_vals.add(norm)
+        else:
+          prod_vals.add(pv.title().strip())
+
+      ind_filter = f"industry: ANY({', '.join([f'\"{v}\"' for v in sorted(list(ind_vals))])})" if ind_vals else ""
+      prod_filter = f"google_product: ANY({', '.join([f'\"{v}\"' for v in sorted(list(prod_vals))])})" if prod_vals else ""
+
+      slide_job_filter = ""
+      if self.slide_job and self.slide_job.lower() not in ['all', 'all slide types', 'select repository', '']:
+        slide_job_filter = f'slide_job: ANY("{self.slide_job}")'
+
+      if slide_job_filter:
+        if ind_filter and prod_filter:
+          filters.append(f"{slide_job_filter} AND {ind_filter} AND {prod_filter}")
+        if ind_filter:
+          filters.append(f"{slide_job_filter} AND {ind_filter}")
+        if prod_filter:
+          filters.append(f"{slide_job_filter} AND {prod_filter}")
+        filters.append(slide_job_filter)
+      else:
+        if ind_filter and prod_filter:
+          filters.append(f"{ind_filter} AND {prod_filter}")
+        if ind_filter:
+          filters.append(ind_filter)
+        if prod_filter:
+          filters.append(prod_filter)
+        # Always allow unfiltered semantic search over sales_play_reusables as final fallback
+        filters.append('')
+
+    elif datastore in ['cust_ref', 'customer references']:
+      ind_vals = set()
+      for iv in self.search_entities.get('industry', []):
+        norm = INDUSTRY_MAP.get(iv.lower().strip())
+        if norm:
+          ind_vals.add(norm)
+        else:
+          ind_vals.add(iv.title().strip())
+
+      prod_vals = set()
+      for pv in self.search_entities.get('product', []):
+        norm = PRODUCT_MAP.get(pv.lower().strip())
+        if norm:
+          prod_vals.add(norm)
+        else:
+          prod_vals.add(pv.title().strip())
+
+      ind_filter = (
+          'industry:'
+          f" ANY({', '.join([f'\"{v}\"' for v in sorted(list(ind_vals))])})"
+          if ind_vals
+          else ''
+      )
+      prod_filter = (
+          'google_product:'
+          f" ANY({', '.join([f'\"{v}\"' for v in sorted(list(prod_vals))])})"
+          if prod_vals
+          else ''
+      )
+
+      if ind_filter and prod_filter:
+        filters.append(
+            f'customer_references = "true" AND {ind_filter} AND {prod_filter}'
         )
-        if not set(['product', 'solution', 'region']).difference(
-            set(filterStr.keys())
-        )
-        else '',
-        f"""{filterStr['product']} AND {filterStr['solution']}"""
-        if not set(['product', 'solution']).difference(set(filterStr.keys()))
-        else '',
-        filterStr['product'] if 'product' in filterStr.keys() else '',
-        filterStr['solution'] if 'solution' in filterStr.keys() else '',
-        filterStr['region'] if 'region' in filterStr.keys() else '',
-    ]
-    searchFilters2 = [val for val in searchFilters2 if val]
+      if ind_filter:
+        filters.append(f'customer_references = "true" AND {ind_filter}')
+        filters.append(f'slide_job: ANY("Proof_Points") AND {ind_filter}')
+      if prod_filter:
+        filters.append(f'customer_references = "true" AND {prod_filter}')
+      filters.append('customer_references = "true"')
+      filters.append('slide_job: ANY("Proof_Points")')
 
-    finalFilters = []
-    for val in searchFilters1:
-      for ent in searchFilters2:
-        finalFilters.append(f"""{val} AND {ent}""")
-
-    finalFilters += searchFilters1 + searchFilters2
-
-    # for val in finalFilters:
-    #     val = '(' + val + ')'
-
-    return finalFilters[:1] if self.is_strict else finalFilters
+    deduped = []
+    for f in filters:
+      if f not in deduped:
+        deduped.append(f)
+    return deduped
 
   def get_datastoreID(self, datastoreName):
-    secret_name = self.config['reusable'][datastoreName]
-    print(f"[DEBUG] get_datastoreID: project={self.__project_name}, datastoreName={datastoreName}, secret_name={secret_name}")
+    if 'reusable' in self.config and datastoreName in self.config['reusable']:
+      secret_name = self.config['reusable'][datastoreName]
+    else:
+      secret_name = datastoreName
+
     try:
       sec_parent = self.sec_client.secret_path(
           project=self.__project_name,
           secret=secret_name,
       )
-      print(f"[DEBUG] get_datastoreID: sec_parent={sec_parent}")
       response = self.sec_client.access_secret_version(
           request={'name': f'{sec_parent}/versions/latest'}
       )
       val = response.payload.data.decode('UTF-8')
-      print(f"[DEBUG] get_datastoreID: retrieved value={val}")
       return val
-    except Exception as e:
-      print(
-          f'[DEBUG] Could not access secret for {datastoreName} (secret: {secret_name}), falling back to'
-          f' default: {e}'
-      )
+    except Exception:
       return secret_name
 
   def search_datastore(self, searchFilter, datastoreID, result_count=20):
-    """search datastore.
+    """search datastore."""
+    try:
+      request = discoveryengine.SearchRequest(
+          serving_config=self.datastore_client.serving_config_path(
+              project=self.__project_name,
+              location=self.__location,
+              data_store=datastoreID,
+              serving_config='default_config',
+          ),
+          query=self.search_query,
+          filter=searchFilter,
+          page_size=result_count,
+      )
+      response = self.datastore_client.search(request)
+      results = response._response.results
 
-    args:
-        searchFilter (str): search filter.
-        datastoreID (str): id of the datastore to be searched.
-        result_count (int): number of results.
+      data = []
+      for res in results:
+        try:
+          doc_dict = MessageToDict(res.document._pb)
+          temp = doc_dict.get('structData', {})
+        except Exception:
+          temp = {}
+          for key in res.document.struct_data.keys():
+            val = res.document.struct_data.get(key)
+            if hasattr(val, '__iter__') and not isinstance(val, str):
+              temp[key] = [str(x) for x in val]
+            else:
+              temp[key] = str(val)
+        data.append(temp)
 
-    returns:
-        data (list): A list of search results.
-    """
-    request = discoveryengine.SearchRequest(
-        serving_config=self.datastore_client.serving_config_path(
-            project=self.__project_name,
-            location=self.__location,
-            data_store=datastoreID,
-            serving_config='default_config',
-        ),
-        query=self.search_query,
-        filter=searchFilter,
-        page_size=result_count,
-    )
-    response = self.datastore_client.search(request)
-    results = response._response.results
-
-    data = []
-    for res in results:
-      temp = {}
-      for key in res.document.struct_data.keys():
-        temp[key] = res.document.struct_data.get(key)
-      data.append(temp)
-
-    return data
+      return data
+    except Exception as e:
+      print(f"[SidebarSlideSearchWorkflow] Search error on DS {datastoreID} (filter='{searchFilter}'): {e}")
+      return []
 
   def get_datastore_results(self, datastore, query_filter='', num_results=20):
     datastore_id = self.get_datastoreID(datastore)
@@ -353,148 +494,234 @@ class slide_search(BaseWorkflow):
         result_count=num_results,
     )
 
-    flag = 1
-    if (datastore in ['pitch_sin', 'golden_sin']) and (not query_filter):
-      flag = 0
-
     op_results = []
     for res in res_slides:
-      if not flag:
-        score = self.get_similarity_score(
-            np.array(res['desc_embedding']), self.query_emd
-        )
-        if score >= 0.7:
-          flag = 1
-      if flag:
-        all_tags = set(res['sub-industry'])
-        all_tags.update(res['industry'])
-        all_tags.update(res['solution'])
-        all_tags.update(res['product'])
-        all_tags.update(res['region'])
-        all_tags.update(([] + [res['customer']]))
+      deck_id = res.get('deck_id') or res.get('deckId') or ''
+      raw_slide_id = res.get('slide_id') or res.get('slideId') or res.get('slideIds') or ''
+      if isinstance(raw_slide_id, list):
+        slide_id = raw_slide_id[0] if raw_slide_id else ''
+      else:
+        slide_id = str(raw_slide_id)
 
-        tags = {val for val in all_tags if val not in ['', 'other']}
+      deck_title = res.get('deck_title') or res.get('deckTitle') or ''
+      slide_title = res.get('slide_title') or res.get('slideTitle') or ''
+      title = (
+          slide_title
+          or res.get('name')
+          or deck_title
+          or res.get('customer')
+          or 'Reusable Slide'
+      )
+      summary = res.get('slide_summary') or res.get('desc') or res.get('content') or res.get('group_summary') or ''
+      core_topics = res.get('core_topics', [])
+      if isinstance(core_topics, str):
+        core_topics = [core_topics]
 
-        op_results.append({
-            'date': res['date'],
-            'name': res['name'] if 'name' in res.keys() else res['customer'],
-            'emd': (
-                np.array(res['desc_embedding'])
-                if 'desc_embedding' in res.keys()
-                else self.get_embeddings_list([res['desc']])[0]
-            ),
-            'deckId': res['deckId'],
-            'slideId': res['slideIds'][0],
-            'slideURL': (
-                f"https://docs.google.com/presentation/d/{res['deckId']}"
-                + f"/edit?#slide=id.{res['slideIds'][0]}"
-            ),
-            'tags': list(tags),
-        })
+      all_tags = set()
+      for tag_key in ['sub_industry', 'sub-industry', 'industry', 'solution', 'product', 'google_product', 'sales_play', 'region', 'customer']:
+        val = res.get(tag_key)
+        if isinstance(val, list):
+          all_tags.update([str(v) for v in val if v and str(v).lower() not in ['', 'other', 'none']])
+        elif isinstance(val, str) and val and val.lower() not in ['', 'other', 'none']:
+          all_tags.add(val)
+      if core_topics:
+        all_tags.update([str(t) for t in core_topics if t])
+
+      tags = {val for val in all_tags if val not in ['', 'other']}
+
+      if 'desc_embedding' in res and isinstance(res['desc_embedding'], list) and len(res['desc_embedding']) > 0:
+        emd = np.array(res['desc_embedding'])
+      else:
+        emd = np.zeros(768)
+
+      date_val = res.get('date') or res.get('ingestion_timestamp') or ''
+      slide_url = res.get('slide_url') or res.get('slideURL') or (
+          f"https://docs.google.com/presentation/d/{deck_id}/edit#slide=id.{slide_id}" if deck_id and slide_id else ""
+      )
+
+      op_results.append({
+          'date': date_val,
+          'name': title,
+          'slide_title': slide_title,
+          'deck_title': deck_title,
+          'deckTitle': deck_title,
+          'customer': res.get('customer') or '',
+          'industry': res.get('industry') or '',
+          'solution': (
+              res.get('solution')
+              or res.get('sales_play')
+              or res.get('salesPlay')
+              or ''
+          ),
+          'product': res.get('product') or res.get('google_product') or '',
+          'slide_job': res.get('slide_job') or res.get('slideJob') or '',
+          'emd': emd,
+          'deckId': deck_id,
+          'slideId': slide_id,
+          'slideURL': slide_url,
+          'tags': list(tags),
+          'summary': summary,
+          'core_topics': core_topics,
+      })
 
     return op_results
 
   def execute(self):
     self.fetch_search_entities()
-    self.query_emd = self.get_embeddings_list([self.search_query])[0]
-    query_ds = set(
-        [self.nameToCode[ds] for ds in self.search_entities['datastore']]
-    )
-    if 'golden_sin' in query_ds:
-      query_ds.add('silver_sin')
-    if not query_ds:
-      query_ds = {'golden_sin', 'silver_sin'}
+    try:
+      self.query_emd = self.get_embeddings_list([self.search_query])[0]
+    except Exception:
+      self.query_emd = np.zeros(768)
 
-    slides_ui = []
-    generic_search = 1
-    search_filters = self.get_search_filters()
-    if search_filters:
-      generic_search = 0
-    print(search_filters)
+    query_ds = set()
+    for ds in self.search_entities.get('datastore', []):
+      code = self.nameToCode.get(ds) or self.nameToCode.get(ds.lower())
+      if code:
+        query_ds.add(code)
+
+    if not query_ds:
+      if self.slide_job and self.slide_job.lower() not in ['all', 'all slide types', 'proof_points', 'proof points', 'customer references', '']:
+        query_ds = {'sales_play_reusables'}
+      elif self.slide_job and self.slide_job.lower() in ['proof_points', 'proof points', 'customer references']:
+        query_ds = {'cust_ref'}
+      else:
+        query_ds = {'sales_play_reusables', 'cust_ref'}
+
+    print(f"[SidebarSlideSearchWorkflow] Query: '{self.search_query}', SlideJob: '{self.slide_job}', Query DS: {query_ds}")
 
     only_customers = (
-        len(self.search_entities['customer']) > 0
+        len(self.search_entities.get('customer', [])) > 0
         and len(
-            self.search_entities['industry']
-            + self.search_entities['solution']
-            + self.search_entities['product']
-            + self.search_entities['region']
+            self.search_entities.get('industry', [])
+            + self.search_entities.get('solution', [])
+            + self.search_entities.get('product', [])
+            + self.search_entities.get('region', [])
         )
         == 0
     )
 
     if only_customers:
-      query_ds.update({'cust_ref'})
+      ordered_ds = ['cust_ref']
+    else:
+      ordered_ds = []
+      if 'sales_play_reusables' in query_ds:
+        ordered_ds.append('sales_play_reusables')
+      if 'cust_ref' in query_ds:
+        ordered_ds.append('cust_ref')
+      for other in query_ds:
+        if other not in ordered_ds:
+          ordered_ds.append(other)
 
-    # dup_check = query_ds.difference({'cust_ref', 'cjms'})
+    seen_slide_keys = set()
+    raw_collected_slides = []
 
-    i = 0
-    unq_deck_cnt = dict()
-    emd_list = []
-    max_deck_limit = 20 if 'cust_ref' in query_ds else 2
-    while len(slides_ui) < 20 and i <= len(search_filters):
-      temp = []
-      if i < len(search_filters):
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-          futures = [
-              executor.submit(self.get_datastore_results, ds, search_filters[i])
-              for ds in query_ds
-          ]
-      elif generic_search:
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-          futures = [
-              executor.submit(self.get_datastore_results, ds) for ds in query_ds
-          ]
-      else:
-        break
-
-      ds_search_res = []
-      for future in futures:
+    for ds in ordered_ds:
+      if ds == 'cust_ref':
         try:
-          result = future.result()
-          ds_search_res.append(result)
-        except Exception as e:
-          print(e)
-          continue
+          from agents.workflows.customer_reference_retriever import NewLibraryCustomerReferenceRetriever
 
-      j = int(math.ceil(((20 - len(slides_ui)) / len(query_ds))))
-      itr = 0
-      while (len(slides_ui) + len(temp)) < 20:
-        prev_len = len(temp)
-        for res in ds_search_res:
-          for ent in res[j * itr : j * (itr + 1)]:
-            if not only_customers:  # and dup_check:
-              dup_scores = [
-                  self.get_similarity_score(ent['emd'], val) >= 0.85
-                  for val in emd_list
-              ]
-            if only_customers or (not any(dup_scores)):  # or (not dup_check):
-              emd_list.append(ent['emd'])
-              del ent['emd']
-              if ent['deckId'] not in unq_deck_cnt.keys():
-                unq_deck_cnt[ent['deckId']] = 1
-                temp.append(ent)
-              elif (not only_customers) and (unq_deck_cnt[ent['deckId']] < max_deck_limit):                
-                # and dup_check
-                unq_deck_cnt[ent['deckId']] += 1
-                temp.append(ent)
+          customer_ref_library_retriever = NewLibraryCustomerReferenceRetriever(
+              self.config, datastore_id='', ds_key='cust_ref'
+          )
+          ind_list = self.search_entities.get('industry', [])
+          prod_list = self.search_entities.get(
+              'product', []
+          ) + self.search_entities.get('solution', [])
+          cust_list = self.search_entities.get('customer', [])
+          customer_ref_library_slides = customer_ref_library_retriever.search_slides(
+              query=self.search_query,
+              limit=25,
+              industry=ind_list[0] if ind_list else '',
+              products=prod_list,
+              customer_name=cust_list[0] if cust_list else '',
+          )
+          for ent in customer_ref_library_slides:
+            d_id = ent.get('deckId') or ent.get('deck_id')
+            s_id = ent.get('slideId') or ent.get('slide_id')
+            slide_key = f'{d_id}_{s_id}'
+            if not d_id or not s_id or slide_key in seen_slide_keys:
+              continue
+            seen_slide_keys.add(slide_key)
+            cleaned_ent = dict(ent)
+            cleaned_ent['deckId'] = d_id
+            cleaned_ent['slideId'] = s_id
+            cleaned_ent['date'] = datetime.now().strftime('%Y-%m-%d')
+            raw_collected_slides.append(cleaned_ent)
+        except Exception as customer_ref_library_err:
+          print(
+              '[SidebarSlideSearchWorkflow] Customer Reference Library cust_ref error:'
+              f' {customer_ref_library_err}'
+          )
+        continue
 
-        if (len(temp) - prev_len) == 0:
+      ds_filters = self.get_datastore_filters(ds)
+      for stage_filter in ds_filters:
+        if len(raw_collected_slides) >= 100:
           break
-        itr += 1
+        res_list = self.get_datastore_results(ds, stage_filter, num_results=50)
+        for ent in res_list:
+          slide_key = f"{ent.get('deckId')}_{ent.get('slideId')}"
+          if not ent.get('deckId') or not ent.get('slideId') or slide_key in seen_slide_keys:
+            continue
 
-      for val in temp:
-        date_val = val.get('date')
-        if date_val:
-          if isinstance(date_val, (int, float)):
-            val['date'] = datetime.fromtimestamp(int(date_val) / 1000).strftime('%Y-%m-%d')
-          elif isinstance(date_val, str):
-            if date_val.isnumeric():
-              val['date'] = datetime.fromtimestamp(int(date_val) / 1000).strftime('%Y-%m-%d')
-            elif " " in date_val:
-              val['date'] = date_val.split(" ")[0]
+          seen_slide_keys.add(slide_key)
 
-      slides_ui.extend(sorted(temp, key=lambda x: x['date'], reverse=True))
-      i += 1
+          date_val = ent.get('date')
+          if date_val:
+            if isinstance(date_val, (int, float)):
+              ent['date'] = datetime.fromtimestamp(int(date_val) / 1000).strftime('%Y-%m-%d')
+            elif isinstance(date_val, str):
+              if date_val.isnumeric():
+                ent['date'] = datetime.fromtimestamp(int(date_val) / 1000).strftime('%Y-%m-%d')
+              elif " " in date_val:
+                ent['date'] = date_val.split(" ")[0]
+          else:
+            ent['date'] = datetime.now().strftime('%Y-%m-%d')
 
-    return slides_ui
+          cleaned_ent = dict(ent)
+          if 'emd' in cleaned_ent:
+            del cleaned_ent['emd']
+
+          raw_collected_slides.append(cleaned_ent)
+
+    # Perform Near-Duplicate Deduplication (>=95% content similarity, keeping freshest version)
+    deduped_slides = self._deduplicate_search_results(raw_collected_slides, similarity_threshold=95)
+    return deduped_slides[:50]
+
+  def _deduplicate_search_results(self, slides: list, similarity_threshold: int = 95) -> list:
+    """Deduplicates search results with >=95% similarity, retaining the newest version."""
+    try:
+      from fuzzywuzzy import fuzz
+    except ImportError:
+      return slides
+
+    unique_slides = []
+    for s in slides:
+      s_title = str(s.get('name', '')).strip().lower()
+      s_summary = str(s.get('summary', '')).strip().lower()
+      s_text = f"{s_title} {s_summary}".strip()
+      s_date_str = str(s.get('date', ''))
+
+      is_duplicate = False
+      for idx, u in enumerate(unique_slides):
+        u_title = str(u.get('name', '')).strip().lower()
+        u_summary = str(u.get('summary', '')).strip().lower()
+        u_text = f"{u_title} {u_summary}".strip()
+        u_date_str = str(u.get('date', ''))
+
+        # Calculate token similarity on body summary and full text
+        summary_sim = fuzz.token_set_ratio(s_summary, u_summary) if (s_summary and u_summary) else 0
+        full_sim = fuzz.token_set_ratio(s_text, u_text)
+        title_sim = fuzz.token_set_ratio(s_title, u_title)
+
+        if summary_sim >= similarity_threshold or (full_sim >= similarity_threshold and title_sim >= 90):
+          is_duplicate = True
+          # Keep the newer version if timestamps are comparable
+          if s_date_str > u_date_str:
+            unique_slides[idx] = s
+          break
+
+      if not is_duplicate:
+        unique_slides.append(s)
+
+    return unique_slides

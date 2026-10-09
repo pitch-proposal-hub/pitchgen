@@ -49,20 +49,20 @@ Financially, PepsiCo reported nearly $92 billion in net revenue in 2024. The rev
 </output>
 
 <input>
-Slide Title: Cloud AI Platform: A Single Platform to Build, Deploy, and Scale ML Models
+Slide Title: Vertex AI: A Single Platform to Build, Deploy, and Scale ML Models
 Slide Content: *   **Unified AI/ML Platform:** Consolidates all AI/ML tasks into one platform, streamlining the entire lifecycle from data preparation to deployment and monitoring for both predictive and generative AI.
 *   **End-to-End MLOps:** Provides a complete set of tools to manage the entire AI model lifecycle, ensuring reliability, scalability, and continuous improvement.
 *   **Reduces Complexity & Cost:** Eliminates heavy lifting by tackling key challenges like model proliferation, scaling difficulties, cost control, and security, thus reducing administrative overhead.
-*   **Flexible & Open:** Supports open-source frameworks (like PyTorch and TensorFlow) and automated ML tools.
-*   **Optimized Infrastructure:** Offers fast inference on GPUs with flexible consumption models (On-demand, Spot VMs) to optimize cost and performance.
+*   **Flexible & Open:** Supports both open-source frameworks (like PyTorch and TensorFlow) and Google's AutoML tools.
+*   **Optimized Infrastructure:** Offers fast inference on GPUs & TPUs with flexible consumption models (On-demand, Spot VMs) to optimize cost and performance.
 </input>
 
 <output>
-Cloud AI Platform serves as a unified platform designed to build, deploy, and scale machine learning models. It consolidates all AI and ML tasks into a single environment, which streamlines the entire lifecycle—from the initial stages of data preparation to the final deployment and monitoring for both predictive and generative AI.
+Vertex AI serves as a unified platform designed to build, deploy, and scale machine learning models. It consolidates all AI and ML tasks into a single environment, which streamlines the entire lifecycle—from the initial stages of data preparation to the final deployment and monitoring for both predictive and generative AI.
 
 The platform provides a complete set of MLOps tools to manage the entire AI model lifecycle. This end-to-end management ensures reliability, facilitates scalability, and supports continuous improvement of the models in production.
 
-A key benefit of Cloud AI Platform is the reduction of both complexity and cost. It addresses significant challenges such as model proliferation, difficulties with scaling, cost control, and security. By managing this heavy lifting, the platform effectively reduces administrative overhead.
+A key benefit of Vertex AI is the reduction of both complexity and cost. It addresses significant challenges such as model proliferation, difficulties with scaling, cost control, and security. By managing this heavy lifting, the platform effectively reduces administrative overhead.
 
 Furthermore, Vertex AI is designed to be both flexible and open. It offers support for popular open-source frameworks like PyTorch and TensorFlow, while also integrating with Google's own AutoML tools.
 
@@ -95,18 +95,15 @@ Slide Content: {slide_content}
 <output>"""
   )
 
-  model = config["default"]["gemini_model"]
+  model = config["default"].get("gemini_model_1", "gemini-3.5-flash-lite")
   contents = [
       types.Content(role="user", parts=[msg1_text1]),
   ]
-  tools = [
-      types.Tool(google_search=types.GoogleSearch()),
-  ]
 
   generate_content_config = types.GenerateContentConfig(
-      temperature=1,
+      temperature=0.2,
       top_p=0.95,
-      max_output_tokens=65535,
+      max_output_tokens=1024,
       safety_settings=[
           types.SafetySetting(
               category="HARM_CATEGORY_HATE_SPEECH", threshold="OFF"
@@ -121,10 +118,6 @@ Slide Content: {slide_content}
               category="HARM_CATEGORY_HARASSMENT", threshold="OFF"
           ),
       ],
-      tools=tools,
-      thinking_config=types.ThinkingConfig(
-          thinking_budget=-1,
-      ),
   )
   text_chunks = []
   for chunk in client.models.generate_content_stream(
@@ -189,21 +182,6 @@ def generate(prompt):
   """
   config = load_config()
   project_id = config["default"]["project_name"]
-  region = config["default"]["region"]
-  #   vertexai.init(project=project_id, location=region)
-  #   model = GenerativeModel("gemini-2.5-pro")
-
-  #   generation_config = {
-  #     # "max_output_tokens": 8192,
-  #     "top_p": 0.95,
-  #     "temperature": 0,
-  # 	"response_mime_type": "application/json"
-  #   }
-
-  #   responses = model.generate_content(
-  #       prompt,
-  #       generation_config=generation_config,
-  #   )
   client = genai.Client(
       vertexai=True,
       project=config["default"]["project_name"],
@@ -360,108 +338,103 @@ def get_placeholders_json(text_content, layout):
   # global template_pdf_documents
   # template_pdf_documents = {'Context':f'gs://{BUCKET_NAME}/Context/Context.pdf'}
   json_files = {
-      "Context": "<YOUR_PRESENTATION_ID>.json",
-      "Case Study": "15H0myA0Iw7FTgImKuwv6snhqoSad_XhWnYVY5V3nWFo.json",
-      "Charts": "1ESIbdiIf3eOcx8wPoSsQZQq0tVYNtMTp5xsR7ILzKjE.json",
-      "Circle Charts": "1jQQ7mikdmlWu_p3Pqghp4M3cv3tuK2kOIYllFp5YBB0.json",
-      "Next Steps": "1xQpWP6t7atlYthR2ym1-b4DowOh3PfgFFFtV5eLQtxg.json",
-      "Timeline": "17CbYbM-oJNiyPLtk2_XWMVr2r8vkIZSCJG6zvRB9MZY.json",
+      "Context": "TEMPLATE_DECK_CONTEXT_V1_PLACEHOLDER_001.json",
+      "Title and content": "TEMPLATE_DECK_CONTEXT_V1_PLACEHOLDER_001.json",
+      "Case Study": "TEMPLATE_DECK_CASE_STUDY_PLACEHOLDER_001.json",
+      "Charts": "TEMPLATE_DECK_CHARTS_V1_PLACEHOLDER_0001.json",
+      "Circle Charts": "TEMPLATE_DECK_CIRCLE_CHART_PLACEHOLDER_1.json",
+      "Next Steps": "TEMPLATE_DECK_NEXT_STEPS_PLACEHOLDER_001.json",
+      "Timeline": "TEMPLATE_DECK_TIMELINE_V1_PLACEHOLDER_01.json",
+      "Industry Use Case": "TEMPLATE_DECK_IND_USECASE_PLACEHOLDER_01.json",
       "GC_AI_Title and content": (
-          "1mt9NW36sExIYBsTALJktGFDtQ-b6HEX1p6RIK3TAhNY.json"
+          "TEMPLATE_DECK_GCAI_TTLCNT_PLACEHOLDER_01.json"
       ),
-      "GC_AI_Divider": "1qXpMl0HgpTMO6riXxDx3TcOxEoH0gMhgsy1T7hGIjP8.json",
-      "GC_AI_Agenda": "1Qrhc6u4d22f8pMRZGeu5O_-w-kXbx_qyqklZi5QjQtQ.json",
+      "GC_AI_Divider": "TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01.json",
+      "GC_AI_Agenda": "TEMPLATE_DECK_GCAI_AGENDA_PLACEHOLDER_01.json",
       "CS_Title and content": (
-          "1NgU26OjqA-l60B6Dj45wi8cdykSqwNPUHwn56Ky9-XU.json"
+          "TEMPLATE_DECK_CS_TITLECNT_PLACEHOLDER_01.json"
       ),
-      "CS_Divider": "16wz6_DbEd5ZQR6Nkzai77cXehZW9PL0cGl1-tO4zqkU.json",
-      "CS_Agenda": "131d3j85xNUhNOSZnEUYj6oS_1VqovU8TtT9nJy3TDyw.json",
+      "CS_Divider": "TEMPLATE_DECK_CS_DIVIDER_PLACEHOLDER_001.json",
+      "CS_Agenda": "TEMPLATE_DECK_CS_AGENDAS_PLACEHOLDER_001.json",
       "GC_AI_Agenda slides General AI": (
-          "1W4NhyGOGYmrgeaAgXrga-kkJl7UbH_9bI_HtZrzXT9U.json"
+          "TEMPLATE_DECK_GCAI_AGD_GN_PLACEHOLDER_01.json"
       ),
       "GC_AI_Title slides General AI": (
-          "1PHyzxVlRNUIGG9F2uKkLgc_IX3GUOOMU5cUeqOdGvjU.json"
+          "TEMPLATE_DECK_GCAI_TTL_GN_PLACEHOLDER_01.json"
       ),
       "GC_AI_Title slides AI agents": (
-          "1idvtVLmCwcDH8BPzjKSTQ7JKcx2Sy_i6x48SHDFbgPA.json"
+          "TEMPLATE_DECK_GCAI_TTL_AG_PLACEHOLDER_01.json"
       ),
       "GC_AI_Welcome slide Gradient": (
-          "10gKOyeSezykoZ00IsIpXckj25kWaBjzO0XeE5pjocKg.json"
+          "TEMPLATE_DECK_WELCOME_GRAD_PLACEHOLDER_1.json"
       ),
       "GC_AI_Welcome slide General AI": (
-          "1PAdzymAwcJuL9d93oft4ovnRqLkDhZ0rjPb1C1cdfxY.json"
+          "TEMPLATE_DECK_GCAI_WLC_GN_PLACEHOLDER_01.json"
       ),
       "GC_AI_Welcome slide AI agents": (
-          "11sdcopM0gtFBakxymSXJmuokta5EHDlzzme3LSvAdIo.json"
+          "TEMPLATE_DECK_WELCOME_AGNT_PLACEHOLDER_1.json"
       ),
       "GC_AI_Agenda slides AI agents": (
-          "1ZLvNu-UGuZ75tiA5Lqm7OpypvXAhB2GAPQjlz0mApo0.json"
+          "TEMPLATE_DECK_GCAI_AGD_AG_PLACEHOLDER_01.json"
       ),
       "GC_AI_Divider slides Gradient": (
-          "1S_JB0BuLpXJfnnQ3rOHfNVIwT_P_olm_8ixU88sVRGY.json"
+          "TEMPLATE_DECK_GCAI_DIV_GR_PLACEHOLDER_01.json"
       ),
       "GC_AI_Divider slides General AI": (
-          "1L1N-4zYnMxoJDUoycwLPRfSD17ite5LLIDLQOsInFt4.json"
+          "TEMPLATE_DECK_GCAI_DIV_GN_PLACEHOLDER_01.json"
       ),
       "GC_AI_Divider slides AI agents": (
-          "1NJ6PdCZVcmSmg7-T7596PscSXkuKahIHsKHmU8KL5_Q.json"
+          "TEMPLATE_DECK_GCAI_DIV_AG_PLACEHOLDER_01.json"
       ),
       "GC_AI_Content slides": (
-          "1VszHYuNoNguePq8PEhtYddAflLcSwghsmthEYu-iB9c.json"
+          "TEMPLATE_DECK_GCAI_CNT_V1_PLACEHOLDER_01.json"
       ),
       "GC_AI_Speaker slides General AI": (
-          "10wLNtn5dZ9x_7UxN49R5P67RYy4VBoAI9G4Ih2AT4Z8.json"
+          "TEMPLATE_DECK_SPEAKER_GEN_PLACEHOLDER_01.json"
       ),
       "GC_AI_Speaker slides AI agents": (
-          "1PtOTxa9TddVnh13hYTKvU3iHy_wVor5Xtw4luUiJ1Z8.json"
+          "TEMPLATE_DECK_GCAI_SPK_AG_PLACEHOLDER_01.json"
       ),
       "GC_AI_Key takeaway slides General AI": (
-          "1qWlksdGK6pJSn_WeFfTRw4Oe8NVSqWnazQ79ejIFAAc.json"
+          "TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01.json"
       ),
       "GC_AI_Key takeaway slides AI agents": (
-          "1rw66qZFse0iCGUtd401kopoXYpaSQfqAyZOYKWopYFM.json"
+          "TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01.json"
       ),
       "GC_AI_Key takeaway slides Gradient": (
-          "1QFF8h_ckL_kwaDU-5YzDR1YNwBryUFixjqOhzs1ImTk.json"
+          "TEMPLATE_DECK_GCAI_KEY_GR_PLACEHOLDER_01.json"
       ),
       "GC_AI_Quote slides General AI": (
-          "1kag_RGG5rfvixuo16MOYXzxsHSdYBdy32iC9AlwYXWE.json"
+          "TEMPLATE_DECK_GCAI_QUO_GN_PLACEHOLDER_01.json"
       ),
       "GC_AI_Quote slides AI agents": (
-          "1WjpfjSxf3qnqSbeVbAxzf9pap8Kp39EQBjVQ0VcyXP8.json"
+          "TEMPLATE_DECK_GCAI_QUO_AG_PLACEHOLDER_01.json"
       ),
       "GC_AI_Quote slides Gradient": (
-          "1PBaN04w59Jjx3gZbyq4hwhifISjmCIz_JnzSJxs6s6I.json"
+          "TEMPLATE_DECK_GCAI_QUO_GR_PLACEHOLDER_01.json"
       ),
-      "CS_Chart": "1TCfs8nRvoDb3U-Xk9iGIb0qgmjgVqdLVLj9YulGUkDw.json",
-      "CS_Content": "1m3VF5mvxjK7l_az2v9NOjaSSJEwlJczbjMxWYKXU8Q0.json",
-      "CS_Quote": "1CiADPv2V7wXkiXxe2pOlDm956IbYsJvtnZ0cRvqOrZc.json",
-      "CS_Speaker": "1E9spQIz10XncAaOHHNFB1MvUj76iZ5YmSlt7LpivxcA.json",
-      "CS_Stats": "1zpVglLTGhd8t3B5HtvF7TFavG2YuajnFhR_9W2gV-RU.json",
-      "CS_Timeline": "1V20Wclh7xYnwbnji2QY0O0Fc7kwMuIzhmDVRW3a8DLk.json",
-      "CS_Table": "1n0wSAnM5r-_xZpTzaLK4KnFNDSgASEeoasfFyXAi2iE.json",
-      "CS_Title": "1t1fTqvswDVR4JdmPDE1MiPB1tCSrbuayLuIoNCbzZuA.json",
+      "CS_Chart": "TEMPLATE_DECK_CS_CHART_V1_PLACEHOLDER_01.json",
+      "CS_Content": "TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001.json",
+      "CS_Quote": "TEMPLATE_DECK_CS_QUOTE_V1_PLACEHOLDER_01.json",
+      "CS_Speaker": "TEMPLATE_DECK_CS_SPEAKER_PLACEHOLDER_001.json",
+      "CS_Stats": "TEMPLATE_DECK_CS_STATS_V1_PLACEHOLDER_01.json",
+      "CS_Timeline": "TEMPLATE_DECK_CS_TIMELINE_PLACEHOLDER_01.json",
+      "CS_Table": "TEMPLATE_DECK_CS_TABLE_V1_PLACEHOLDER_01.json",
+      "CS_Title": "TEMPLATE_DECK_CS_TITLE_V1_PLACEHOLDER_01.json",
       "Customer References": (
-          "1oCP5q3baYxLxDp2O2mhmiHbzCzSyJv2wJ-1OeBRGgWE.json"
+          "TEMPLATE_DECK_CUST_REF_PLACEHOLDER_00001.json"
       ),
-      "GTM_GTM Layout": "1SrZqeXsc9IpC313IYM0u_ahdEtgHsfKgp8RyjKdBypo.json",
+      "GTM_GTM Layout": "TEMPLATE_DECK_GTM_LAYOUT_PLACEHOLDER_001.json",
   }
-  global deck_id
-  deck_id = json_files[layout].split(".")[0]
-  client = storage.Client(project=config["default"]["project_name"])
-  bucket = client.bucket(BUCKET_NAME)
-  blob = bucket.blob(f"slides/{json_files[layout]}")
-  json_string = blob.download_as_string().decode("utf-8")
-  global data
-  data = json.loads(json_string, strict=False)
-
   prompt_ref = {
       "Context": "context",
+      "Title and content": "context",
       "Case Study": "case_study",
       "Charts": "charts",
       "Circle Charts": "circle_charts",
       "Next Steps": "next_steps",
       "Timeline": "timeline",
+      "Industry Use Case": "industry_use_case",
       "GC_AI_Title and content": "gc_ai_title_and_content",
       "GC_AI_Divider": "gc_ai_divider",
       "GC_AI_Agenda": "gc_ai_agendas",
@@ -505,7 +478,39 @@ def get_placeholders_json(text_content, layout):
       "GTM_GTM Layout": "gtm_gtm_layout",
   }
   global layout_prompt
-  layout_prompt = prompt_ref[layout]
+  layout_prompt = prompt_ref.get(layout, "context")
+
+  global deck_id
+  deck_id = json_files.get(
+      layout, "TEMPLATE_DECK_CONTEXT_V1_PLACEHOLDER_001.json"
+  ).split(".")[0]
+  global data
+  import os
+
+  current_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+  local_meta_path = os.path.join(
+      current_dir, "templates_metadata", f"{layout_prompt}.txt"
+  )
+  if os.path.exists(local_meta_path):
+    with open(local_meta_path, "r") as mf:
+      meta_dict = json.load(mf)
+    ordered_sids = []
+    for k in sorted(
+        meta_dict.keys(),
+        key=lambda x: int(x.split("@")[0])
+        if x.split("@")[0].isdigit()
+        else 999,
+    ):
+      parts = k.split("@")
+      if len(parts) >= 3:
+        ordered_sids.append(parts[2])
+    data = {"slideids": ordered_sids}
+  else:
+    client = storage.Client(project=config["default"]["project_name"])
+    bucket = client.bucket(BUCKET_NAME)
+    blob = bucket.blob(f"slides/{json_files[layout]}")
+    json_string = blob.download_as_string().decode("utf-8")
+    data = json.loads(json_string, strict=False)
 
   text_content = re.sub(r"\n+", "\n", text_content)
   pattern = r"\*\*Slide Title\:\*\*"

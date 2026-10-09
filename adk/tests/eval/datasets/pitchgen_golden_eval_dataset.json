@@ -1,0 +1,222 @@
+{
+  "benchmark_version": "1.0.0",
+  "description": "Golden multi-account evaluation dataset for PitchGen GTM presentations, testing vertical precision, archetype alignment, proof point immutability, and length governance.",
+  "eval_cases": [
+    {
+      "case_id": "luxury_retail_awt",
+      "customer_name": "Giorgio Armani",
+      "industry": "Retail",
+      "sub_industry": "Luxury & Fashion",
+      "sales_play": "Agentic Workplace Transformation",
+      "target_audience": [
+        "Chief Technology Officer",
+        "Head of Digital Transformation"
+      ],
+      "win_cycle": "S2",
+      "user_request": "Build an executive pitch for Giorgio Armani on how Agentic Workplace Transformation and Gemini Enterprise empower store associates and digital ateliers to personalize clienteling and automate inventory tracking.",
+      "expected_archetype": "Executive_Vision_Thought_Leadership",
+      "expected_vertical_keywords": [
+        "clienteling",
+        "atelier",
+        "omnichannel",
+        "store associate",
+        "luxury",
+        "boutique",
+        "assortment"
+      ],
+      "forbidden_cross_vertical_keywords": [
+        "fleet management",
+        "subsea cable",
+        "megawatt",
+        "clinical trial"
+      ],
+      "protected_proof_points": [
+        "Lowe's",
+        "Home Depot",
+        "Carrefour",
+        "Macy's",
+        "Target"
+      ]
+    },
+    {
+      "case_id": "fintech_data_cloud_cfo",
+      "customer_name": "Banco Santander",
+      "industry": "Financial Services",
+      "sub_industry": "Banking & Capital Markets",
+      "sales_play": "Agentic Data Cloud",
+      "target_audience": [
+        "Chief Financial Officer",
+        "Risk Committee"
+      ],
+      "win_cycle": "S3",
+      "user_request": "Create a CFO business case for Banco Santander detailing how BigQuery and Agentic Data Cloud reduce compliance reporting latency and total cost of ownership (TCO) with committed use discounts.",
+      "expected_archetype": "CFO_Business_Case",
+      "expected_vertical_keywords": [
+        "tco",
+        "roi",
+        "npv",
+        "compliance",
+        "regulatory",
+        "fraud detection",
+        "capital markets",
+        "sovereignty"
+      ],
+      "forbidden_cross_vertical_keywords": [
+        "guest room management",
+        "shopping cart",
+        "game loop",
+        "liveops"
+      ],
+      "protected_proof_points": [
+        "Cynergy Bank",
+        "PayPal",
+        "Scotiabank",
+        "HSBC",
+        "BBVA"
+      ]
+    },
+    {
+      "case_id": "healthcare_ai_apps_cto",
+      "customer_name": "Mayo Clinic",
+      "industry": "Healthcare & Life Sciences",
+      "sub_industry": "Provider & Clinical Health",
+      "sales_play": "Scale AI Apps and Agents",
+      "target_audience": [
+        "Chief Medical Information Officer",
+        "VP Enterprise Architecture"
+      ],
+      "win_cycle": "S1",
+      "user_request": "Technical architecture deck for Mayo Clinic demonstrating how Vertex AI Agent Studio and MedLM build HIPAA-compliant clinical reasoning assistants that integrate with EHR systems.",
+      "expected_archetype": "Practitioner_Technical_Architecture",
+      "expected_vertical_keywords": [
+        "ehr",
+        "hipaa",
+        "clinical",
+        "diagnostic",
+        "provider",
+        "patient outcomes",
+        "fhir",
+        "dicom"
+      ],
+      "forbidden_cross_vertical_keywords": [
+        "merchandising",
+        "inventory turnover",
+        "ticketing",
+        "telecom churn"
+      ],
+      "protected_proof_points": [
+        "Highmark Health",
+        "Bayer",
+        "HCA Healthcare",
+        "Apollo247"
+      ]
+    },
+    {
+      "case_id": "media_gaming_liveops",
+      "customer_name": "Square Enix",
+      "industry": "Gaming",
+      "sub_industry": "Interactive Entertainment & Mobile",
+      "sales_play": "Scale AI Apps and Agents",
+      "target_audience": [
+        "Studio Technical Director",
+        "Lead Game Architect"
+      ],
+      "win_cycle": "S1",
+      "user_request": "Technical workshop presentation for Square Enix on real-time game analytics, multiplayer telemetry on Google Kubernetes Engine (GKE), and player churn prediction with BigQuery.",
+      "expected_archetype": "Practitioner_Technical_Architecture",
+      "expected_vertical_keywords": [
+        "telemetry",
+        "gke",
+        "churn",
+        "latency",
+        "multiplayer",
+        "analytics",
+        "gameplay"
+      ],
+      "forbidden_cross_vertical_keywords": [
+        "underwriting",
+        "claims adjudication",
+        "hospital bed",
+        "point of sale"
+      ],
+      "protected_proof_points": [
+        "Niantic",
+        "King",
+        "Ubisoft",
+        "Riot Games"
+      ]
+    },
+    {
+      "case_id": "logistics_supply_chain_coo",
+      "customer_name": "Maersk",
+      "industry": "Logistics & Supply Chain",
+      "sub_industry": "Maritime & Global Freight",
+      "sales_play": "Agentic Data Cloud",
+      "target_audience": [
+        "Chief Operating Officer",
+        "VP Global Logistics"
+      ],
+      "win_cycle": "S2",
+      "user_request": "Strategic presentation for Maersk on optimizing multimodal freight routing, port turnaround times, and predictive vessel maintenance with Google Cloud IoT and BigQuery.",
+      "expected_archetype": "Executive_Vision_Thought_Leadership",
+      "expected_vertical_keywords": [
+        "freight",
+        "turnaround",
+        "vessel",
+        "maritime",
+        "intermodal",
+        "supply chain",
+        "cargo",
+        "logistics"
+      ],
+      "forbidden_cross_vertical_keywords": [
+        "merchandising",
+        "branch banking",
+        "patient portal",
+        "hotel booking"
+      ],
+      "protected_proof_points": [
+        "UPS",
+        "FedEx",
+        "DHL",
+        "Flexport"
+      ]
+    },
+    {
+      "case_id": "security_defense_ciso",
+      "customer_name": "CyberShield Enterprise",
+      "industry": "Technology",
+      "sub_industry": "Enterprise Security",
+      "sales_play": "Security Sales Plays",
+      "target_audience": [
+        "Chief Information Security Officer",
+        "VP SecOps"
+      ],
+      "win_cycle": "S2",
+      "user_request": "Security architecture proposal for CyberShield Enterprise on modernizing autonomous SOC operations with Mandiant Threat Intelligence and Chronicle Security Operations.",
+      "expected_archetype": "Practitioner_Technical_Architecture",
+      "expected_vertical_keywords": [
+        "soc",
+        "mandiant",
+        "chronicle",
+        "siem",
+        "soar",
+        "threat intelligence",
+        "zero trust",
+        "secops"
+      ],
+      "forbidden_cross_vertical_keywords": [
+        "shopping cart",
+        "guest loyalty",
+        "clinical notes",
+        "freight tracking"
+      ],
+      "protected_proof_points": [
+        "Banco Santander",
+        "BBVA",
+        "TELUS",
+        "Siemens"
+      ]
+    }
+  ]
+}

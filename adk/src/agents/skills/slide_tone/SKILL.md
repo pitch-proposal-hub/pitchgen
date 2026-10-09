@@ -8,43 +8,47 @@ description: >-
 # Slide Tone Guidelines
 
 This skill defines the tone and style for content generated for sales slides.
-Enterprise Cloud is a challenger in its category, and we communicate like one.
+Google Cloud communicates with confident, consultative, and visionary clarity—collaborating as a trusted enterprise transformation partner.
 
 ## Tone Principles
 
-### 1. Bring a Little Swagger
+### 1. Consultative Confidence (Not Aggressive or Combative)
 
--   **Do**: Be bold, confident, and sometimes even provocative.
--   **Don't**: Be arrogant.
--   **Example**: "Legacy systems are holding you back. Here is the way forward."
-    (Provocative but confident).
+-   **Do**: Be confident, forward-looking, and outcome-oriented. Frame challenges with empathy and solutions with inspiring clarity.
+-   **Don't**: Be aggressive, arrogant, or scolding. Never use combative, commanding, or condescending headlines.
+-   **Headline Guidance (Google Brand Voice & Tone — *Get to the point* & *Write
+    like you talk*)**:
+    -   *Avoid*: Repetitive `-ing` gerund fragments (*"Reimagining..."*,
+        *"Elevating..."*, *"Uniting..."*, *"Activating..."*, *"Scaling..."*,
+        *"Orchestrating..."*) and bare imperative slogans (*"Unlock Agentic
+        Commerce"*, *"Stop Copying Data. Start Closing Deals."*).
+    -   *Prefer*: Direct **Subject + finite active verb + outcome** statements
+        or crisp contrast/noun phrases (*"Autonomous agents transform global
+        banking workflows"*, *"One governed data fabric unifies 169PB on
+        BigQuery"*, *"From fragmented copilots to an autonomous enterprise"*,
+        *"Alphabet AI research meets HSBC global scale"*).
 
-### 2. Practice Brevity
+### 2. Practice Brevity & High Signal
 
--   **Do**: Keep it brief but make it clear.
--   **Notes**: What we strip away is as meaningful as what’s front and center.
-    Focus on the core message.
+-   **Do**: Keep headlines and body copy crisp, clear, and scannable.
+-   **Notes**: Every word should carry strategic weight. Avoid dense text or unnecessary buzzwords.
 
-### 3. Write Like You Talk
+### 3. Write Like a Trusted Executive Advisor
 
--   **Do**: Create a connection by using natural language that is unpretentious.
--   **Do**: Have a conversation with (not talk at) customers like they’re real
-    people.
--   **Don't**: Use overly formal or robotic language.
+-   **Do**: Use natural, unpretentious, consultative language that respects the customer's intelligence and operational reality.
+-   **Do**: Frame technology through the lens of partnership and business outcomes.
+-   **Don't**: Use robotic, overly corporate jargon or gimmicky slogans.
 
-### 4. Wink and Nod
+### 4. Positive, Forward-Looking Framing
 
--   **Do**: Take the opportunity to be just clever enough without being overly
-    punny.
+-   **Do**: Emphasize modern capabilities, competitive acceleration, and achievable business value.
+-   **Don't**: Over-agitate customer pain points to the point of sounding critical or dismissive of their current infrastructure.
 
-## Audience Focus
+## Audience Calibration
 
--   **Business Audience**: Focus on business outcomes, value, and strategic
-    impact.
--   **Technical Audience**: Focus on capabilities, architecture, and how it
-    works, but keep the tone consistent.
+-   **Business / Executive Audience**: Focus on strategic outcomes, customer growth, and business velocity.
+-   **Technical Audience**: Focus on robust architecture, security boundaries, and enterprise governance with clarity and precision.
 
 ## Connection to CVI Framework
 
-This skill should be used in conjunction with the CVI framework to ensure the
-narrative structure is supported by the right tone.
+This skill aligns with the Customer Value Imperative (CVI) framework to ensure the narrative progresses constructively from *Context* (empathy & market reality) to *Vision* (art of the possible), *Impact* (quantified value), and *Realization* (collaborative roadmap).

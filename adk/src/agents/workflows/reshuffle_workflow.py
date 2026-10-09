@@ -194,8 +194,10 @@ class SlideReshuffler:
         'Charts': 'templates_metadata/charts.txt',
         'Circle Charts': 'templates_metadata/circle_charts.txt',
         'Context': 'templates_metadata/context.txt',
+        'Title and content': 'templates_metadata/context.txt',
         'Next Steps': 'templates_metadata/next_steps.txt',
         'Timeline': 'templates_metadata/timeline.txt',
+        'Industry Use Case': 'templates_metadata/industry_use_case.txt',
         'GC_AI_Title and content': (
             'templates_metadata/gc_ai_title_and_content.txt'
         ),
@@ -229,7 +231,7 @@ class SlideReshuffler:
             'templates_metadata/gc_ai_Divider_slides_Gradient.txt'
         ),
         'GC_AI_Divider slides General AI': (
-            'templates_metadata/gc_ai_Divider_slides_General AI.txt'
+            'templates_metadata/gc_ai_Divider_slides_General_AI.txt'
         ),
         'GC_AI_Divider slides AI agents': (
             'templates_metadata/gc_ai_Divider_slides_AI_agents.txt'
@@ -242,7 +244,7 @@ class SlideReshuffler:
             'templates_metadata/gc_ai_Speaker_slides_AI_agents.txt'
         ),
         'GC_AI_Key takeaway slides General AI': (
-            'templates_metadata/gc_ai_Key_takeaway_slides_General AI.txt'
+            'templates_metadata/gc_ai_Key_takeaway_slides_General_AI.txt'
         ),
         'GC_AI_Key takeaway slides AI agents': (
             'templates_metadata/gc_ai_Key_takeaway_slides_AI_agents.txt'
@@ -251,7 +253,7 @@ class SlideReshuffler:
             'templates_metadata/gc_ai_Key_takeaway_slides_Gradient.txt'
         ),
         'GC_AI_Quote slides General AI': (
-            'templates_metadata/gc_ai_Quote_slides_General AI.txt'
+            'templates_metadata/gc_ai_Quote_slides_General_AI.txt'
         ),
         'GC_AI_Quote slides AI agents': (
             'templates_metadata/gc_ai_Quote_slides_AI_agents.txt'
@@ -278,9 +280,10 @@ class SlideReshuffler:
     if slide_layout == 'GTM Accelerate':
       input_data_slide_category = 'GTM_' + input_data_slide_category
 
-    meta_path = os.path.join(
-        self.current_dir, templates_metadata[input_data_slide_category]
+    meta_rel_path = templates_metadata.get(
+        input_data_slide_category, 'templates_metadata/context.txt'
     )
+    meta_path = os.path.join(self.current_dir, meta_rel_path)
     with open(meta_path, 'r') as meta_json:
       meta_json = meta_json.read()
     meta_json = json.loads(meta_json)
@@ -289,6 +292,9 @@ class SlideReshuffler:
     for key, value in meta_json.items():
       if slide_id in key:
         new_slide_template = value
+        break
+    if not new_slide_template and meta_json:
+      new_slide_template = next(iter(meta_json.values()))
     new_slide_template = json.dumps(new_slide_template, indent=2)
 
     prompt_path = os.path.join(

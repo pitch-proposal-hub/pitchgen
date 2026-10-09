@@ -1,45 +1,40 @@
 {
     "templates": {
         "1": {
-            "Use_Case_Title": "30 to 40 characters",
-            "Sales_Play_1": "15 to 25 characters",
-            "Sales_Play_2": "15 to 25 characters",
-            "Sales_Play_3": "15 to 25 characters",
-            "Sales_Play_4": "15 to 25 characters",
-            "Persona_1": "15 to 25 characters",
-            "Persona_2": "15 to 25 characters",
-            "Persona_3": "15 to 25 characters",
-            "Persona_4": "15 to 25 characters",
-            "Industry_Pillar": "20 to 30 characters",
-            "Description_details": "150 to 200 characters",
-            "Problem_statement_details": "150 to 200 characters",
-            "Value_statement": "100 to 150 characters",
-            "List_of_KPIs": "50 to 100 characters",
-            "differentiation_points": "100 to 150 characters"
+            "Industry_Tag": "12 to 22 characters",
+            "Use_Case_Title": "38 to 52 characters",
+            "Description_Header": "16 to 26 characters",
+            "Description_details": "115 to 145 characters",
+            "Problem_statement_header": "16 to 26 characters",
+            "Problem_statement_details": "115 to 145 characters",
+            "Google_differentiation_header": "16 to 26 characters",
+            "Google_differentiation_points": "115 to 145 characters",
+            "Architecture_header": "16 to 26 characters"
         },
         "2": {
-            "Use_Case_Title": "30 to 40 characters",
-            "Sales_Plays": "30 to 50 characters",
-            "Personas": "30 to 50 characters",
-            "Industry_Pillar": "20 to 30 characters",
-            "Description_details": "150 to 200 characters",
-            "Problem_statement_details": "150 to 200 characters",
-            "Value_statement": "100 to 150 characters",
-            "List_of_KPIs": "50 to 100 characters",
-            "differentiation_points": "100 to 150 characters"
+            "Industry_Tag": "12 to 22 characters",
+            "Use_Case_Title": "38 to 52 characters",
+            "Description_Header": "16 to 26 characters",
+            "Description_details": "115 to 145 characters",
+            "Problem_statement_header": "16 to 26 characters",
+            "Problem_statement_details": "115 to 145 characters",
+            "Google_differentiation_header": "16 to 26 characters",
+            "Google_differentiation_1": "55 to 75 characters",
+            "Google_differentiation_2": "55 to 75 characters",
+            "Architecture_header": "16 to 26 characters"
         },
         "3": {
-            "Use_Case_Title": "30 to 40 characters",
-            "Industry_Pillar": "20 to 30 characters",
-            "Description_details": "150 to 200 characters",
-            "Problem_statement_details": "150 to 200 characters",
-            "Value_statement": "100 to 150 characters",
-            "List_of_KPIs": "50 to 100 characters",
-            "differentiation_points": "100 to 150 characters",
-            "Sales_Plays": "30 to 50 characters",
-            "Personas": "30 to 50 characters",
-            "Industry": "15 to 25 characters"
+            "Industry_Tag": "12 to 22 characters",
+            "Use_Case_Title": "38 to 52 characters",
+            "Description_Header": "16 to 26 characters",
+            "Description_details": "115 to 145 characters",
+            "Problem_statement_header": "16 to 26 characters",
+            "Problem_statement_details": "115 to 145 characters",
+            "Google_differentiation_header": "16 to 26 characters",
+            "Google_differentiation_1": "55 to 75 characters",
+            "Google_differentiation_2": "55 to 75 characters",
+            "Architecture_header": "16 to 26 characters"
         }
     },
-    "examples": "* Example 1:\n[Input]\n```INPUT_TEXT\nSlide Title: Inventory Optimization in Retail\nSlide Content: Retailers face challenges in predicting demand, leading to stockouts or excess inventory. Enterprise Cloud's AI solutions help optimize supply chain operations.\n- Industry Pillar: Digital Supply Chain\n- Sales Plays: Inventory Optimization, Smart Supply Chain, Demand Forecasting\n- Personas: Supply Chain Director, Store Managers, Retail Analysts\n- Problem: Inaccurate forecasting and legacy ERP systems lead to high carrying costs and lost sales.\n- Solution: Implement Gemini-powered predictive modeling to forecast demand with 90%+ accuracy, automate stock replenishment, and optimize warehouse logistics.\n- Value: Reduce excess inventory by 20%, improve fulfillment rates, and save millions in carrying costs.\n- KPIs: Stockout Reduction, Inventory Turnover Ratio, Warehouse Cost Savings\n- Google Differentiation: Vertex AI offers pre-built demand forecasting models that integrate with ERPs, utilizing multimodal data (weather, trends) for unmatched accuracy.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"2\",\n    \"placeholders\":{\n  \"Use_Case_Title\": \"Inventory Optimization via AI\",\n  \"Sales_Plays\": \"Smart Supply Chain, Demand Forecasting\",\n  \"Personas\": \"Supply Chain Director, Retail Analysts\",\n  \"Industry_Pillar\": \"Digital Supply Chain\",\n  \"Description_details\": \"Implement Gemini-powered predictive modeling to forecast demand with 90%+ accuracy, automate stock replenishment, and optimize warehouse logistics across retail locations.\",\n  \"Problem_statement_details\": \"Inaccurate demand forecasting and legacy ERP systems lead to high carrying costs, frequent stockouts, lost sales, and poor warehouse efficiency.\",\n  \"Value_statement\": \"Reduce excess inventory by 20%, improve store fulfillment rates, and save millions in carrying costs annually.\",\n  \"List_of_KPIs\": \"20% Inventory Reduction, Higher Turnover, Lower Carrying Costs\",\n  \"differentiation_points\": \"Vertex AI offers pre-built demand forecasting models integrating with ERPs, using weather, trends, and market data for unmatched accuracy.\"\n}\n}\n```\n\n* Example 2:\n[Input]\n```INPUT_TEXT\nSlide Title: Connected Customer Service in Banking\nSlide Content: Banks need to modernize customer service using AI to resolve queries faster and reduce call center loads.\n- Industry Pillar: Customer Experience Modernization\n- Sales Plays: Agent Assist, Virtual Agents, Contact Center AI\n- Personas: Head of Retail Banking, Customer Support VP, Operations Lead\n- Problem: High support costs, long hold times, and low customer satisfaction due to manual call routing and legacy IVR systems.\n- Solution: Deploy Contact Center AI (CCAI) to route queries, assist agents in real-time, and automate common banking transactions.\n- Value: Reduce average handle time by 30%, increase self-service resolution, and improve CSAT score.\n- KPIs: average handle time reduction, self-service rate, CSAT improvement\n- Google Differentiation: Native integration of Gemini into Contact Center AI allows complex query resolution and automated summary generation.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"1\",\n    \"placeholders\":{\n  \"Use_Case_Title\": \"Connected Customer Service\",\n  \"Sales_Play_1\": \"Agent Assist\",\n  \"Sales_Play_2\": \"Virtual Agents\",\n  \"Sales_Play_3\": \"Contact Center AI\",\n  \"Sales_Play_4\": \"CX Modernization\",\n  \"Persona_1\": \"Head of Retail Banking\",\n  \"Persona_2\": \"Customer Support VP\",\n  \"Persona_3\": \"Operations Lead\",\n  \"Persona_4\": \"Support Agent\",\n  \"Industry_Pillar\": \"Customer Experience\",\n  \"Description_details\": \"Deploy Enterprise Cloud Contact Center AI (CCAI) to intelligently route queries, assist support agents in real-time with context, and automate common retail banking transactions.\",\n  \"Problem_statement_details\": \"High support operational costs, long hold times, and low customer satisfaction due to manual call routing, siloed systems, and legacy IVR platforms.\",\n  \"Value_statement\": \"Reduce average handle time by 30%, increase self-service query resolution, and improve overall CSAT scores.\",\n  \"List_of_KPIs\": \"30% AHT Reduction, Higher Self-Service Rate, Improved CSAT\",\n  \"differentiation_points\": \"Native integration of Gemini into Contact Center AI enables complex query resolution and automated, highly accurate summary generation.\"\n}\n}\n```"
+    "examples": "* Example 1:\n[Input]\n```INPUT_TEXT\nSlide Title: Inventory Optimization in Retail\nSlide Content: Retailers face challenges in predicting demand, leading to stockouts or excess inventory. Google Cloud's AI solutions help optimize supply chain operations.\n- Industry Pillar: Digital Supply Chain\n- Sales Plays: Inventory Optimization, Smart Supply Chain, Demand Forecasting\n- Personas: Supply Chain Director, Store Managers, Retail Analysts\n- Problem: Inaccurate forecasting and legacy ERP systems lead to high carrying costs and lost sales.\n- Solution: Implement Gemini-powered predictive modeling to forecast demand with 90%+ accuracy, automate stock replenishment, and optimize warehouse logistics.\n- Value: Reduce excess inventory by 20%, improve fulfillment rates, and save millions in carrying costs.\n- KPIs: Stockout Reduction, Inventory Turnover Ratio, Warehouse Cost Savings\n- Google Differentiation: Vertex AI offers pre-built demand forecasting models that integrate with ERPs, utilizing multimodal data (weather, trends) for unmatched accuracy.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"2\",\n    \"placeholders\":{\n  \"Use_Case_Title\": \"Inventory Optimization via AI\",\n  \"Sales_Plays\": \"Smart Supply Chain, Demand Forecasting\",\n  \"Personas\": \"Supply Chain Director, Retail Analysts\",\n  \"Industry_Pillar\": \"Digital Supply Chain\",\n  \"Description_details\": \"Implement Gemini-powered predictive modeling to forecast demand with 90%+ accuracy, automate stock replenishment, and optimize warehouse logistics across retail locations.\",\n  \"Problem_statement_details\": \"Inaccurate demand forecasting and legacy ERP systems lead to high carrying costs, frequent stockouts, lost sales, and poor warehouse efficiency.\",\n  \"Value_statement\": \"Reduce excess inventory by 20%, improve store fulfillment rates, and save millions in carrying costs annually.\",\n  \"List_of_KPIs\": \"20% Inventory Reduction, Higher Turnover, Lower Carrying Costs\",\n  \"Google_differentiation_points\": \"Vertex AI offers pre-built demand forecasting models integrating with ERPs, using weather, trends, and market data for unmatched accuracy.\"\n}\n}\n```\n\n* Example 2:\n[Input]\n```INPUT_TEXT\nSlide Title: Connected Customer Service in Banking\nSlide Content: Banks need to modernize customer service using AI to resolve queries faster and reduce call center loads.\n- Industry Pillar: Customer Experience Modernization\n- Sales Plays: Agent Assist, Virtual Agents, Contact Center AI\n- Personas: Head of Retail Banking, Customer Support VP, Operations Lead\n- Problem: High support costs, long hold times, and low customer satisfaction due to manual call routing and legacy IVR systems.\n- Solution: Deploy Contact Center AI (CCAI) to route queries, assist agents in real-time, and automate common banking transactions.\n- Value: Reduce average handle time by 30%, increase self-service resolution, and improve CSAT score.\n- KPIs: average handle time reduction, self-service rate, CSAT improvement\n- Google Differentiation: Native integration of Gemini into Contact Center AI allows complex query resolution and automated summary generation.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"1\",\n    \"placeholders\":{\n  \"Use_Case_Title\": \"Connected Customer Service\",\n  \"Sales_Play_1\": \"Agent Assist\",\n  \"Sales_Play_2\": \"Virtual Agents\",\n  \"Sales_Play_3\": \"Contact Center AI\",\n  \"Sales_Play_4\": \"CX Modernization\",\n  \"Persona_1\": \"Head of Retail Banking\",\n  \"Persona_2\": \"Customer Support VP\",\n  \"Persona_3\": \"Operations Lead\",\n  \"Persona_4\": \"Support Agent\",\n  \"Industry_Pillar\": \"Customer Experience\",\n  \"Description_details\": \"Deploy Google Cloud Contact Center AI (CCAI) to intelligently route queries, assist support agents in real-time with context, and automate common retail banking transactions.\",\n  \"Problem_statement_details\": \"High support operational costs, long hold times, and low customer satisfaction due to manual call routing, siloed systems, and legacy IVR platforms.\",\n  \"Value_statement\": \"Reduce average handle time by 30%, increase self-service query resolution, and improve overall CSAT scores.\",\n  \"List_of_KPIs\": \"30% AHT Reduction, Higher Self-Service Rate, Improved CSAT\",\n  \"Google_differentiation_points\": \"Native integration of Gemini into Contact Center AI enables complex query resolution and automated, highly accurate summary generation.\"\n}\n}\n```"
 }

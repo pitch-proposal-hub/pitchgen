@@ -1,0 +1,58 @@
+{
+    "1@TEMPLATE_DECK_SPEAKER_GEN_PLACEHOLDER_01@g385ad69085e_0_676": {
+        "header1": "20 to 34 characters",
+        "header1_content": "48 to 68 characters",
+        "header2": "20 to 34 characters",
+        "header3": "20 to 34 characters",
+        "header2_content": "48 to 68 characters",
+        "header3_content": "48 to 68 characters",
+        "item1_content": "80 to 110 characters",
+        "item2_content": "80 to 110 characters",
+        "item3_content": "80 to 110 characters",
+        "heading4": "139 to 159 characters",
+        "heading4_content": "48 to 68 characters",
+        "text4_content": "80 to 110 characters"
+    },
+    "2@TEMPLATE_DECK_SPEAKER_GEN_PLACEHOLDER_01@g385ad69085e_0_699": {
+        "header1": "20 to 34 characters",
+        "header1_content": "48 to 68 characters",
+        "header2": "20 to 34 characters",
+        "header2_content": "48 to 68 characters",
+        "item1_content": "80 to 110 characters",
+        "item2_content": "80 to 110 characters",
+        "header3": "20 to 34 characters",
+        "header3_content": "48 to 68 characters",
+        "item3_content": "80 to 110 characters",
+        "heading4": "139 to 159 characters",
+        "heading4_content": "48 to 68 characters",
+        "text4_content": "80 to 110 characters"
+    },
+    "3@TEMPLATE_DECK_SPEAKER_GEN_PLACEHOLDER_01@g385ad69085e_0_722": {
+        "header1": "20 to 34 characters",
+        "header1_content": "48 to 68 characters",
+        "header2": "20 to 34 characters",
+        "header3": "20 to 34 characters",
+        "header2_content": "48 to 68 characters",
+        "header3_content": "48 to 68 characters",
+        "item1_content": "80 to 110 characters",
+        "item2_content": "80 to 110 characters",
+        "item3_content": "80 to 110 characters",
+        "heading4": "139 to 159 characters",
+        "heading4_content": "48 to 68 characters",
+        "text4_content": "80 to 110 characters"
+    },
+    "4@TEMPLATE_DECK_SPEAKER_GEN_PLACEHOLDER_01@g385ad69085e_0_745": {
+        "header1": "20 to 34 characters",
+        "header1_content": "48 to 68 characters",
+        "header2": "20 to 34 characters",
+        "header2_content": "48 to 68 characters",
+        "item1_content": "80 to 110 characters",
+        "item2_content": "80 to 110 characters",
+        "header3": "20 to 34 characters",
+        "header3_content": "48 to 68 characters",
+        "item3_content": "80 to 110 characters",
+        "heading4": "139 to 159 characters",
+        "heading4_content": "48 to 68 characters",
+        "text4_content": "80 to 110 characters"
+    }
+}

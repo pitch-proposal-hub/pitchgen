@@ -1,0 +1,14 @@
+{
+    "1@TEMPLATE_DECK_GCAI_TTLCNT_PLACEHOLDER_01@g38a47d16ae7_0_267": {
+        "title": "40 to 56 characters",
+        "item1": "130 to 165 characters",
+        "item2": "130 to 165 characters",
+        "item3": "130 to 165 characters"
+    },
+    "2@TEMPLATE_DECK_GCAI_TTLCNT_PLACEHOLDER_01@g38a47d16ae7_0_281": {
+        "title": "40 to 56 characters",
+        "item1": "130 to 165 characters",
+        "item2": "130 to 165 characters",
+        "item3": "130 to 165 characters"
+    }
+}

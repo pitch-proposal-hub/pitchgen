@@ -1,0 +1,62 @@
+{
+    "1@TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01@g389c6265dae_0_722": {
+        "title": "13 to 23 characters",
+        "header1": "15 to 25 characters",
+        "header1_content": "110 to 140 characters",
+        "header2": "15 to 25 characters",
+        "header2_content": "110 to 140 characters",
+        "header3": "15 to 25 characters",
+        "header3_content": "110 to 140 characters"
+    },
+    "2@TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01@g389c6265dae_0_735": {
+        "title": "13 to 23 characters",
+        "header1": "15 to 25 characters",
+        "header1_content": "110 to 140 characters",
+        "header2": "15 to 25 characters",
+        "header2_content": "110 to 140 characters",
+        "header3": "15 to 25 characters",
+        "header3_content": "110 to 140 characters"
+    },
+    "3@TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01@g389c6265dae_0_748": {
+        "title": "13 to 23 characters",
+        "header1": "15 to 25 characters",
+        "header1_content": "110 to 140 characters",
+        "header2": "15 to 25 characters",
+        "header2_content": "110 to 140 characters",
+        "header3": "15 to 25 characters",
+        "header3_content": "110 to 140 characters"
+    },
+    "4@TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01@g389c6265dae_0_763": {
+        "title": "13 to 23 characters",
+        "header1": "15 to 25 characters",
+        "header1_content": "110 to 140 characters",
+        "header2": "15 to 25 characters",
+        "header2_content": "110 to 140 characters",
+        "header3": "15 to 25 characters",
+        "header3_content": "110 to 140 characters"
+    },
+    "5@TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01@g389c6265dae_0_777": {
+        "item1": "40 to 60 characters"
+    },
+    "6@TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01@g389c6265dae_0_784": {
+        "item1": "40 to 60 characters"
+    },
+    "7@TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01@g389c6265dae_0_791": {
+        "item1": "40 to 60 characters"
+    },
+    "8@TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01@g389c6265dae_0_798": {
+        "item1": "40 to 60 characters"
+    },
+    "9@TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01@g389c6265dae_0_805": {
+        "item1": "177 to 207 characters"
+    },
+    "10@TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01@g389c6265dae_0_813": {
+        "item1": "177 to 207 characters"
+    },
+    "11@TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01@g389c6265dae_0_821": {
+        "item1": "177 to 207 characters"
+    },
+    "12@TEMPLATE_DECK_GCAI_KEY_GN_PLACEHOLDER_01@g389c6265dae_0_829": {
+        "item1": "177 to 207 characters"
+    }
+}

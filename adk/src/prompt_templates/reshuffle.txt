@@ -72,11 +72,11 @@ Highlight only the key partnership milestones in a chronological timeline format
 {
   "title": "Continuing through and with Insurance",
   "date1": "May 2020",
-  "date1_content": "Brit + Enterprise Cloud collaborate to launch the first algorithmically driven Lloyd's of London syndicate",
+  "date1_content": "Brit + Google Cloud collaborate to launch the first algorithmically driven Lloyd's of London syndicate",
   "date2": "March 2021",
   "date2_content": "Munich Re, AGCS, & Google partner on cyber insurance solution",
   "date3": "April 2023",
-  "date3_content": "Definify taps Enterprise Cloud to power insurance innovation"
+  "date3_content": "Definify taps Google Cloud to power insurance innovation"
 }
 ```
 

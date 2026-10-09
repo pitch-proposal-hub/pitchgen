@@ -1,0 +1,11 @@
+# Example Asset Placeholder
+
+Asset files are NOT loaded into context—they're used in output.
+
+Common asset types:
+- Templates: .pptx, .docx, boilerplate directories
+- Images: .png, .jpg, .svg
+- Fonts: .ttf, .otf, .woff
+- Data files: .csv, .json, .yaml
+
+Replace this with actual assets or delete if not needed.

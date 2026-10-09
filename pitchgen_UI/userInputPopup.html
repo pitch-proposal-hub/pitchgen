@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Icon placeholder -->
+    <link rel="icon" href="https://drive.google.com/file/d/1AYuMzqClv_t5FizvqfBnSIvOEFshkKTq/view?usp=drive_link&resourcekey=0-EZTcZ0rH1m0Gx3-csrXDJw" type="image/png">
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
     <script src="https://apis.google.com/js/api.js"></script>
 </head>
@@ -390,24 +390,26 @@ img {
 .draggable-input {
  display: flex;
  align-items: center;
- margin-bottom: 7px;
+ margin-bottom: 8px;
  border: 1px solid #b3b5b9;
  background-color: #f1f3f4;
  border-radius: 10px;
  margin-right: 3px;
  flex-wrap: wrap;
+ padding: 6px 14px 6px 10px;
 }
 .form2-input-field {
- width: 75%;
- padding: 5px;
- margin-right: 10px;
+ flex: 1;
+ width: auto !important;
+ padding: 2px 6px;
+ margin-right: 12px;
+ margin-bottom: 0px !important;
  background-color:#f1f3f4;
  border: none;
  box-shadow: none;
- margin-top:7px;
  font-weight: 500;
  color: black;
- height:25px;
+ height: 28px;
 }
 .form2-input-field:hover,
 .form2-input-field:active,
@@ -420,6 +422,7 @@ img {
 }
 .drag-indicator {
   cursor: move;
+  margin-right: 8px;
 }
 /* //loading gif for adding slide =CSS */
 .loading-screen{
@@ -699,10 +702,18 @@ img {
     background-color: #f1f3f4 !important;
   }
   .agendaSubTopic{
-    width: 100% !important;
+    width: calc(100% - 28px) !important;
     display: flex;
     align-items: center;
-    margin-left: 8vh;
+    margin-left: 28px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+  .agendaSubTopic input {
+    flex: 1;
+    width: auto !important;
+    margin-right: 12px;
+    margin-bottom: 0px !important;
   }
   .numericalInput{
     border: 1px solid #b3b5b9;
@@ -714,10 +725,13 @@ img {
     font-size: 12px;
   }
   .remove-subtopic{
-    border-radius: 10px;
-    height: 32px;
+    border-radius: 8px;
+    height: 28px;
+    width: 28px;
     background-color: #f1f3f4;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
   }
   .agendaInput{
@@ -725,10 +739,13 @@ img {
     font-weight: 600;
   }
   .add-subtopic{
-    border-radius: 10px;
-    height: 32px;
+    border-radius: 8px;
+    height: 28px;
+    width: 28px;
     background-color: #f1f3f4;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     margin-right: 6px;
   }
@@ -754,12 +771,12 @@ img {
     margin-bottom: 0px;
   }
   .numericalDiv{
-    width: 100% !important;
+    width: calc(100% - 28px) !important;
     display: flex;
     align-items: center;
-    margin-left: 8vh;
-    margin-bottom: 3vh;
-    margin-top: 2vh;
+    margin-left: 28px;
+    margin-bottom: 2vh;
+    margin-top: 1.5vh;
   }
   .dropdown-menu.open{
     max-width: 264%;
@@ -912,7 +929,7 @@ img {
       <textarea class="form-control b-content business_context" id="business_context" name="business_context" rows="3" placeholder="What presentation are you building today?" style="padding: 14px 16px 44px 16px !important;" required></textarea>
       
       <!-- Circular Plus Button Trigger -->
-      <div class="attachment-trigger" id="attachmentTrigger" style="position: absolute; bottom: 12px; left: 16px; width: 28px; height: 28px; border-radius: 50%; background-color: #e8eaed; display: flex; align-items: center; justify-content: center; color: #3c4043; cursor: pointer; user-select: none; transition: background-color 0.2s;">
+      <div class="attachment-trigger" id="attachmentTrigger" title="Add sources" data-toggle="tooltip" data-placement="top" style="position: absolute; bottom: 12px; left: 16px; width: 28px; height: 28px; border-radius: 50%; background-color: #e8eaed; display: flex; align-items: center; justify-content: center; color: #3c4043; cursor: pointer; user-select: none; transition: background-color 0.2s;">
         <span class="material-icons" style="font-size: 18px;">add</span>
       </div>
 
@@ -957,26 +974,26 @@ img {
 
     <div class="quick-button-container">
         <span class="quick-button" id="quickButton0" onmouseover="penSparkWhiteHover(0)" onmouseout="penSparkHover(0)">
-          <img src="https://storage.googleapis.com/<?= bucketName ?>/UI/pen_spark.png" id="pen-spark0" class="pen-spark">
+          <img src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/pen_spark.png" id="pen-spark0" class="pen-spark">
           <span id="prompt0">Loading...</span>
         </span>
         <span class="quick-button" id="quickButton1" onmouseover="penSparkWhiteHover(1)" onmouseout="penSparkHover(1)">
-          <img src="https://storage.googleapis.com/<?= bucketName ?>/UI/pen_spark.png" id="pen-spark1" class="pen-spark">
+          <img src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/pen_spark.png" id="pen-spark1" class="pen-spark">
           <span id="prompt1">Loading...</span>
         </span>
         <span class="quick-button" id="quickButton2" onmouseover="penSparkWhiteHover(2)" onmouseout="penSparkHover(2)">
-          <img src="https://storage.googleapis.com/<?= bucketName ?>/UI/pen_spark.png" id="pen-spark2" class="pen-spark">
+          <img src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/pen_spark.png" id="pen-spark2" class="pen-spark">
           <span id="prompt2">Loading...</span>
         </span>
         <span class="quick-button-refresh" id="refresh-icon-success" onclick="refreshPrompt()">
-          <img id="refresh-success-icon" src="https://storage.googleapis.com/<?= bucketName ?>/UI/exchange_magic.png" style="padding:0" width="25" height="25">
+          <img id="refresh-success-icon" src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/exchange_magic.png" style="padding:0" width="25" height="25">
         </span>
         <span class="quick-button-refresh" id="refresh-icon-fail" onclick="promptLoad('refresh-fail-icon')" style="display:none;">
-          <img id="refresh-fail-icon" src="https://storage.googleapis.com/<?= bucketName ?>/UI/exchange_magic.png" style="padding:0" width="25" height="25">
+          <img id="refresh-fail-icon" src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/exchange_magic.png" style="padding:0" width="25" height="25">
         </span>
     </div>
 
-      <p class="help-text">Add below details to further customize the content of your asset. <a href="YOUR_USER_GUIDE_URL" target="_blank">Learn more</a>
+      <p class="help-text">Add below details to further customize the content of your asset. <a href="https://docs.google.com/presentation/d/SAMPLE_PRESENTATION_ID_PLACEHOLDER_00002/edit?slide=id.g278605aa52c_1_3623&resourcekey=0-HXh3OGsfNkeixsdX1mnY3A#slide=id.g278605aa52c_1_3623" target="_blank">Learn more</a>
       </p>
     <div id="rowsWrapper" style="position: relative; margin-top: 20px;">
     <div class="row first-row" style="margin-top:0px">
@@ -1060,15 +1077,14 @@ img {
         </select>
       </div>
       <div class="col-md-4" style="margin-bottom: 15px;">
-        <!-- <label class="form-label label-size">Region</label> -->
-        <select class="form-control form-select common-field" id="region" name="region" onchange="changeFontStyle(this)" title="Region">
-          <option value="" selected disabled hidden style="font-style: italic;">Region</option>
-          <option value="APAC">APAC</option>
-          <option value="EMEA">EMEA</option>
-          <option value="JAPAN">JAPAN</option>
-          <option value="LATAM">LATAM</option>
-          <option value="NORTHAM">NORTHAM</option>
-          <option value="GLOBAL">GLOBAL</option>
+        <!-- <label class="form-label label-size">Sales Stage</label> -->
+        <select class="form-control form-select common-field" id="salesStage" name="salesStage" onchange="changeFontStyle(this)" title="Sales Stage">
+          <option value="" selected disabled hidden style="font-style: italic;">Sales Stage (WIN Cycle)</option>
+          <option value="S0">Qualify (S0)</option>
+          <option value="S1">Position & Build (S1)</option>
+          <option value="S2">Tech Solutioning (S2)</option>
+          <option value="S3">Propose & Negotiate (S3)</option>
+          <option value="S4">Mobilize & Deliver (S4)</option>
         </select>
       </div>
       <div class="col-md-4" style="margin-bottom: 15px;"> 
@@ -1104,6 +1120,8 @@ img {
       </div>
     </div>
     
+
+    
     <!-- Hidden selects for solution and product to prevent JS break -->
     <div class="col" style="display:none;">
       <select class="form-control form-select selectpicker common-field" multiple id="solution" name="solution">
@@ -1118,7 +1136,7 @@ img {
     
       <div class="right-button" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10;" id="generateOutline">
         <button class="btn btn-custom" type="submit" onclick="generate_Outline('Generate');" onmouseover="generateOutlineWhiteHover()" onmouseout="generateOutlineHover()">
-          <img id="generate-outline-icon" class="generate-outline-icon" src="https://storage.googleapis.com/<?= bucketName ?>/UI/summarize_auto_2.png">Generate Outline
+          <img id="generate-outline-icon" class="generate-outline-icon" src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/summarize_auto_2.png">Generate Outline
         </button>
       </div>
       <div class="right-button" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10; display:none;" id="generateDeck">
@@ -1136,10 +1154,26 @@ img {
     <input id="data" style="display:none" >
     <div class="row"  style="margin-top:20px"> <!-- Main row start ------------>
       <div class="col-2 fixed-column">   <!-- left column start ------------>
+        <label class="form-label" style="color: black; font-weight: bold; font-size: 13px; margin-bottom: 6px;">
+          Deck Strategy:
+        </label>
+        <div class="strategy-selector-wrapper" style="margin-bottom: 14px; display: flex; flex-direction: column; gap: 6px;">
+          <button type="button" class="strategy-btn active" id="strat_smart_hybrid" onclick="selectStrategy('smart_hybrid')" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 8px; border: 1.5px solid #1a73e8; background: #e8f0fe; color: #1a73e8; font-size: 11.5px; font-weight: 600; cursor: pointer; text-align: left; transition: all 0.2s; box-shadow: 0 1px 2px rgba(26,115,232,0.15);">
+            <span>⚡</span> Smart Hybrid
+          </button>
+          <button type="button" class="strategy-btn" id="strat_cloudhub_focused" onclick="selectStrategy('cloudhub_focused')" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 8px; border: 1px solid #dadce0; background: #ffffff; color: #3c4043; font-size: 11.5px; font-weight: 500; cursor: pointer; text-align: left; transition: all 0.2s;">
+            <span>📁</span> CloudHub Focused
+          </button>
+          <button type="button" class="strategy-btn" id="strat_bespoke_custom" onclick="selectStrategy('bespoke_custom')" style="display: flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 8px; border: 1px solid #dadce0; background: #ffffff; color: #3c4043; font-size: 11.5px; font-weight: 500; cursor: pointer; text-align: left; transition: all 0.2s;">
+            <span>✨</span> Bespoke Custom
+          </button>
+        </div>
+        <input type="hidden" id="selectedDeckStrategy" value="smart_hybrid">
+
         <label for="exampleFormControlTextarea1" class="form-label" style="color: black; font-weight: bold; font-size: 13px;">
           Prompt:
         </label>
-        <textarea class="form-control form2-context-area" id="exampleFormControlTextarea1" placeholder="Eg. Build a “why Google Cloud” pitch for a US-based ecommerce company. Include GenAI solutions, as well as a slide on sustainability." required disabled='true' ></textarea>
+        <textarea class="form-control form2-context-area" id="exampleFormControlTextarea1" placeholder="Eg. Build a “why Google Cloud” pitch for a US-based ecommerce company. Include GenAI solutions, as well as a slide on sustainability." required disabled='true' style="height: 160px; min-height: 140px;"></textarea>
         <div class="left-button">
           <button class="btn btn-recreate" id="recreate_button" type="submit" disabled='true' onclick="recreateApi()">Recreate</button>
         </div>
@@ -1159,7 +1193,7 @@ img {
         <div class="scrollable-content">
           <div id="container"> <!-- Outline container start ------------>
           <div class="broken-animation">
-            <img id="404_gif" src="https://storage.googleapis.com/<?= bucketName ?>/UI/UI_errorV1.png" alt="logo" class="broken_gif" style="display:none">
+            <img id="404_gif" src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/UI_errorV1.png" alt="logo" class="broken_gif" style="display:none">
           </div>
             <div id="gifImage_loader" style="display: none; margin: 48px auto 24px auto; width: 90%; font-family: 'Google Sans', sans-serif;">
               <!-- Gemini-style "Show thoughts" Collapsible Section -->
@@ -1177,23 +1211,23 @@ img {
                 <div id="thoughts-body" style="padding: 16px; max-height: 300px; transition: max-height 0.3s ease-out, padding 0.3s ease-out; overflow-y: auto;">
                   <div class="thought-step" id="step-0">
                     <span class="material-symbols-outlined step-icon icon-pending">circle</span>
-                    <span class="step-text">Analyzing context and prompt inputs</span>
+                    <span class="step-text">Analyzing account context &amp; vertical dynamics</span>
                   </div>
                   <div class="thought-step" id="step-1">
                     <span class="material-symbols-outlined step-icon icon-pending">circle</span>
-                    <span class="step-text">Retrieving Google Cloud reference architectures</span>
+                    <span class="step-text">Retrieving Google Cloud sales assets &amp; playbooks</span>
                   </div>
                   <div class="thought-step" id="step-2">
                     <span class="material-symbols-outlined step-icon icon-pending">circle</span>
-                    <span class="step-text">Designing structured outline and slide topics</span>
+                    <span class="step-text">Designing structured narrative &amp; section sequence</span>
                   </div>
                   <div class="thought-step" id="step-3">
                     <span class="material-symbols-outlined step-icon icon-pending">circle</span>
-                    <span class="step-text">Fleshing out talking points and subtopics</span>
+                    <span class="step-text">Synthesizing account-specific talking points</span>
                   </div>
                   <div class="thought-step" id="step-4">
                     <span class="material-symbols-outlined step-icon icon-pending">circle</span>
-                    <span class="step-text">Preparing outline for interactive review</span>
+                    <span class="step-text">Finalizing outline for review &amp; customization</span>
                   </div>
                 </div>
               </div>
@@ -1210,7 +1244,7 @@ img {
     <div class="loading-screen"  id="loader">
        <!-- <button onclick="goBack()" class="go-back-button">Go Back</button> -->
       <div class="loading-animation">
-        <img id="gifImage" src="https://storage.googleapis.com/<?= bucketName ?>/UI/UI_contentV1.gif" alt="logo" class="logo">
+        <img id="gifImage" src="https://storage.mtls.cloud.google.com/<?= bucketName ?>/UI/UI_contentV1.gif" alt="logo" class="logo">
         <div class="overlay-text">
           <span class="pitch-title">PitchGen is on it! 🚀</span>
           <span class="pitch-desc">Your deck will be ready in 4–5 minutes. Don't close this tab, but feel free to multitask—we'll email you the moment it's done!</span>
@@ -1272,7 +1306,7 @@ img {
     // Set first step as active
     activateStep(0);
     
-    // Progress every 4 seconds
+    // Progress every 9 seconds (5 seconds longer per section before turning green)
     thoughtsInterval = setInterval(function() {
       if (currentThoughtStep < 4) {
         completeStep(currentThoughtStep);
@@ -1282,7 +1316,7 @@ img {
         completeStep(4);
         clearInterval(thoughtsInterval);
       }
-    }, 4000);
+    }, 9000);
   }
 
   function activateStep(index) {
@@ -1354,12 +1388,11 @@ img {
       return;
     }
 
-    var mimeType = file.type;
-    // Standard images or PDFs are multimodal compatible
-    var isMultiModal = mimeType === "application/pdf" || mimeType.startsWith("image/");
+    var mimeType = file.type || "";
+    var isImage = mimeType.startsWith("image/") || file.name.match(/\.(png|jpg|jpeg|gif|webp)$/i);
 
-    if (isMultiModal) {
-      $('#pdfUploadStatus').html("Uploading file to cloud...").show().css("color", "grey");
+    if (isImage) {
+      $('#pdfUploadStatus').html("Uploading image to cloud...").show().css("color", "grey");
     } else {
       $('#pdfUploadStatus').html("Analyzing and parsing document...").show().css("color", "grey");
     }
@@ -1368,8 +1401,8 @@ img {
     reader.onload = function(event) {
       var base64Data = event.target.result.split(',')[1];
 
-      if (isMultiModal) {
-        // GCS Upload Flow
+      if (isImage) {
+        // GCS Upload Flow for Images
         google.script.run.withSuccessHandler(function(arg) {
           if (arg.status == true) {
             $('#pdfUploadStatus').hide();
@@ -1378,24 +1411,24 @@ img {
             $('#pdfFileMimeType').val(arg.mimeType);
             $('#extractedDocumentText').val(''); // Clear extracted text
             renderAttachmentChips();
-            alertify.success("File uploaded successfully to cloud!");
+            alertify.success("Image uploaded successfully!");
           } else {
             $('#pdfUploadStatus').html("Upload failed: " + arg.error).css("color", "red");
             alertify.error("Upload failed: " + arg.error);
           }
         }).uploadFileToGCS(base64Data, file.name, mimeType);
       } else {
-        // Apps Script Document Parsing Flow
+        // Apps Script Document Parsing Flow for PDF, Word, PPTX, Excel, Text
         google.script.run.withSuccessHandler(function(arg) {
           if (arg.status == true) {
             $('#pdfUploadStatus').hide();
-            $('#extractedDocumentText').val(arg.text);
+            $('#extractedDocumentText').val(arg.text || "");
             $('#pdfFileName').val(file.name);
-            $('#pdfGcsUrl').val(''); // Clear GCS GAE fields
-            $('#pdfFileMimeType').val('');
+            $('#pdfGcsUrl').val(''); 
+            $('#pdfFileMimeType').val(mimeType);
             renderAttachmentChips();
             alertify.success("Document parsed successfully!");
-            console.log("Extracted text length: ", arg.text.length);
+            console.log("Extracted text length: ", (arg.text || "").length);
           } else {
             $('#pdfUploadStatus').html("Parsing failed: " + arg.error).css("color", "red");
             alertify.error("Parsing failed: " + arg.error);
@@ -1513,9 +1546,9 @@ img {
       var selectedSolutions = [];
       var customer_name = document.getElementById("customer_name").value;
 
-      var region = document.getElementById("region").value;
-      if(region==""){
-        region="GLOBAL";
+      var salesStage = document.getElementById("salesStage") ? document.getElementById("salesStage").value : "";
+      if(salesStage == ""){
+        salesStage = "S1";
       }
       var selectedProducts = [];
       var er_number = document.getElementById("er_number").value;
@@ -1527,15 +1560,24 @@ img {
         }
       }
 
+      var deckLength = "Standard";
+      var bcLower = (business_context || "").toLowerCase();
+      if (bcLower.match(/\b(concise|brief|short|3\s*-\s*5\s*slides|5\s*slides|6\s*slides|7\s*slides)\b/)) {
+        deckLength = "Concise";
+      } else if (bcLower.match(/\b(comprehensive|detailed|deep\s*dive|12\s*slides|15\s*slides|16\s*slides|20\s*slides)\b/)) {
+        deckLength = "Comprehensive";
+      }
+
       localStorage.setItem('audience', selectedAudiences);
       localStorage.setItem('solution', selectedSolutions);
       localStorage.setItem('product', selectedProducts);
       localStorage.setItem('customer_name', customer_name);
       localStorage.setItem('industry', industry);
-      localStorage.setItem('region', region);
+      localStorage.setItem('salesStage', salesStage);
       localStorage.setItem('salesPlay', selectedSalesPlay);
+      localStorage.setItem('deck_length', deckLength);
     
-      values=[business_context,selectedAudiences,industry,selectedSolutions,customer_name,region,selectedProducts,er_number,selectedSalesPlay];
+      values=[business_context,selectedAudiences,industry,selectedSolutions,customer_name,salesStage,selectedProducts,er_number,selectedSalesPlay,deckLength];
       console.log(values);
       $('#exampleFormControlTextarea1').val($('#business_context').val()).trigger('input');
       google.script.run.withSuccessHandler(function(arg){
@@ -1552,10 +1594,14 @@ img {
           }
           else
           {
-            const totalAgendaKeys = Object.keys(arg.titles);
+            const totalAgendaKeys = Object.keys(arg.titles || {});
             console.log("arg : ",arg);
             console.log("data : ",arg.data);
-            console.log("resOut : ",JSON.parse(arg.resOut));
+            try {
+              console.log("resOut : ", JSON.parse(arg.resOut));
+            } catch(e) {
+              console.log("resOut raw: ", arg.resOut);
+            }
             console.log("Total Agenda :",totalAgendaKeys.length);
             document.getElementById("gifImage_loader").style.display = 'none';  //progressbar for generating outline
             stopThinkingAnimation();
@@ -1565,6 +1611,11 @@ img {
               for(var i=0; i<totalAgendaKeys.length; i++)
               {
                 totalAgenda = i;
+                var currentAgenda = arg.titles[totalAgendaKeys[i]];
+                var currentTitle = (typeof currentAgenda === 'object' && currentAgenda !== null) ? (currentAgenda.title || totalAgendaKeys[i]) : String(currentAgenda || '');
+                var currentParts = (typeof currentAgenda === 'object' && currentAgenda !== null && Array.isArray(currentAgenda.parts)) ? currentAgenda.parts : [];
+                var currentCustRef = (typeof currentAgenda === 'object' && currentAgenda !== null) ? (currentAgenda.cust_ref || 'false') : 'false';
+
                     $('#container').append(`
                     <div class="draggable-input" draggable="true">
                         <span class="drag-indicator material-icons">
@@ -1573,7 +1624,7 @@ img {
                                 <path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
                             </svg>
                         </span>
-                        <input type="text" class="form-control mb-2 form2-input-field agendaInput" id="${"input_"+i}" value="${arg.titles[totalAgendaKeys[i]].title}" onchange="outlineChange()">
+                        <input type="text" class="form-control mb-0 form2-input-field agendaInput" id="${"input_"+i}" value="${currentTitle}" onchange="outlineChange()">
                         <div class="add-agenda" onclick="add_agenda(event);">
                             <a class="edit" title="Add" data-toggle="tooltip">
                                 <i class="material-icons">add</i>
@@ -1584,9 +1635,9 @@ img {
                             <i class="material-icons">delete</i>
                           </a>
                         </div>
-                        ${arg.titles[totalAgendaKeys[i]].parts.map((part, j) => {totalSubTopic++; return `
+                        ${currentParts.map((part, j) => {totalSubTopic++; return `
                           <div class="agendaSubTopic countSubTopic_${i}">
-                            <input type="text" class="form-control mb-2 form2-input-field" style="width:75%"
+                            <input type="text" class="form-control mb-0 form2-input-field"
                                 id="subinput_${i}_${j}" 
                                 value="${part}" 
                                 onchange="outlineChange()">
@@ -1602,13 +1653,7 @@ img {
                             </div>    
                           </div>
                         `;}).join('')}
-                        <input type="text" class="custref" id="${"custref_"+i}" value="${arg.titles[totalAgendaKeys[i]].cust_ref || 'false'}" style="display:none">
-                        <div class="numericalDiv">
-                          <label class="numericalLabel" style="width: 24%;"># of CloudHub Slides</label>
-                          <input type="text" class="numericalInput" id="${"reusable_"+i}" maxlength="1" oninput="validateNumberOnly(this)">
-                          <label class="numericalLabel" style="margin-left: 5%;"># of Generated Slides</label>
-                          <input type="text" class="numericalInput" id="${"generated_"+i}" maxlength="1" oninput="validateNumberOnly(this)">
-                        </div>
+                        <input type="text" class="custref" id="${"custref_"+i}" value="${currentCustRef}" style="display:none">
                         <!-- Modal -->
                         <div class="modal fade" id="myModal" role="dialog" tabindex="-1">
                           <div class="modal-dialog modal-dialog-centered">
@@ -1631,7 +1676,7 @@ img {
                     </div>
                 `);
               }
-              $('#btn-container').append('<div class="right-button"><span class="messageError" id="messageError"></span><button class="btn btn-custom btn-pitch" type="submit" id="generate_pitch" onclick="generate_Pitch();">Generate Deck</button></div>');
+              $('#btn-container').append('<div class="right-button"><span class="messageError" id="messageError"></span><button class="btn btn-custom btn-pitch" type="button" id="generate_pitch" onclick="generate_Pitch(event);">Generate Deck</button></div>');
 
               document.getElementById("data").value=arg.data;
               document.getElementById("resOut").value=arg.resOut;
@@ -1653,7 +1698,7 @@ img {
               document.getElementById("recreate_button").style.display = "block";
             }
           }
-        }).apiCall(business_context,selectedAudiences,industry,selectedSolutions,customer_name,region,selectedProducts,er_number,requestType,selectedSalesPlay, $('#selectedDriveFileId').val(), $('#selectedDriveFileType').val(), $('#pdfGcsUrl').val(), $('#pdfFileMimeType').val());
+        }).apiCall(business_context,selectedAudiences,industry,selectedSolutions,customer_name,salesStage,selectedProducts,er_number,requestType,selectedSalesPlay, $('#selectedDriveFileId').val(), $('#selectedDriveFileType').val(), $('#pdfGcsUrl').val(), $('#pdfFileMimeType').val(), deckLength);
     }
   }
   //Context area recreate button functioanlity
@@ -1903,12 +1948,11 @@ function add_agenda(event) {
         agendaSubTopicClassUpdate[i].remove();
     }
 
-    var agendaNumericalInput = clone.querySelectorAll('.numericalInput');
-    agendaNumericalInput[0].id = "reusable_"+totalAgenda;
-    agendaNumericalInput[1].id = "generated_"+totalAgenda;
-
     var custref = clone.querySelectorAll('.custref');
-    custref[0].id = "custref_"+totalAgenda;
+    if (custref.length > 0) {
+      custref[0].id = "custref_"+totalAgenda;
+      custref[0].value = "false";
+    }
 
     parentElement.parentNode.insertBefore(clone, parentElement.nextSibling);
     secondFormLoad();
@@ -1916,13 +1960,12 @@ function add_agenda(event) {
     // Focus on the first input field of the cloned element
     inputs[0].focus();
     document.getElementById("noOfOutlines").innerHTML="["+(document.getElementById("container").childElementCount - 2)+"]";
-
-    document.getElementById("custref_"+totalAgenda).value = "false";
 }
 
 
 //Click on submit of form2....................................
-function generate_Pitch(){
+function generate_Pitch(e){
+  if (e && e.preventDefault) e.preventDefault();
   if ("Notification" in window && Notification.permission === "default") {
     Notification.requestPermission();
   }
@@ -1962,9 +2005,8 @@ function generate_Pitch(){
     });
     addedAgenda.title = inputs[i].value;
     addedAgenda.parts = subTitle;
-    addedAgenda.reusable = document.getElementById("reusable_"+position).value;
-    addedAgenda.generated = document.getElementById("generated_"+position).value;
-    var custRef = document.getElementById("custref_"+position).value;
+    var custRefElem = document.getElementById("custref_"+position);
+    var custRef = custRefElem ? custRefElem.value : 'false';
     if(custRef=='true')
     {
       addedAgenda.cust_ref = custRef;
@@ -1976,34 +2018,51 @@ function generate_Pitch(){
   {
     $("#messageError").text("**Agenda cannot be blank! Please enter the agenda or delete the blank agenda.");
     document.getElementById("messageError").style.display = "block";
+    alertify.alert("One or more agenda topics or subtopics is empty. Please enter text or remove the empty item before generating the deck.", function(){}).set({title:"Empty Field Detected"});
   }
   else if( document.getElementById("container").childElementCount <= 2)
   {
     $("#messageError").css("text-align", "left").html("**Agenda cannot be blank to Generate Deck. Please modify context in left panel and click <br> Recreate button to Generate Outline.");
     document.getElementById("messageError").style.display = "block";
+    alertify.alert("Agenda cannot be empty. Please modify the context and click Recreate to generate an outline first.", function(){}).set({title:"No Agenda"});
   }
   else
   {
+    var currentStrategy = ($('#selectedDeckStrategy').length ? $('#selectedDeckStrategy').val() : '') || 'smart_hybrid';
     document.getElementById("loader").style.display = "block";
-    google.script.run.withSuccessHandler(function(arg){
-      if(arg.status == false)
-      {
-          alertify.alert(arg.message, function(){
-              document.getElementById("loader").style.display = "none";
-          }).set({title:""});
-      }
-      else
-      {
+    google.script.run
+      .withFailureHandler(function(err){
+        document.getElementById("loader").style.display = "none";
+        alertify.alert((err && (err.message || err.toString())) || "Deck generation failed. Please try again.", function(){}).set({title:"Error"});
+      })
+      .withSuccessHandler(function(arg){
+        if(arg.status == false)
+        {
+            alertify.alert(arg.message || "Deck generation failed. Please try again.", function(){
+                document.getElementById("loader").style.display = "none";
+            }).set({title:""});
+            return;
+        }
         var contentGenFilename = arg.contentGenFilename;
         var reuseSlideIdAndPosition = arg.reuseSlideIdAndPosition;
         var userInputId = arg.userInputId;
         var agendaCount = agendaArr.length;
         var dbCount = arg.dbCount;
         var erNumber = arg.erNumber;
+        var publishedDeckUrl = arg.publishedDeckUrl;
+
+        if (publishedDeckUrl) {
+          document.getElementById("loader").style.display = "none";
+          alertify.alert("🎉 <b>Success!</b> Your deck has been published directly to Google Drive.<br><br><a href='" + publishedDeckUrl + "' target='_blank' style='color:#1a73e8; font-weight:bold; font-size:15px;'>👉 View Your PitchGen Deck</a>", function(){
+            try { google.script.run.showSidebar(); } catch(e) {}
+            try { google.script.host.close(); } catch(e) {}
+          }).set({title:"PitchGen Deck Ready"});
+          showSystemNotification("PitchGen", "Your deck has been published to Google Drive!");
+          return;
+        }
         
         startPollingForContent(contentGenFilename, reuseSlideIdAndPosition, userInputId, agendaCount, dbCount, erNumber);
-      }
-    }).apiCall2(data,resOut,agendaArr,deleteAgendaId,deleteAgenda);
+    }).apiCall2(data,resOut,agendaArr,deleteAgendaId,deleteAgenda,currentStrategy);
   }
 }
 
@@ -2035,49 +2094,58 @@ function pollOnce(filename, reuseSlideIdAndPosition, userInputId, agendaCount, d
         pollOnce(filename, reuseSlideIdAndPosition, userInputId, agendaCount, dbCount, erNumber);
       }, 15000);
     }
-  }).checkFileExists("content-uploading-prod", filename);
+  }).checkFileExists(filename);
 }
 
 function processContent(filename, reuseSlideIdAndPosition, userInputId, agendaCount, dbCount, erNumber) {
   console.log("processContent test");
-  google.script.run.withSuccessHandler(function(result) {
-    if (result.status === true) {
+  google.script.run
+    .withFailureHandler(function(err) {
       document.getElementById("loader").style.display = "none";
-      alertify.success("Deck generated successfully!");
-      
-      showSystemNotification("PitchGen", "Your deck has been generated successfully!");
+      var msg = (err && (err.message || err.toString())) || "Deck assembly encountered an error.";
+      alertify.alert(msg, function() {
+        try { google.script.run.showSidebar(); } catch(e) {}
+        try { google.script.host.close(); } catch(e) {}
+      }).set({title: "Assembly Error"});
+    })
+    .withSuccessHandler(function(result) {
+      if (result && result.status === true) {
+        document.getElementById("loader").style.display = "none";
+        alertify.success("🎉 Deck generated successfully!");
+        showSystemNotification("PitchGen", "Your deck has been generated successfully!");
 
-      setTimeout(function() {
-        try {
-          google.script.run.showSidebar();
-        } catch(err) {
-          console.log("Failed to show sidebar: " + err.message);
-        }
-        try {
-          google.script.host.close();
-        } catch(err) {
-          console.log("Failed to close dialog: " + err.message);
-        }
-      }, 1500);
-    } else if (result.status === "pending") {
-      console.log("File not fully ready (missing sections), resuming poll...");
-      startPollingForContent(filename, reuseSlideIdAndPosition, userInputId, agendaCount, dbCount, erNumber);
-    } else {
-      document.getElementById("loader").style.display = "none";
-      alertify.alert("Failed to assemble presentation: " + result.error, function() {
-        try {
-          google.script.run.showSidebar();
-        } catch(err) {
-          console.log("Failed to show sidebar: " + err.message);
-        }
-        try {
-          google.script.host.close();
-        } catch(err) {
-          console.log("Failed to close dialog: " + err.message);
-        }
-      }).set({title:"Error"});
-    }
-  }).processGeneratedContent(filename, reuseSlideIdAndPosition, userInputId, agendaCount, dbCount, erNumber);
+        setTimeout(function() {
+          try {
+            google.script.run.showSidebar();
+          } catch(err) {
+            console.log("Failed to show sidebar: " + err.message);
+          }
+          try {
+            google.script.host.close();
+          } catch(err) {
+            console.log("Failed to close dialog: " + err.message);
+          }
+        }, 600);
+      } else if (result && result.status === "pending") {
+        console.log("File not fully ready (missing sections), resuming poll...");
+        startPollingForContent(filename, reuseSlideIdAndPosition, userInputId, agendaCount, dbCount, erNumber);
+      } else {
+        document.getElementById("loader").style.display = "none";
+        var errMsg = (result && (result.error || result.message)) || "Failed to assemble presentation.";
+        alertify.alert(errMsg, function() {
+          try {
+            google.script.run.showSidebar();
+          } catch(err) {
+            console.log("Failed to show sidebar: " + err.message);
+          }
+          try {
+            google.script.host.close();
+          } catch(err) {
+            console.log("Failed to close dialog: " + err.message);
+          }
+        }).set({title:"Error"});
+      }
+    }).processGeneratedContent(filename, reuseSlideIdAndPosition, userInputId, agendaCount, dbCount, erNumber);
 }
 
 function showSystemNotification(title, body) {
@@ -2406,7 +2474,10 @@ function generate_Deck()
   var audience = document.getElementById("audience").value;
   var business_context = document.getElementById("business_context").value;
   var solution = document.getElementById("solution").value;
-  var region = document.getElementById("region").value;
+  var salesStage = document.getElementById("salesStage") ? document.getElementById("salesStage").value : "";
+  if(salesStage == ""){
+    salesStage = "S1";
+  }
   var product = document.getElementById("product").value;
 
   var salesPlay = "Not Matched";
@@ -2414,7 +2485,7 @@ function generate_Deck()
   var salesName;
   var defaultIndustry = "";
   var businessOrTechnical = 0;      //0 means business pitch
-  if(audience=="CTO")
+  if(audience=="CTO" || salesStage=="S2")
   {
     businessOrTechnical = 1;        //1 means technical pitch
   }
@@ -2455,7 +2526,7 @@ function generate_Deck()
   savePlayData.solution = solution;
   savePlayData.customerName = customerName;
   savePlayData.erNumber = erNumber;
-  savePlayData.region = region;
+  savePlayData.salesStage = salesStage;
   savePlayData.product = product;
   savePlayData.audience = audience;
   savePlayData.salesPlayName = salesPlayName;
@@ -2543,7 +2614,7 @@ function savePopupState() {
     industry: $('#industry').val(),
     er_number: $('#er_number').val(),
     salesPlay: $('#salesPlay').val(),
-    region: $('#region').val(),
+    salesStage: $('#salesStage').val() || 'S1',
     audience: $('#audience').val()
   };
   google.script.run.savePopupState(JSON.stringify(state));
@@ -2570,16 +2641,33 @@ function restorePopupState(stateJson) {
     changeSalesPlay(document.getElementById('salesPlay'));
   }
   
-  if (state.region) {
-    $('#region').val(state.region);
-    $('#region').selectpicker('refresh');
-    changeFontStyle(document.getElementById('region'));
+  if (state.salesStage) {
+    $('#salesStage').val(state.salesStage);
+    changeFontStyle(document.getElementById('salesStage'));
   }
   
   if (state.audience) {
     $('#audience').val(state.audience);
     $('#audience').selectpicker('refresh');
   }
+}
+
+function selectStrategy(mode) {
+  $('#selectedDeckStrategy').val(mode);
+  $('.strategy-btn').removeClass('active').css({
+    'border': '1px solid #dadce0',
+    'background': '#ffffff',
+    'color': '#3c4043',
+    'font-weight': '500',
+    'box-shadow': 'none'
+  });
+  $('#strat_' + mode).addClass('active').css({
+    'border': '1.5px solid #1a73e8',
+    'background': '#e8f0fe',
+    'color': '#1a73e8',
+    'font-weight': '600',
+    'box-shadow': '0 1px 2px rgba(26,115,232,0.15)'
+  });
 }
 
 function openDrivePicker() {

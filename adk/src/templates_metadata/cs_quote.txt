@@ -1,0 +1,10 @@
+{
+    "1@TEMPLATE_DECK_CS_QUOTE_V1_PLACEHOLDER_01@g38d7f517e21_0_450": {
+        "header1": "20 to 34 characters",
+        "header1_content": "60 to 70 characters"
+    },
+    "2@TEMPLATE_DECK_CS_QUOTE_V1_PLACEHOLDER_01@g38d7f517e21_0_891": {
+        "item1": "100 to 110 characters",
+        "text1": "30 to 40 characters"
+    }
+}

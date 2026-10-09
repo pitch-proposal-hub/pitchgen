@@ -1,0 +1,37 @@
+{
+    "1@TEMPLATE_DECK_IND_USECASE_PLACEHOLDER_01@g3e90d84c586_0_534": {
+        "Industry_Tag": "12 to 22 characters",
+        "Use_Case_Title": "38 to 52 characters",
+        "Description_Header": "16 to 26 characters",
+        "Description_details": "115 to 145 characters",
+        "Problem_statement_header": "16 to 26 characters",
+        "Problem_statement_details": "115 to 145 characters",
+        "Google_differentiation_header": "16 to 26 characters",
+        "Google_differentiation_points": "115 to 145 characters",
+        "Architecture_header": "16 to 26 characters"
+    },
+    "2@TEMPLATE_DECK_IND_USECASE_PLACEHOLDER_01@g3e90d84c586_0_558": {
+        "Industry_Tag": "12 to 22 characters",
+        "Use_Case_Title": "38 to 52 characters",
+        "Description_Header": "16 to 26 characters",
+        "Description_details": "115 to 145 characters",
+        "Problem_statement_header": "16 to 26 characters",
+        "Problem_statement_details": "115 to 145 characters",
+        "Google_differentiation_header": "16 to 26 characters",
+        "Google_differentiation_1": "55 to 75 characters",
+        "Google_differentiation_2": "55 to 75 characters",
+        "Architecture_header": "16 to 26 characters"
+    },
+    "3@TEMPLATE_DECK_IND_USECASE_PLACEHOLDER_01@g3e26368216f_0_269": {
+        "Industry_Tag": "12 to 22 characters",
+        "Use_Case_Title": "38 to 52 characters",
+        "Description_Header": "16 to 26 characters",
+        "Description_details": "115 to 145 characters",
+        "Problem_statement_header": "16 to 26 characters",
+        "Problem_statement_details": "115 to 145 characters",
+        "Google_differentiation_header": "16 to 26 characters",
+        "Google_differentiation_1": "55 to 75 characters",
+        "Google_differentiation_2": "55 to 75 characters",
+        "Architecture_header": "16 to 26 characters"
+    }
+}

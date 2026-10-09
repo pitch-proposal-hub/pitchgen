@@ -10,10 +10,10 @@ class TranslationEngineWorkflow(BaseWorkflow):
         'TranslationEngineWorkflow', 'Translates text to a target language.'
     )
     self.config = config
-    self.project_id = config['default'].get('project_name', os.getenv("GOOGLE_CLOUD_PROJECT", "YOUR_PROJECT_ID"))
+    self.project_id = config['default'].get('project_name', 'your-gcp-project-id')
     self.gemini_model = config['default'].get(
         'gemini_model',
-        config['default'].get('gemini_model_1', 'gemini-3.1-flash-lite'),
+        config['default'].get('gemini_model_1', 'gemini-3.5-flash-lite'),
     )
     self.region = 'global'
 
@@ -42,7 +42,22 @@ class TranslationEngineWorkflow(BaseWorkflow):
               temperature=0.1,
           ),
       )
-      return response.text.strip()
+      res_text = getattr(response, 'text', None)
+      if isinstance(res_text, str) and res_text.strip():
+        return res_text.strip()
+      if response and response.candidates:
+        candidate = response.candidates[0]
+        content = getattr(candidate, 'content', None)
+        parts = getattr(content, 'parts', None) if content else None
+        if parts:
+          parts_text = ''.join(
+              str(getattr(p, 'text', ''))
+              for p in parts
+              if getattr(p, 'text', None)
+          )
+          if parts_text.strip():
+            return parts_text.strip()
+      return text
     except Exception as e:
       print(f'[TranslationEngineWorkflow] Gemini call failed: {e}')
       return text

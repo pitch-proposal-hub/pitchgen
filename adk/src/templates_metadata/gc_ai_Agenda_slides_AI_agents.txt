@@ -1,0 +1,50 @@
+{
+    "1@TEMPLATE_DECK_GCAI_AGD_AG_PLACEHOLDER_01@g389c53dd35a_0_342": {
+        "title": "6 to 16 characters",
+        "item1": "28 to 44 characters",
+        "item2": "28 to 44 characters",
+        "item3": "28 to 44 characters",
+        "item4": "28 to 44 characters"
+    },
+    "2@TEMPLATE_DECK_GCAI_AGD_AG_PLACEHOLDER_01@g389c53dd35a_0_356": {
+        "title": "6 to 16 characters",
+        "item1": "28 to 44 characters",
+        "item2": "28 to 44 characters",
+        "item3": "28 to 44 characters",
+        "item4": "28 to 44 characters"
+    },
+    "3@TEMPLATE_DECK_GCAI_AGD_AG_PLACEHOLDER_01@g389c53dd35a_0_370": {
+        "title": "6 to 16 characters",
+        "item1": "28 to 44 characters",
+        "item2": "28 to 44 characters",
+        "item3": "28 to 44 characters",
+        "item4": "28 to 44 characters",
+        "item5": "28 to 44 characters"
+    },
+    "4@TEMPLATE_DECK_GCAI_AGD_AG_PLACEHOLDER_01@g389c53dd35a_0_386": {
+        "title": "6 to 16 characters",
+        "item1": "28 to 44 characters",
+        "item2": "28 to 44 characters",
+        "item3": "28 to 44 characters",
+        "item4": "28 to 44 characters",
+        "item5": "28 to 44 characters"
+    },
+    "5@TEMPLATE_DECK_GCAI_AGD_AG_PLACEHOLDER_01@g389c53dd35a_0_402": {
+        "title": "6 to 16 characters",
+        "item1": "28 to 44 characters",
+        "item2": "28 to 44 characters",
+        "item3": "28 to 44 characters",
+        "item4": "28 to 44 characters",
+        "item5": "28 to 44 characters",
+        "item6": "28 to 44 characters"
+    },
+    "6@TEMPLATE_DECK_GCAI_AGD_AG_PLACEHOLDER_01@g389c53dd35a_0_420": {
+        "title": "6 to 16 characters",
+        "item1": "28 to 44 characters",
+        "item2": "28 to 44 characters",
+        "item3": "28 to 44 characters",
+        "item4": "28 to 44 characters",
+        "item5": "28 to 44 characters",
+        "item6": "28 to 44 characters"
+    }
+}

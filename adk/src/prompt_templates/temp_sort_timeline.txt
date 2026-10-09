@@ -217,7 +217,7 @@
 [Input]
 ```INPUT_TEXT
 Slide Title:
-Key Cloud Milestones
+Key GCP Milestones
 Slide Content:
 -2008: Google App Engine launched, marking Google's initial PaaS offering.
 -2012: Google Compute Engine introduced, providing IaaS capabilities.
@@ -294,7 +294,7 @@ Slide Content:
 -1998: Search Engine Launch - Foundation: Google's search engine began, revolutionizing information access with its PageRank algorithm, setting the stage for future innovations.
 -2004: Gmail - Communication: Gmail launched, offering vast storage and a new approach to email management, significantly impacting online communication standards.
 -2008: Chrome & App Engine - Web & Cloud: Chrome browser debuted, challenging existing browsers; App Engine introduced PaaS, marking Google's entry into cloud computing.
--2012: Compute Engine - Infrastructure: Compute Engine provided IaaS, enabling scalable virtual machines, a major step in building Cloud Platform's core services.
+-2012: Compute Engine - Infrastructure: Compute Engine provided IaaS, enabling scalable virtual machines, a major step in building Google Cloud Platform's core services.
 -2014: Kubernetes - Containerization: Kubernetes was open-sourced, automating container deployment and management, becoming a leading orchestration platform.
 -2019: Anthos - Hybrid Cloud: Anthos launched, allowing consistent management of applications across on-premises and cloud environments, addressing hybrid needs.
 -2023: Generative AI - Innovation: Google introduced advanced generative AI models, like PaLM 2 and Gemini, demonstrating significant strides in AI capabilities.

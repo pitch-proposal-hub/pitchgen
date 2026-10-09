@@ -1,0 +1,827 @@
+[
+  {
+    "use_case_title": "Customer Service Self-Serviced",
+    "description_and_problem_statement": "Problem Statement: Common frustrations in the customer journey include long checkout lines, complicated online checkout processes, and unexpected costs such as hidden fees. Customers are also deterred by a lack of preferred payment options, poor mobile website optimization, and being forced to create an account to make a purchase. An inconsistent experience between a retailer's website and physical store can also lead to dissatisfaction.\n\nDescription: Deploy intelligent agents to handle common customer service queries (e.g., \"Where is my order?\"), freeing up human agents to focus on complex, high-value interactions.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "AI -Scale AI Apps and Agents-Primary"
+    ],
+    "key_personas": [
+      "Chief Digital Officer, VP of Ecommerce, Head of Content Marketing, Catalog Manager, Chief Marketing Officer, Product Marketing Director"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a customer, I want to use a natural language assistant to track my order, process a return, or resolve common billing questions without waiting for a human agent. As a VP of E-commerce, I want to deploy intelligent self-service agents to handle routine inquiries 24/7, reducing operational costs and freeing my team for high-value tasks.",
+    "how_it_works_narrative": "Combines Gemini Enterprise for Customer Experience, Agent Platform and Agent Platform Search for Commerce to deliver personalized, conversational self-service checkout and shopping guidance. It uses natively enriched retail catalogs and AlloyDB for real-time data storage and analytics to understand customer intent, provide intelligent answers, and facilitate seamless end-to-end journeys from discovery to purchase.",
+    "key_technologies": [
+      "AI + Machine Learning-Agent Platform",
+      "AI + Machine Learning-Gemini Enterprise",
+      "AI + Machine Learning-Agent Platform Workbench",
+      "Analytics-BigQuery"
+    ],
+    "demo_available": "Kind of - not a direct match",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/agentic-ai-interactive-learning",
+    "google_proof_points": [
+      "Best Buy - https://www.google.com/press/2024/best-buy-and-google-cloud-partner-to-enhance-customer-experience-with-generative-ai/"
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Reduces operational costs by automating routine inquiries, Improves response times with 24/7 availability, Increases human agent productivity by offloading high-volume tasks, Enhances customer satisfaction and loyalty through faster issue resolution.",
+    "kpis": [
+      "- Automated Resolution Rate\n  - First Contact Resolution (FCR)\n  - Customer Satisfaction Score (CSAT)\n  - Average Handle Time (AHT)\n  - Net Promoter Score (NPS)\n  - Customer Effort Score (CES)\n  - Cost per Interaction"
+    ],
+    "google_differentiation": "Google uniquely combines Gemini Enterprise for CX, Agent Platform Agent Builder, and CX Agent Studio to deliver a unified platform that manages the full customer lifecycle from discovery to post-purchase resolution. This integrated approach allows businesses to deploy prebuilt, multimodal agents in days that handle complex reasoning and multi-step tasks while preserving context across web, mobile, and contact center channels.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Valtech",
+      "Accenture",
+      "Publicis Sapient"
+    ],
+    "isv": [
+      "commercetools",
+      "Wynshop",
+      "Shopify",
+      "Big Commerce"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Proactive Support",
+    "description_and_problem_statement": "Problem Statement: Support agents often deal with high volumes of repetitive inquiries, a lack of access to complete customer data, and the pressure of handling frustrated customers across multiple channels. This can lead to longer resolution times, customer dissatisfaction, and high agent turnover.\n\nDescription: Proactive support in a connected store involves anticipating customer needs and reaching out to them with relevant information or assistance. This can be achieved by leveraging customer data and AI to identify patterns and triggers that indicate a customer might need help.",
+    "use_case_status": "Demo/Material - Not Deployed",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Digital Officer",
+      "VP of Ecommerce",
+      "Head of Customer Experience",
+      "Chief Marketing Officer",
+      "Product Manager of Digital Channels"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a customer who abandoned my online shopping cart, I want a timely and helpful reminder, maybe with a small incentive, to encourage me to complete my purchase. As a Head of Digital Marketing, I want to use predictive AI to identify high-intent customers and proactively engage them to recover potentially lost sales and increase lifetime value.",
+    "how_it_works_narrative": "This solution uses BigQuery to analyze a customer's browsing history and past purchases. A machine learning model built on Agent Platform identifies a customer who has been repeatedly viewing a specific, high-consideration product, like a TV, but hasn't purchased. Instead of waiting, the system proactively triggers an engagement through Contact Center AI, sending a targeted email or app notification offering a \"live chat with a product expert.\" This turns passive browsing into an active sales opportunity, improving conversion rates and customer satisfaction by offering help at the precise moment of need.",
+    "key_technologies": [
+      "Agent Platform",
+      "BigQuery",
+      "Contact Center AI",
+      "Gemini Enterprise for Customer Experience"
+    ],
+    "demo_available": "Yes",
+    "demo_links": "https://cloud.google.com/retail-search, https://cloud.google.com/contact-center/ai/platform",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/choose-agentic-ai-architecture-components",
+    "google_proof_points": [
+      "Ulta Beauty"
+    ],
+    "value_driver": [
+      "Grow the Business"
+    ],
+    "value_narrative": "Reduces operational costs by automating routine inquiries, Improves response times with 24/7 availability, Increases human agent productivity by offloading high-volume tasks, Enhances customer satisfaction and loyalty through faster issue resolution.",
+    "kpis": [
+      "- Automated Resolution Rate\n  - First Contact Resolution (FCR)\n  - Customer Satisfaction Score (CSAT)\n  - Average Handle Time (AHT)\n  - Net Promoter Score (NPS)\n  - Customer Effort Score (CES)\n  - Cost per Interaction"
+    ],
+    "google_differentiation": "Our AI is born from decades of understanding the consumer journey. We use advanced predictive models to anticipate needs and engage customers at the right moment.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Cognizant"
+    ],
+    "isv": [
+      "commercetools",
+      "Wynshop",
+      "Shopify",
+      "Big Commerce"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Agent Assist",
+    "description_and_problem_statement": "Problem Statement: Support agents often deal with high volumes of repetitive inquiries, a lack of access to complete customer data, and the pressure of handling frustrated customers across multiple channels. This can lead to longer resolution times, customer dissatisfaction, and high agent turnover.\n\nDescription: Agent Assist empowers customer service agents with real-time information and guidance, helping them resolve customer issues more quickly and effectively.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "AI -Scale AI Apps and Agents-Primary",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Digital Officer, VP of Ecommerce, Head of Digital Marketing, Head of Customer Experience, Chief Marketing Officer, Product Manager of Digital Channels"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As a customer calling about a damaged delivery, I want the support agent to have my order history available immediately and offer a solution on the first call. As a Head of Customer Service, I want to deploy Agent Assist to reduce agent training time and decrease average handle time, leading to significant operational savings and higher CSAT scores.",
+    "how_it_works_narrative": "This flow leverages Contact Center AI (CCAI) with Agent Assist. When a customer calls about a missing online order, the agent immediately sees a real-time transcription of the call. As the conversation unfolds, Agent Assist automatically pulls up the relevant order details from the retailer's unified data in BigQuery. It then suggests responses and provides links to knowledge articles about shipping policies. This eliminates the need for the agent to manually search multiple systems, reducing handle time and leading to a faster, more accurate resolution for the customer.",
+    "key_technologies": [
+      "Contact Center AI (CCAI)",
+      "Agent Assist",
+      "Dialogflow",
+      "BigQuery",
+      "Gemini Models"
+    ],
+    "demo_available": "Yes",
+    "demo_links": "https://cloud.google.com/contact-center/ai/platform",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/choose-agentic-ai-architecture-components",
+    "google_proof_points": [
+      "Best Buy - https://www.google.com/press/2024/best-buy-and-google-cloud-partner-to-enhance-customer-experience-with-generative-ai/"
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Reduces operational costs by automating routine inquiries, Improves response times with 24/7 availability, Increases human agent productivity by offloading high-volume tasks, Enhances customer satisfaction and loyalty through faster issue resolution.",
+    "kpis": [
+      "- Automated Resolution Rate\n  - First Contact Resolution (FCR)\n  - Customer Satisfaction Score (CSAT)\n  - Average Handle Time (AHT)\n  - Net Promoter Score (NPS)\n  - Customer Effort Score (CES)\n  - Cost per Interaction"
+    ],
+    "google_differentiation": "Google's advanced, multimodal AI models like Gemini empower agents by reasoning across text and data to provide real-time, intelligent guidance and summaries.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Cognizant"
+    ],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Unified Data Foundation for In Store Operations",
+    "description_and_problem_statement": "Problem Statement: Retailers often struggle with inefficient inventory management, which can result in stockouts or overstocking. Poor staff engagement and high turnover contribute to a lackluster customer experience, and an inability to innovate can leave retailers struggling to meet evolving customer expectations. Disorganized store layouts and high operational costs are also significant challenges.\n\nDescription: A unified data foundation is crucial for a connected store, as it provides a single source of truth for all data related to customers, products, and operations.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "Data Cloud-Migrate",
+      "Modernize",
+      "and Build with Data Cloud -Primary",
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "Infrastructure -Sovereignty - GDC-Emerging"
+    ],
+    "key_personas": [
+      "Chief Operating Officer, VP of Customer Experience, Head of Customer Service, Director of Contact Center Operations"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As a store manager, I want a single dashboard that shows me real-time sales, inventory, and staffing levels so I can make immediate, informed decisions. As a Chief Operating Officer (COO), I want to break down data silos across my organization to get a holistic view of the business and uncover inefficiencies.",
+    "how_it_works_narrative": "This foundational solution centralizes all of a retailer's disparate data\u2014from POS systems, e-commerce platforms, supply chain logs, and marketing campaigns\u2014into BigQuery. With this single source of truth, a store manager can access a Looker dashboard that visualizes sales trends, in-store traffic patterns, and inventory levels in real time. They can easily see which products are selling best, identify staffing gaps during peak hours, and understand the true impact of a recent promotion. This breaks down data silos and empowers leaders at every level to make data-driven decisions that improve store efficiency and performance.",
+    "key_technologies": [
+      "BigQuery",
+      "Looker",
+      "Google Cloud Storage",
+      "Google Distributed Cloud",
+      "Agent Platform"
+    ],
+    "demo_available": "Yes",
+    "demo_links": "https://cloud.google.com/solutions/retail-data-cloud",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/data-mesh",
+    "google_proof_points": [
+      "The Home Depot",
+      "Kroger",
+      "METRO",
+      "Mercadona"
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Empowers service agents with real-time transcription and unified customer data to accelerate issue resolution, Reduces average handle time and agent training requirements, Decreases operational costs through automated knowledge surfacing and suggested responses, Improves customer satisfaction with faster and more accurate first-call resolutions.",
+    "kpis": [
+      "Average Handle Time (AHT)",
+      "First Call Resolution (FCR)",
+      "Customer Satisfaction (CSAT)",
+      "Net Promoter Score (NPS)"
+    ],
+    "google_differentiation": "BigQuery offers a serverless, highly scalable data warehouse with built-in ML, allowing retailers to unify all data sources and gain real-time operational insights.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "345 Global",
+      "o9 Solutions"
+    ],
+    "isv": [
+      "345 Global",
+      "o9 Solutions"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Workforce & Task Management",
+    "description_and_problem_statement": "Problem Statement: Frontline workers often face high turnover and burnout due to stressful work environments, unpredictable schedules, and a lack of support. They frequently lack real-time information to answer customer questions, struggle with inefficient communication, and feel disconnected from the broader organization. Limited training and difficulties in balancing multiple tasks further compound these challenges.\n\nDescription: These solutions help retailers optimize their workforce, streamline scheduling, and manage tasks more efficiently.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Agent Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Operating Officer (COO), VP of Operations, Store Manager, Chief Digital Officer, VP of IT/Technology, Chief Information Officer (CIO)"
+    ],
+    "implementation_complexity": "Day 1 / Low",
+    "customer_user_journeys": "As a store associate, I want to receive clear, prioritized tasks on my handheld device so I always know what to work on next and can manage my time effectively. As a Director of Store Operations, I want to optimize my labor costs by automatically aligning staffing schedules with real-time customer traffic patterns.",
+    "how_it_works_narrative": "This flow leverages data from various sources in BigQuery, including foot traffic patterns from in-store sensors and sales data from POS systems. An Agent Platform forecasting model predicts peak shopping times and store section activity. This data is then used to automatically generate optimized staff schedules and task lists within a partner workforce management tool (like StoreForce or Zebra). An associate receives a notification on their device: \"Customer traffic is increasing in electronics. Please head to that section to assist,\" ensuring staff are always where they're needed most, improving both operational efficiency and customer service.",
+    "key_technologies": [
+      "Agent Platform",
+      "BigQuery",
+      "Partner ISV Solutions"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/choose-agentic-ai-architecture-components",
+    "google_proof_points": [],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Eliminates data silos by centralizing disparate data into a single source of truth, enabling real-time visibility into sales, inventory, and operations. This empowers leaders to make data-driven decisions that improve store efficiency, optimize staffing, and enhance overall business performance while reducing manual data reconciliation and operational costs.",
+    "kpis": [
+      "Inventory Accuracy Rate",
+      "Data Silos Reduction Rate",
+      "Decision-Making Latency",
+      "Sales Per Square Foot",
+      "Inventory Turnover Ratio",
+      "Average Transaction Value",
+      "and Operational Cost Savings."
+    ],
+    "google_differentiation": "BigQuery's scalable data cloud unifies disparate data to power Agent Platform forecasting, enabling optimized labor scheduling and automated task routing for your workforce.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "ADP (WorkForce Suite)",
+      "StoreForce",
+      "Kronos (Workforce Ready)",
+      "Zebra Technologies",
+      "YOOBIC",
+      "Zipline",
+      "TaskRabbit",
+      "Asana",
+      "When I Work",
+      "aTurnos",
+      "Movista ONE",
+      "Quinyx",
+      "Logile",
+      "Infor WFM"
+    ],
+    "isv": [
+      "ADP",
+      "StoreForce",
+      "Kronos",
+      "Zebra Technologies",
+      "YOOBIC",
+      "Zipline",
+      "TaskRabbit",
+      "Asana",
+      "When I Work",
+      "aTurnos",
+      "Movista ONE",
+      "Quinyx",
+      "Logile",
+      "Infor WFM"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Intelligent Frontline Associate Agent",
+    "description_and_problem_statement": "Problem Statement: Frontline workers often face high turnover and burnout due to stressful work environments, unpredictable schedules, and a lack of support. They frequently lack real-time information to answer customer questions, struggle with inefficient communication, and feel disconnected from the broader organization. Limited training and difficulties in balancing multiple tasks further compound these challenges.\n\nDescription: This use case is about empowering store associates with the information and tools they need to provide excellent customer service.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "AI -Scale AI Apps and Agents-Primary",
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "Workplace -Lead the Agentic Workplace Transformation -Primary"
+    ],
+    "key_personas": [
+      "Director of Store Operations, VP of Retail Operations, Chief Operating Officer, VP of Human Resources, Store Manager"
+    ],
+    "implementation_complexity": "Day 1 / Low",
+    "customer_user_journeys": "As an in-store shopper, I want the store associate to instantly answer my questions about product availability and features without having to leave my side to check a back-room terminal. As a Chief Retail Officer, I want to equip my associates with an AI-powered \"expert in their pocket\" to improve customer service, increase sales, and boost employee confidence.",
+    "how_it_works_narrative": "This solution uses Agent Platform running on devices managed by ChromeOS to create a \"digital assistant\" for store employees. An associate can ask the device, \"Where can I find this specific running shoe in a size 10?\" or \"What's the difference between these two blenders?\" The AI agent instantly pulls data from BigQuery (for inventory) and product catalogs to provide a direct answer, complete with stock levels in the back room and key selling points. This empowers associates to answer customer questions confidently and immediately, improving service and driving sales.",
+    "key_technologies": [
+      "Agent Platform",
+      "ChromeOS",
+      "BigQuery",
+      "Gemini for Workspace",
+      "Google Agentspace",
+      "NotebookLM for enterprise"
+    ],
+    "demo_available": "Yes",
+    "demo_links": "https://cloud.google.com/solutions/empowering-retail-associates-ai",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/rag-capable-gen-ai-app-using-vertex-ai",
+    "google_proof_points": [
+      "Kroger",
+      "Carrefour",
+      "Lowe's"
+    ],
+    "value_driver": [
+      "Grow the Business",
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Optimizes labor costs by aligning staffing with real-time customer traffic, Improves operational efficiency through automated task prioritization, Enhances customer service by ensuring staff availability during peak times, Reduces manual effort for scheduling and task management.",
+    "kpis": [
+      "Labor Cost Reduction",
+      "Labor Productivity",
+      "Overtime Reduction",
+      "Task Completion Rate",
+      "Customer Satisfaction (CSAT)"
+    ],
+    "google_differentiation": "Gemini's multimodal reasoning and Google Agentspace empower associates with instant answers and expert-level guidance, improving productivity and customer service.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "In-Store POS & Database Modernization",
+    "description_and_problem_statement": "Problem Statement: Retailers often struggle with inefficient inventory management, which can result in stockouts or overstocking. Poor staff engagement and high turnover contribute to a lackluster customer experience, and an inability to innovate can leave retailers struggling to meet evolving customer expectations. Disorganized store layouts and high operational costs are also significant challenges.\n\nDescription: Modernizing point-of-sale (POS) systems and databases is a critical step in creating a connected store. Cloud-based POS systems offer greater flexibility, scalability, and real-time data access.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "Data Cloud-Migrate",
+      "Modernize",
+      "and Build with Data Cloud -Primary",
+      "Infrastructure -Sovereignty - GDC-Emerging"
+    ],
+    "key_personas": [
+      "Chief Operating Officer, VP of Customer Experience, Head of Customer Service, Director of Contact Center Operations"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As a shopper during a holiday rush, I want a fast, reliable checkout experience that never crashes or slows down, no matter how busy the store is. As a Chief Information Officer (CIO), I want to replace my brittle, legacy POS databases with a scalable and resilient cloud-native solution that eliminates on-site maintenance and enables real-time data analytics.",
+    "how_it_works_narrative": "This solution involves migrating a retailer's legacy, on-premises Point of Sale (POS) database to a fully managed, scalable cloud database like AlloyDB Omni running on Google Distributed Cloud Edge. When a customer makes a purchase, the transaction is processed instantly on the in-store GDC Edge hardware, ensuring sub-millisecond latency and uptime even if the internet connection is unstable. The transaction data is then seamlessly replicated to BigQuery in the cloud for real-time analysis. This provides the resilience of an on-premises system with the scalability, flexibility, and data integration of the cloud.",
+    "key_technologies": [
+      "AlloyDB Omni",
+      "Google Distributed Cloud Edge",
+      "BigQuery",
+      "Cloud-based POS systems",
+      "Database Modernization services"
+    ],
+    "demo_available": "Yes",
+    "demo_links": "https://cloud.google.com/solutions/retail-data-cloud, https://cloud.google.com/solutions/retail-workloads-on-gdc-edge",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/hybrid-multicloud-patterns-and-practices/edge-hybrid-pattern",
+    "google_proof_points": [
+      "Mercadona"
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Empowers service agents with real-time transcription and unified customer data to accelerate issue resolution, Reduces average handle time and agent training requirements, Decreases operational costs through automated knowledge surfacing and suggested responses, Improves customer satisfaction with faster and more accurate first-call resolutions.",
+    "kpis": [
+      "Average Handle Time (AHT)",
+      "First Call Resolution (FCR)",
+      "Customer Satisfaction (CSAT)",
+      "Net Promoter Score (NPS)"
+    ],
+    "google_differentiation": "Google Distributed Cloud Edge extends our fully managed cloud infrastructure directly into stores, ensuring high resilience and continuous operations even offline.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Onix"
+    ],
+    "isv": [
+      "AdvanceRetail"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "BOPIS & Curbside Pickup Optimization",
+    "description_and_problem_statement": "Problem Statement: Retailers often struggle with inefficient inventory management, which can result in stockouts or overstocking. Poor staff engagement and high turnover contribute to a lackluster customer experience, and an inability to innovate can leave retailers struggling to meet evolving customer expectations. Disorganized store layouts and high operational costs are also significant challenges.\n\nDescription: This use case focuses on creating a seamless experience for customers who buy online and pick up in-store or curbside. This requires a unified view of inventory and efficient processes for order fulfillment.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "Data Cloud-Migrate",
+      "Modernize",
+      "and Build with Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Information Officer (CIO), Chief Technology Officer (CTO), VP of IT Infrastructure, VP of Retail Operations, Director of IT Operations, Head of Store Systems"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a busy parent, I want to pick up my online order curbside in under five minutes without having to make a phone call or wait in a long line. As a Head of Omnichannel Retail, I want to create a seamless BOPIS experience by using location data to perfectly time order staging with customer arrival, reducing wait times and improving satisfaction.",
+    "how_it_works_narrative": "A customer places a \"Buy Online, Pick Up in Store\" (BOPIS) order. The order information, powered by a unified inventory view in BigQuery, is immediately routed to an associate's handheld device as a task. When the customer notifies the store via the mobile app that they are \"on their way,\" the app uses Google Maps Platform APIs to calculate their real-time ETA. This triggers a secondary notification to the associate: \"Your customer is 5 minutes away.\" The associate can then stage the order just in time, minimizing customer wait times and creating a seamless, \"just-in-time\" fulfillment experience.",
+    "key_technologies": [
+      "Google Maps Platform",
+      "BigQuery",
+      "Partner/Custom Mobile Apps"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/hybrid-multicloud-patterns-and-practices/edge-hybrid-pattern",
+    "google_proof_points": [],
+    "value_driver": [
+      "Grow the Business",
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Eliminates on-site maintenance and reduces infrastructure costs by migrating to a scalable cloud-native solution, Ensures 100% uptime and sub-millisecond latency for checkout even during internet outages using edge computing, Provides real-time visibility into sales and inventory across all locations for better decision-making, Improves customer satisfaction with a fast and reliable checkout experience.",
+    "kpis": [
+      "Transaction Processing Speed",
+      "System Uptime",
+      "Database Migration Time",
+      "Infrastructure Maintenance Costs",
+      "Real-time Data Accuracy"
+    ],
+    "google_differentiation": "By combining BigQuery's unified data cloud with Google Maps Platform APIs, we enable real-time inventory visibility and precise location tracking for seamless fulfillment.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Automated & Conversational Food Ordering",
+    "description_and_problem_statement": "Problem Statement: QSRs and restaurants struggle with high cart abandonment and order errors due to complex menu modifiers and clunky digital ordering interfaces. \n\nDescription: Deploy a conversational food ordering agent powered by GECX that understands complex modifiers and natural language to guide customers through a seamless, personalized ordering and upselling journey.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "AI -Scale AI Apps and Agents-Primary",
+      "AI -Gemini Enterprise for customer Experience -Growth"
+    ],
+    "key_personas": [
+      "Chief Digital Officer, Head of Digital Experience, VP of Restaurant Operations, Chief Marketing Officer"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As a hungry customer, I want to order a highly customized meal using natural language without navigating complex menus. As a Head of Digital Experience, I want to deploy a conversational agent to increase order accuracy, drive upselling, and improve the overall digital ordering experience.",
+    "how_it_works_narrative": "Utilizes the Gemini Enterprise for Customer Experience (GECX) food ordering agent to understand natural language requests, complex menu modifiers, and conversational nuances. The agent integrates with the restaurant's POS and digital menu to provide real-time options, recommendations, and seamless order placement.",
+    "key_technologies": [
+      "Agent Platform",
+      "AI Commerce Search",
+      "Gemini Enterprise for Customer Experience",
+      "Conversational Commerce agent"
+    ],
+    "demo_available": "Yes",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-product-recommendations",
+    "google_proof_points": [
+      "Papa Johns"
+    ],
+    "value_driver": [
+      "Grow the Business"
+    ],
+    "value_narrative": "Deliver a seamless, conversational ordering experience that handles complex modifiers with ease. This drives higher conversion rates and average order value through intelligent, guided upselling, reduces order errors, and builds customer loyalty with a fast, personalized digital ordering journey.",
+    "kpis": [
+      "Transaction Processing Speed",
+      "System Uptime",
+      "Database Migration Time",
+      "Infrastructure Maintenance Costs",
+      "Real-time Data Accuracy"
+    ],
+    "google_differentiation": "Google uniquely combines the power of Gemini Enterprise for Customer Experience (GECX) with a deep understanding of conversational nuances and complex food modifiers, enabling a highly accurate and natural ordering experience that competitors struggle to match.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Frictionless Checkout",
+    "description_and_problem_statement": "Problem Statement: Common frustrations in the customer journey include long checkout lines, complicated online checkout processes, and unexpected costs such as hidden fees. Customers are also deterred by a lack of preferred payment options, poor mobile website optimization, and being forced to create an account to make a purchase. An inconsistent experience between a retailer's website and physical store can also lead to dissatisfaction.\n\nDescription: The goal of frictionless checkout is to make the payment process as quick and seamless as possible. This can involve technologies like self-checkout, mobile payments, and even \"just walk out\" technology.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "Infrastructure -Sovereignty - GDC-Emerging",
+      "AI -Your Business. Your Models - Agent Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Information Officer (CIO), Chief Technology Officer (CTO), VP of IT Infrastructure, VP of Retail Operations, Director of IT Operations, Head of Store Systems"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As a customer in a hurry, I want to be able to grab the items I need and simply walk out of the store, with the payment handled automatically. As a Head of Retail Innovation, I want to pilot \"just walk out\" technology to create the ultimate convenient shopping experience and differentiate our brand from competitors.",
+    "how_it_works_narrative": "This solution transforms the checkout process using smart carts or camera-based systems powered by Vision AI running on Google Distributed Cloud Edge. A customer places items into their cart, and the computer vision models identify each product in real time, adding it to a virtual basket. When the customer is finished shopping, they simply walk through a designated exit lane. The system finalizes the transaction automatically using their linked payment method on the retailer's app. This completely eliminates the need for traditional checkout lines, offering the ultimate in shopping convenience.",
+    "key_technologies": [
+      "Vision AI",
+      "Google Distributed Cloud Edge"
+    ],
+    "demo_available": "",
+    "demo_links": "https://cloud.google.com/solutions/retail-workloads-on-gdc-edge",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/hybrid-multicloud-patterns-and-practices/edge-hybrid-pattern",
+    "google_proof_points": [],
+    "value_driver": [
+      "Grow the Business",
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Eliminates on-site maintenance and reduces infrastructure costs by migrating to a scalable cloud-native solution, Ensures 100% uptime and sub-millisecond latency for checkout even during internet outages using edge computing, Provides real-time visibility into sales and inventory across all locations for better decision-making, Improves customer satisfaction with a fast and reliable checkout experience.",
+    "kpis": [
+      "Transaction Processing Speed",
+      "System Uptime",
+      "Database Migration Time",
+      "Infrastructure Maintenance Costs",
+      "Real-time Data Accuracy"
+    ],
+    "google_differentiation": "Google Distributed Cloud Edge provides the fully managed, low-latency processing required on-site to power real-time video analysis for a seamless checkout experience.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Automated Store Audits for Planogram Compliance",
+    "description_and_problem_statement": "Problem Statement: Retailers often struggle with inefficient inventory management, which can result in stockouts or overstocking. Poor staff engagement and high turnover contribute to a lackluster customer experience, and an inability to innovate can leave retailers struggling to meet evolving customer expectations. Disorganized store layouts and high operational costs are also significant challenges.\n\nDescription: Planogram compliance is about ensuring that products are displayed on shelves according to the retailer's plan. Automating this process with AI and computer vision can save time and improve accuracy.",
+    "use_case_status": "Demo/Material - Not Deployed",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "Infrastructure -Sovereignty - GDC-Emerging",
+      "AI -Your Business. Your Models - Agent Platform -Growth",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Information Officer (CIO), Chief Technology Officer (CTO), VP of IT Infrastructure, VP of Retail Operations, Director of IT Operations, Head of Store Systems"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a customer, I want the store to be well-organized, with products where I expect them to be, making my shopping trip faster and less frustrating. As a brand manager for a CPG company, I want to ensure my products are always displayed correctly in retail stores to maximize brand visibility and sales lift.",
+    "how_it_works_narrative": "This flow leverages cameras in the store combined with Vision AI and Google Distributed Cloud Edge. As cameras scan the aisles, the AI models\u2014running in real-time on GDC Edge\u2014compare the shelf layout against the master planogram data stored in BigQuery. When the AI detects a product in the wrong place or an incorrect facing, it automatically flags the non-compliance and creates a task in the associate's task management app, complete with an image of the issue. This automates a traditionally tedious manual audit process, ensuring brand standards are met and improving the customer's visual shopping experience.",
+    "key_technologies": [
+      "Vision AI",
+      "Google Distributed Cloud Edge",
+      "BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "https://cloud.google.com/blog/products/ai-machine-learning/real-time-inventory-management-with-google-clouds-vertex-ai-vision",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/hybrid-multicloud-patterns-and-practices/edge-hybrid-pattern",
+    "google_proof_points": [
+      "Lowe's"
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Eliminates on-site maintenance and reduces infrastructure costs by migrating to a scalable cloud-native solution, Ensures 100% uptime and sub-millisecond latency for checkout even during internet outages using edge computing, Provides real-time visibility into sales and inventory across all locations for better decision-making, Improves customer satisfaction with a fast and reliable checkout experience.",
+    "kpis": [
+      "Transaction Processing Speed",
+      "System Uptime",
+      "Database Migration Time",
+      "Infrastructure Maintenance Costs",
+      "Real-time Data Accuracy"
+    ],
+    "google_differentiation": "Google offers purpose-built retail AI like our Shelf Checking tool, running on GDC Edge for real-time video analysis without needing to build your own custom models.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "ParallelDots"
+    ],
+    "isv": [
+      "Tiger Analytics",
+      "ImageVision.ai",
+      "Snap2Insight",
+      "Taqtics",
+      "Net Solutions"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Store Threat Protection",
+    "description_and_problem_statement": "Problem Statement: Retailers often struggle with inefficient inventory management, which can result in stockouts or overstocking. Poor staff engagement and high turnover contribute to a lackluster customer experience, and an inability to innovate can leave retailers struggling to meet evolving customer expectations. Disorganized store layouts and high operational costs are also significant challenges.\n\nDescription: This use case focuses on using technology to reduce theft and other security threats in stores.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "Infrastructure -Sovereignty - GDC-Emerging",
+      "AI -Your Business. Your Models - Agent Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Digital Officer, Chief Technology Officer, VP of Retail Innovation, Head of Customer Experience, Store Operations Director"
+    ],
+    "implementation_complexity": "Day 1 / Low",
+    "customer_user_journeys": "As a store associate, I want to feel safe at work, knowing there are systems in place to deter organized retail crime and alert security to threats in real time. As a Director of Asset Protection, I want to use our existing security cameras with AI to proactively detect and respond to potential large-scale theft events, rather than just reviewing footage after the fact.",
+    "how_it_works_narrative": "This flow uses existing security cameras enhanced with Vision AI running on Google Distributed Cloud Edge to identify potential security threats in real time. The AI model is trained to recognize behaviors associated with organized retail crime, such as coordinated group entry or large-scale \"sweep\" theft. When a potential event is detected, a silent alert containing a short video clip is instantly sent to the store's security personnel and manager. This allows for immediate intervention and response, acting as a proactive deterrent to protect staff, customers, and inventory.",
+    "key_technologies": [
+      "Vision AI",
+      "Google Distributed Cloud Edge"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/agentic-ai-orchestrate-security-ops-workflows",
+    "google_proof_points": [],
+    "value_driver": [
+      "Improve Profitability"
+    ],
+    "value_narrative": "Eliminates traditional checkout lines and wait times to provide the ultimate shopping convenience, Reduces labor costs by automating the transaction process, Improves operational efficiency and staff productivity, Increases conversion rates and sales volume by reducing purchase friction, Differentiates the brand through innovation and a superior customer experience.",
+    "kpis": [
+      "Conversion Rate",
+      "Customer Lifetime Value (CLV)",
+      "Cart Abandonment Rate",
+      "Net Promoter Score (NPS)"
+    ],
+    "google_differentiation": "Google Distributed Cloud Edge provides the AI-optimized, low-latency processing needed on-site to run advanced computer vision models for real-time threat detection.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Everseen",
+      "Supermicro",
+      "Wesco"
+    ],
+    "isv": [
+      "Everseen",
+      "Supermicro",
+      "Wesco"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Dynamic Pricing & Promotions",
+    "description_and_problem_statement": "Problem Statement: Retailers often struggle with inefficient inventory management, which can result in stockouts or overstocking. Poor staff engagement and high turnover contribute to a lackluster customer experience, and an inability to innovate can leave retailers struggling to meet evolving customer expectations. Disorganized store layouts and high operational costs are also significant challenges.\n\nDescription: Dynamic pricing involves adjusting prices in real-time based on factors like demand, competition, and inventory levels.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Agent Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Operating Officer, VP of Asset Protection, Director of Asset Protection, Chief Information Security Officer, Store Manager"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As a price-conscious shopper, I want to receive personalized promotions for products I'm interested in, at the right time. As a Chief Merchandising Officer, I want to use AI to dynamically adjust prices based on real-time demand, competitor stock, and inventory levels to maximize my product margins.",
+    "how_it_works_narrative": "This solution uses BigQuery to analyze real-time sales data, competitor pricing, and inventory levels. A machine learning model built with Agent Platform predicts demand and identifies opportunities to optimize margins. For example, if the model detects a competitor has run out of a popular item, it can trigger a slight price increase on that item. Conversely, it can automatically generate a personalized promotion, delivered via email or the mobile app, for a slow-moving product to prevent overstock. This allows retailers to react instantly to market changes and maximize profitability.",
+    "key_technologies": [
+      "BigQuery",
+      "Agent Platform",
+      "AI tools"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-product-recommendations",
+    "google_proof_points": [
+      "METRO",
+      "L'Or\u00e9al"
+    ],
+    "value_driver": [
+      "Improve Profitability"
+    ],
+    "value_narrative": "Deters theft and organized retail crime through real-time alerts and behavioral recognition, Enhances associate and customer safety by providing a proactive security presence, Reduces inventory shrinkage and protects profits, Lowers operational costs by leveraging existing camera infrastructure with AI, Improves incident response times with automated silent alerts and video evidence.",
+    "kpis": [
+      "Transaction Processing Speed",
+      "System Uptime",
+      "Database Migration Time",
+      "Infrastructure Maintenance Costs",
+      "Real-time Data Accuracy"
+    ],
+    "google_differentiation": "BigQuery's built-in ML and native integration with the Google Ads ecosystem allows retailers to analyze real-time data and optimize pricing and promotions seamlessly.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Eagle Eye"
+    ],
+    "isv": [
+      "Eagle Eye"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Smart Replenishment & Shelf Vision",
+    "description_and_problem_statement": "Problem Statement: Retailers often struggle with inefficient inventory management, which can result in stockouts or overstocking. Poor staff engagement and high turnover contribute to a lackluster customer experience, and an inability to innovate can leave retailers struggling to meet evolving customer expectations. Disorganized store layouts and high operational costs are also significant challenges.\n\nDescription: This use case is about using technology to monitor shelf inventory in real-time and automate the replenishment process.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "Infrastructure -Sovereignty - GDC-Emerging",
+      "AI -Your Business. Your Models - Agent Platform -Growth",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Operating Officer, Vice President of Store Operations, Director of Store Operations, Head of Retail Excellence, Store Manager"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a customer, I want my favorite products to always be in stock on the shelf when I visit the store. As a Director of Store Operations, I want to automate the tedious process of shelf scanning to reduce out-of-stocks and ensure planogram compliance without burning out my staff.",
+    "how_it_works_narrative": "This flow leverages cameras in the store combined with Vision AI and Google Distributed Cloud Edge. As cameras scan the aisles, the AI models\u2014running in real-time on GDC Edge\u2014identify out-of-stocks in real-time. An alert is automatically sent to an associate's handheld device, automating the manual shelf-checking process.",
+    "key_technologies": [
+      "Vision AI",
+      "Google Distributed Cloud Edge",
+      "BigQuery",
+      "Shelf Inventory AI Tool"
+    ],
+    "demo_available": "",
+    "demo_links": "https://cloud.google.com/blog/products/ai-machine-learning/real-time-inventory-management-with-google-clouds-vertex-ai-vision",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/hybrid-multicloud-patterns-and-practices/edge-hybrid-pattern",
+    "google_proof_points": [
+      "The Home Depot",
+      "Lowe's"
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence",
+      "Improve Profitability"
+    ],
+    "value_narrative": "Reduces out-of-stocks and improves on-shelf availability to drive sales, Increases labor productivity by automating manual shelf audits, Ensures planogram compliance and pricing accuracy, and Improves customer satisfaction by ensuring products are available and easy to find.",
+    "kpis": [
+      "Out-of-Stock Reduction Rate",
+      "On-Shelf Availability (OSA)",
+      "Planogram Compliance Rate",
+      "Inventory Accuracy",
+      "Labor Cost Reduction",
+      "Sales Lift",
+      "Response Time to Restock",
+      "and Customer Satisfaction (CSAT)"
+    ],
+    "google_differentiation": "Our purpose-built Shelf Checking AI uses advanced computer vision to recognize billions of products, automating inventory tracking and reducing out-of-stocks efficiently.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "ParallelDots"
+    ],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Shrink Reduction",
+    "description_and_problem_statement": "Problem Statement: Retailers often struggle with inefficient inventory management, which can result in stockouts or overstocking. Poor staff engagement and high turnover contribute to a lackluster customer experience, and an inability to innovate can leave retailers struggling to meet evolving customer expectations. Disorganized store layouts and high operational costs are also significant challenges.\n\nDescription: Shrink reduction is about minimizing inventory losses due to theft, fraud, or errors.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Create the connected store",
+    "associated_horizontal_plays": [
+      "Infrastructure -Sovereignty - GDC-Emerging",
+      "AI -Your Business. Your Models - Agent Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Operating Officer, Vice President of Store Operations, Director of Store Operations, Head of Retail Excellence, Store Manager"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As an honest customer using self-checkout, I want a smooth and fast experience without feeling watched or accused if I make an error. As a Head of Loss Prevention, I want to use AI to discreetly identify and prevent sources of shrink at self-checkout in real time, protecting our margins without creating friction.",
+    "how_it_works_narrative": "This solution uses Vision AI running on Google Distributed Cloud Edge to analyze video feeds from self-checkout stations. The AI model is trained to identify common sources of shrink, such as a customer scanning a cheaper item while bagging a more expensive one (e.g., scanning an apple but bagging avocados). When a mismatch is detected, the system can subtly alert a nearby associate to \"check and assist,\" preventing loss in a non-confrontational way. This provides a real-time security layer that protects margins without creating friction for honest customers.",
+    "key_technologies": [
+      "Vision AI",
+      "Google Distributed Cloud Edge",
+      "SynthID"
+    ],
+    "demo_available": "",
+    "demo_links": "https://cloud.google.com/solutions/retail-workloads-on-gdc-edge",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/hybrid-multicloud-patterns-and-practices/edge-hybrid-pattern",
+    "google_proof_points": [],
+    "value_driver": [
+      "Improve Profitability"
+    ],
+    "value_narrative": "Reduces out-of-stocks and improves on-shelf availability to drive sales, Increases labor productivity by automating manual shelf audits, Ensures planogram compliance and pricing accuracy, and Improves customer satisfaction by ensuring products are available and easy to find.",
+    "kpis": [
+      "Out-of-Stock Reduction Rate",
+      "On-Shelf Availability (OSA)",
+      "Planogram Compliance Rate",
+      "Inventory Accuracy",
+      "Labor Cost Reduction",
+      "Sales Lift",
+      "Response Time to Restock",
+      "and Customer Satisfaction (CSAT)"
+    ],
+    "google_differentiation": "Google Distributed Cloud Edge provides the resilient, low-latency edge AI processing required to analyze video feeds in real time and prevent loss securely on-site.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Everseen",
+      "NVIDIA"
+    ],
+    "isv": [
+      "Everseen",
+      "NVIDIA"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  }
+]

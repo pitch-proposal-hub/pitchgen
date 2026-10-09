@@ -42,29 +42,22 @@ questions.
 
 ## Desired Output Format
 
-For each slide, generate the notes using this exact markdown structure:
+For each slide, generate clean, professional speaker notes in plain text using this structure:
 
-```markdown
-Slide X: [Slide Title/Topic]
-Key Message: [State what this slide communicates in one clear sentence.]
-Framework Section: [e.g., WHY CHANGE: Trends & Changes]
+Key Takeaway: [State what this slide communicates in 1-2 clear, compelling sentences.]
+
 Talking Points:
-- [Bulleted talking point 1]
-- [Bulleted talking point 2]
-- [Bulleted talking point 3]
-Thought Provoking Questions:
-- [Bulleted question 1]
-- [Bulleted question 2]
-```
+• [Conversational talking point 1 that the presenter can say directly to the customer]
+• [Conversational talking point 2 highlighting business value and Google Cloud differentiation]
+• [Conversational talking point 3 addressing architecture or implementation scale]
+
+Discovery Question:
+• [Thought-provoking consultative question to engage the customer]
 
 ## Content Generation Guidelines
 
-1.  **Key Message**: Identify in a single, clear sentence.
-2.  **Talking Points**: 3-5 concise bulleted points that directly align with the
-    specified framework section or slide goal. Must be complete sentences that a
-    presenter could say verbatim. Persuasive, conversational, and
-    client-focused. Provide context so presenter understands what to convey.
-3.  **Questions**: 1-2 thought-provoking questions for the audience.
-4.  **Clarity and Conciseness**: Clear, direct, easy to follow. Avoid jargon,
-    keep sentences succinct.
-5.  **Tone**: Professional, authoritative, empathetic, concise, conversational.
+1.  **Format Integrity**: Return ONLY plain text. NEVER include markdown code fences (do NOT output ```markdown or ```). NEVER include internal taxonomy headers or framework labels (do NOT output 'Slide X:', 'Framework Section:', 'WHY CHANGE:', 'Do Statement', etc.).
+2.  **Key Takeaway**: Identify in a single, clear executive sentence.
+3.  **Talking Points**: 2-3 concise bulleted points that directly align with the slide's business outcome. Must be complete, natural sentences that a presenter can say verbatim.
+4.  **Discovery Question**: 1-2 thought-provoking consultative questions for the customer.
+5.  **Tone**: Professional, consultative, empathetic, concise, and conversational.

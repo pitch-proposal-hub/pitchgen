@@ -1,15 +1,11 @@
-name: "pitchgen-enterprise"
-acli_version: "0.3.0"
-agent_directory: "src"
-entry_point: "enterprise_agent.py"
-region: "us-central1"
-base_template: "local_Pitchgen_MultiAgent"
-generated_at: "2026-06-16T23:48:00.000000+00:00"
-language: "python"
-create_params:
-  deployment_target: "agent_runtime"
-  session_type: "none"
-  cicd_runner: "skip"
-  include_data_ingestion: false
-  datastore: "none"
-  agent_guidance_filename: "GEMINI.md"
+schema_version: 1
+name: pitchgen-enterprise
+description: PitchGen Enterprise Agent with A2UI v0.9 & Google Slides Canvas Integration
+language: python
+framework: adk
+entrypoint: src/agent_runtime_app.py:app
+env:
+  GOOGLE_CLOUD_PROJECT: your-gcp-project-id
+  GOOGLE_CLOUD_REGION: us-central1
+  GOOGLE_CLOUD_LOCATION: global
+  GCS_BUCKET_CONTENT: your-pitchgen-content-bucket

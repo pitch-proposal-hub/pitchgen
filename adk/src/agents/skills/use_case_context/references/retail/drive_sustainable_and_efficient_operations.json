@@ -1,0 +1,738 @@
+[
+  {
+    "use_case_title": "End-to-End Supply Chain Visibility",
+    "description_and_problem_statement": "Problem Statement: Retailers struggle with fragmented data across e-commerce platforms, warehouse management systems, and in-store inventory, preventing a real-time, holistic view of their logistics network.\n\nDescription: Break down data silos by unifying data from e-commerce platforms, warehouse management systems, and in-store inventory into a single source of truth. This provides the real-time, holistic view needed for all advanced operational optimizations.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "Data Cloud-Migrate",
+      "Modernize",
+      "and Build with Data Cloud -Primary",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer, Chief Digital Officer, VP of Ecommerce, Head of Customer Experience, Chief Data Officer, Marketing Director, Product Manager of Digital Experience"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As a customer, I want to see accurate, real-time delivery estimates for my order. As a Head of Supply Chain, I want a unified view of my entire inventory\u2014in transit, in warehouses, and in stores\u2014to make smarter, faster decisions.",
+    "how_it_works_narrative": "This solution combines Supply Chain Twin and BigQuery to create a single source of truth for your entire logistics network. By breaking down silos, we unify data from your e-commerce platform, warehouse management systems, and in-store inventory into a live, digital twin of your operations. This provides the real-time, holistic view needed to enable all other advanced optimizations.",
+    "key_technologies": [
+      "Supply Chain Twin",
+      "BigQuery",
+      "Looker",
+      "Knowledge Catalog",
+      "Pub/Sub"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [
+      "The Home Depot"
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Unify data from e-commerce, warehouse management, and in-store inventory into a live digital twin of operations. This provides the real-time, holistic view needed to enable advanced optimizations, breaks down data silos, and improves decision-making speed and accuracy.",
+    "kpis": [
+      "Inventory Accuracy",
+      "Order Fulfillment Lead Time",
+      "Out-of-Stock Rate",
+      "Supply Chain Cycle Time"
+    ],
+    "google_differentiation": "Google's unique differentiation in this space comes from its ability to orchestrate data across internal enterprise systems, external partner networks, and public sources without complex integrations. By combining Supply Chain Twin with industry-leading analytics in BigQuery and real-time mapping via Google Maps Platform, Google enables a digital representation of the physical supply chain that moves operations from reactive to predictive and prescriptive.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "The Agentic Supply Chain Tower",
+    "description_and_problem_statement": "Problem Statement: Supply chain teams spend too much time firefighting routine disruptions manually, leading to stockouts, delays, and inefficiencies.\n\nDescription: Deploy a centralized, autonomous command center for inventory and logistics. This agent continuously monitors live data feeds and autonomously executes workflows to prevent stockouts, mitigate delays by re-routing shipments, and optimize costs by consolidating orders.",
+    "use_case_status": "Demo/Material - Not Deployed",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "AI -Scale AI Apps and Agents-Primary",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Data Officer, Chief Information Officer, Chief Technology Officer, VP of Retail Operations, VP of Digital Experience, Head of Customer Experience"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As an inventory planner, I want to stop firefighting and trust that an agent is handling routine disruptions automatically, allowing me to focus on strategic exceptions. As a VP of Logistics, I want to reduce operational overhead and improve supply chain resilience by deploying an autonomous system that can make optimal decisions 24/7.",
+    "how_it_works_narrative": "Leverages Agent Platform and Supply Chain Twin to deploy a centralized, autonomous command center. This AI agent continuously monitors live data feeds\u2014from weather to port traffic to warehouse capacity. It autonomously executes workflows to prevent stockouts by creating transfer orders, mitigates delays by re-routing shipments, and optimizes costs by consolidating orders before human operators are even aware of a problem.",
+    "key_technologies": [
+      "Agent Platform",
+      "Supply Chain Twin",
+      "Google Kubernetes Engine (GKE)",
+      "Pub/Sub"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [
+      "The Home Depot",
+      "Carrefour"
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Deploy a centralized, autonomous command center that continuously monitors live data feeds and autonomously executes workflows. This prevents stockouts, mitigates delays by re-routing shipments, and optimizes costs by consolidating orders automatically.",
+    "kpis": [
+      "Inventory Accuracy",
+      "Order Fulfillment Lead Time",
+      "Out-of-Stock Rate",
+      "Supply Chain Cycle Time"
+    ],
+    "google_differentiation": "Google's unique differentiation in this space comes from its ability to orchestrate data across internal enterprise systems, external partner networks, and public sources without complex integrations. By combining Supply Chain Twin with industry-leading analytics in BigQuery and real-time mapping via Google Maps Platform, Google enables a digital representation of the physical supply chain that moves operations from reactive to predictive and prescriptive.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Accenture",
+      "Deloitte",
+      "BCG"
+    ],
+    "isv": [
+      "o9",
+      "project44",
+      "Manhattan Associates",
+      "Quantiphi",
+      "RapidResponse"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Demand Forecasting & Inventory Optimization",
+    "description_and_problem_statement": "Problem Statement: Retailers struggle to accurately predict demand, leading to costly overstocks of slow-moving items and lost revenue from stockouts of popular products.\n\nDescription: Leverage AI/ML models on a unified data platform to generate highly accurate, real-time demand forecasts. This optimizes inventory levels, reduces waste, and minimizes both overstocks and costly stockouts.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Agent Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer, VP of Digital Marketing, Head of Content Marketing, Creative Director, Social Media Director, Brand Manager"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a customer, I want my favorite items to be in stock when I want to buy them. As a Merchandising Manager, I want to accurately predict demand to maximize sell-through and minimize the need for costly, margin-eroding markdowns.",
+    "how_it_works_narrative": "This solution uses Vertex AI Forecast running on a unified data platform in BigQuery. By ingesting not just historical sales but also real-time demand signals like marketing promotions and social media trends, it generates highly accurate, granular forecasts. This allows retailers to optimize inventory levels for every SKU in every location, drastically reducing both the capital cost of overstocks and the lost revenue from stockouts.",
+    "key_technologies": [
+      "Vertex AI Forecast",
+      "BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [
+      "The Home Depot",
+      "Carrefour"
+    ],
+    "value_driver": [
+      "Improve Profitability"
+    ],
+    "value_narrative": "Generate highly accurate, granular forecasts by ingesting historical sales and real-time demand signals. This optimizes inventory levels for every SKU, drastically reducing the capital cost of overstocks and the lost revenue from stockouts.",
+    "kpis": [
+      "Inventory Accuracy",
+      "Order Fulfillment Lead Time",
+      "Out-of-Stock Rate",
+      "Supply Chain Cycle Time"
+    ],
+    "google_differentiation": "Google's unique differentiation in this space comes from its ability to orchestrate data across internal enterprise systems, external partner networks, and public sources without complex integrations. By combining Supply Chain Twin with industry-leading analytics in BigQuery and real-time mapping via Google Maps Platform, Google enables a digital representation of the physical supply chain that moves operations from reactive to predictive and prescriptive.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Accenture",
+      "Deloitte",
+      "BCG"
+    ],
+    "isv": [
+      "o9",
+      "project44",
+      "Manhattan Associates",
+      "Quantiphi",
+      "RapidResponse"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Predictive Product Assortment",
+    "description_and_problem_statement": "Problem Statement: Generic, one-size-fits-all planograms fail to meet local customer preferences, resulting in excess inventory and missed sales opportunities.\n\nDescription: Use AI to create an optimal product assortment for each individual store by analyzing local customer preferences, regional trends, and store-specific demographics, ensuring the right products are in the right place.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Agent Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer",
+      "VP of Marketing",
+      "Head of Content Marketing",
+      "Brand Manager",
+      "Digital Marketing Director",
+      "Customer Experience Manager"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a customer, I want my local store to carry products that are relevant to my lifestyle and community. As a Category Manager, I want to move beyond one-size-fits-all planograms and use data to tailor my product assortment by store, increasing sales and reducing transferred or marked-down stock.",
+    "how_it_works_narrative": "Combines historical sales data in BigQuery with custom Vertex AI models to create an optimal product assortment for each individual store. The model analyzes local customer purchase patterns, regional trends, and store-specific demographics to recommend a unique 'fingerprint' of products for each location, ensuring that local tastes are met and the right products are always in the right place.",
+    "key_technologies": [
+      "Agent Platform (Custom Models)",
+      "BigQuery",
+      "Looker"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Grow the Business"
+    ],
+    "value_narrative": "Create an optimal product assortment for each individual store by analyzing local customer purchase patterns and regional trends. This ensures local tastes are met, increases sales, and reduces transferred or marked-down stock.",
+    "kpis": [
+      "Reduced Stockout Rate",
+      "Inventory Turnover Ratio",
+      "Forecast Accuracy Improvement",
+      "Reduction in Waste/Markdowns",
+      "Excess Inventory Value Reduction"
+    ],
+    "google_differentiation": "Google uniquely combines BigQuery's unified data platform with Vertex AI Forecast's automated model selection and state-of-the-art deep learning architectures like TiDE to deliver superior accuracy and significantly faster training speeds compared to traditional methods.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Dynamic Pricing & Promotion Strategies",
+    "description_and_problem_statement": "Problem Statement: Retailers struggle to manually adjust pricing and promotions quickly enough to respond to market changes, leaving revenue and margins on the table.\n\nDescription: Employ AI models to enable real-time dynamic pricing and intelligent promotion strategies in response to competitor moves, demand changes, and inventory levels, maximizing margins and revenue.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Agent Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer, Chief Digital Officer, VP of Retail Operations, Head of Customer Experience, Marketing Director, VP of Ecommerce"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a customer, I want to feel I'm getting a fair price based on current market conditions. As a Chief Revenue Officer, I want to optimize pricing dynamically across thousands of SKUs to maximize revenue and profit margin without manual intervention.",
+    "how_it_works_narrative": "This solution employs AI models built on Vertex AI and BigQuery to enable real-time dynamic pricing. The models continuously analyze competitor moves, real-time demand signals, and current inventory levels to recommend or even automatically apply price adjustments, maximizing margins on popular items and intelligently clearing stock on slow-movers.",
+    "key_technologies": [
+      "Vertex AI (Custom Models)",
+      "BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Improve Profitability"
+    ],
+    "value_narrative": "Enable real-time dynamic pricing by analyzing competitor moves, real-time demand signals, and current inventory levels. This maximizes margins on popular items and intelligently clears stock on slow-movers without manual intervention.",
+    "kpis": [
+      "- Sell-through Rate\n  - Gross Margin Return on Investment (GMROI)\n  - In-Stock Percentage\n  - Inventory Turnover Rate\n  - Inventory Transfer Cost\n  - Sales per Square Foot"
+    ],
+    "google_differentiation": "Google uniquely combines BigQuery's unified data platform with Vertex AI Forecast's automated model selection and state-of-the-art deep learning architectures like TiDE to deliver superior accuracy and significantly faster training speeds compared to traditional methods.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Back Office Automation",
+    "description_and_problem_statement": "Problem Statement: High-volume, routine back-office processes are often manual and time-consuming, driving up administrative costs and tying up valuable staff.\n\nDescription: Digitize and automate routine, high-volume back-office processes such as document processing, financial reporting, and HR tasks to improve efficiency, reduce manual effort, and free up employees for higher-value work.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "Workplace -Lead the Agentic Workplace Transformation -Primary",
+      "AI -Scale AI Apps and Agents-Primary"
+    ],
+    "key_personas": [
+      "Chief Supply Chain Officer, VP of Logistics and Distribution, VP of Warehousing and Fulfillment, Director of Supply Chain Operations, Chief Digital Officer, VP of Retail Operations"
+    ],
+    "implementation_complexity": "Day 1 / Low",
+    "customer_user_journeys": "As an Accounts Payable clerk, I want to stop manually keying in invoice data and instead focus on resolving exceptions and managing vendor relationships. As a Chief Financial Officer (CFO), I want to lower our general and administrative expenses (G&A) by automating manual processes and improving the accuracy of our financial reporting.",
+    "how_it_works_narrative": "Digitizes and automates routine, high-volume back-office processes by combining Document AI and Gemini Enterprise. Imagine an invoice arriving in an inbox; Document AI automatically extracts the key information, Gemini validates it against a purchase order, and the payment is scheduled for approval, all without a human touching it. This improves efficiency, reduces errors, and frees up finance and admin teams for higher-value work.",
+    "key_technologies": [
+      "Gemini Enterprise",
+      "Document AI",
+      "AppSheet",
+      "Google Workspace"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Digitize and automate routine, high-volume back-office processes like invoice processing. This improves efficiency, reduces errors, lowers general and administrative expenses, and frees up finance and admin teams for higher-value work.",
+    "kpis": [
+      "- Gross Profit Margin\n  - Revenue Growth Rate\n  - Price Realization Index\n  - Inventory Turnover Ratio\n  - Average Order Value (AOV)"
+    ],
+    "google_differentiation": "BigQuery\u2019s built-in ML and native integration with Vertex AI allow retailers to analyze massive datasets\u2014including competitor moves, real-time demand, and inventory\u2014to deliver real-time pricing adjustments across thousands of SKUs with unmatched scale and speed.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Dynamic Re-routing of Inbound Logistics",
+    "description_and_problem_statement": "Problem Statement: Logistics and dispatch operations often rely on static, pre-planned routes that do not account for real-time disruptions such as traffic congestion, accidents, or sudden closures at receiving docks. This leads to costly delays, increased fuel consumption, and inefficient use of driver and vehicle time.\n\nDescription: This use case describes an agent that leverages real-time data to dynamically optimize logistics. By monitoring traffic patterns, weather conditions, and warehouse receiving availability, the agent can re-route inbound trucks to the most efficient drop-off point, minimizing idle time and ensuring on-time delivery.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Supply Chain Officer, Vice President of Supply Chain, Director of Inventory Management, VP of Merchandise Planning and Inventory Management, Chief Operating Officer, Chief Merchandising Officer"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a truck driver, I want my dispatch system to give me the best route based on what's happening right now, not what was planned yesterday. As a Warehouse Operations Manager, I want to smooth out the arrival of inbound trucks to prevent yard congestion and better plan my receiving staff allocation.",
+    "how_it_works_narrative": "This agent leverages real-time data from the Google Maps Platform and warehouse management systems. By continuously monitoring live traffic patterns and receiving dock availability, the agent can dynamically re-route inbound trucks to the most efficient drop-off point\u2014whether it's a different distribution center or simply a different dock at the same facility\u2014minimizing driver idle time and ensuring on-time delivery.",
+    "key_technologies": [
+      "Google Maps Platform (Routes API)",
+      "Cloud Fleet Routing",
+      "Pub/Sub",
+      "BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [
+      "UPS"
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Dynamically re-route inbound trucks to the best drop-off point by monitoring live traffic patterns and dock availability. This minimizes driver idle time, ensures on-time delivery, and prevents yard congestion.",
+    "kpis": [
+      "Process Automation Rate",
+      "Reduction in Manual Effort",
+      "Data Accuracy Rate",
+      "Process Cycle Time",
+      "Operational Cost Reduction"
+    ],
+    "google_differentiation": "Google's unique differentiation in this space comes from its unified stack that combines Gemini Enterprise, Document AI, and Google Workspace. This architecture creates a single operating fabric for enterprise AI, allowing retailers to stitch together historically separate layers into a seamless flow that automates complex, multi-step back-office tasks with high accuracy and minimal integration risk.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Accenture",
+      "Deloitte",
+      "BCG"
+    ],
+    "isv": [
+      "o9",
+      "project44",
+      "Manhattan Associates",
+      "Quantiphi",
+      "RapidResponse"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Dynamic Route Optimization",
+    "description_and_problem_statement": "Problem Statement: Fixed transportation routes do not account for real-time variables like traffic accidents or congestion at warehouse docks, leading to inefficient deliveries.\n\nDescription: An agent bridges real-time traffic data with warehouse dock availability to re-route drivers to the most efficient drop-off point, reducing fuel consumption and idle time.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Supply Chain Officer, Vice President of Supply Chain, Director of Inventory Management, VP of Merchandise Planning and Inventory Management, Chief Operating Officer, Chief Merchandising Officer"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a customer, I want a narrow and accurate delivery window for my package. As a Fleet Manager, I want to reduce our annual fuel costs and increase the number of deliveries each driver can make per day.",
+    "how_it_works_narrative": "This solution uses Cloud Fleet Routing, which combines the power of the Google Maps Platform with advanced optimization algorithms. It solves the complex 'traveling salesperson problem' for an entire fleet, determining the most efficient sequence of stops and routes for every vehicle based on real-time traffic and delivery windows, leading to significant reductions in fuel consumption and idle time.",
+    "key_technologies": [
+      "Cloud Fleet Routing",
+      "Google Maps Platform (Routes API)",
+      "BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Determine the most efficient sequence of stops and routes for every vehicle based on real-time traffic and delivery windows. This solves the traveling salesperson problem, leading to significant reductions in fuel consumption and idle time.",
+    "kpis": [
+      "Process Automation Rate",
+      "Reduction in Manual Effort",
+      "Data Accuracy Rate",
+      "Process Cycle Time",
+      "Operational Cost Reduction"
+    ],
+    "google_differentiation": "Google's unique differentiation in this space comes from its unified stack that combines Gemini Enterprise, Document AI, and Google Workspace. This architecture creates a single operating fabric for enterprise AI, allowing retailers to stitch together historically separate layers into a seamless flow that automates complex, multi-step back-office tasks with high accuracy and minimal integration risk.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Accenture",
+      "Deloitte",
+      "BCG"
+    ],
+    "isv": [
+      "o9",
+      "project44",
+      "Manhattan Associates",
+      "Quantiphi",
+      "RapidResponse"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Markdown Stimulation",
+    "description_and_problem_statement": "Problem Statement: Manually calculating the price elasticity for thousands of products is difficult, often resulting in suboptimal markdown strategies that either fail to clear stock or unnecessarily erode profit margins.\n\nDescription: This use case analyzes historical price versus sales volume data to suggest the exact markdown percentage needed to clear specific stock by a target date, thereby maximizing revenue while ensuring inventory is sold through.",
+    "use_case_status": "Demo/Material - Not Deployed",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Vertex AI Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Merchandising Officer, VP of Merchandising, Head of Category Management, Store Operations Manager, Director of Supply Chain"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a customer, I want to find good deals on items at the end of a season. As an Inventory Analyst, I want a data-driven recommendation for markdowns instead of relying on gut feel, ensuring I don't erode margin unnecessarily.",
+    "how_it_works_narrative": "Manually calculating price elasticity is impossible at scale. This use case uses Vertex AI to analyze historical price versus sales volume data from BigQuery. The resulting model can then suggest the exact markdown percentage needed to clear a specific amount of stock by a target date, thereby maximizing revenue while ensuring aging inventory is sold through.",
+    "key_technologies": [
+      "Vertex AI (Custom Models for elasticity)",
+      "BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Improve Profitability"
+    ],
+    "value_narrative": "Analyze historical price versus sales volume data to suggest the exact markdown percentage needed to clear stock by a target date. This maximizes revenue while ensuring aging inventory is sold through without eroding margin unnecessarily.",
+    "kpis": [
+      "Reduced Stockout Rate",
+      "Improved Delivery On-Time Performance",
+      "Reduced Logistics Costs",
+      "Inventory Turnover Ratio",
+      "Order Consolidation Efficiency"
+    ],
+    "google_differentiation": "Google's unique differentiation in this space comes from the native integration of BigQuery's high-scale data warehousing with Vertex AI's advanced machine learning. This combination allows retailers to build custom models that analyze massive datasets of local purchase patterns, regional trends, and store-specific demographics to deliver hyper-localized product assortments and store-specific \"fingerprints\" at scale.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Spoilage Prediction and Markdown Optimization",
+    "description_and_problem_statement": "Problem Statement: Grocery retailers face significant financial losses due to the spoilage of fresh produce. Predicting which items will expire and when to discount them is a major challenge, leading to waste and lost value.\n\nDescription: An agent predicts which fresh produce items are likely to spoil before they can be sold and automatically generates markdown recommendations. This helps to minimize waste, recover value from at-risk inventory, and improve overall margins.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Vertex AI Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Financial Officer, Chief Operating Officer, Chief Administrative Officer, VP of Finance, HR Director, Director of Shared Services, Head of Business Operations"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a grocery shopper, I appreciate finding discounts on fresh items that are nearing their sell-by date. As a Fresh Foods Department Manager, I want to reduce our daily spoilage waste, which is a major drain on our profitability.",
+    "how_it_works_narrative": "Specifically for grocery, this agent uses Vertex AI Forecast to predict which fresh produce items are likely to spoil. Before an item reaches its expiration date, the agent automatically generates a markdown recommendation and can even push the new price to digital price tags in the store. This helps to minimize food waste, recover value from at-risk inventory, and improve margins in a low-margin category.",
+    "key_technologies": [
+      "Vertex AI (Forecasting & Custom Models)",
+      "BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Improve Profitability"
+    ],
+    "value_narrative": "Predict which fresh produce items are likely to spoil and automatically generate markdown recommendations before expiration. This minimizes food waste, recovers value from at-risk inventory, and improves margins in a low-margin category.",
+    "kpis": [
+      "Reduced Stockout Rate",
+      "Improved Delivery On-Time Performance",
+      "Reduced Logistics Costs",
+      "Inventory Turnover Ratio",
+      "Order Consolidation Efficiency"
+    ],
+    "google_differentiation": "Google's unique differentiation in this space comes from the native integration of BigQuery's high-scale data warehousing with Vertex AI's advanced machine learning. This combination allows retailers to build custom models that analyze massive datasets of local purchase patterns, regional trends, and store-specific demographics to deliver hyper-localized product assortments and store-specific \"fingerprints\" at scale.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [
+      "AWM",
+      "RetailNext",
+      "Trax",
+      "Fabric",
+      "NCR's R10 Enterprise",
+      "Square",
+      "LS Retail",
+      "NCR Corp.",
+      "Lightspeed",
+      "Aptos Retail",
+      "BigCommerce",
+      "NewStore",
+      "Shopify"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Building Customer Trust with a Secure, AI-Powered Retail Platform (GenAIOps)",
+    "description_and_problem_statement": "Problem Statement: As retailers deploy more AI-driven experiences, they face challenges in securing underlying data and monitoring AI models to maintain customer trust.\n\nDescription: Implement a comprehensive security and privacy strategy for the entire AI lifecycle. This involves securing the underlying data, implementing responsible AI guardrails to control content, and using a unified monitoring dashboard to protect the integrity of the entire AI-driven experience.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "AI -Scale AI Apps and Agents-Primary"
+    ],
+    "key_personas": [
+      "Chief Financial Officer, Chief Operating Officer, Chief Administrative Officer, VP of Finance, HR Director, Director of Shared Services, Head of Business Operations"
+    ],
+    "implementation_complexity": "Day 1 / Low",
+    "customer_user_journeys": "As a CISO, I want to implement a unified security dashboard and AI guardrails to protect customer data and ensure model integrity. As a Chief Digital Officer, I want to build customer trust by ensuring all AI-driven retail experiences are secure, compliant, and monitored in real time.",
+    "how_it_works_narrative": "This solution implements a comprehensive security strategy using Security Command Center and Chronicle. We secure the underlying data in BigQuery, apply responsible AI guardrails in Vertex AI Agent Builder to control content and prevent harmful responses, and use a unified monitoring dashboard in Chronicle to protect the integrity of the entire AI-driven experience, ensuring customer trust.",
+    "key_technologies": [
+      "Security Command Center",
+      "Chronicle Security Operations",
+      "Vertex AI Agent Builder (Guardrails)"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Strengthen the Foundation"
+    ],
+    "value_narrative": "Implement a robust security strategy to secure underlying data, apply AI guardrails, and monitor the AI-driven experience. This ensures customer trust, protects personal data, and provides a unified way to secure AI models and data pipelines.",
+    "kpis": [
+      "Reduced Stockout Rate",
+      "Improved Delivery On-Time Performance",
+      "Reduced Logistics Costs",
+      "Inventory Turnover Ratio",
+      "Order Consolidation Efficiency"
+    ],
+    "google_differentiation": "Google's unique differentiation in this space comes from the native integration of BigQuery's high-scale data warehousing with Vertex AI's advanced machine learning. This combination allows retailers to build custom models that analyze massive datasets of local purchase patterns, regional trends, and store-specific demographics to deliver hyper-localized product assortments and store-specific \"fingerprints\" at scale.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Logistics & Carbon Footprint Optimization",
+    "description_and_problem_statement": "Problem Statement: Retailers struggle to accurately measure, report, and reduce their Scope 3 emissions from transportation and logistics while managing costs.\n\nDescription: Use AI to analyze and optimize logistics, from fleet routing to shipment consolidation, in order to reduce transportation costs, minimize delays, and lower the carbon footprint of the supply chain.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Supply Chain Officer, VP of Logistics and Distribution, VP of Transportation, Director of Supply Chain Operations, Logistics Manager"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a customer, I want the option to choose a slower but more environmentally friendly shipping method. As a Chief Sustainability Officer, I need to accurately measure, report, and reduce our Scope 3 emissions from transportation and logistics.",
+    "how_it_works_narrative": "This solution combines Cloud Fleet Routing with BigQuery and Looker to optimize logistics for both cost and carbon. After planning the most efficient routes, we analyze the resulting data to calculate the carbon footprint for different delivery options. This allows you to offer customers a 'green shipping' choice at checkout and provides executives with a Looker dashboard to track progress against corporate sustainability goals.",
+    "key_technologies": [
+      "Cloud Fleet Routing",
+      "Google Maps Platform",
+      "BigQuery",
+      "Looker",
+      "Earth Engine"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [
+      "Carrefour"
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Optimize logistics for cost and carbon by planning efficient routes and calculating the carbon footprint for delivery options. This allows offering green shipping choices, reduces Scope 3 emissions, and tracks progress against corporate sustainability goals.",
+    "kpis": [
+      "Sell-through Rate (STR)",
+      "Gross Margin",
+      "Inventory Turnover",
+      "Markdown Rate",
+      "Revenue Growth"
+    ],
+    "google_differentiation": "Google's AI/ML tools for demand forecasting use decades of prediction expertise to ensure optimal product placement and minimize waste.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Accenture",
+      "Deloitte",
+      "BCG"
+    ],
+    "isv": [
+      "o9",
+      "project44",
+      "Manhattan Associates",
+      "Quantiphi",
+      "RapidResponse"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "AI-Ready Retail Infrastructure Foundation",
+    "description_and_problem_statement": "Problem Statement: High fixed-cost legacy IT infrastructure drains budgets, preventing retailers from reinvesting in innovation and modernizing operations.\n\nDescription: Execute a holistic migration of the core IT estate (including data centers and legacy ERPs) to a secure, scalable, and cost-effective cloud foundation. This frees up IT budget to reinvest in innovation and creates the AI-ready platform required for modern retail operations.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "Data Cloud-Migrate",
+      "Modernize",
+      "and Build with Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "VP of Logistics",
+      "Chief Supply Chain Officer",
+      "Director of Transportation",
+      "Fleet Manager",
+      "VP of Operations",
+      "Warehouse Manager"
+    ],
+    "implementation_complexity": "Day 1 / Low",
+    "customer_user_journeys": "As a Head of E-commerce, I want our website to be fast and stable on Black Friday, not crash under the load. As a Chief Information Officer (CIO), I want to reduce our data center TCO and shift my budget from 'keeping the lights on' to driving business innovation.",
+    "how_it_works_narrative": "This is the foundational journey of executing a holistic migration of core IT, like SAP and data centers, to Google Cloud's secure and scalable infrastructure. By moving from a high fixed-cost model to a flexible, consumption-based one, you free up IT budget to reinvest in innovation. This creates the stable, AI-ready platform required for all the modern retail use cases we've discussed.",
+    "key_technologies": [
+      "Google Cloud (Core Infrastructure - Compute Engine",
+      "GKE)",
+      "Cloud SQL",
+      "Spanner"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [
+      "Macy's",
+      "L'Or\u00e9al"
+    ],
+    "value_driver": [
+      "Strengthen the Foundation"
+    ],
+    "value_narrative": "Execute a holistic migration of core IT to a secure, scalable, and cost-effective cloud foundation. This frees up IT budget to reinvest in innovation, creates a stable AI-ready platform, and reduces data center total cost of ownership.",
+    "kpis": [
+      "Sell-through Rate (STR)",
+      "Gross Margin",
+      "Inventory Turnover",
+      "Markdown Rate",
+      "Revenue Growth"
+    ],
+    "google_differentiation": "Apigee enabled an API-first architecture, essential for connecting systems like POS and e-commerce to provide a consistent omnichannel experience.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Quantiphi",
+      "Resulticks",
+      "Onlinesales.ai",
+      "Fynd",
+      "Talon.One",
+      "Kargo",
+      "Smartly"
+    ],
+    "isv": [
+      "Quantiphi",
+      "Resulticks",
+      "Onlinesales.ai",
+      "Fynd",
+      "Talon.One",
+      "Kargo",
+      "Smartly"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Developer Productivity & Code Agents",
+    "description_and_problem_statement": "Problem Statement: Technology teams spend too much time on boilerplate code and debugging legacy systems, slowing down development velocity.\n\nDescription: Utilize AI-powered coding assistants and agents to accelerate software development, modernize legacy applications, and increase the overall productivity and efficiency of internal technology teams.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Drive sustainable and efficient operations",
+    "associated_horizontal_plays": [
+      "AI -Scale AI Apps and Agents-Primary",
+      "Workplace -Lead the Agentic Workplace Transformation -Primary"
+    ],
+    "key_personas": [
+      "Chief Financial Officer, Chief Merchandising Officer, VP of Merchandising, Director of Pricing, Category Manager, Inventory Manager"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As a developer, I want to spend less time on boilerplate code and debugging legacy systems, and more time building new, exciting features. As a VP of Engineering, I want to increase my team's development velocity and accelerate our application modernization initiatives.",
+    "how_it_works_narrative": "This solution utilizes Gemini for Google Cloud (formerly Duet AI) to accelerate software development. An AI-powered coding assistant directly within the developer's editor provides code completion, explains legacy code, generates unit tests, and even translates entire code blocks from old languages like COBOL to modern ones like Java. This dramatically increases the productivity and efficiency of internal technology teams.",
+    "key_technologies": [
+      "Gemini for Google Cloud (Cloud Code",
+      "Cloud Shell Editor)"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Utilize AI-powered coding assistants to accelerate software development, modernize legacy applications, and generate unit tests. This dramatically increases the productivity and efficiency of internal technology teams and accelerates application modernization initiatives.",
+    "kpis": [
+      "- Sell-through Rate\n  - Gross Margin Return on Investment (GMROI)\n  - In-Stock Percentage\n  - Inventory Turnover Rate\n  - Inventory Transfer Cost\n  - Sales per Square Foot"
+    ],
+    "google_differentiation": "Google's unique differentiation in this space comes from the native integration of BigQuery's high-scale data warehousing with Vertex AI's advanced machine learning. This combination allows retailers to build custom models that analyze massive datasets of local purchase patterns, regional trends, and store-specific demographics to deliver hyper-localized product assortments and store-specific \"fingerprints\" at scale.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  }
+]

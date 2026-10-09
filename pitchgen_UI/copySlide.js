@@ -1,10 +1,10 @@
-function copySlidesFromSuggestions(response) {
+function copySlidesFromSuggestions(response,presentationId) {
   var stringify = JSON.stringify(response);
   var json = JSON.parse(stringify);
   console.log(json);
   //var jsonData = json[0];
   var jsonData = json;
-  var presentation = SlidesApp.getActivePresentation();
+  var presentation = SlidesApp.openById(presentationId);
   var slideIdsAndPositions = {};
   
   for (var section in jsonData) {
@@ -19,28 +19,86 @@ function copySlidesFromSuggestions(response) {
           var slideUrl = suggestions[i].values[j];
           console.log("i : ",i);
           console.log("j : ",j);
-          try{
-          var presId = extractPresentationId(slideUrl);
-          var sourcePresentation = SlidesApp.openById(presId);
+          try {
+            var presId = extractPresentationId(slideUrl);
+            var sourcePresentation = getCachedPresentation(presId);
+          if (!sourcePresentation) {
+            console.warn("Could not open source presentation: " + presId);
+            continue;
+          }
           console.log("Source slide Url : ",slideUrl);
           var sourceSlideId = extractSlideId(slideUrl);
           console.log("sourceSlideId : ",sourceSlideId);
           var sourceSlide = sourcePresentation.getSlideById(sourceSlideId);
-          var copiedSlide = presentation.appendSlide(sourceSlide);
+          if (!sourceSlide) {
+            console.warn(
+                'Could not find source slide by ID: ' + sourceSlideId +
+                ' in presentation: ' + presId +
+                '. Using O(1) positional fallback.');
+            var allSlides = sourcePresentation.getSlides();
+            if (allSlides && allSlides.length > 0) {
+              // Positional fallback if available (O(1) without scanning all
+              // shapes/notes across 100+ slides)
+              if (suggestions[i].slide_index != null) {
+                var sIdx = parseInt(suggestions[i].slide_index, 10);
+                if (!isNaN(sIdx) && sIdx >= 0 && sIdx < allSlides.length) {
+                  sourceSlide = allSlides[sIdx];
+                  console.log("Found source slide fallback by slide_index: " + sIdx);
+                }
+              }
+              if (!sourceSlide) {
+                var fallbackIdx = allSlides.length > 1 ? Math.min(j + 1, allSlides.length - 1) : 0;
+                sourceSlide = allSlides[fallbackIdx];
+                console.warn("Using fallback slide at index " + fallbackIdx + " in presentation: " + presId);
+              }
+            }
+          }
+          if (!sourceSlide) {
+            console.warn("Could not find any source slide in presentation: " + presId);
+            continue;
+          }
+          var copiedSlide;
+          try {
+            copiedSlide = presentation.appendSlide(sourceSlide, SlidesApp.SlideLinkingMode.LINKED);
+          } catch (linkErr) {
+            console.log("Could not link slide, falling back to unlinked copy: " + linkErr);
+            copiedSlide = presentation.appendSlide(sourceSlide);
+          }
           var copiedSlideId = copiedSlide.getObjectId();
           console.log("copiedSlideId : ",copiedSlideId);
-          mappingSourceAndCopiedSlideId[copiedSlideId] = sourceSlideId;
+          mappingSourceAndCopiedSlideId[copiedSlideId] = sourceSlide.getObjectId();
+
+          // Reusable slides are copied cleanly as-is.
+          // Full-deck text transformation runs post-assembly across all slides.
+
           if (!slideIdsAndPositions[section]) {
             slideIdsAndPositions[section] = { ids: [] };
           }
           slideIdsAndPositions[section].ids.push(copiedSlideId);
-          if (suggestions[i].hasOwnProperty('is_golden')) {
-          var notes = suggestions[i].name + " ("+ formatDate(suggestions[i].date)+")";
-          presentation.getSlideById(copiedSlideId).getNotesPage().getSpeakerNotesShape().getText().setText(notes).getTextStyle().setFontFamily("Google Sans").setBold(true).setFontSize(14).setLinkUrl(slideUrl);
+          // Include source slide link and preserve original speaker notes
+          try {
+            var notesShape = copiedSlide.getNotesPage().getSpeakerNotesShape();
+            var origNotes = "";
+            try {
+              origNotes = sourceSlide.getNotesPage().getSpeakerNotesShape().getText().asString().trim();
+            } catch (e) {}
+
+            var slideLabel = suggestions[i].name || suggestions[i].original_title || "Original Reusable Slide";
+            var dateStr = (suggestions[i].date && suggestions[i].date.length > 3) ? (" (" + formatDate(suggestions[i].date) + ")") : "";
+            var linkHeader = "🔗 Source Slide: " + slideLabel + dateStr + "\n" + slideUrl;
+
+            var fullNotes = linkHeader;
+            if (origNotes && origNotes !== slideLabel) {
+              fullNotes += "\n\n--- Original Speaker Notes ---\n" + origNotes;
+            }
+
+            var textRange = notesShape.getText();
+            textRange.setText(fullNotes);
+            textRange.getTextStyle().setFontFamily("Google Sans").setFontSize(11);
+          } catch (notesErr) {
+            console.log("Warning: could not attach speaker notes to copied slide: " + notesErr);
           }
-          else{
-            console.log("Customer Reference Slide");
-          }
+
           totalCopiedSuggestionSlide = totalCopiedSuggestionSlide + 1;
           }
           catch(error){
@@ -66,7 +124,6 @@ function copySlidesFromSuggestions(response) {
   var standardKeys = ["title", "agenda", "thank_you"];
   for (var k = 1; k <= 10; k++) {
     standardKeys.push(k.toString());
-    standardKeys.push("divider_" + k);
   }
   for (var idx = 0; idx < standardKeys.length; idx++) {
     var key = standardKeys[idx];
@@ -137,7 +194,8 @@ function searchSlide(searchContentInput, repository)
     "search_query": searchContentInput,
     "strict_search": strictSearch,
     "user_ldap" : userLdap,
-    "repository": repository
+    "repository": repository,
+    "slide_job": repository
   };
   const payload = {
     "class_method": "async_stream_query",
@@ -213,47 +271,53 @@ function searchSlide(searchContentInput, repository)
 function generateImageURL(searchResults)
 {
   var slidesUrl = [];
-  var slidesObj = {};
 
   for(var i=0; i<searchResults.length; i++)
   {
+    var item = searchResults[i];
+    var deckId = item.deckId;
+    if (Array.isArray(deckId)) {
+      deckId = deckId[0];
+    }
+    var slideId = item.slideId;
+    if (Array.isArray(slideId)) {
+      slideId = slideId[0];
+    }
+
+    if (!deckId || !slideId) {
+      continue;
+    }
+
+    var slideURL = item.slideURL || ("https://docs.google.com/presentation/d/" + deckId + "/edit#slide=id." + slideId);
+
     try
     {
-      slidesObj = {};
-      const url = Slides.Presentations.Pages.getThumbnail(searchResults[i].deckId, searchResults[i].slideId, {"thumbnailProperties.mimeType": "PNG"}).contentUrl;
+      const url = Slides.Presentations.Pages.getThumbnail(deckId, slideId, {"thumbnailProperties.mimeType": "PNG"}).contentUrl;
       
-      slidesObj.date = searchResults[i].date;
-      slidesObj.name = searchResults[i].name;
-      slidesObj.slideId = searchResults[i].slideId;
-      slidesObj.deckId = searchResults[i].deckId;
-      slidesObj.slideURL = searchResults[i].slideURL;
-      slidesObj.url = url;
-      slidesUrl.push(slidesObj);    
+      slidesUrl.push({
+        date: item.date || "",
+        name: item.name || "Reusable Slide",
+        slideId: slideId,
+        deckId: deckId,
+        slideURL: slideURL,
+        url: url
+      });
     }
     catch(error)
     {
-      if(error.name=="GoogleJsonResponseException")
+      console.log("Thumbnail generation failed for deck " + deckId + ", slide " + slideId + ": " + error);
+      var thumbnailUrl = recursiveGenerateImageURL(deckId, slideId, 3);
+      if(thumbnailUrl != null)
       {
-        console.log(error.name+" : Recursive call to the function once again for creating the thumbnails");
-        var totalExecute = 5;
-        var thumbnailUrl = recursiveGenerateImageURL(searchResults[i].deckId, searchResults[i].slideId, totalExecute);
-        if(thumbnailUrl != null)
-        {
-          slidesObj = {};
-          slidesObj.date = searchResults[i].date;
-          slidesObj.name = searchResults[i].name;
-          slidesObj.slideId = searchResults[i].slideId;
-          slidesObj.deckId = searchResults[i].deckId;
-          slidesObj.slideURL = searchResults[i].slideURL;
-          slidesObj.url = thumbnailUrl;
-          slidesUrl.push(slidesObj);
-        }
+        slidesUrl.push({
+          date: item.date || "",
+          name: item.name || "Reusable Slide",
+          slideId: slideId,
+          deckId: deckId,
+          slideURL: slideURL,
+          url: thumbnailUrl
+        });
       }
-      else
-      {
-        console.log(error.stack);
-      }
-      continue;
     }
   }
   return slidesUrl;
@@ -326,6 +390,7 @@ function searchSlideInsertion(resData){
   };
   console.log("Database Payload : ",saveSearchOptions);
   try{  
+    //To get the current position from deck
     var currentSlideId = SlidesApp.getActivePresentation().getSelection().getCurrentPage().getObjectId();
     var allSlides = SlidesApp.getActivePresentation().getSlides();
     var presentation = SlidesApp.getActivePresentation();
@@ -350,6 +415,7 @@ function searchSlideInsertion(resData){
     var copiedSlideId = copiedSlide.getObjectId();
     console.log("copiedSlideId : ",copiedSlideId);
     var notes = resData.name + " ("+ formatDate(resData.date)+")";
+    //To add Speaker Note 
     presentation.getSlideById(copiedSlideId).getNotesPage().getSpeakerNotesShape().getText().setText(notes).getTextStyle().setFontFamily("Google Sans").setBold(true).setFontSize(14).setLinkUrl(deckUrl);
 
     var searchResponse = UrlFetchApp.fetch(saveEditAction,saveSearchOptions);
@@ -371,3 +437,59 @@ function searchSlideInsertion(resData){
   }
 
 }
+
+/**
+ * Deprecated: Replaced by post-assembly transformFullDeckText().
+ * If invoked as fallback, updates only the title shape without corrupting body shapes.
+ */
+function customizeCopiedSlideShapes(copiedSlide, suggestion) {
+  if (!suggestion || !copiedSlide) return;
+
+  var isCustRef = suggestion.is_cust_ref || (suggestion._source_datastore_key === 'cust_ref') || suggestion.is_proof_point;
+  if (isCustRef) {
+    return;
+  }
+
+  var custTitle = suggestion.customized_title;
+  var origTitle = suggestion.original_title || suggestion.name;
+
+  // 1. Update Title Shape safely if provided
+  if (custTitle) {
+    if (/^Partnering with /i.test(custTitle) || /^Working with /i.test(custTitle)) {
+      if (origTitle && (/build together/i.test(origTitle) || /next steps/i.test(origTitle) || /path forward/i.test(origTitle))) {
+        custTitle = origTitle;
+      } else {
+        custTitle = custTitle.replace(/^Partnering with /i, "Accelerating ").replace(/^Working with /i, "Empowering ");
+      }
+    }
+
+    var shapes = copiedSlide.getShapes();
+    var titleShape = null;
+
+    for (var s = 0; s < shapes.length; s++) {
+      var shape = shapes[s];
+      var pType = shape.getPlaceholderType();
+      var text = shape.getText().asString().trim();
+
+      if (pType === SlidesApp.PlaceholderType.TITLE || pType === SlidesApp.PlaceholderType.CENTERED_TITLE) {
+        titleShape = shape;
+        break;
+      } else if (!titleShape && (s === 0 || text.length > 20) && origTitle && text.includes(origTitle.substring(0, 15))) {
+        titleShape = shape;
+        break;
+      }
+    }
+
+    if (titleShape) {
+      titleShape.getText().setText(custTitle);
+    } else if (origTitle) {
+      try {
+        copiedSlide.replaceAllText(origTitle, custTitle);
+      } catch (e) {}
+    }
+  }
+
+  // NOTE: Body shapes are preserved intact to avoid destroying card layout/typography.
+  // Full deck text transformation is executed post-assembly via transformFullDeckText().
+}
+

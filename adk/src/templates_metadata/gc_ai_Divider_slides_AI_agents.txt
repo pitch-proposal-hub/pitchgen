@@ -1,0 +1,8 @@
+{
+    "1@TEMPLATE_DECK_GCAI_DIV_AG_PLACEHOLDER_01@g389c58f0aa6_0_520": {
+        "header1": "18 to 21 characters"
+    },
+    "2@TEMPLATE_DECK_GCAI_DIV_AG_PLACEHOLDER_01@g389c58f0aa6_0_527": {
+        "header1": "18 to 21 characters"
+    }
+}

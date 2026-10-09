@@ -1,0 +1,90 @@
+{
+    "1@TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01@g385adda83b1_0_716": {
+        "title": "28 to 42 characters",
+        "header1": "14 to 22 characters",
+        "header1_content": "75 to 100 characters",
+        "header2": "14 to 22 characters",
+        "header2_content": "75 to 100 characters",
+        "header3": "14 to 22 characters",
+        "header3_content": "75 to 100 characters"
+    },
+    "2@TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01@g385adda83b1_0_729": {
+        "title": "28 to 42 characters",
+        "header1": "14 to 22 characters",
+        "header1_content": "75 to 100 characters",
+        "header2": "14 to 22 characters",
+        "header2_content": "75 to 100 characters",
+        "header3": "14 to 22 characters",
+        "header3_content": "75 to 100 characters"
+    },
+    "3@TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01@g385adda83b1_0_742": {
+        "title": "28 to 42 characters",
+        "header1": "14 to 22 characters",
+        "header1_content": "75 to 100 characters",
+        "header2": "14 to 22 characters",
+        "header2_content": "75 to 100 characters",
+        "header3": "14 to 22 characters",
+        "header3_content": "75 to 100 characters"
+    },
+    "4@TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01@g385adda83b1_0_755": {
+        "title": "28 to 42 characters",
+        "header1": "14 to 22 characters",
+        "header1_content": "75 to 100 characters",
+        "header2": "14 to 22 characters",
+        "header2_content": "75 to 100 characters",
+        "header3": "14 to 22 characters",
+        "header3_content": "75 to 100 characters"
+    },
+    "5@TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01@g385adda83b1_0_768": {
+        "title": "14 to 24 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "85 to 115 characters",
+        "header2": "18 to 28 characters",
+        "header2_content": "85 to 115 characters",
+        "header3": "18 to 28 characters",
+        "header3_content": "85 to 115 characters"
+    },
+    "6@TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01@g385adda83b1_0_775": {
+        "title": "14 to 24 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "85 to 115 characters",
+        "header2": "18 to 28 characters",
+        "header2_content": "85 to 115 characters",
+        "header3": "18 to 28 characters",
+        "header3_content": "85 to 115 characters"
+    },
+    "7@TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01@g385adda83b1_0_782": {
+        "title": "14 to 24 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "85 to 115 characters",
+        "header2": "18 to 28 characters",
+        "header2_content": "85 to 115 characters",
+        "header3": "18 to 28 characters",
+        "header3_content": "85 to 115 characters"
+    },
+    "8@TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01@g385adda83b1_0_789": {
+        "title": "14 to 24 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "85 to 115 characters",
+        "header2": "18 to 28 characters",
+        "header2_content": "85 to 115 characters",
+        "header3": "18 to 28 characters",
+        "header3_content": "85 to 115 characters"
+    },
+    "9@TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01@g385adda83b1_0_796": {
+        "title": "14 to 24 characters",
+        "item1": "90 to 125 characters"
+    },
+    "10@TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01@g385adda83b1_0_804": {
+        "title": "14 to 24 characters",
+        "item1": "90 to 125 characters"
+    },
+    "11@TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01@g385adda83b1_0_812": {
+        "title": "14 to 24 characters",
+        "item1": "90 to 125 characters"
+    },
+    "12@TEMPLATE_DECK_GCAI_KEY_AG_PLACEHOLDER_01@g385adda83b1_0_820": {
+        "title": "14 to 24 characters",
+        "item1": "90 to 125 characters"
+    }
+}

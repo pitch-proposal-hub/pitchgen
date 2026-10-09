@@ -1,0 +1,14 @@
+{
+    "1@TEMPLATE_DECK_GCAI_DIV_GR_PLACEHOLDER_01@g389c5613e7c_0_562": {
+        "header1": "10 to 20 characters"
+    },
+    "2@TEMPLATE_DECK_GCAI_DIV_GR_PLACEHOLDER_01@g389c5613e7c_0_570": {
+        "header1": "10 to 20 characters"
+    },
+    "3@TEMPLATE_DECK_GCAI_DIV_GR_PLACEHOLDER_01@g389c5613e7c_0_578": {
+        "header1": "10 to 20 characters"
+    },
+    "4@TEMPLATE_DECK_GCAI_DIV_GR_PLACEHOLDER_01@g389c5613e7c_0_586": {
+        "header1": "10 to 20 characters"
+    }
+}

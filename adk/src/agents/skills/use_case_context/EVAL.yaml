@@ -1,0 +1,35 @@
+suite_name: use-case-context
+timeout_seconds: 600
+max_tool_calls: 10
+
+cases:
+  - name: generate_json_for_conversational_commerce
+    prompt: >
+      Create a slide for the 'Conversational Commerce' use case.
+      Use the `use-case-context` skill to guide you.
+    skills: [use-case-context]
+    difficulty: easy
+    outcome_assertions:
+      - "The agent produces a JSON object matching the target schema."
+      - "The JSON contains data specific to 'Conversational Commerce' extracted from the reference files."
+      - "The `horizontal_plays` array contains relevant sales plays aligned with the `sales-play-selection` skill."
+
+  - name: generate_json_with_user_context
+    prompt: >
+      Create a slide for 'Autonomous Shopping Agents' for customer 'Acme Corp' targeting 'VPs of E-commerce'.
+      Use the `use-case-context` skill to guide you.
+    skills: [use-case-context]
+    difficulty: medium
+    outcome_assertions:
+      - "The agent produces a JSON object matching the target schema."
+      - "The JSON integrates 'Acme Corp' and 'VPs of E-commerce' into the generated content."
+
+  - name: generate_json_different_pillar
+    prompt: >
+      Create a slide for the 'Trend Analysis' use case.
+      Use the `use-case-context` skill to guide you.
+    skills: [use-case-context]
+    difficulty: easy
+    outcome_assertions:
+      - "The agent finds the use case in the 'leverage_ai_to_transform_data_into_value.md' reference file."
+      - "The agent produces a JSON object matching the target schema."

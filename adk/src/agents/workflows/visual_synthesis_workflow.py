@@ -19,20 +19,19 @@ class VisualSynthesisWorkflow(BaseWorkflow):
         ),
     )
     self.config = config
-    self.project_id = config["default"]["project_name"]
-    self.gemini_model = config["default"]["gemini_model"]
-    self.image_model = config["default"].get(
+    default_sec = config["default"] if "default" in config else {}
+    self.project_id = default_sec.get("project_name", "your-gcp-project-id")
+    self.image_model = default_sec.get(
         "gemini_image_model_1", "gemini-3.1-flash-image"
     )
-    self.image_model_fallback = config["default"].get(
+    self.image_model_fallback = default_sec.get(
         "gemini_image_model_2", "gemini-3.1-pro-image"
     )
     self.disable_image_generation = (
-        config["default"].get("disable_image_generation", "false").lower()
+        str(default_sec.get("disable_image_generation", "false")).lower()
         == "true"
     )
     self.region = "global"
-
 
   def execute(
       self,
@@ -47,6 +46,7 @@ class VisualSynthesisWorkflow(BaseWorkflow):
       user_input_slide_image_url=None,
       sales_play="",
       template_slide_image_url=None,
+      model_override=None,
   ):
     """Generates a net-new slide image.
 
@@ -92,7 +92,7 @@ class VisualSynthesisWorkflow(BaseWorkflow):
       ref_img = user_input_slide_image_url or reference_image
     else:
       # Advanced payload flow
-      from agents.skill_loader import load_skill_instructions, load_skill_reference, detect_industry_category
+      from agents.skill_loader import load_skill_instructions, load_skill_reference
       import os
 
       tone_instructions = load_skill_instructions("slide_tone")
@@ -100,40 +100,23 @@ class VisualSynthesisWorkflow(BaseWorkflow):
       brand_instructions = load_skill_instructions("google_brand")
 
       # Load industry GTM dynamically
-      current_dir = os.path.dirname(os.path.abspath(__file__))
-      skills_dir = os.path.join(os.path.dirname(current_dir), "skills")
-      if not os.path.exists(skills_dir):
-        skills_dir = os.path.join(os.path.dirname(os.path.dirname(current_dir)), "src", "agents", "skills")
-        if not os.path.exists(skills_dir):
-          skills_dir = os.path.join(os.path.dirname(os.path.dirname(current_dir)), "skills")
+      from agents.skill_loader import get_domain_and_account_glossary
 
-      available_industries = []
-      if os.path.exists(skills_dir):
-        available_industries = [
-            d.replace("_industry", "")
-            for d in os.listdir(skills_dir)
-            if os.path.isdir(os.path.join(skills_dir, d)) and d.endswith("_industry")
-        ]
-
-      detected_industry = None
-      if industry:
-        mapped_ind = detect_industry_category(client, self.gemini_model, industry, available_industries)
-        if mapped_ind != "None":
-          detected_industry = mapped_ind
-
-      industry_instructions = ""
-      if detected_industry:
-        industry_skill = f"{detected_industry}_industry"
-        industry_instructions = load_skill_instructions(industry_skill)
-        pillars = load_skill_reference(industry_skill, "industry_pillars.md")
-        if pillars:
-          industry_instructions = (
-              f"{industry_instructions}\n\n### Industry Pillars & Grounding:\n{pillars}"
-          )
+      industry_instructions = load_skill_instructions("industry_verticals") or ""
+      glossary = get_domain_and_account_glossary({"industry": industry})
+      if glossary:
+        industry_instructions = f"{industry_instructions}\n\n{glossary}"
 
       # Load play guidelines dynamically
       play_instructions = ""
       if sales_play:
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        skills_dir = os.path.join(os.path.dirname(current_dir), "skills")
+        if not os.path.exists(skills_dir):
+          skills_dir = os.path.join(os.path.dirname(os.path.dirname(current_dir)), "src", "agents", "skills")
+          if not os.path.exists(skills_dir):
+            skills_dir = os.path.join(os.path.dirname(os.path.dirname(current_dir)), "skills")
+
         play_norm = str(sales_play).lower().replace("_", " ").strip()
         play_ref_dir = os.path.join(skills_dir, "sales_play_selection", "references")
         detected_play_file = None
@@ -177,7 +160,8 @@ class VisualSynthesisWorkflow(BaseWorkflow):
       if brand_instructions:
         prompt_parts.append(f"\n### Google Brand Guidelines:\n{brand_instructions}")
       if industry_instructions:
-        prompt_parts.append(f"\n### Google Cloud {detected_industry.capitalize()} Industry Guidelines:\n{industry_instructions}")
+        ind_title = industry.capitalize() if industry else "Vertical"
+        prompt_parts.append(f"\n### Google Cloud {ind_title} Industry Guidelines:\n{industry_instructions}")
       if play_instructions:
         prompt_parts.append(f"\n### Google Cloud Sales Play Guidelines:\n{play_instructions}")
 
@@ -188,7 +172,6 @@ class VisualSynthesisWorkflow(BaseWorkflow):
           "\n\nCRITICAL: Do NOT write literal layout names (e.g. 'Timeline', 'Circle Charts', 'Stats') or theme names (e.g. 'Google Cloudstyle', 'PitchHub') as text headers or elements on the slide. These are instructions for layout and style choice only. The generated slide must only contain real, polished business text related to the slide's topic."
       )
       ref_img = user_input_slide_image_url or reference_image
-
 
     contents = []
     has_template = False
@@ -232,30 +215,52 @@ class VisualSynthesisWorkflow(BaseWorkflow):
 
     contents.append(prompt_str)
 
+    active_model = self.image_model
+    active_fallback = self.image_model_fallback
+    if model_override:
+      mo_clean = str(model_override).strip().lower()
+      if "2.1" in mo_clean or "2_1" in mo_clean:
+        active_model = "gemini-nano-banana-2.1"
+        active_fallback = self.image_model_fallback
+      elif "pro" in mo_clean:
+        active_model = self.image_model_fallback
+        active_fallback = self.image_model
+      elif "flash" in mo_clean or mo_clean in ("nano_banana", "nano banana"):
+        active_model = self.image_model
+        active_fallback = self.image_model_fallback
+      elif mo_clean.startswith("gemini-"):
+        active_model = str(model_override).strip()
+
     print(
-        "[VisualSynthesisWorkflow] Calling multimodal image generation using Nano Banana"
-        f" {self.image_model}..."
+        "[VisualSynthesisWorkflow] Calling multimodal image generation using"
+        f" Nano Banana {active_model}..."
     )
     try:
+      gen_cfg_kwargs = {
+          "response_modalities": ["IMAGE"],
+          "temperature": 0.4,
+          "image_config": types.ImageConfig(
+              image_size="2K",
+              aspect_ratio="16:9",
+          ),
+      }
+      if "flash-image" in str(active_model):
+        gen_cfg_kwargs["tools"] = [
+            types.Tool(
+                google_search=types.GoogleSearch(
+                    search_types=types.SearchTypes(
+                        image_search=types.ImageSearch(),
+                        web_search=types.WebSearch(),
+                    )
+                )
+            )
+        ]
       response = self.generate_content_with_fallback(
           client=client,
-          model=self.image_model,
+          model=active_model,
           contents=contents,
-          config=types.GenerateContentConfig(
-              response_modalities=["IMAGE"],
-              temperature=0.4,
-              tools=[
-                  types.Tool(
-                      google_search=types.GoogleSearch(
-                          search_types=types.SearchTypes(
-                              image_search=types.ImageSearch(),
-                              web_search=types.WebSearch(),
-                          )
-                      )
-                  )
-              ],
-          ),
-          fallback_model=self.image_model_fallback,
+          config=types.GenerateContentConfig(**gen_cfg_kwargs),
+          fallback_model=active_fallback,
       )
       image_bytes = None
       if response.candidates and response.candidates[0].content.parts:

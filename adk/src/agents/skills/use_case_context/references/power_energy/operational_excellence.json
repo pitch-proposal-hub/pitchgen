@@ -1,0 +1,694 @@
+[
+  {
+    "use_case_title": "Agentic Asset Management & Predictive Maintenance",
+    "description_and_problem_statement": "Using agentic AI to automate asset management tasks, including asset monitoring and failure mode and effects analysis, to predict asset/equipment failure.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "VP of Operations",
+      "Asset Managers",
+      "COO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "Gemini Enterprise Agent Platform",
+      "Google Maps Platform",
+      "GDC"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Reduced costs; improve asset reliability and minimize shutdowns"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Avoids lost production ($50k-$200k/day)",
+      "optimizes maintenance truck rolls"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Agentic Work Management",
+    "description_and_problem_statement": "Using Vizier and AI capabilities, determine optimal use of crews and materials to achieve the lowest cost, fastest construction of an asset.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "VP of Operations",
+      "COO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise",
+      "Google Workspace",
+      "Vizier"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Construction Efficiency (e.g. reductions to time and cost)"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Reduction in planning man-hours",
+      "accelerated time-to-quote"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Drilling Optimization",
+    "description_and_problem_statement": "Model geophysics of drill site and bit performance to optimize drilling to reduce wear on assets, lower costs, and improve margins",
+    "use_case_status": "Demo/Material - Not Deployed",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "VP of Field Operations",
+      "VP of Exploration & Production"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise Agent Platform",
+      "Analytics-BigQuery",
+      "Vizier",
+      "WeatherNext"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Reduced costs; improved margins"
+    ],
+    "value_narrative": "",
+    "kpis": [],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Refinery Yield and Profitability Optimization",
+    "description_and_problem_statement": "Improving refinery yield with agentic AI, using real-time data ingestion to optimize crude blending, maximizing high-value product output.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise Agent Platform"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Reduced costs; improved margins"
+    ],
+    "value_narrative": "",
+    "kpis": [],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Connected Worker (supply chain + work management + routing + dispatch) of the Future",
+    "description_and_problem_statement": "Enable field workers to have work dynamically assigned and find the optimal route to the worksite, based on crew skills, supply chain, and weather.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "COO",
+      "VP Operations",
+      "Chief Customer Officer",
+      "E/S/VP Transmission/Distribution"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise",
+      "Gemini Enterprise Agent Platform",
+      "Google Workspace"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Field Productivity Increase (Wrench time); Reduced OpEx"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Reduced overtime",
+      "faster dispatch",
+      "improved first-time fix rates"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Integrated Grid Strategy (Veg Mgmt, OH to UG conversion, Leak Detection)",
+    "description_and_problem_statement": "Optimization agent to provide monthly recommendations based on RoE, cashflow, customer satisfaction, and reliability targets.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "COO",
+      "VP Operations",
+      "VP Smart Grid",
+      "Manager Vegetation Mgmt",
+      "VP Engineering"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "Gemini Enterprise Agent Platform"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Capital Efficiency and Risk Optimization"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Gain in CapEx spend accuracy",
+      "reduction in total congestion costs"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Co-Engineer / Co-Scientist AI Assistant",
+    "description_and_problem_statement": "Using agentic AI to assist design engineers for repetitive work, suggesting least-cost, most-reliable solutions.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "COO",
+      "VP Operations",
+      "VP Engineering"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise",
+      "Gemini Enterprise Agent Platform"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Reduced costs; faster throughput"
+    ],
+    "value_narrative": "",
+    "kpis": [],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Enhanced Energy Trading and Risk Management",
+    "description_and_problem_statement": "Using insights from forecasted demand, supply, congestion, and other external factors, use AI to develop algorithmic, automated trading solutions.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "E/S/VP of Energy Trading or Forecasting",
+      "COO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "Gemini Enterprise Agent Platform",
+      "WeatherNext"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Increased Trading Margins"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Higher margins",
+      "avoided hedging losses"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Integrated Customer Engagement and Marketing AI-Led Transformation",
+    "description_and_problem_statement": "Using agentic AI to predict customer needs and proactively market solutions (program enrollment, billing, outages).",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "Chief Customer Officer",
+      "VP of Call Center Operations"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise",
+      "GECX",
+      "Analytics-BigQuery",
+      "Analytics-Looker"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Improvements to customer satisfaction / engagement / NPS; call center volume reduction"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Reduced cost-to-serve",
+      "increased program enrollment"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Asset Automation (unit start up or shut down)",
+    "description_and_problem_statement": "Automation to enable safe unit starts and stop, while minimizing cost and employee involvement.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise Agent Platform",
+      "Analytics-Pub/Sub",
+      "Cloud Dataflow"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Reduced operating costs; higher reliability"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Extended asset life (CAPEX deferral)",
+      "self-healing grid"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Layered Computing and Optimization at the Grid Edge",
+    "description_and_problem_statement": "Using edge-base kubernetes and agentic AI to identify anomalous asset behavior and trigger work orders.",
+    "use_case_status": "Demo/Material - Not Deployed",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "COO",
+      "VP Operations",
+      "VP Smart Grid",
+      "Asset Management"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise Agent Platform",
+      "GDC",
+      "WeatherNext"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "CapEx Deferral (Non-wires Alternatives, Volt/VAR optimization)"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Reduced peak demand charges",
+      "DER integration"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Extracting Data from Documentation",
+    "description_and_problem_statement": "Utilizing Gemini to automatically extract master data from P&ID drawings, single-line diagrams, and regulatory documents.",
+    "use_case_status": "",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "VP Engineering",
+      "Operations Directors",
+      "EPC Leads"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise",
+      "Gemini Enterprise Agent Platform",
+      "BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Construction Efficiency (~$20M annual cost avoidance)"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Recovering 100k+ engineering hours"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Multimodal Drone Visual Analytics",
+    "description_and_problem_statement": "Deploying Drone & AI strategies to automate remote visual inspections, monitor wildlife, and track asset integrity.",
+    "use_case_status": "",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "VP Operations",
+      "Asset Managers",
+      "Innovation VPs"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise",
+      "GDC",
+      "Google Earth Engine"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Reduced costs; higher reliability, inspection efficiency & throughput"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "15-25% insurance premium reduction",
+      "avoidance of shutdowns"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Dispatch Decision Optimization - Grid Composer",
+    "description_and_problem_statement": "Optimizes unit commitment and grid operations to solve cost inefficiencies created by siloed decision-making.",
+    "use_case_status": "",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "VP Energy Marketing & Trading",
+      "VP Generation",
+      "VP Power Delivery"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise Agent Platform",
+      "Analytics-BigQuery",
+      "Compute Engine"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Avoided cost and risk from siloed decision-making and unnecessary plant shutdowns."
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Prevents unnecessary shutdowns",
+      "eliminates handoff gap"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Generation Performance Intelligence - Gen E",
+    "description_and_problem_statement": "Helps generation operators find and recover missing megawatts caused by forecast errors and performance degradation.",
+    "use_case_status": "",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "VP of Power Generation"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "Gemini Enterprise Agent Platform",
+      "WeatherNext"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Maximized revenue and minimized operating costs by recovering lost megawatts."
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Solves revenue leakage",
+      "pinpoints asset-level Diagnostics"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Non-Revenue Water Loss Reduction & Anomaly Detection",
+    "description_and_problem_statement": "Reduce non-revenue water loss through AI-driven anomaly detection.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "VP Water Operations",
+      "Director Network Integrity",
+      "Asset Managers"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "Gemini Enterprise Agent Platform"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Minimized water loss and optimized capital allocation."
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Predicts leak growth rates",
+      "detects deviations in real-time"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Agentic Field Vehicle Routing w/ WeatherNext",
+    "description_and_problem_statement": "Dynamically optimizing the dispatch and routing of Oil & Gas fleets using Vertex AI and WeatherNext.",
+    "use_case_status": "",
+    "industry_pillar": "Build and Operate secure resilient infrastructure more efficiently (Operational Excellence)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "VP of Field Operations"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "WeatherNext",
+      "Google Maps",
+      "Gemini Enterprise Agent Platform",
+      "BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Reduced fuel consumption and fleet maintenance costs."
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Proactive rerouting",
+      "reduction in Scope 1 emissions"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  }
+]

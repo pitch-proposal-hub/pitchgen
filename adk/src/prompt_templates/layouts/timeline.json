@@ -1,31 +1,34 @@
 {
     "templates": {
         "1": {
-            "title": "30 to 40 characters",
-            "subtitle": "50 to 80 characters",
-            "item1": "10 to 30 characters",
-            "item2": "10 to 30 characters",
-            "item3": "10 to 30 characters",
-            "item4": "10 to 30 characters",
-            "item5": "10 to 30 characters",
-            "item6": "10 to 30 characters"
+            "title": "40 to 56 characters",
+            "subtitle": "65 to 95 characters",
+            "header1": "16 to 24 characters",
+            "header1_content": "65 to 85 characters",
+            "item1": "8 to 14 characters",
+            "header2": "16 to 24 characters",
+            "header2_content": "65 to 85 characters",
+            "item2": "8 to 14 characters",
+            "header3": "16 to 24 characters",
+            "header3_content": "65 to 85 characters",
+            "item3": "8 to 14 characters",
+            "header4": "16 to 24 characters",
+            "header4_content": "65 to 85 characters",
+            "item4": "8 to 14 characters"
         },
         "2": {
-            "title": "30 to 40 characters",
-            "date1": "10 to 12 characters",
-            "date1_content": "10 to 50 characters",
-            "date2": "10 to 12 characters",
-            "date2_content": "10 to 50 characters",
-            "date3": "10 to 12 characters",
-            "date3_content": "10 to 50 characters",
-            "date4": "10 to 12 characters",
-            "date4_content": "10 to 50 characters",
-            "date5": "10 to 12 characters",
-            "date5_content": "10 to 50 characters",
-            "date6": "10 to 12 characters",
-            "date6_content": "10 to 50 characters",
-            "date7": "10 to 12 characters",
-            "date7_content": "10 to 50 characters"
+            "title": "38 to 54 characters",
+            "subtitle": "65 to 95 characters",
+            "header1": "14 to 22 characters",
+            "header1_content": "55 to 75 characters",
+            "header2": "14 to 22 characters",
+            "header2_content": "55 to 75 characters",
+            "header3": "14 to 22 characters",
+            "header3_content": "55 to 75 characters",
+            "header4": "14 to 22 characters",
+            "header4_content": "55 to 75 characters",
+            "header5": "14 to 22 characters",
+            "header5_content": "55 to 75 characters"
         },
         "3": {
             "title": "30 to 40 characters",
@@ -178,5 +181,5 @@
             "date4_content": "10 to 50 characters"
         }
     },
-    "examples": "* Example 1:\n[Input]\n```INPUT_TEXT\nSlide Title:\nKey Cloud Milestones\nSlide Content:\n-2008: Google App Engine launched, marking Google's initial PaaS offering.\n-2012: Google Compute Engine introduced, providing IaaS capabilities.\n-2013: BigQuery launched, enabling serverless data warehousing.\n-2014: Kubernetes open-sourced, revolutionizing container orchestration.\n-2016: Cloud Functions released, facilitating serverless event-driven computing.\n-2019: Anthos launched, supporting hybrid and multi-cloud deployments.\n-2020: Vertex AI platform introduced, consolidating machine learning tools.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"3\",\n    \"placeholders\":{\n    \"title\": \"Google & GCP: Broadening Horizons\",\n    \"date1\": \"1998\",\n    \"date1_content\": \"Google Search Engine Launch\",\n    \"date2\": \"2001\",\n    \"date2_content\": \"Image Search Introduction\",\n    \"date3\": \"2004\",\n    \"date3_content\": \"Gmail Email Service\",\n    \"date4\": \"2005\",\n    \"date4_content\": \"Google Maps and Earth\",\n    \"date5\": \"2008\",\n    \"date5_content\": \"Chrome & App Engine\",\n    \"date6\": \"2012\",\n    \"date6_content\": \"Compute Engine Infrastructure\",\n    \"date7\": \"2014\",\n    \"date7_content\": \"Kubernetes Open Source\",\n    \"date8\": \"2019\",\n    \"date8_content\": \"Anthos Hybrid Cloud\",\n    \"date9\": \"2023\",\n    \"date9_content\": \"Generative AI advancements\"\n}\n}\n```\n\n* Example 2:\n[Input]\n```INPUT_TEXT\nSlide Title: Google's Core Evolutions\nSlide Content: \n-1998: Search Engine Foundation.\n-2004: Expansion into Communication with Gmail.\n-2005: Mapping and Location Services with Google Maps.\n-2006: Multimedia Integration with YouTube.\n-2008: Web Browser Development with Chrome.\n-2012: Major Cloud Infrastructure with Compute Engine.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"1\",\n    \"placeholders\":{\n    \"title\": \"Google's Core Evolutions\",\n    \"subtitle\": \"Key milestones in Google's expanding ecosystem.\",\n    \"item1\": \"1998: Search Engine\",\n    \"item2\": \"2004: Gmail Communication\",\n    \"item3\": \"2005: Google Maps Launch\",\n    \"item4\": \"2006: YouTube Integration\",\n    \"item5\": \"2008: Chrome Web Browser\",\n    \"item6\": \"2012: Compute Engine Cloud\"\n}\n}\n```\n\n* Example 3:\n[Input]\n```INPUT_TEXT\nSlide Title: Google & GCP: Key Year-Based Developments\nSlide Content: \n-1998: Search Engine Launch - Foundation: Google's search engine began, revolutionizing information access with its PageRank algorithm, setting the stage for future innovations.\n-2004: Gmail - Communication: Gmail launched, offering vast storage and a new approach to email management, significantly impacting online communication standards.\n-2008: Chrome & App Engine - Web & Cloud: Chrome browser debuted, challenging existing browsers; App Engine introduced PaaS, marking Google's entry into cloud computing.\n-2012: Compute Engine - Infrastructure: Compute Engine provided IaaS, enabling scalable virtual machines, a major step in building Cloud Platform's core services.\n-2014: Kubernetes - Containerization: Kubernetes was open-sourced, automating container deployment and management, becoming a leading orchestration platform.\n-2019: Anthos - Hybrid Cloud: Anthos launched, allowing consistent management of applications across on-premises and cloud environments, addressing hybrid needs.\n-2023: Generative AI - Innovation: Google introduced advanced generative AI models, like PaLM 2 and Gemini, demonstrating significant strides in AI capabilities.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"8\",\n    \"placeholders\":{\n  \"title\": \"Google & GCP: Year-Based Timeline\",\n  \"date1\": \"1998\",\n  \"date2\": \"2004\",\n  \"date3\": \"2008\",\n  \"date4\": \"2012\",\n  \"date5\": \"2014\",\n  \"date6\": \"2019\",\n  \"date7\": \"2023\",\n  \"header1\": \"Search Engine\",\n  \"header1_content\": \"Google Search launched, revolutionizing info access.\",\n  \"header2\": \"Gmail\",\n  \"header2_content\": \"Gmail launched, impacting online communication standards.\",\n  \"header3\": \"Chrome & App Engine\",\n  \"header3_content\": \"Chrome debuted; App Engine introduced PaaS cloud.\",\n  \"header4\": \"Compute Engine\",\n  \"header4_content\": \"Compute Engine provided IaaS, building GCP's core.\",\n  \"header5\": \"Kubernetes\",\n  \"header5_content\": \"Kubernetes open-sourced, a leading orchestration platform.\",\n  \"header6\": \"Anthos\",\n  \"header6_content\": \"Anthos launched, managing apps across environments.\",\n  \"header7\": \"Generative AI\",\n  \"header7_content\": \"Introduced advanced AI models, like PaLM 2 & Gemini.\"\n}\n}\n```"
+    "examples": "* Example 1:\n[Input]\n```INPUT_TEXT\nSlide Title:\nKey GCP Milestones\nSlide Content:\n-2008: Google App Engine launched, marking Google's initial PaaS offering.\n-2012: Google Compute Engine introduced, providing IaaS capabilities.\n-2013: BigQuery launched, enabling serverless data warehousing.\n-2014: Kubernetes open-sourced, revolutionizing container orchestration.\n-2016: Cloud Functions released, facilitating serverless event-driven computing.\n-2019: Anthos launched, supporting hybrid and multi-cloud deployments.\n-2020: Vertex AI platform introduced, consolidating machine learning tools.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"3\",\n    \"placeholders\":{\n\u00a0\u00a0\u00a0\u00a0\"title\": \"Google & GCP: Broadening Horizons\",\n\u00a0\u00a0\u00a0\u00a0\"date1\": \"1998\",\n\u00a0\u00a0\u00a0\u00a0\"date1_content\": \"Google Search Engine Launch\",\n\u00a0\u00a0\u00a0\u00a0\"date2\": \"2001\",\n\u00a0\u00a0\u00a0\u00a0\"date2_content\": \"Image Search Introduction\",\n\u00a0\u00a0\u00a0\u00a0\"date3\": \"2004\",\n\u00a0\u00a0\u00a0\u00a0\"date3_content\": \"Gmail Email Service\",\n\u00a0\u00a0\u00a0\u00a0\"date4\": \"2005\",\n\u00a0\u00a0\u00a0\u00a0\"date4_content\": \"Google Maps and Earth\",\n\u00a0\u00a0\u00a0\u00a0\"date5\": \"2008\",\n\u00a0\u00a0\u00a0\u00a0\"date5_content\": \"Chrome & App Engine\",\n\u00a0\u00a0\u00a0\u00a0\"date6\": \"2012\",\n\u00a0\u00a0\u00a0\u00a0\"date6_content\": \"Compute Engine Infrastructure\",\n\u00a0\u00a0\u00a0\u00a0\"date7\": \"2014\",\n\u00a0\u00a0\u00a0\u00a0\"date7_content\": \"Kubernetes Open Source\",\n\u00a0\u00a0\u00a0\u00a0\"date8\": \"2019\",\n\u00a0\u00a0\u00a0\u00a0\"date8_content\": \"Anthos Hybrid Cloud\",\n\u00a0\u00a0\u00a0\u00a0\"date9\": \"2023\",\n\u00a0\u00a0\u00a0\u00a0\"date9_content\": \"Generative AI advancements\"\n}\n}\n```\n\n* Example 2:\n[Input]\n```INPUT_TEXT\nSlide Title: Google's Core Evolutions\nSlide Content: \n-1998: Search Engine Foundation.\n-2004: Expansion into Communication with Gmail.\n-2005: Mapping and Location Services with Google Maps.\n-2006: Multimedia Integration with YouTube.\n-2008: Web Browser Development with Chrome.\n-2012: Major Cloud Infrastructure with Compute Engine.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"1\",\n    \"placeholders\":{\n\u00a0\u00a0\u00a0\u00a0\"title\": \"Google's Core Evolutions\",\n\u00a0\u00a0\u00a0\u00a0\"subtitle\": \"Key milestones in Google's expanding ecosystem.\",\n\u00a0\u00a0\u00a0\u00a0\"item1\": \"1998: Search Engine\",\n\u00a0\u00a0\u00a0\u00a0\"item2\": \"2004: Gmail Communication\",\n\u00a0\u00a0\u00a0\u00a0\"item3\": \"2005: Google Maps Launch\",\n\u00a0\u00a0\u00a0\u00a0\"item4\": \"2006: YouTube Integration\",\n\u00a0\u00a0\u00a0\u00a0\"item5\": \"2008: Chrome Web Browser\",\n\u00a0\u00a0\u00a0\u00a0\"item6\": \"2012: Compute Engine Cloud\"\n}\n}\n```\n\n* Example 3:\n[Input]\n```INPUT_TEXT\nSlide Title: Google & GCP: Key Year-Based Developments\nSlide Content: \n-1998: Search Engine Launch - Foundation: Google's search engine began, revolutionizing information access with its PageRank algorithm, setting the stage for future innovations.\n-2004: Gmail - Communication: Gmail launched, offering vast storage and a new approach to email management, significantly impacting online communication standards.\n-2008: Chrome & App Engine - Web & Cloud: Chrome browser debuted, challenging existing browsers; App Engine introduced PaaS, marking Google's entry into cloud computing.\n-2012: Compute Engine - Infrastructure: Compute Engine provided IaaS, enabling scalable virtual machines, a major step in building Google Cloud Platform's core services.\n-2014: Kubernetes - Containerization: Kubernetes was open-sourced, automating container deployment and management, becoming a leading orchestration platform.\n-2019: Anthos - Hybrid Cloud: Anthos launched, allowing consistent management of applications across on-premises and cloud environments, addressing hybrid needs.\n-2023: Generative AI - Innovation: Google introduced advanced generative AI models, like PaLM 2 and Gemini, demonstrating significant strides in AI capabilities.\n```\n\n[Output]\n```JSON\n{\n    \"template\": \"8\",\n    \"placeholders\":{\n  \"title\": \"Google & GCP: Year-Based Timeline\",\n  \"date1\": \"1998\",\n  \"date2\": \"2004\",\n  \"date3\": \"2008\",\n  \"date4\": \"2012\",\n  \"date5\": \"2014\",\n  \"date6\": \"2019\",\n  \"date7\": \"2023\",\n  \"header1\": \"Search Engine\",\n  \"header1_content\": \"Google Search launched, revolutionizing info access.\",\n  \"header2\": \"Gmail\",\n  \"header2_content\": \"Gmail launched, impacting online communication standards.\",\n  \"header3\": \"Chrome & App Engine\",\n  \"header3_content\": \"Chrome debuted; App Engine introduced PaaS cloud.\",\n  \"header4\": \"Compute Engine\",\n  \"header4_content\": \"Compute Engine provided IaaS, building GCP's core.\",\n  \"header5\": \"Kubernetes\",\n  \"header5_content\": \"Kubernetes open-sourced, a leading orchestration platform.\",\n  \"header6\": \"Anthos\",\n  \"header6_content\": \"Anthos launched, managing apps across environments.\",\n  \"header7\": \"Generative AI\",\n  \"header7_content\": \"Introduced advanced AI models, like PaLM 2 & Gemini.\"\n}\n}\n```"
 }

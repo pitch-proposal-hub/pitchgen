@@ -1,42 +1,29 @@
-"""This module contains functions for generating and adding slides to a presentation deck.
-
-test comment
-"""
+"""Functions for generating and adding slides to a presentation deck."""
 
 import json
 import os
 import re
+
+from config_loader import load_config
 from google import genai
 from google.cloud import storage
 from google.genai import types
-from config_loader import load_config
 from pitchgen_utils.template_sorting import get_placeholders_json
 
 
 def generate(prompt, model):
-  """Generates content for a slide based on the given prompt using a generative model.
+  """Generates content for a slide based on prompt using Gemini.
 
-  Parameters:
-  - prompt (str): The input prompt or context for generating slide content.
+  Args:
+    prompt: The input prompt or context for generating slide content.
+    model: The Gemini model name to use.
 
   Returns:
-  - str: The generated content for the slide.
+    str: The generated JSON string content for the slide.
   """
   config = load_config()
   project_id = config["default"]["project_name"]
-  region = config["default"]["region"]
-  #     vertexai.init(project=project_id, location=region)
-  #     model = GenerativeModel("gemini-3.5-flash", system_instruction = ["Please provide output in json format."])
-  #     generation_config = {
-  #       "top_p": 0.95,
-  #       "temperature": 0,
-  # 	  "response_mime_type": "application/json"
-  #     }
 
-  #     responses = model.generate_content(
-  #         prompt,
-  #         generation_config=generation_config
-  #     )
   client = genai.Client(
       vertexai=True,
       project=project_id,
@@ -54,40 +41,35 @@ def generate(prompt, model):
   )
 
   output_text = ""
-  if response.candidates and response.candidates[0].content.parts:
-    output_text = "".join([
-        part.text
-        for part in response.candidates[0].content.parts
-        if hasattr(part, "text") and part.text
-    ])
+  if response and response.candidates:
+    candidate = response.candidates[0]
+    content = getattr(candidate, "content", None)
+    parts = getattr(content, "parts", None) if content else None
+    if parts:
+      output_text = "".join([
+          str(getattr(part, "text", ""))
+          for part in parts
+          if getattr(part, "text", None)
+      ])
 
   return output_text
 
 
 def image_data_extraction(text, input_data):
-  """Generates content for a slide based on the given prompt using a generative model.
+  """Extracts metadata from slide text and input data using Gemini.
 
-  Parameters:
-  - prompt (str): The input prompt or context for generating slide content.
+  Args:
+    text: Contextual text extracted from slide.
+    input_data: User or template image context.
 
   Returns:
-  - str: The generated content for the slide.
+    tuple: (er_number, audience, industry, solution, customer_name,
+    business_context)
   """
   config = load_config()
   project_id = config["default"]["project_name"]
-  region = config["default"]["region"]
   bucket_name_content = config["bucket"]["content"]
-  #     vertexai.init(project=project_id, location=region)
 
-  #     model = GenerativeModel("gemini-3.5-flash")
-
-  #     generation_config = {
-  #         "max_output_tokens": 2048,
-  #         "top_p": 0.4,
-  #         "top_k": 32,
-  # 		"response_mime_type": "application/json"
-  #     }
-  #     response = model.generate_content([text, input_data], generation_config=generation_config)
   client = genai.Client(
       vertexai=True,
       project=project_id,
@@ -105,53 +87,59 @@ def image_data_extraction(text, input_data):
   )
 
   slide_details_json = ""
-  if response.candidates and response.candidates[0].content.parts:
-    slide_details_json = "".join([
-        part.text
-        for part in response.candidates[0].content.parts
-        if hasattr(part, "text") and part.text
-    ])
-
-  # slide_details_json = response.text
+  if response and response.candidates:
+    candidate = response.candidates[0]
+    content = getattr(candidate, "content", None)
+    parts = getattr(content, "parts", None) if content else None
+    if parts:
+      slide_details_json = "".join([
+          str(getattr(part, "text", ""))
+          for part in parts
+          if getattr(part, "text", None)
+      ])
 
   slide_details_json = slide_details_json.replace("```json", "")
   slide_details_json = slide_details_json.replace("```", "")
 
+  output_data = {}
   try:
     output_data = json.loads(slide_details_json.strip())
-  except json.JSONDecodeError as e:
+  except Exception as e:
     print(f"Error decoding JSON: {e}")
-    return
+    m = re.search(r"\{.*\}", slide_details_json, re.DOTALL)
+    if m:
+      try:
+        output_data = json.loads(m.group(0))
+      except Exception:
+        output_data = {}
+
+  if not output_data:
+    return ("", [], "", [], "", "")
 
   print(json.dumps(output_data, indent=2))
 
   audiences = output_data.get("Audience", [])
-  if audiences != []:
-    try:
-      try:
-        audience = audiences.split(",")
-      except Exception as e:
-        audience = audiences.split(", ")
-    except Exception as e:
-      audience = [audiences]
-  else:
+  if isinstance(audiences, str):
+    audience = [a.strip() for a in audiences.split(",") if a.strip()]
+  elif isinstance(audiences, list):
     audience = audiences
+  else:
+    audience = [str(audiences)] if audiences else []
+
   print("audience:", audience)
   customer_name = output_data.get("Customer Name", "")
   business_context = output_data.get("Business context", "")
   er_number = output_data.get("ER Number", "")
   industry = output_data.get("Industry", "")
+
   solutions = output_data.get("Solution", [])
-  if solutions != []:
-    try:
-      try:
-        solution = solutions.split(", ")
-      except Exception as e:
-        solution = solutions.split(",")
-    except Exception as e:
-      solution = [solutions]
-  else:
+  if isinstance(solutions, str):
+    solution = [s.strip() for s in solutions.split(",") if s.strip()]
+  elif isinstance(solutions, list):
     solution = solutions
+  else:
+    solution = [str(solutions)] if solutions else []
+
   print("solution:", solution)
 
   filename = f"extracted_slide_details_{customer_name}.json"
@@ -172,9 +160,9 @@ def upload_json_from_blob(bucket_name, data, file_name):
   """Upload JSON data to a specified Google Cloud Storage bucket.
 
   Args:
-      bucket_name (str): The name of the GCS bucket.
-      data (str): The JSON data to upload.
-      file_name (str): The name of the file to create in the bucket.
+    bucket_name: The name of the GCS bucket.
+    data: The JSON data to upload.
+    file_name: The name of the file to create in the bucket.
   """
   client = storage.Client()
   bucket = client.bucket(bucket_name)
@@ -183,7 +171,7 @@ def upload_json_from_blob(bucket_name, data, file_name):
 
 
 def clean_json_string(json_string):
-  """Clean the generated JSON string by ensuring proper escaping and removing any trailing commas or problematic newlines."""
+  """Clean the generated JSON string by escaping and removing trailing commas."""
   json_string = json_string.strip()
   json_string = re.sub(r",\s*}", "}", json_string)
   json_string = re.sub(r",\s*]", "]", json_string)
@@ -204,19 +192,18 @@ def add_slide(
 ):
   """Adds a new slide to a presentation deck based on given inputs.
 
-  Parameters:
-  - ensemble_retriever: An instance of the ensemble retriever used to retrieve
-  documents.
-  - slide_title (str): The title of the slide to be added.
-  - slide_content (str): The content or text of the slide.
-  - slide_layout: The layout or format of the slide.
-  - slide_category: The category or type of the slide.
-  - deck_id (str): The ID of the presentation deck.
-  - slide_id (str): The ID of the slide within the deck.
+  Args:
+    ensemble_retriever: An instance of the ensemble retriever.
+    slide_title: The title of the slide to be added.
+    slide_content: The content or text of the slide.
+    slide_layout: The layout or format of the slide.
+    slide_category: The category or type of the slide.
+    deck_id: The ID of the presentation deck.
+    slide_id: The ID of the slide within the deck.
+    model: The Gemini model name to use.
 
   Returns:
-  - dict: A JSON object containing placeholders filled according to the
-  generated content.
+    dict: A JSON object containing placeholders filled according to content.
   """
   docs = ensemble_retriever.retrieve(slide_content)
   text = ""
@@ -237,21 +224,36 @@ def add_slide(
 
   if not slide_id:
     designer_prompt_path = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+        os.path.dirname(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        ),
         "prompt_templates/add_slide_designer.txt",
     )
     with open(designer_prompt_path, "r") as prompt_template_file:
       prompt_template = prompt_template_file.read()
-    prompt = prompt_template.replace("{context}", text).replace("{slide_description}", slide_content)
-    designed_slide = generate(prompt, model)
-    designed_slide = clean_json_string(designed_slide)
-    designed_slide = designed_slide.strip()
-    designed_slide = designed_slide[
-        designed_slide.index("{") : (
-            ((len(designed_slide) - 1) - designed_slide[::-1].index("}") + 1)
+    prompt = (
+        prompt_template.replace("{context}", text)
+        .replace("{slide_description}", slide_content)
+    )
+    try:
+      designed_slide_raw = generate(prompt, model)
+      designed_slide_clean = clean_json_string(designed_slide_raw).strip()
+      if "{" in designed_slide_clean and "}" in designed_slide_clean:
+        start_idx = designed_slide_clean.index("{")
+        end_idx = (
+            len(designed_slide_clean)
+            - 1
+            - designed_slide_clean[::-1].index("}")
+            + 1
         )
-    ]
-    designed_slide = json.loads(designed_slide.strip(), strict=False)
+        designed_slide_clean = designed_slide_clean[start_idx:end_idx]
+      designed_slide = json.loads(designed_slide_clean.strip(), strict=False)
+    except Exception as e:
+      print(f"[SidebarAddSlidesWorkflow] Warning: Failed to parse designer output: {e}")
+      designed_slide = {
+          "slide_title": slide_title if slide_title else "Generated Slide",
+          "slide_content": slide_content,
+      }
     slide_title_content = f"""
 -----Task 1 Completed successfully-----
 
@@ -296,10 +298,6 @@ Slide Content: {designed_slide['slide_content']}
         "placeholders": op_json["agendas"]["0"]["slides"]["1"]["placeholders"],
     }
 
-  config = load_config()
-  bucket_name = config["bucket"]["template"]
-  client = storage.Client()
-  bucket = client.bucket(bucket_name)
   templates_metadata = {
       "Case Study": "case_study",
       "Charts": "charts",
@@ -327,9 +325,15 @@ Slide Content: {designed_slide['slide_content']}
       "GC_AI_Content slides": "gc_ai_Content_slides",
       "GC_AI_Speaker slides General AI": "gc_ai_Speaker_slides_General_AI",
       "GC_AI_Speaker slides AI agents": "gc_ai_Speaker_slides_AI_agents",
-      "GC_AI_Key takeaway slides General AI": "gc_ai_Key_takeaway_slides_General AI",
-      "GC_AI_Key takeaway slides AI agents": "gc_ai_Key_takeaway_slides_AI_agents",
-      "GC_AI_Key takeaway slides Gradient": "gc_ai_Key_takeaway_slides_Gradient",
+      "GC_AI_Key takeaway slides General AI": (
+          "gc_ai_Key_takeaway_slides_General AI"
+      ),
+      "GC_AI_Key takeaway slides AI agents": (
+          "gc_ai_Key_takeaway_slides_AI_agents"
+      ),
+      "GC_AI_Key takeaway slides Gradient": (
+          "gc_ai_Key_takeaway_slides_Gradient"
+      ),
       "GC_AI_Quote slides General AI": "gc_ai_Quote_slides_General AI",
       "GC_AI_Quote slides AI agents": "gc_ai_Quote_slides_AI_agents",
       "GC_AI_Quote slides Gradient": "gc_ai_Quote_slides_Gradient",
@@ -346,9 +350,9 @@ Slide Content: {designed_slide['slide_content']}
       "Industry Use Case": "industry_use_case",
   }
 
-  workflows_dir = os.path.dirname(os.path.abspath(__file__)) # src/agents/workflows
-  src_dir = os.path.dirname(os.path.dirname(workflows_dir)) # src/
-  
+  workflows_dir = os.path.dirname(os.path.abspath(__file__))  # src/agents/workflows
+  src_dir = os.path.dirname(os.path.dirname(workflows_dir))  # src/
+
   layout_name = templates_metadata.get(slide_category, "context")
   layout_file = os.path.join(
       src_dir, "prompt_templates", "layouts", f"{layout_name}.json"
@@ -361,8 +365,9 @@ Slide Content: {designed_slide['slide_content']}
   metadata_file = os.path.join(
       src_dir, "templates_metadata", f"{layout_name}.txt"
   )
-  
+
   template_num = None
+  metadata = {}
   if os.path.exists(metadata_file):
     try:
       with open(metadata_file, "r") as f:
@@ -380,33 +385,44 @@ Slide Content: {designed_slide['slide_content']}
     template = layout_data["templates"][template_num]
 
   if template is None:
-    # Fallback to first template placeholders if not found
+    # Fallback to first template placeholders (and live slide_id if the requested slide_id was deleted from Context-v1)
     first_key = list(layout_data["templates"].keys())[0]
     template = layout_data["templates"][first_key]
+    if metadata and deck_id == "TEMPLATE_DECK_CONTEXT_V1_PLACEHOLDER_001":
+      for key in metadata.keys():
+        parts = key.split("@")
+        if len(parts) >= 3 and parts[0] == str(first_key):
+          slide_id = parts[2]
+          break
   template = json.dumps(template, indent=2)
   add_slide_prompt_path = os.path.join(
-      os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+      os.path.dirname(
+          os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+      ),
       "prompt_templates/add_slide.txt",
   )
   with open(add_slide_prompt_path, "r") as prompt_template_file:
     prompt_template = prompt_template_file.read()
   if not slide_title:
     slide_title = " "
-  prompt = prompt_template.replace("{text}", text).replace("{slide_description}", slide_content).replace("{slide_title}", slide_title).replace("{template}", template)
+  prompt = (
+      prompt_template.replace("{text}", text)
+      .replace("{slide_description}", slide_content)
+      .replace("{slide_title}", slide_title)
+      .replace("{template}", template)
+  )
   retry_count = 0
   while retry_count < 2:
     try:
       if retry_count > 0:
         print("retrying...")
-      output = generate(prompt, model)
-      output = clean_json_string(output)
-      output = output.strip()
-      output = output[
-          output.index("{") : (
-              ((len(output) - 1) - output[::-1].index("}") + 1)
-          )
-      ]
-      placeholders_json = json.loads(output.strip(), strict=False)
+      output_raw = generate(prompt, model)
+      output_clean = clean_json_string(output_raw).strip()
+      if "{" in output_clean and "}" in output_clean:
+        start_idx = output_clean.index("{")
+        end_idx = len(output_clean) - 1 - output_clean[::-1].index("}") + 1
+        output_clean = output_clean[start_idx:end_idx]
+      placeholders_json = json.loads(output_clean.strip(), strict=False)
       return {
           "deck_id": deck_id,
           "slide_id": slide_id,
@@ -415,4 +431,9 @@ Slide Content: {designed_slide['slide_content']}
     except Exception as e:
       print(e)
       retry_count += 1
-      prompt = prompt_template.replace("{text}", text[:10000]).replace("{slide_description}", slide_content).replace("{slide_title}", slide_title).replace("{template}", template)
+      prompt = (
+          prompt_template.replace("{text}", text[:10000])
+          .replace("{slide_description}", slide_content)
+          .replace("{slide_title}", slide_title)
+          .replace("{template}", template)
+      )

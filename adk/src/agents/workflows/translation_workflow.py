@@ -28,6 +28,7 @@ class SlideTranslator:
         self.translation_bucket_name
     )
     self.target_lang_code = ''
+    self.translate_instructions = ''
 
     current_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -77,7 +78,7 @@ class SlideTranslator:
               temperature=0.0,
           ),
       )
-      lang_code = response.text.strip().lower()
+      lang_code = (response.text or "").strip().lower()
       for code in self.codeToLang.keys():
         if code.lower() == lang_code:
           return DetectedLanguage(code, 1.0)
@@ -250,17 +251,22 @@ class SlideTranslator:
         ex_data.append((inp, out))
     return ex_data
 
-  def getTranslationPrompt(self, src_lang, tar_lang, examples, input_text):
+    custom_rule = (
+        '\n            8. ADDITIONAL USER TRANSLATION INSTRUCTIONS / GLOSSARY:'
+        f' {self.translate_instructions}'
+        if getattr(self, 'translate_instructions', '')
+        else ''
+    )
     prompt = [
         f"""You are an expert in translating {src_lang} content to {tar_lang} language while preserving the original meaning and context.
             You follow the RULES below VERY STRICTLY:
             1. DO NOT translate Google Cloud Product names, Technical Terms (acronyms), Organization names.
-            2. DO NOT translate any escape sequences like '\n', '\t', etc., which may appear in the input text.
+            2. DO NOT translate any escape sequences like '\\n', '\\t', etc., which may appear in the input text.
             3. DO NOT translate numerical values, special characters like '%', '.', etc., and whitespaces.
             4. Wherever required, please USE ONLY VALID escape sequences.
             5. Ensure that the translation is accurate and fluent, it should retain the actual meaning, sentence structure and context as much as possible.
             6. Pay attention to gender agreement for articles and adjectives, nuances, idioms, and cultural context to provide the best possible translation.
-            7. Please output ONLY VALID JSON object."""
+            7. Please output ONLY VALID JSON object.{custom_rule}"""
     ]
     if examples:
       prompt.extend([
@@ -600,6 +606,13 @@ class SlideTranslator:
     target_lang = translate_dict['targetLanguage']
     print('target language: ', target_lang)
     self.target_lang_code = self.langToCode[target_lang]
+    self.translate_instructions = str(
+        translate_dict.get('translateInstructions')
+        or translate_dict.get('translate_instructions')
+        or ''
+    ).strip()
+    if self.translate_instructions:
+      print('translate instructions: ', self.translate_instructions)
 
     lang_data = self.get_translation_data(input_data)
     detected_langs = set(lang_data.keys())

@@ -1,0 +1,65 @@
+{
+    "1@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_688": {
+        "header1": "25 to 30 characters"
+    },
+    "2@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_693": {
+        "header1": "25 to 30 characters"
+    },
+    "3@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_698": {
+        "header1": "35 to 40 characters"
+    },
+    "4@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_703": {
+        "header1": "35 to 40 characters"
+    },
+    "5@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_708": {
+        "header1": "25 to 30 characters"
+    },
+    "6@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_713": {
+        "header1": "25 to 30 characters"
+    },
+    "7@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_718": {
+        "header1": "25 to 30 characters"
+    },
+    "8@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_723": {
+        "header1": "25 to 30 characters"
+    },
+    "9@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_728": {
+        "header1": "25 to 30 characters"
+    },
+    "10@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_733": {
+        "header1": "25 to 30 characters"
+    },
+    "11@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_738": {
+        "header1": "25 to 30 characters"
+    },
+    "12@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_743": {
+        "header1": "25 to 30 characters"
+    },
+    "13@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_748": {
+        "header1": "20 to 34 characters"
+    },
+    "14@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_753": {
+        "header1": "20 to 34 characters"
+    },
+    "15@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_758": {
+        "header1": "20 to 34 characters"
+    },
+    "16@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_763": {
+        "header1": "20 to 25 characters"
+    },
+    "17@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_768": {
+        "header1": "20 to 25 characters"
+    },
+    "18@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_773": {
+        "header1": "20 to 25 characters"
+    },
+    "19@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_778": {
+        "header1": "20 to 25 characters"
+    },
+    "20@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_783": {
+        "header1": "20 to 25 characters"
+    },
+    "21@TEMPLATE_DECK_GCAI_DIVIDR_PLACEHOLDER_01@g38a48303b1f_0_788": {
+        "header1": "20 to 25 characters"
+    }
+}

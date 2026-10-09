@@ -1,0 +1,6 @@
+{
+    "1@TEMPLATE_DECK_CS_TITLE_V1_PLACEHOLDER_01@g38d7e408af3_0_446": {
+        "header1": "35 to 40 characters",
+        "header1_content": "30 to 40 characters"
+    }
+}

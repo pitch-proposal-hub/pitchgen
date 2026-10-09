@@ -1,0 +1,482 @@
+[
+  {
+    "use_case_title": "Conversational Commerce",
+    "description_and_problem_statement": "Problem Statement: Retailers face a digitally fragmented e-commerce experience that leads to high search abandonment and customer frustration. \n\nDescription: Engage customers with a natural language shopping assistant that can answer questions, provide style advice, and guide them through their purchase journey.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Capture Unified and Agentic Commerce Grwoth",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "AI -Scale AI Apps and Agents-Primary"
+    ],
+    "key_personas": [
+      "Chief Digital Officer",
+      "VP of Ecommerce",
+      "Head of Customer Experience",
+      "Chief Marketing Officer",
+      "Product Manager of Digital Channels"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a customer, I want to chat with a natural language shopping assistant to get style advice and find the perfect items. As a Head of E-commerce, I want to deploy conversational search to drive higher conversion rates and build deeper customer relationships.",
+    "how_it_works_narrative": "Combines Gemini Enterprise for Customer Experience, Agent Platform, and AI Commerce Search to power natural language shopping assistants. This transforms traditional keyword searches into conversational interactions, guiding customers through their purchase journey.",
+    "key_technologies": [
+      "AI + Machine Learning-Gemini Enterprise",
+      "AI + Machine Learning-Gemini Enterprise Agent Platform",
+      "AI + Machine Learning-Agent Search on Gemini Enterprise Agent Platform "
+    ],
+    "demo_available": "Yes",
+    "demo_links": "https://cloud-demo-hub.corp.google.com/demo/Gemini-Enterprise-for-Customer-Experience---eCommerce-demo-for-NRF/1587?origin=search_demos",
+    "demo_type": "Functional live demo, Demo videos, Demo GIFs",
+    "agent": "ADK + GE",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/agentic-ai-overview",
+    "google_proof_points": [
+      "Lowe's",
+      "The Home Depot",
+      "Carrefour Taiwan",
+      "Macy's",
+      "Ulta"
+    ],
+    "value_driver": [
+      "Grow the Business",
+      "Improve Profitability"
+    ],
+    "value_narrative": "Engage customers with a natural language shopping assistant that can answer questions, provide style advice, and guide them through their purchase journey. This drives higher conversion rates and average order value through guided, relevant experiences, lowers content creation costs and reduces returns, and builds deeper customer relationships with interactive, personalized shopping assistants.",
+    "kpis": [
+      "Conversion Rate",
+      "Customer Lifetime Value (CLV)",
+      "Cart Abandonment Rate",
+      "Net Promoter Score (NPS)"
+    ],
+    "google_differentiation": "Google uniquely combines AI Commerce Search, Gemini Enterprise Agent Platform, and Generative Media to deliver an end-to-end agentic shopping experience.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Valtech",
+      "Accenture",
+      "Publicis Sapient"
+    ],
+    "isv": [
+      "commercetools",
+      "Wynshop",
+      "Shopify",
+      "Big Commerce"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Autonomous Shopping Agents",
+    "description_and_problem_statement": "Problem Statement: The traditional e-commerce journey suffers from a fundamental disconnect between the online storefront and fulfillment, causing friction in complex shopping tasks. \n\nDescription: Deploy agents that can handle complex, multi-step tasks on behalf of the customer, such as planning a weekly menu and automatically building a cart, or acting as a personal stylist",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Capture Unified and Agentic Commerce Grwoth",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "AI -Scale AI Apps and Agents-Primary"
+    ],
+    "key_personas": [
+      "Chief Digital Officer",
+      "VP of Ecommerce",
+      "Head of Customer Experience",
+      "Chief Marketing Officer",
+      "Product Manager of Digital Channels"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As a customer, I want an AI agent to handle complex tasks like planning my weekly menu and building my grocery cart automatically. As a Chief Digital Officer, I want to offer autonomous shopping agents to reduce customer friction and increase average order value.",
+    "how_it_works_narrative": "Deploys intelligent agents using Gemini Enterprise Agent Platform to execute complex, multi-step customer tasks autonomously. These agents can handle activities like planning weekly menus and automatically building grocery carts.",
+    "key_technologies": [
+      "AI + Machine Learning-Gemini Enterprise",
+      "AI + Machine Learning-Agent Platform"
+    ],
+    "demo_available": "Yes",
+    "demo_links": "1. https://cloud-demo-hub.corp.google.com/demo/Conversational-Agent-for-assisted-shopping---Apparel/1144?origin=search_demos\n2. https://cloud-demo-hub.corp.google.com/demo/Conversational-Agent-for-assisted-shopping---Apparel/1144?origin=search_demos",
+    "demo_type": "Functional live demo, Demo videos, Demo GIFs",
+    "agent": "ADK + GE, GE",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/agentic-ai-overview",
+    "google_proof_points": [
+      "Lowe's",
+      "The Home Depot",
+      "Carrefour Taiwan",
+      "Macy's",
+      "Ulta"
+    ],
+    "value_driver": [
+      "Grow the Business",
+      "Improve Profitability"
+    ],
+    "value_narrative": "Deploy agents that can handle complex, multi-step tasks on behalf of the customer, such as planning a weekly menu and automatically building a cart, or acting as a personal stylist. This drives higher conversion rates and average order value through guided, relevant experiences, lowers content creation costs and reduces returns, and builds deeper customer relationships with interactive, personalized shopping assistants.",
+    "kpis": [
+      "Time-to-Value for New AI Experiences",
+      "Customer Adoption Rate (of Agent)",
+      "Session Engagement with Agent",
+      "CSAT with Agentic Experience"
+    ],
+    "google_differentiation": "Google uniquely combines AI Commerce Search, Agent Platform, and Generative Media to deliver an end-to-end agentic shopping experience.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Salesforce",
+      "Commercetools",
+      "Accenture"
+    ],
+    "isv": [
+      "commercetools",
+      "Wynshop",
+      "Shopify",
+      "Big Commerce"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Catalog & Content Enrichment",
+    "description_and_problem_statement": "Problem Statement: Retailers struggle with inconsistent, incomplete, and uninspiring product catalogs, which leads to poor search results, low conversion rates, and significant manual overhead. \n\nDescription: Automate the creation of product descriptions, marketing copy, and promotional content, dramatically increasing content velocity and reducing manual effort",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Capture Unified and Agentic Commerce Grwoth",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "AI -Your Business. Your Models - Agent Platform -Growth",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer",
+      "VP of Ecommerce",
+      "Head of Content Marketing",
+      "Catalog Manager",
+      "Chief Digital Officer",
+      "Product Marketing Director"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Catalog Manager, I want AI to automatically generate product descriptions and marketing copy to reduce my manual workload. As a Chief Marketing Officer, I want to accelerate product time-to-market and lower content production costs.",
+    "how_it_works_narrative": "Employs natively multimodal Gemini models on Agent Platform to automate the generation of rich product descriptions, marketing copy, and promotional content. This reduces manual effort and accelerates the time-to-market for new products.",
+    "key_technologies": [
+      "AI + Machine Learning-Gemini Enterprise",
+      "AI + Machine Learning-Agent Platform"
+    ],
+    "demo_available": "Yes",
+    "demo_links": "https://cloud-demo-hub.corp.google.com/demo/Digital-Commerce---Retail-Catalog/914?origin=search_demos",
+    "demo_type": "Functional live demo, Demo videos",
+    "agent": "ADK",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-marketing-campaigns",
+    "google_proof_points": [
+      "Wayfair",
+      "Carrefour"
+    ],
+    "value_driver": [
+      "Grow the Business",
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Automate the creation of product descriptions, marketing copy, and promotional content, dramatically increasing content velocity and reducing manual effort. This accelerates time-to-market by reducing the manual effort required to onboard new products, improves product findability and creates more engaging product pages that drive sales, and lowers the costs associated with manual data entry, content creation, and error correction.",
+    "kpis": [
+      "Product Time-to-Market",
+      "Content Production Cost",
+      "Data Accuracy/Consistency Rate",
+      "SKU Onboarding Time"
+    ],
+    "google_differentiation": "Natively Multimodal AI lets retailers use Gemini on Agent Platform to auto-generate rich attributes from images, accelerating time-to-market.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Valtech",
+      "SoftServe",
+      "Accenture"
+    ],
+    "isv": [
+      "Akeneo"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Virtual Try On & Product Visualization",
+    "description_and_problem_statement": "Problem Statement: Customers often experience a disconnect between digital product representations and physical reality, leading to purchase hesitation and high return rates. \n\nDescription: Create the shopping experience where the customer is at by leveraging our genmedia stack to virtually try on clothes, makeup, try different styles with new items or what you have already in your closet.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Capture Unified and Agentic Commerce Grwoth",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "AI -Leverage Generative Media in your Business -Growth"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer",
+      "VP of Ecommerce",
+      "Head of Content Marketing",
+      "Catalog Manager",
+      "Chief Digital Officer",
+      "Product Marketing Director"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As a customer, I want to virtually try on clothes and makeup to see how they look on me before purchasing. As a VP of E-commerce, I want to provide immersive visual experiences to increase buyer confidence and reduce return rates.",
+    "how_it_works_narrative": "Leverages Google's Generative Media stack on Agent Platform to deliver immersive product visualization and virtual try-on experiences. This allows customers to see how clothes or makeup look on them before purchasing, bridging the gap between digital and physical shopping.",
+    "key_technologies": [
+      "AI + Machine Learning-Agent Platform"
+    ],
+    "demo_available": "Yes",
+    "demo_links": "1. https://cloud-demo-hub.corp.google.com/demo/Virtual-Try-On-VTO/1449?origin=search_demos\n2. https://cloud-demo-hub.corp.google.com/demo/GenMedia%253A-Get-ready-with-me---All-in-one-app--for--Clothing%252C-Accessories%252C-Beauty-Makeup%252C-Size-and-Fit-recommendations/1628?origin=search_demos",
+    "demo_type": "Functional live demo, Demo videos",
+    "agent": "ADK + GE, GE, ADK",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/agentic-ai-overview",
+    "google_proof_points": [
+      "Lowe's",
+      "The Home Depot",
+      "Carrefour Taiwan",
+      "Macy's",
+      "Ulta"
+    ],
+    "value_driver": [
+      "Grow the Business",
+      "Improve Profitability"
+    ],
+    "value_narrative": "Create the shopping experience where the customer is at by leveraging our genmedia stack to virtually try on clothes, makeup, try different styles with new items or what you have already in your closet. This drives higher conversion rates and average order value through guided, relevant experiences, lowers content creation costs and reduces returns, and builds deeper customer relationships with interactive, personalized shopping assistants.",
+    "kpis": [
+      "Conversion Rate",
+      "Customer Lifetime Value (CLV)",
+      "Cart Abandonment Rate",
+      "Net Promoter Score (NPS)"
+    ],
+    "google_differentiation": "Google uniquely combines AI Commerce Search, Agent Platform, and Generative Media to deliver an end-to-end agentic shopping experience.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Valtech",
+      "SoftServe"
+    ],
+    "isv": [
+      "commercetools",
+      "Wynshop",
+      "Shopify",
+      "Big Commerce"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "AI-Powered Recommendations",
+    "description_and_problem_statement": "Problem Statement: Generic, one-size-fits-all marketing is no longer effective, and traditional recommendation engines fail to keep pace with rapid, community-driven trends. \n\nDescription: Move beyond basic recommendations to deliver hyper-personalized product suggestions based on real-time user behavior and a unified customer profile.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Capture Unified and Agentic Commerce Grwoth",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer",
+      "Head of Ecommerce",
+      "VP of Digital Experience",
+      "Chief Data Officer",
+      "Marketing Director",
+      "Personalization Lead"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a customer, I want to see hyper-personalized product suggestions that match my real-time behavior and current trends. As a Personalization Lead, I want a recommendation engine that combines individual preferences with market intelligence to boost click-through rates.",
+    "how_it_works_narrative": "Utilizes Recommendations AI and BigQuery to analyze massive datasets and real-time user behavior. This enables the delivery of hyper-personalized product suggestions that go beyond basic recommendations, adapting to current trends and individual preferences.",
+    "key_technologies": [
+      "AI + Machine Learning-AI Commerce Search",
+      "Analytics-BigQuery"
+    ],
+    "demo_available": "Yes",
+    "demo_links": "https://cloud-demo-hub.corp.google.com/demo/GenAI-Powered-Personalized-Style-Recommendations-for-E-Commerce/1125?origin=search_demos",
+    "demo_type": "Functional live demo, Demo videos",
+    "agent": "ADK",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-product-recommendations",
+    "google_proof_points": [
+      "Target",
+      "IKEA",
+      "Sephora"
+    ],
+    "value_driver": [
+      "Grow the Business",
+      "Improve Profitability"
+    ],
+    "value_narrative": "Move beyond basic recommendations to deliver hyper-personalized product suggestions based on real-time user behavior and a unified customer profile. This fosters loyalty and drives repeat purchases through deep personalization, boosts click-through and conversion rates with hyper-relevant offers, and reduces churn by delivering consistently superior experiences that retain valuable customers.",
+    "kpis": [
+      "Conversion Rate",
+      "Customer Lifetime Value (CLV)",
+      "Cart Abandonment Rate",
+      "Net Promoter Score (NPS)"
+    ],
+    "google_differentiation": "Recommendations AI uses deep learning and massive datasets for superior recommendations and dynamic, 1:1 customer journeys at scale.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Accenture",
+      "Deloitte"
+    ],
+    "isv": [
+      "Bloomreach",
+      "Groupby"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Dynamic Customer Journeys",
+    "description_and_problem_statement": "Problem Statement: Retailers struggle to move beyond static offers, missing emerging demand and failing to provide the deep, real-time personalization required to retain valuable customers. \n\nDescription: Tailor a unique digital path for every customer by adapting the online experience in real-time based on their behaviors and preferences, ultimately increasing engagement and conversion rates.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Capture Unified and Agentic Commerce Grwoth",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "AI -Scale AI Apps and Agents-Primary"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer",
+      "Head of Ecommerce",
+      "VP of Digital Experience",
+      "Chief Data Officer",
+      "Marketing Director",
+      "Personalization Lead"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As a customer, I want my online shopping journey to adapt dynamically based on my interactions and preferences. As a VP of Digital Experience, I want to tailor unique digital paths for every user to maximize engagement and customer lifetime value.",
+    "how_it_works_narrative": "Uses Agent Platform for Personalization to analyze real-time customer behavior and interactions. This allows retailers to move beyond static offers and dynamically adapt the digital shopping path for each individual user, maximizing engagement.",
+    "key_technologies": [
+      "AI + Machine Learning-Vertex AI"
+    ],
+    "demo_available": "No",
+    "demo_links": "",
+    "demo_type": "None",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-product-recommendations",
+    "google_proof_points": [
+      "Albertsons",
+      "Honeywell"
+    ],
+    "value_driver": [
+      "Grow the Business",
+      "Improve Profitability"
+    ],
+    "value_narrative": "Tailor a unique digital path for every customer by adapting the online experience in real-time based on their behaviors and preferences, ultimately increasing engagement and conversion rates. This fosters loyalty and drives repeat purchases through deep personalization, boosts click-through and conversion rates with hyper-relevant offers, and reduces churn by delivering consistently superior experiences that retain valuable customers.",
+    "kpis": [
+      "Conversion Rate",
+      "Customer Lifetime Value (CLV)",
+      "Cart Abandonment Rate",
+      "Net Promoter Score (NPS)"
+    ],
+    "google_differentiation": "Recommendations AI uses deep learning and massive datasets for superior recommendations and dynamic, 1:1 customer journeys at scale.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Accenture",
+      "Valtech",
+      "Publicis Sapient"
+    ],
+    "isv": [
+      "Bloomreach",
+      "Groupby"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Automated Attribute Extraction",
+    "description_and_problem_statement": "Problem Statement: The manual process of creating and managing product catalog metadata is slow and costly, resulting in incomplete attributes that undermine personalization and search discovery. \n\nDescription: Use AI to analyze product images and text to automatically generate and normalize product attributes (e.g., color, style, material).",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Capture Unified and Agentic Commerce Grwoth",
+    "associated_horizontal_plays": [
+      "AI -Your Business. Your Models - Vertex AI Platform -Growth",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Digital Officer, VP of Ecommerce, Head of Content Marketing, Catalog Manager, Chief Marketing Officer, Product Marketing Director"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Catalog Manager, I want AI to instantly analyze product images and automatically extract attributes like color, style, and material. As a VP of E-commerce, I want to ensure our catalog is fully enriched and machine-readable to improve search discovery.",
+    "how_it_works_narrative": "Uses Gemini on Vertex AI and Vertex AI Vision to analyze product images and text. This automatically extracts and normalizes key product attributes, such as color, style, and material, ensuring the catalog is fully enriched and machine-readable.",
+    "key_technologies": [
+      "AI + Machine Learning-Gemini Enterprise",
+      "AI + Machine Learning-Vertex AI",
+      "IoT + MR-Vertex AI Vision"
+    ],
+    "demo_available": "Kind of - not a direct match",
+    "demo_links": "https://cloud-demo-hub.corp.google.com/demo/Accelerate-product-catalog-management-with-generative-AI/680?origin=search_demos",
+    "demo_type": "Functional live demo",
+    "agent": "ADK",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-marketing-campaigns",
+    "google_proof_points": [
+      "Wayfair",
+      "Carrefour"
+    ],
+    "value_driver": [
+      "Grow the Business",
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Use AI to analyze product images and text to automatically generate and normalize product attributes (e.g., color, style, material). This accelerates time-to-market by reducing the manual effort required to onboard new products, improves product findability and creates more engaging product pages that drive sales, and lowers the costs associated with manual data entry, content creation, and error correction.",
+    "kpis": [
+      "Product Time-to-Market",
+      "Content Production Cost",
+      "Data Accuracy/Consistency Rate",
+      "SKU Onboarding Time"
+    ],
+    "google_differentiation": "Natively Multimodal AI lets retailers use Gemini on Vertex AI to auto-generate rich attributes from images, accelerating time-to-market.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Valtech",
+      "SoftServe"
+    ],
+    "isv": [
+      "Akeneo"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Generative Content Creation",
+    "description_and_problem_statement": "Problem Statement: Creating high-quality, on-brand product descriptions and SEO content manually is a critical bottleneck to growth and delays product launches. \n\nDescription: Continuously monitor and enforce data standards across the entire product catalog to ensure consistency and accuracy.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Capture Unified and Agentic Commerce Grwoth",
+    "associated_horizontal_plays": [
+      "AI -Your Business. Your Models - Vertex AI Platform -Growth",
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Leverage Generative Media in your Business -Growth"
+    ],
+    "key_personas": [
+      "Chief Digital Officer, VP of Ecommerce, Head of Content Marketing, Catalog Manager, Chief Marketing Officer, Product Marketing Director"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Head of Content Marketing, I want to use AI to generate high-quality, SEO-optimized product copy that aligns with our brand voice. As a Chief Marketing Officer, I want to continuously enforce data standards across the catalog to ensure a consistent customer experience.",
+    "how_it_works_narrative": "Leverages Gemini models on Vertex AI to continuously generate high-quality, SEO-optimized product content. By ingesting catalog data and brand guidelines, the AI ensures all generated copy is accurate, consistent, and aligned with the brand voice.",
+    "key_technologies": [
+      "AI + Machine Learning-Gemini Enterprise",
+      "AI + Machine Learning-Vertex AI"
+    ],
+    "demo_available": "Yes",
+    "demo_links": "https://cloud-demo-hub.corp.google.com/demo/Digital-Commerce---Retail-Catalog/914?origin=search_demos\n\nBrand Aligner Agent: https://cloud-demo-hub.corp.google.com/demo/Gemini-Enterprise-for-Customer-Experience---eCommerce-demo-for-NRF/1588",
+    "demo_type": "Functional live demo",
+    "agent": "ADK",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-marketing-campaigns",
+    "google_proof_points": [
+      "Wayfair",
+      "Carrefour"
+    ],
+    "value_driver": [
+      "Grow the Business",
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Continuously monitor and enforce data standards across the entire product catalog to ensure consistency and accuracy. This accelerates time-to-market by reducing the manual effort required to onboard new products, improves product findability and creates more engaging product pages that drive sales, and lowers the costs associated with manual data entry, content creation, and error correction.",
+    "kpis": [
+      "Product Time-to-Market",
+      "Content Production Cost",
+      "Data Accuracy/Consistency Rate",
+      "SKU Onboarding Time"
+    ],
+    "google_differentiation": "Natively Multimodal AI lets retailers use Gemini on Vertex AI to auto-generate rich attributes from images, accelerating time-to-market.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Valtech",
+      "SoftServe",
+      "Accenture"
+    ],
+    "isv": [
+      "Akeneo"
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  }
+]

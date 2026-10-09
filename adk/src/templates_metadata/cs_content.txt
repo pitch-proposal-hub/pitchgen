@@ -1,0 +1,154 @@
+{
+    "1@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_466": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "2@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_471": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "3@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_479": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "4@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_928": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "5@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_1388": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "6@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_1394": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "7@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_1836": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "8@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_1850": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "9@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_2295": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "10@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_2299": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "11@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_2740": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "12@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_2745": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "13@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_2750": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "14@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_2755": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "15@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_2760": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "16@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g38d7e5c58a5_0_2766": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "17@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g3b30a3eb1e3_2_1994": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "18@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g3b30a3eb1e3_2_2008": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    },
+    "19@TEMPLATE_DECK_CS_CONTENT_PLACEHOLDER_001@g3b30a3eb1e3_2_2019": {
+        "title": "28 to 42 characters",
+        "subtitle": "55 to 80 characters",
+        "item1": "125 to 160 characters",
+        "item2": "125 to 160 characters",
+        "header1": "18 to 28 characters",
+        "header1_content": "125 to 160 characters"
+    }
+}

@@ -1,0 +1,117 @@
+# Canonical QA Scorecard & Auto-Remediation Schema (`pitch-deck-qa`)
+schema_version: "2.0"
+owner: "pitchgen-team"
+
+qa_pass_thresholds:
+  generated_deck_qa:
+    total_gates: 16
+    required_overall_score: 100.0
+    max_auto_remediation_passes: 2
+    blocker_gates:
+      - "G01"
+      - "G03"
+      - "G04"
+      - "G05"
+      - "G08"
+      - "G09"
+      - "G10"
+      - "G11"
+      - "G13"
+      - "G14"
+      - "G15"
+    high_gates:
+      - "G02"
+      - "G06"
+      - "G07"
+      - "G12"
+      - "G16"
+
+  deck_transformation_qa:
+    total_gates: 10
+    required_overall_score: 100.0
+    max_auto_remediation_passes: 2
+    blocker_gates:
+      - "T01"
+      - "T02"
+      - "T05"
+      - "T06"
+      - "T08"
+      - "T09"
+      - "T10"
+    high_gates:
+      - "T03"
+      - "T04"
+      - "T07"
+
+  visual_4_quadrant_qa:
+    total_dimensions: 5
+    quadrants:
+      - id: "TL"
+        label: "Top-Left (x: 0..360pt, y: 0..202.5pt)"
+      - id: "TR"
+        label: "Top-Right (x: 360..720pt, y: 0..202.5pt)"
+      - id: "BL"
+        label: "Bottom-Left (x: 0..360pt, y: 202.5..405pt)"
+      - id: "BR"
+        label: "Bottom-Right (x: 360..720pt, y: 202.5..405pt)"
+    dimensions:
+      - id: "V01"
+        name: "Zero Text Overflow & Clipping"
+      - id: "V02"
+        name: "Zero Element-on-Element Collision"
+      - id: "V03"
+        name: "Visual Contrast & Hierarchy"
+      - id: "V04"
+        name: "Card Balance & Whitespace Symmetry"
+      - id: "V05"
+        name: "Zero-Text-in-Image & 2K Sharpness"
+
+report_schemas:
+  DeckAuditReport:
+    fields:
+      presentation_id: "string"
+      title: "string"
+      customer_name: "string"
+      deck_strategy: "string (cloudhub | bespoke_custom | smart_hybrid)"
+      deck_length: "string"
+      sales_stage: "string (S0 | S1 | S2 | S3 | S4)"
+      total_slides: "integer"
+      content_slides: "integer"
+      reusable_slides: "integer"
+      bespoke_slides: "integer"
+      customer_ref_slides: "integer"
+      overall_score: "float (0.0 to 100.0)"
+      passed_all_gates: "boolean"
+      gates_passed: "integer"
+      gates_total: "integer (16)"
+      gate_results: "list[GateResult]"
+      remediation_actions: "list[RemediationAction]"
+
+  TransformationAuditReport:
+    fields:
+      presentation_id: "string"
+      workflow_type: "string (transform_text | transform_slide | translate | transform_nanobanana)"
+      customer_name: "string"
+      specific_use_case: "string"
+      target_language: "string"
+      target_slide_indices: "list[integer]"
+      total_slides: "integer"
+      mutated_slides_count: "integer"
+      mutated_shapes_count: "integer"
+      locked_shapes_preserved_count: "integer"
+      overall_score: "float (0.0 to 100.0)"
+      passed_all_gates: "boolean"
+      gates_passed: "integer"
+      gates_total: "integer (10)"
+      gate_results: "list[GateResult]"
+      remediation_actions: "list[RemediationAction]"
+
+  RemediationAction:
+    fields:
+      gate_id: "string (G01..G16 | T01..T10 | V01..V05)"
+      severity: "string (BLOCKER | HIGH | MEDIUM)"
+      slide_index: "integer"
+      slide_object_id: "string"
+      shape_object_id: "string"
+      action_type: "string (REVERT_LOCKED_SHAPE | REWRITE_WITHIN_BUDGET | FIX_TITLE_STYLE | EXPAND_DENSITY | SYNC_DIVIDER | SANITIZE_NAMING | DELETE_LEGACY_BADGE | REGENERATE_VISUAL)"
+      instruction: "string"

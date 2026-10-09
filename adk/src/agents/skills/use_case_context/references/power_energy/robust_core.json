@@ -1,0 +1,376 @@
+[
+  {
+    "use_case_title": "Air-Gapped AI and Cloud Infrastructure (GDC)",
+    "description_and_problem_statement": "Highly secure, regulated, air-gapped cloud environments using Google Distributed Cloud (GDC) to process operations, planning, and customer information safely, adhering to local sovereign data requirements.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Enable a Secure and Scalable foundation to advance your AI journey (Robust Core)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "E/S/VP of Sec/Comp",
+      "CISO",
+      "Chief Security Officer",
+      "COO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "GDC"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Absolute protection of critical infrastructure and operational data"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Full compliance with regulatory standards",
+      "Zero breaches"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Advanced Threat Detection and Response for Utilities",
+    "description_and_problem_statement": "Using advanced telemetry from SCADA and traditional networks, paired with Mandiant intelligence, use security agent to proactively identify threats and isolate endpoints.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Enable a Secure and Scalable foundation to advance your AI journey (Robust Core)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "E/S/VP of Sec/Comp",
+      "CISO",
+      "Chief Security Officer",
+      "COO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Sec Ops-Chronicle",
+      "Sec Ops-Mandiant",
+      "Gemini Enterprise Security"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Reduced costs; avoid critical system shutdowns, loss of life, regulatory actions"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Faster MTTR",
+      "improved threat containment rate"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Cloud Foundations (Migration, Database/Storage Modernization, FinOps)",
+    "description_and_problem_statement": "Accelerating cloud migration and FinOps to enable highly-scalable compute/storage.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Enable a Secure and Scalable foundation to advance your AI journey (Robust Core)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "E/S/VP of Sec/Comp",
+      "CISO",
+      "COO",
+      "CFO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Compute-Compute Engine",
+      "Database-AlloyDB",
+      "Database-Spanner"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "OpEx savings; agile compute/storage capabilities"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "FinOps optimization percentage",
+      "migration speed"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Enhanced Safety Management (Worker Safety and Hazard Detection)",
+    "description_and_problem_statement": "Using computer vision at the grid edge (GDC) to identify and notify operations of worker safety issues (e.g. lack of PPE, unsafe zones) or environmental hazards (e.g. oil spill, downed wire).",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Enable a Secure and Scalable foundation to advance your AI journey (Robust Core)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "E/S/VP of EHS",
+      "COO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise",
+      "GDC"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Employee health and safety; reduced insurance premiums"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Reduction in safety incidents",
+      "faster hazard containment"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Supply Chain of the Future",
+    "description_and_problem_statement": "Automate material and spare part tracking across physical inventory locations and in-transit fleets to reduce inventory carry costs.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Enable a Secure and Scalable foundation to advance your AI journey (Robust Core)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "E/S/VP Supply Chain",
+      "COO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "Gemini Enterprise Agent Platform"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Carry cost reduction; CapEx optimization"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Carry cost reduction percentage",
+      "improved stockout prevention rate"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Regulatory and Sustainability Insights and Reporting",
+    "description_and_problem_statement": "Using multimodal AI to assist in compiling environmental and sovereign regulatory reporting.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Enable a Secure and Scalable foundation to advance your AI journey (Robust Core)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "E/S/VP of Sec/Comp",
+      "E/S/VP of EHS",
+      "COO"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise",
+      "Google Earth Engine"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Time and cost savings in compiling complex documents"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Reduction in preparation hours",
+      "zero compliance fines"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "AI for Finance (Invoicing, Auditing, Procurement)",
+    "description_and_problem_statement": "Automatically audit procurement invoices against purchase orders to identify billing anomalies and streamline approvals.",
+    "use_case_status": "Conceptual",
+    "industry_pillar": "Enable a Secure and Scalable foundation to advance your AI journey (Robust Core)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "CFO",
+      "VP Procurement",
+      "VP Accounts Payable"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Gemini Enterprise",
+      "Gemini Enterprise Agent Platform",
+      "Document AI"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Better audit accuracy and reduced leakage"
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Audit cycle time reduction",
+      "leakage savings"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Cyber OT Convergence & Security Monitoring",
+    "description_and_problem_statement": "Unifying IT and OT security monitoring through Chronicle SecOps to defend high-value physical infrastructure from cyber threats.",
+    "use_case_status": "",
+    "industry_pillar": "Enable a Secure and Scalable foundation to advance your AI journey (Robust Core)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "CISO",
+      "VP OT Infrastructure",
+      "Grid Ops Directors"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Sec Ops-Chronicle",
+      "Sec Ops-Mandiant",
+      "GDC"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Improved protection against cyber-physical attacks and malicious insider threats."
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Reduces security silos",
+      "provides a unified pane-of-glass"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Critical Infrastructure Security & Operational Efficiency",
+    "description_and_problem_statement": "Defending the operational core of utilities—SCADA, power grids, and water plants—from cyber-physical threats while driving sovereign GDC efficiency.",
+    "use_case_status": "",
+    "industry_pillar": "Enable a Secure and Scalable foundation to advance your AI journey (Robust Core)",
+    "associated_horizontal_plays": [],
+    "key_personas": [
+      "CISO",
+      "VP Physical Security",
+      "VP Operations"
+    ],
+    "implementation_complexity": "",
+    "customer_user_journeys": "",
+    "how_it_works_narrative": "",
+    "key_technologies": [
+      "Sec Ops-Chronicle",
+      "Sec Ops-Mandiant",
+      "GDC"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "",
+    "google_proof_points": [],
+    "value_driver": [
+      "Absolute resilience for critical infrastructure against state-sponsored cyber attacks."
+    ],
+    "value_narrative": "",
+    "kpis": [
+      "Prevents blackouts/leakages",
+      "drives GDC sovereign compliance"
+    ],
+    "google_differentiation": "",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  }
+]

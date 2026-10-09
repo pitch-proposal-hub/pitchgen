@@ -1,0 +1,855 @@
+[
+  {
+    "use_case_title": "Brand Policy Data Management & Governance",
+    "description_and_problem_statement": "Inconsistent data definitions and a lack of a clear governance framework lead to poor data quality, impacting everything from customer experience to operational efficiency.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "Data Cloud-Migrate",
+      "Modernize",
+      "and Build with Data Cloud -Primary",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Operating Officer, Vice President of Store Operations, Director of Store Operations, Head of Retail Excellence, Store Manager"
+    ],
+    "implementation_complexity": "Day 1 / Low",
+    "customer_user_journeys": "As a Data Analyst, I want to spend less time searching for data and more time analyzing it, with full confidence in its accuracy and lineage. As a Chief Data Officer (CDO), I want to create a unified data governance framework that automates compliance and security, enabling my organization to trust our data and scale our analytics safely.",
+    "how_it_works_narrative": "This solution uses Knowledge Catalog to automatically discover and organize data across all sources, from Cloud Storage to BigQuery. Data Catalog then tags this data based on business context, while Cloud Data Loss Prevention automatically identifies and masks sensitive information, creating a secure, unified, and governed data foundation for all analytics.",
+    "key_technologies": [
+      "Analytics-Knowledge Catalog",
+      "Analytics-BigQuery",
+      "Analytics-Looker"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/data-mesh",
+    "google_proof_points": [
+      "The Home Depot utilizes Google Cloud",
+      "including BigQuery",
+      "to break down data silos and unify its data lifecycle. This provides a single",
+      "trusted view of data across its 2",
+      "300+ stores and massive online presence",
+      "enabling better decisions and a more cohesive customer experience."
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Establishes a single source of truth for data, ensuring accuracy, security, and accessibility. This is the foundation for any successful AI or analytics initiative.",
+    "kpis": [
+      "Data Quality Score",
+      "Compliance Adherence Rate",
+      "Reduction in data-related errors"
+    ],
+    "google_differentiation": "Fully Managed & Integrated Fabric: Google Cloud offers a unified and intelligent data fabric with Knowledge Catalog, which automates data discovery, lifecycle management, and security. Unlike competitors that often require cobbling together multiple, less integrated services, our \"no-ops\" serverless approach simplifies governance and reduces overhead. Carrefour chose Google Cloud for its modern, scalable data analytics solution to replace costly and low-performance legacy systems.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Deloitte's data governance frameworks built on Google Cloud provide a structured approach to implementation. Slalom offers consulting services for building robust data governance and quality programs."
+    ],
+    "isv": [
+      "Collibra integrates with Google Cloud to provide a comprehensive data governance and catalog platform. Informatica offers data quality and governance tools that run on Google Cloud."
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Agent-Powered New Product Development",
+    "description_and_problem_statement": "Traditional product development is often slow, reactive, and hampered by siloed information and an over-reliance on intuition rather than data.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "AI -Scale AI Apps and Agents-Primary",
+      "AI -Your Business. Your Models - Agent Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Data Officer, Chief Information Security Officer, VP of Marketing, VP of Data Governance, Chief Digital Officer, Head of Data Privacy, Marketing Operations Director, and Data Protection Officer"
+    ],
+    "implementation_complexity": "High",
+    "customer_user_journeys": "As a Product Developer, I want to use an AI assistant to quickly analyze market trends, competitor features, and customer feedback to validate my ideas and build better products faster. As a Chief Product Officer (CPO), I want to leverage AI to reduce our product development lifecycle, increase our new product success rate, and make more data-driven bets on innovation.",
+    "how_it_works_narrative": "This combines Agent Platform with the reasoning power of Gemini models. An R&D specialist can now ask an AI agent complex questions like, \"What new flavor profiles are trending on social media that align with our sustainable sourcing goals?\" The agent queries market data in BigQuery to deliver actionable insights, dramatically accelerating innovation.",
+    "key_technologies": [
+      "AI + Machine Learning-Agent Platform",
+      "AI + Machine Learning-Agent Platform Agents",
+      "Analytics-BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "ADK",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/choose-agentic-ai-architecture-components",
+    "google_proof_points": [
+      "L'Or\u00e9al",
+      "the world's largest cosmetics company",
+      "built a scalable MLOps platform on Google Cloud to accelerate AI initiatives and optimize product development. This platform streamlines workflows and empowers teams to innovate faster",
+      "turning ideas into market-ready products with greater speed and efficiency."
+    ],
+    "value_driver": [
+      "Grow the Business"
+    ],
+    "value_narrative": "AI agents can analyze market trends, simulate product performance, and optimize the entire innovation lifecycle, leading to faster, more successful product launches.",
+    "kpis": [
+      "Time-to-market reduction",
+      "New product success rate",
+      "Return on innovation investment"
+    ],
+    "google_differentiation": "End-to-End AI Platform (Agent Platform): Google provides a single, unified platform in Agent Platform that covers the entire ML lifecycle, from data prep to model deployment and management. This is a significant advantage over competitors that have more fragmented AI offerings. Our state-of-the-art models (like Gemini) and infrastructure empower companies to build, test, and deploy AI agents and models faster and more cost-effectively than they could on their own.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "CI&T helps companies leverage AI for faster product innovation cycles. Quantiphi builds custom AI solutions on Google Cloud to accelerate new product development and simulate market performance."
+    ],
+    "isv": [
+      "Sisu provides a decision intelligence engine to quickly analyze complex data and identify key drivers for product success. Unbabel offers AI-powered language translation to analyze global customer feedback."
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Dynamic Creative Optimization (DCO)",
+    "description_and_problem_statement": "Creating personalized advertising at scale is a significant challenge, often limited by creative bottlenecks and the complexity of audience segmentation.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "AI -Your Business. Your Models - Agent Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Product Officer, Chief Marketing Officer, VP of Product Management, Head of Product Innovation, Chief Digital Officer, VP of Ecommerce"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Customer, I want to see ads that are actually relevant to me and my current interests, not the same generic banner ad over and over. As a Head of Digital Marketing, I want to automate the creation of thousands of personalized ad variations to maximize my ROAS and ensure every ad dollar is spent delivering the most relevant message.",
+    "how_it_works_narrative": "This flow connects real-time audience segments from BigQuery with Agent Platform. Using Gemini models, it generates thousands of personalized ad headlines and descriptions. These creatives are then seamlessly pushed into Google Marketing Platform (DV360), which automatically serves the perfect ad variation to each individual user, maximizing relevance and ROAS.",
+    "key_technologies": [
+      "AI + Machine Learning-Agent Platform",
+      "Media + Comms-Cloud CDN"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "GE",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-marketing-campaigns",
+    "google_proof_points": [
+      "L'Or\u00e9al Taiwan used the combination of Google Marketing Platform and Google Cloud (AutoML) to predict which customers were most likely to purchase offline. This allowed them to tailor ad campaigns to the highest-potential audience",
+      "resulting in a 2.5x increase in offline revenue and a 2.2x increase in ROAS."
+    ],
+    "value_driver": [
+      "Grow the Business"
+    ],
+    "value_narrative": "DCO automates the generation of thousands of ad variations, tailoring each one to individual user behavior and context in real-time to maximize relevance and impact.",
+    "kpis": [
+      "Click-Through Rate (CTR)",
+      "Conversion Rate",
+      "Return on Ad Spend (ROAS)"
+    ],
+    "google_differentiation": "Deep Integration with Google's Ad Ecosystem: This is our killer differentiator. No other cloud provider has native integration with Google Marketing Platform (DV360, Google Ads). This allows for a seamless flow of data and insights from analytics and AI models directly into campaign execution, enabling true real-time, AI-driven optimization that other platforms cannot match.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Accenture Interactive designs and implements data-driven creative strategies leveraging Google's DCO tools. WPP creates and manages large-scale",
+      "personalized advertising campaigns using Google Cloud and Marketing Platform."
+    ],
+    "isv": [
+      "Celtra is a creative automation platform that integrates with Google's ad ecosystem. Jivox provides a personalized DCO platform that utilizes Google Cloud for data processing and analytics."
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Trend Analysis",
+    "description_and_problem_statement": "The rapid pace of consumer trends, especially those driven by social media, makes it difficult for retailers to anticipate and react to shifting market demands.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer, VP of Ecommerce, Head of Digital Marketing, Chief Creative Officer, Director of Digital Strategy, Advertising Manager"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Merchandiser, I want to see which products are trending in real-time, so I can proactively adjust inventory and promotions to capitalize on demand before it fades. As a Chief Merchandising Officer, I want to use predictive analytics to improve forecast accuracy, reduce markdowns, and ensure we have the right products in the right place at the right time.",
+    "how_it_works_narrative": "This solution streams real-time point-of-sale and web traffic data into BigQuery using Dataflow. A merchandiser then uses a Looker dashboard to instantly visualize emerging sales spikes and identify trending products by region, allowing them to make proactive inventory and promotion decisions in minutes, not days.",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "Analytics-Looker",
+      "AI + Machine Learning-Agent Platform"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/big-data-analytics/analytics-lakehouse",
+    "google_proof_points": [
+      "The Home Depot leverages BigQuery to analyze years of data",
+      "enabling them to make targeted improvements to their website and optimize their supply chain based on deep insights. This data-driven approach allows them to anticipate customer needs and stay ahead of market trends."
+    ],
+    "value_driver": [
+      "Grow the Business"
+    ],
+    "value_narrative": "AI algorithms can analyze a wide array of data sources in real-time to detect emerging trends, allowing retailers to proactively adjust inventory, marketing, and product strategies.",
+    "kpis": [
+      "Forecast Accuracy",
+      "Inventory Turnover Rate",
+      "Sales uplift from trend-based campaigns"
+    ],
+    "google_differentiation": "Unmatched Scale and Real-Time Analytics with BigQuery: BigQuery\u2019s serverless, multi-cloud architecture allows retailers like Carrefour and The Home Depot to analyze massive datasets in real time without managing infrastructure. Its separation of compute and storage provides unparalleled flexibility and cost-efficiency compared to competitors like Snowflake or Redshift. This enables more granular and timely trend analysis.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "HCLTech provides retail-specific analytics solutions that identify emerging trends. SADA implements custom analytics solutions on Google Cloud to help retailers track and respond to market shifts."
+    ],
+    "isv": [
+      "ThoughtSpot offers a search and AI-driven analytics platform that can run on Google Cloud. Tableau can connect to BigQuery to visualize and explore trend data."
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "AI-Powered Content Generation / Genmedia",
+    "description_and_problem_statement": "The demand for fresh, engaging, and personalized content often outstrips the capacity of marketing teams, leading to generic messaging and missed opportunities.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "AI -Your Business. Your Models - Agent Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer",
+      "VP of Marketing",
+      "Head of Content Strategy",
+      "Digital Marketing Director",
+      "Brand Manager",
+      "Social Media Manager"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Content Marketer, I want an AI tool to help me write first drafts of product descriptions and blog posts in our brand voice, freeing me up to focus on strategy and creative direction. As a Chief Marketing Officer (CMO), I want to scale our content production with generative AI to support personalization across all channels without tripling my headcount or budget.",
+    "how_it_works_narrative": "This solution leverages Vertex AI's Gemini models to automate content creation. A marketing manager can provide a product name and a few key features, and the system generates a complete, on-brand product description. With Imagen, it can also generate unique lifestyle images for that product, ready for use on the website or social media.",
+    "key_technologies": [
+      "AI + Machine Learning-Vertex AI",
+      "AI + Machine Learning-Gemini Enterprise"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "GE",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-marketing-campaigns",
+    "google_proof_points": [
+      "Wayfair is using Google Cloud's Gemini models to automatically categorize products",
+      "reducing the time needed to curate and update product listings by 67%. They are also using Gemini to enhance employee productivity and generate creative content",
+      "leading to significant cost savings."
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Generative AI can automate the creation of high-quality, personalized content at scale, from product descriptions to social media posts, ensuring a consistent brand voice and freeing up creative teams for more strategic work.",
+    "kpis": [
+      "Content production time reduction",
+      "Increase in customer engagement",
+      "Cost savings on content creation"
+    ],
+    "google_differentiation": "State-of-the-Art, Multimodal Generative AI: With Vertex AI and foundational models like Gemini and Imagen, we offer cutting-edge capabilities for generating text, images, and soon, video. As L'Or\u00e9al discovered, Google Cloud provides tools to do this \"better, cheaper, and faster\" than trying to build it all in-house, with built-in features for safety and copyright.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Typeface",
+      "a strategic partner",
+      "provides a generative AI platform built on Google Cloud for enterprise content creation. Accenture and Deloitte help integrate Gen AI into marketing and content workflows."
+    ],
+    "isv": [
+      "Jasper",
+      "Writer",
+      "and Persado offer generative AI platforms that can leverage Google Cloud's infrastructure and models for scalable content creation and language optimization."
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "AI-Driven Marketing Campaigns",
+    "description_and_problem_statement": "Employ AI-powered tools to automate and optimize marketing campaign execution, ad spend, and performance management in real-time. This includes personalized promotions and recommendations across all channels.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Vertex AI Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer",
+      "VP of Marketing",
+      "Head of Content Strategy",
+      "Digital Marketing Director",
+      "Brand Manager",
+      "Social Media Manager"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Campaign Manager, I want to use AI to automatically identify and target our highest-potential customers, so I can improve campaign performance without endless manual segmentation. As a VP of Marketing, I want to build a closed-loop system where data drives campaign execution and performance data refines our AI models, ensuring continuous, automated improvement.",
+    "how_it_works_narrative": "This solution starts in BigQuery ML, where a marketer builds a \"propensity to purchase\" model using simple SQL. The resulting high-value audience segment is then automatically exported to Google Ads. The campaign runs, and performance data flows back into Google Analytics 4 and BigQuery, closing the loop for continuous, AI-driven optimization.",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "AI + Machine Learning-Vertex AI",
+      "Analytics-Looker"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/use-vertex-ai-pipelines-for-propensity-modeling",
+    "google_proof_points": [
+      "L'Or\u00e9al uses Google Cloud and Google Marketing Platform to optimize digital marketing",
+      "increasing offline revenue by 2.5x. Fruugo",
+      "an online marketplace",
+      "rolled out AI-powered Performance Max campaigns in over 20 languages",
+      "contributing to a 110% year-over-year revenue growth."
+    ],
+    "value_driver": [
+      "Grow the Business"
+    ],
+    "value_narrative": "Builds a closed-loop system where data drives campaign execution and performance data refines AI models, ensuring continuous, automated improvement.",
+    "kpis": [
+      "Conversion Rate",
+      "Return on Ad Spend (ROAS)",
+      "Revenue Growth"
+    ],
+    "google_differentiation": "Closed-Loop Analytics and Activation: Our ability to seamlessly integrate BigQuery, Vertex AI, and Google Ads creates a powerful feedback loop. Retailers can derive insights from their data and immediately activate them in marketing campaigns. This tight integration provides a holistic view of performance and ROI that is far more difficult to achieve with competitors.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "WPP and Publicis Groupe leverage Google's advertising and cloud platforms to build and manage data-driven",
+      "AI-powered marketing campaigns for global brands."
+    ],
+    "isv": [
+      "Braze and HubSpot can integrate with BigQuery and Vertex AI to enrich customer profiles and orchestrate more intelligent",
+      "AI-driven marketing campaigns across channels."
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Customer Churn Prediction & Prevention",
+    "description_and_problem_statement": "Employs machine learning models to identify customers who are at a high risk of churning and enables proactive, targeted retention campaigns to keep them.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Vertex AI Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Operating Officer, Chief Technology Officer, VP of Asset Protection, VP of Store Operations, Head of Loss Prevention"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Customer Service Agent, I want a real-time alert that tells me if the customer I'm speaking with is at risk of churning, along with a recommended offer to help me retain them. As a Head of Customer Loyalty, I want to proactively identify at-risk customer segments and target them with personalized retention campaigns before they decide to leave.",
+    "how_it_works_narrative": "Using Vertex AI AutoML, this solution trains a machine learning model on historical customer data from BigQuery to predict which customers are at the highest risk of churning. The results are surfaced in a Looker dashboard, allowing a retention manager to identify and target at-risk segments with proactive offers and personalized outreach.",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "AI + Machine Learning-Vertex AI",
+      "Analytics-Looker"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/use-vertex-ai-pipelines-for-propensity-modeling",
+    "google_proof_points": [
+      "Carrefour Taiwan is planning to use Machine Learning models on Google Cloud to predict customer behavior and send tailored product recommendations. This proactive approach",
+      "powered by a unified data warehouse in BigQuery",
+      "aims to increase customer loyalty and prevent churn."
+    ],
+    "value_driver": [
+      "Improve Profitability"
+    ],
+    "value_narrative": "Proactively identifies at-risk customer segments using machine learning and targets them with personalized retention campaigns and offers before they decide to leave.",
+    "kpis": [
+      "Churn Rate",
+      "Customer Retention Rate",
+      "Customer Lifetime Value (CLV)"
+    ],
+    "google_differentiation": "Accessible AI with BigQuery ML: Google Cloud democratizes machine learning by allowing users to build and deploy models like churn predictors directly in BigQuery using simple SQL commands. This dramatically lowers the barrier to entry compared to AWS or Azure, which require more specialized data science expertise and complex workflows to achieve the same result.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Quantiphi and Capgemini build and deploy custom churn prediction models on Google Cloud",
+      "helping businesses proactively retain customers with targeted interventions."
+    ],
+    "isv": [
+      "Salesforce (Service Cloud and Marketing Cloud) can integrate with Vertex AI predictions to trigger retention workflows and personalized offers for customers identified as being at high risk of churning."
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Next-Best-Action (NBA) Engine",
+    "description_and_problem_statement": "A real-time system that recommends the optimal action (e.g., send an offer, provide information, suggest a product) for each individual customer at any given touchpoint to maximize lifetime value.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Operating Officer, Chief Technology Officer, VP of Asset Protection, VP of Store Operations, Head of Loss Prevention"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Store Associate, I want my tablet to suggest the perfect accessory to go with the item a customer is buying, so I can be more helpful and increase basket size. As a Head of E-commerce, I want to deploy a real-time recommendation engine that personalizes every touchpoint of the customer journey, driving higher conversion rates and average order value.",
+    "how_it_works_narrative": "This solution uses a recommendation model on Vertex AI that processes a customer's real-time clickstream data. As the customer browses, the model queries their interaction history in BigQuery and serves a hyper-personalized product recommendation via Cloud Run, all within milliseconds, to guide them to their next best action.",
+    "key_technologies": [
+      "AI + Machine Learning-Vertex AI",
+      "Analytics-BigQuery",
+      "Compute-Cloud Functions"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-product-recommendations",
+    "google_proof_points": [
+      "Papa John's is using BigQuery and Vertex AI to build predictive tools that anticipate customer orders",
+      "enhance their loyalty program",
+      "and deliver more personalized marketing offers. This enables them to provide the right offer at the right time."
+    ],
+    "value_driver": [
+      "Grow the Business"
+    ],
+    "value_narrative": "Deploys a real-time recommendation engine that personalizes every touchpoint of the customer journey, suggesting the perfect product or offer to drive higher conversion rates and basket size.",
+    "kpis": [
+      "Conversion Rate",
+      "Average Order Value (AOV)",
+      "Click-Through Rate (CTR)"
+    ],
+    "google_differentiation": "Real-Time, Scalable AI Serving: Google Cloud is built for real-time. With services like Vertex AI for model serving and BigQuery for real-time data ingestion and analytics, we provide the low-latency infrastructure required to power personalized, in-the-moment decisions for millions of users, a key requirement for effective NBA engines.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Slalom and CI&T design and implement NBA engines on Google Cloud",
+      "enabling retailers to deliver hyper-personalized recommendations and offers at the right moment in the customer journey."
+    ],
+    "isv": [
+      "Pega offers a real-time decisioning engine that can be integrated with Google Cloud data sources to power sophisticated Next-Best-Action strategies across all touchpoints."
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "AI-Driven Marketing Mix Modeling (MMM)",
+    "description_and_problem_statement": "Goes beyond standard analytics to determine the effectiveness and ROI of different marketing channels, helping to optimize budget allocation across your entire marketing mix.",
+    "use_case_status": "Demo/Material - Not Deployed",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Vertex AI Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Operating Officer, Chief Technology Officer, VP of Asset Protection, VP of Store Operations, Head of Loss Prevention"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Marketing Analyst, I want to understand the true ROI of each of my channels and campaigns, including the impact of offline media and external factors. As a Chief Financial Officer (CFO), I want a transparent, data-driven model to justify our marketing spend and optimize budget allocation for maximum business impact.",
+    "how_it_works_narrative": "This flow uses BigQuery to consolidate all marketing spend and performance data into one place. It then leverages Google's open-source Meridian model running on Vertex AI to analyze channel effectiveness and ROI. The outputs are visualized in Looker, allowing a CMO to run \"what-if\" scenarios and optimize future budget allocations.",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "AI + Machine Learning-Vertex AI",
+      "Analytics-Looker"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/big-data-analytics/analytics-lakehouse",
+    "google_proof_points": [
+      "While specific customer stories for MMM on Google Cloud are emerging",
+      "the foundation is clear. Retailers like L'Or\u00e9al and The Home Depot are already consolidating all their business data on BigQuery",
+      "which is the essential first step for any advanced MMM."
+    ],
+    "value_driver": [
+      "Improve Profitability"
+    ],
+    "value_narrative": "Provides a transparent, data-driven model to understand the true ROI of all marketing channels and campaigns, enabling retailers to justify marketing spend and optimize budget allocation for maximum business impact.",
+    "kpis": [
+      "Return on Investment (ROI)",
+      "Return on Ad Spend (ROAS)",
+      "Customer Acquisition Cost (CAC)"
+    ],
+    "google_differentiation": "Open, Flexible, and Future-Proof: Google Cloud provides the open-source Meridian MMM solution and the powerful, flexible BigQuery platform to run it on. Unlike \"black box\" solutions from competitors, our approach offers full transparency and control, allowing retailers to customize models to their specific business logic and avoid vendor lock-in.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Deloitte and Nielsen offer MMM services and solutions that are increasingly being built on cloud data platforms like BigQuery for greater speed",
+      "granularity",
+      "and accuracy."
+    ],
+    "isv": [
+      "Neustar (a TransUnion company) and Incrementality from Measured are leading MMM providers that can leverage Google Cloud for data integration and processing to provide holistic marketing measurement."
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Unified Customer Data Platform (CDP)",
+    "description_and_problem_statement": "Consolidate all customer data from online and offline touchpoints into a unified platform to create a 360-degree view of the customer. This serves as the core engine for real-time personalization and targeted marketing campaigns.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "Data Cloud-Migrate",
+      "Modernize",
+      "and Build with Data Cloud -Primary",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer, VP of Ecommerce, Head of Customer Experience, Chief Data Officer, Chief Customer Experience Officer, Retention Specialist"
+    ],
+    "implementation_complexity": "Day 1 / Low",
+    "customer_user_journeys": "As a Marketing Specialist, I want a single view of the customer so I can build segments and launch campaigns without having to ask engineering for a new data pull every time. As a Chief Technology Officer (CTO), I want to build a flexible, scalable, and future-proof customer data foundation that gives us ownership of our data and avoids vendor lock-in.",
+    "how_it_works_narrative": "This solution establishes BigQuery as the central, scalable data store for all customer information. Dataflow handles real-time data ingestion, while Looker provides the exploration and segmentation layer. This composable CDP creates a complete, 360-degree customer view without the limitations of a traditional, packaged CDP.",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "Analytics-Looker",
+      "Analytics-Pub/Sub",
+      "Compute-Cloud Dataflow",
+      "Analytics-Knowledge Catalog"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/marketing-data-warehouse",
+    "google_proof_points": [
+      "The Home Depot created a 360-degree view of its customers by aggregating first- and third-party data sources in Google Cloud. This composable CDP approach",
+      "with BigQuery at its core",
+      "allows them to personalize the shopping experience across both physical and digital channels."
+    ],
+    "value_driver": [
+      "Grow the Business"
+    ],
+    "value_narrative": "Builds a flexible, scalable, and future-proof customer data foundation that provides a single view of the customer, enabling seamless segmentation and personalized campaigns without vendor lock-in.",
+    "kpis": [
+      "Segment Creation Time",
+      "Campaign Time-to-Market",
+      "Customer Lifetime Value (CLV)"
+    ],
+    "google_differentiation": "The Power of the Composable CDP: We champion a modern, composable approach to CDP, with BigQuery as the open and scalable data foundation. This is fundamentally more flexible and powerful than the rigid, packaged CDPs offered by some competitors. It allows retailers to own their data and integrate best-of-breed tools without being locked into a single vendor's ecosystem.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "Lytics and Amperity are CDP partners that can run their platforms on Google Cloud",
+      "offering retailers a packaged solution with the power of BigQuery underneath."
+    ],
+    "isv": [
+      "Twilio Segment and mParticle are leading CDP platforms that integrate seamlessly with Google BigQuery",
+      "allowing businesses to use BigQuery as the central data store for their customer data."
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Real Time Customer Insights via Customer Relationship Management (CRM)",
+    "description_and_problem_statement": "Integrate AI into CRM systems to gain predictive insights on customer behavior, improve lead scoring, and enable more personalized customer interactions.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Vertex AI Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer, VP of Ecommerce, Head of Customer Experience, Chief Data Officer, Chief Customer Experience Officer, Retention Specialist"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Sales Representative, I want my CRM to show me real-time insights about my customer, like their propensity to buy or their top product interests, so I can have more relevant and effective conversations. As a Head of Sales Operations, I want to enrich our CRM with AI-driven intelligence to improve lead scoring, boost sales productivity, and provide a 360-degree view of the customer.",
+    "how_it_works_narrative": "This solution demonstrates the zero-copy integration between Salesforce Data Cloud and BigQuery. A service agent views a customer record in Salesforce and sees real-time insights\u2014like a \"churn risk\" score or a \"next best offer\"\u2014that are generated by a Vertex AI model running on the latest enterprise data in BigQuery, without ever moving the data.",
+    "key_technologies": [
+      "Analytics-BigQuery",
+      "Compute-Cloud Dataflow",
+      "AI + Machine Learning-Vertex AI"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/marketing-data-warehouse",
+    "google_proof_points": [
+      "The expanded partnership between Salesforce and Google Cloud enables deep",
+      "bidirectional integration. This allows for AI agents and real-time insights from Google Cloud (like churn predictions or propensity models from Vertex AI) to be surfaced directly within Salesforce",
+      "empowering sales and service teams with actionable intelligence. Wayfair is a key customer leveraging this partnership."
+    ],
+    "value_driver": [
+      "Grow the Business"
+    ],
+    "value_narrative": "Enriches the CRM with AI-driven intelligence via zero-copy data sharing to provide sales and service teams with real-time insights, improving lead scoring, sales productivity, and creating a 360-degree customer view.",
+    "kpis": [
+      "Sales Conversion Rate",
+      "Customer Satisfaction (CSAT)",
+      "Lead-to-Opportunity Ratio"
+    ],
+    "google_differentiation": "Zero-Copy, Real-Time Data Sharing: Our partnership with Salesforce allows for seamless, real-time data sharing between BigQuery and Salesforce Data Cloud without ETL. This \"zero-copy\" integration means data doesn't have to be moved, reducing complexity and cost while ensuring that CRM users always have the freshest insights from across the enterprise. This is a powerful differentiator against siloed solutions.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "SADA specializes in Google Cloud and Salesforce integrations",
+      "helping businesses create a 360-degree customer view by bringing real-time analytics and AI insights into the hands of sales and service agents."
+    ],
+    "isv": [
+      "Salesforce is the primary ISV here. Its integration capabilities",
+      "particularly with the MuleSoft Anypoint Platform",
+      "allow for robust",
+      "bidirectional data flows with Google Cloud services like BigQuery."
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Sentiment Analysis & Social Listening",
+    "description_and_problem_statement": "Actively monitors and analyzes customer reviews, social media mentions, and support interactions to gain deep insights into brand perception, product feedback, and overall customer satisfaction.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Vertex AI Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Product Officer, Chief Marketing Officer, VP of Product Management, Head of Product Innovation, Chief Digital Officer, VP of Ecommerce"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Social Media Manager, I want to automatically analyze thousands of comments and posts to understand customer sentiment about our latest launch and quickly identify any emerging issues. As a Head of Brand Strategy, I want to use social listening to benchmark our brand sentiment against competitors and understand the \"why\" behind customer conversations at scale.",
+    "how_it_works_narrative": "This flow uses the Vertex AI Natural Language API to process thousands of customer reviews stored in BigQuery. It automatically extracts the sentiment (positive/negative), key entities (e.g., \"shipping,\" \"battery life\"), and topics, providing a clear, actionable summary of customer feedback in a Looker dashboard.",
+    "key_technologies": [
+      "AI + Machine Learning-Vertex AI",
+      "Analytics-BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-marketing-campaigns",
+    "google_proof_points": [
+      "Carrefour Belgium uses data analytics on Google Cloud to gain deeper customer insights and deliver more effective",
+      "personalized communications. This includes analyzing customer feedback to better understand sentiment and tailor services."
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Automatically analyzes thousands of customer comments and posts to understand sentiment, identify emerging issues, benchmark against competitors, and understand the \"why\" behind customer conversations at scale.",
+    "kpis": [
+      "Brand Sentiment Score",
+      "Issue Resolution Time",
+      "Social Engagement Rate"
+    ],
+    "google_differentiation": "Superior Natural Language AI: Google's long history in search gives our Natural Language AI API a deep understanding of consumer intent. It provides highly accurate sentiment analysis, entity extraction, and topic classification \"out of the box,\" allowing retailers to quickly derive insights from unstructured text data like reviews and social media posts with minimal effort.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [
+      "PwC and Wavestone help companies implement social listening strategies",
+      "using Google Cloud's AI tools to analyze public sentiment and gain competitive intelligence from sources like social media and forums."
+    ],
+    "isv": [
+      "Sprinklr and Brandwatch are leading social listening platforms that can integrate with Google Cloud to allow for deeper analysis and combination with internal enterprise data for a more complete picture of customer sentiment."
+    ],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Analytics and Reporting",
+    "description_and_problem_statement": "Utilize the consolidated data to generate dashboards and reports for monitoring business performance and gaining basic insights into customer behavior and operations.",
+    "use_case_status": "Deployed - Referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer, Chief Financial Officer, VP of Marketing, Marketing Director, Head of Analytics, Chief Data Officer"
+    ],
+    "implementation_complexity": "Day 1 / Low",
+    "customer_user_journeys": "As a Business User, I want to ask simple questions about my sales data and get immediate answers in a clear, visual format, without needing a data science degree. As a VP of Analytics, I want to empower every team with self-service analytics on a governed, trusted data platform, fostering a true data-driven culture.",
+    "how_it_works_narrative": "This solution empowers business users by connecting Looker to a BigQuery data warehouse. A marketing analyst can now use Looker's natural language search feature to ask, \"Show me top selling products in California last week,\" and get an instant visualization and report, enabling true self-service analytics.",
+    "key_technologies": [
+      "Analytics-Looker",
+      "Analytics-BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/big-data-analytics/analytics-lakehouse",
+    "google_proof_points": [
+      "Keychron",
+      "a custom keyboard manufacturer",
+      "used Looker and BigQuery to build a centralized analytics platform. This gave their business teams self-service access to real-time data on sales",
+      "marketing",
+      "and inventory",
+      "empowering them to make faster",
+      "data-driven decisions without relying on engineering."
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Empowers every team with self-service analytics on a governed, trusted data platform, allowing business users to ask simple questions and get immediate visual answers to foster a data-driven culture.",
+    "kpis": [
+      "Time-to-Insight",
+      "Report Generation Time",
+      "Data Platform Adoption Rate"
+    ],
+    "google_differentiation": "Unified, Governed, and Accessible BI: Google Cloud provides a complete, end-to-end analytics solution with BigQuery as the single source of truth and Looker as the semantic modeling and BI layer. This integration ensures that everyone from data analysts to business users is working from the same governed data, while Looker's modeling layer (LookML) provides a robust framework for defining business logic that is far more powerful and reusable than the approach of competitors.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Cross-Channel Asset Adaptation",
+    "description_and_problem_statement": "Adapting a single creative concept for numerous social and web channels is a manual and repetitive bottleneck for content managers, slowing down campaign execution. An agent takes a master creative asset and automatically reformats the copy, metadata, and visuals for every required channel (e.g., Email, Social, PIM), dramatically increasing the speed and efficiency of content deployment.",
+    "use_case_status": "Demo/Material - Not Deployed",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "AI -Your Business. Your Models - Vertex AI Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer, Chief Financial Officer, VP of Marketing, Marketing Director, Head of Analytics, Chief Data Officer"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Graphic Designer, I want to stop spending my days manually resizing the same image into ten different formats and instead focus on creating high-impact original concepts. As a Head of Creative Operations, I want to use AI to automate the adaptation of our creative assets, ensuring brand consistency while dramatically reducing production time and costs.",
+    "how_it_works_narrative": "This flow uses Vertex AI's Imagen model to automate creative resizing. A designer uploads a single high-resolution hero image. The model then automatically generates correctly sized and cropped versions for every channel\u2014social media squares, email banners, and website heroes\u2014drastically reducing manual effort.",
+    "key_technologies": [
+      "AI + Machine Learning-Vertex AI"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "GE",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-marketing-campaigns",
+    "google_proof_points": [
+      "While many companies are in the early stages",
+      "consider a large apparel retailer. They use Vertex AI (Imagen) to automatically adapt their high-resolution product photography for different marketing channels\u2014creating square crops for Instagram",
+      "vertical versions for Stories",
+      "and lifestyle backgrounds for email campaigns",
+      "all from a single source image. This dramatically reduces manual design work."
+    ],
+    "value_driver": [
+      "Enhance Operational Excellence"
+    ],
+    "value_narrative": "Uses generative AI to automate the adaptation and resizing of creative assets across various formats and channels, ensuring brand consistency while dramatically reducing manual production time and costs.",
+    "kpis": [
+      "Creative Production Time",
+      "Asset Creation Cost",
+      "Time-to-Market for Campaigns"
+    ],
+    "google_differentiation": "Powerful and Versatile Generative AI: Google's Imagen models on Vertex AI are not just for generating images from scratch; they excel at editing and adapting existing ones (inpainting, outpainting). This, combined with our world-class infrastructure, allows retailers to build scalable pipelines to automate creative adaptation, a task that is difficult to achieve with the more limited or less integrated AI services of other clouds.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Customer Review Ingestion & Analysis for Marketing",
+    "description_and_problem_statement": "Marketing teams struggle to manually gather and analyze customer reviews from dozens of sources, missing out on valuable insights and authentic customer testimonials that could be used in marketing materials. This use case describes an agent that automatically ingests customer reviews from e-commerce sites, review platforms, and social media. It then analyzes sentiment, identifies key product themes, and extracts impactful quotes that can be leveraged in marketing campaigns to build social proof and drive conversions.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "AI -Gemini Enterprise for customer Experience -Growth",
+      "Data Cloud-AI- Native Data Cloud -Primary"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer, VP of Ecommerce, Head of Digital Marketing, Chief Creative Officer, Director of Digital Strategy, Advertising Manager"
+    ],
+    "implementation_complexity": "Day 1 / Low",
+    "customer_user_journeys": "As a Customer, I want the brands I buy from to listen to my feedback and use it to improve their products and services. As a Head of Marketing, I want to leverage the authentic voice of my happiest customers by automatically identifying our best reviews and transforming them into compelling marketing content.",
+    "how_it_works_narrative": "This solution creates a pipeline where positive customer reviews from BigQuery, identified by the Natural Language API, are fed into a Gemini prompt. The model automatically transforms the authentic customer quote into a catchy, on-brand social media post, ready for the marketing team to publish.",
+    "key_technologies": [
+      "AI + Machine Learning-Vertex AI",
+      "AI + Machine Learning-Gemini Enterprise",
+      "Analytics-BigQuery"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "GE",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-marketing-campaigns",
+    "google_proof_points": [
+      "Imagine an online electronics retailer using Vertex AI's Natural Language API to analyze thousands of product reviews. The system automatically identifies the most positive",
+      "descriptive reviews and",
+      "using Gemini models",
+      "transforms them into compelling marketing snippets for use in social media ads and email newsletters",
+      "adding authentic social proof to their campaigns."
+    ],
+    "value_driver": [
+      "Grow the Business"
+    ],
+    "value_narrative": "Leverages the authentic voice of customers by automatically identifying the best reviews and transforming them into compelling marketing content and social proof using generative AI.",
+    "kpis": [
+      "Content Production Time",
+      "Engagement Rate on Social Proof Ads",
+      "Conversion Rate"
+    ],
+    "google_differentiation": "From Insight to Content in One Platform: Google Cloud provides the unique ability to go from analysis to creation seamlessly. A retailer can use the NLP API to understand sentiment and entities within reviews stored in BigQuery, then immediately pass those insights to Gemini models to generate marketing copy. This end-to-end workflow on a single platform is a powerful advantage over competitors where this would require stitching together multiple, disparate services.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  },
+  {
+    "use_case_title": "Geo-Targeted Mobile Offers Based on Proximity",
+    "description_and_problem_statement": "Retailers often miss opportunities to drive foot traffic and impulse purchases because they lack a mechanism to engage customers with relevant offers when they are physically near a store. An agent triggers personalized offers to a customer's mobile app when they are detected near a store location. The offers are tailored based on the customer's purchase history and the time of day, creating timely, relevant incentives that increase store visits and sales.",
+    "use_case_status": "Deployed - Not referencable",
+    "industry_pillar": "Leverage AI to transform data into value",
+    "associated_horizontal_plays": [
+      "Data Cloud-AI- Native Data Cloud -Primary",
+      "AI -Your Business. Your Models - Vertex AI Platform -Growth"
+    ],
+    "key_personas": [
+      "Chief Marketing Officer, VP of Ecommerce, Head of Customer Experience, Chief Data Officer, Marketing Director, Product Manager of Digital Experience, Chief Digital Officer"
+    ],
+    "implementation_complexity": "Medium",
+    "customer_user_journeys": "As a Customer, I want to receive a relevant, valuable offer on my phone when I'm near a store, making my shopping trip easier and more affordable. As a Head of Retail Operations, I want to use location-based offers to drive incremental foot traffic into my stores and create a seamless bridge between the digital and physical shopping experience.",
+    "how_it_works_narrative": "This solution uses Google Maps Platform APIs to create geofences around physical stores. When a mobile app user enters a geofence, a Cloud Function is triggered. This function calls a Vertex AI model to generate a personalized offer based on the user's purchase history in BigQuery, driving immediate foot traffic.",
+    "key_technologies": [
+      "Compute-Cloud Functions",
+      "Analytics-BigQuery",
+      "AI + Machine Learning-Vertex AI",
+      "Analytics-Pub/Sub"
+    ],
+    "demo_available": "",
+    "demo_links": "",
+    "demo_type": "",
+    "agent": "GE",
+    "architecture_reference": "https://docs.cloud.google.com/architecture/genai-product-recommendations",
+    "google_proof_points": [
+      "A large coffee chain uses Google Cloud to power its mobile app. When a loyalty member who has opted-in to location sharing comes within a certain radius of a store (a geofence)",
+      "Cloud Functions triggers a check against their purchase history in BigQuery. If they're a frequent buyer of a certain drink",
+      "a Vertex AI model might generate a personalized \"20% off your favorite latte\" push notification to drive foot traffic."
+    ],
+    "value_driver": [
+      "Grow the Business"
+    ],
+    "value_narrative": "Uses location-based data and real-time infrastructure to send relevant, personalized mobile offers when a customer is near a store, driving incremental foot traffic and bridging the digital and physical shopping experience.",
+    "kpis": [
+      "Store Foot Traffic",
+      "Offer Redemption Rate",
+      "Incremental Sales"
+    ],
+    "google_differentiation": "Mastery of Geospatial Data and Real-Time Infrastructure: Google has unparalleled expertise in location and geospatial data, stemming from Google Maps. Retailers can leverage services like Google Maps Platform for geofencing, combined with our low-latency infrastructure (Pub/Sub, Cloud Functions, Vertex AI) to process real-time location signals and trigger personalized actions. This deep integration with a leading mapping platform is a unique and powerful differentiator.",
+    "average_estimated_revenue": "",
+    "average_estimated_acv": "",
+    "preferred_partners": [],
+    "isv": [],
+    "additional_reference_material": "",
+    "gcc_specific_offerings": "",
+    "if_priority_functional_demo_build_plan": ""
+  }
+]

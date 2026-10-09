@@ -1,9 +1,9 @@
 var spreadsheetMap = new Map();
-spreadsheetMap.set("UAT","1r9Vu0jSbP5UGFJGeLP4gqT34v6SA1zg1yZE_BF9ZTAk");
-spreadsheetMap.set("QA","1Hsj5U_I1R-6gA0oY35XV5wkWKJlhAvRLmXHuPEqM7a4");
-spreadsheetMap.set("PROD","1EQn-f6e0SqbqclAzBJEkdawnesMw-wEqLBonr-tGEV8");
-spreadsheetMap.set("DEV","1zrjhQ1F8iN5hpbqdZBVxFbn3ND1A0crUpC9Q1ZgFpeQ");
-spreadsheetMap.set("DEMO","1ynt-lMrr83Ax6Y9xLQYiQVbtVKT5JAWNErqT3xRqcEc");
+spreadsheetMap.set("UAT","YOUR_FEEDBACK_SPREADSHEET_ID_UAT_0000001");
+spreadsheetMap.set("QA","YOUR_FEEDBACK_SPREADSHEET_ID_QA_00000001");
+spreadsheetMap.set("PROD","YOUR_FEEDBACK_SPREADSHEET_ID_DEV_0000001");
+spreadsheetMap.set("DEV","YOUR_FEEDBACK_SPREADSHEET_ID_PROD_000001");
+spreadsheetMap.set("DEMO","YOUR_FEEDBACK_SPREADSHEET_ID_STAGE_00001");
 
 var spreadsheetId;
 var sheetName = "Form Responses 1";
@@ -190,4 +190,3 @@ function formatDateToYYYYMMDDHH(date) {
 
   return formattedDate;
 }
-

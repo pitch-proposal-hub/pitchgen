@@ -23,7 +23,7 @@ class GlobalState:
           "title": "Outline",
           "outline": self.outline
       }
-    
+
     # Normalize agendas if it is a list
     if isinstance(self.agendas, list):
       print("[GlobalState] Normalizing agendas list to expected dictionary structure...")
@@ -35,10 +35,13 @@ class GlobalState:
   @classmethod
   def from_json(cls, json_str):
     data = json.loads(json_str)
-    if isinstance(data, dict) and "Status" in data and "data" in data:
+    if (
+        isinstance(data, dict)
+        and "data" in data
+        and isinstance(data["data"], dict)
+    ):
       data = data["data"]
     state = cls()
     state.__dict__.update(data)
     state._normalize()
     return state
-
